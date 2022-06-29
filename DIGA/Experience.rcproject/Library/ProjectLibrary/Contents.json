@@ -1,3 +1,22 @@
 [
-
+  {
+    "libraryIdentifier" : "c0a8065e02babb66b2139e86535575ce",
+    "format" : "model",
+    "displayName" : "coilUSDP.usdz"
+  },
+  {
+    "libraryIdentifier" : "b2ea4c178b3218bb7f04aebd31335270",
+    "format" : "model",
+    "displayName" : "＊.usdz"
+  },
+  {
+    "libraryIdentifier" : "16d1a38443d7a81ddeb74fffaf656b69",
+    "format" : "image",
+    "displayName" : "diga.png"
+  },
+  {
+    "libraryIdentifier" : "530e541ef356394e9a45352c2d0ebd29",
+    "format" : "image",
+    "displayName" : "go.png"
+  }
 ]
