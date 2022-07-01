@@ -171,6 +171,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         my_longitude = locationManager.location?.coordinate.longitude
         guard let latitude = my_latitude else {return}
         guard let longitude = my_longitude else {return}
+        debugPrint(latitude)
+        debugPrint(longitude)
 
         let currentlocation = CLLocationCoordinate2DMake(latitude,longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
@@ -246,6 +248,16 @@ extension MapViewController{
         }
     }
 
+}
+
+
+extension MapViewController{
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toNext" {
+//            let nextView = segue.destination as! NextViewController
+//            nextView.str = textField.text!
+//        }
+//    }
 }
 
 

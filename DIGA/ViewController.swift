@@ -10,6 +10,8 @@ import RealityKit
 
 class ViewController: UIViewController {
     
+    var imageValue:String!
+    
     @IBOutlet var arView: ARView!
     
     @IBAction func AddFriends(_ sender: UIButton) {

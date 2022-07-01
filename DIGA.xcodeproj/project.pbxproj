@@ -19,8 +19,6 @@
 		0D78B11C286C2BD5002CFB48 /* TopViewContoroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B11B286C2BD5002CFB48 /* TopViewContoroller.swift */; };
 		0D78B11E286C2BEE002CFB48 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B11D286C2BEE002CFB48 /* MapViewController.swift */; };
 		0D78B121286C2F91002CFB48 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D78B120286C2F91002CFB48 /* CoreLocation.framework */; };
-		0D78B123286C72D4002CFB48 /* go.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D78B122286C72D4002CFB48 /* go.png */; };
-		0D78B125286C7443002CFB48 /* ダウンロード.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0D78B124286C7443002CFB48 /* ダウンロード.jpeg */; };
 		0D78B12E286DD2A2002CFB48 /* Picturebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B12D286DD2A1002CFB48 /* Picturebook.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,9 +55,6 @@
 		0D78B11B286C2BD5002CFB48 /* TopViewContoroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewContoroller.swift; sourceTree = "<group>"; };
 		0D78B11D286C2BEE002CFB48 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0D78B120286C2F91002CFB48 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		0D78B122286C72D4002CFB48 /* go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = go.png; path = ../../go.png; sourceTree = "<group>"; };
-		0D78B124286C7443002CFB48 /* ダウンロード.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ダウンロード.jpeg"; path = "../../ダウンロード.jpeg"; sourceTree = "<group>"; };
-		0D78B126286C754D002CFB48 /* amongs.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; name = amongs.usdc; path = ../../amongs.usdc; sourceTree = "<group>"; };
 		0D78B12D286DD2A1002CFB48 /* Picturebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picturebook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,9 +108,6 @@
 		0D78B0EB286C2B01002CFB48 /* DIGA */ = {
 			isa = PBXGroup;
 			children = (
-				0D78B122286C72D4002CFB48 /* go.png */,
-				0D78B124286C7443002CFB48 /* ダウンロード.jpeg */,
-				0D78B126286C754D002CFB48 /* amongs.usdc */,
 				0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */,
 				0D78B11B286C2BD5002CFB48 /* TopViewContoroller.swift */,
 				0D78B11D286C2BEE002CFB48 /* MapViewController.swift */,
@@ -261,8 +253,6 @@
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
 				0D78B0F4286C2B01002CFB48 /* Main.storyboard in Resources */,
-				0D78B125286C7443002CFB48 /* ダウンロード.jpeg in Resources */,
-				0D78B123286C72D4002CFB48 /* go.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

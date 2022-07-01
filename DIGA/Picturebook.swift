@@ -12,7 +12,16 @@ import CoreLocation
 class Picturebook:UIViewController{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+      let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+      // セルの左端に画像を追加
+      cell.imageView!.image = UIImage(named: "exeid")
+            
+      return cell
     }
     
 }
