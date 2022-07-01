@@ -36,9 +36,20 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     // タップした緯度経度を保持するインスタンス
     var tapLatitude: CLLocationDegrees!
     var tapLongitude: CLLocationDegrees!
-    var targetTitle = ""
+
+    var targetTitle: String!
     var targetCharacterImage: UIImage?
+    var targetRarity: Int?
+    var targetPlace: String?
+    let hokkaidoLatitude = 43.344778
+    let hokkaidoLongitude = 142.382944
+    let okinawaLatitude = 26.451614
+    let okinawaLongitude = 127.899915
+    let honshuLatitude = 35.0
+    let honshuLongitude = 135.0
     var targetRemoveAnnotaion: MKAnnotation?
+    
+
     
     // 位置情報初回のみ表示させる際のグローバル変数
     var first = true
@@ -169,6 +180,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         locationManager!.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+
         myLatitude = locationManager.location?.coordinate.latitude
         myLongitude = locationManager.location?.coordinate.longitude
 //        myLatitude = 35.1707
@@ -178,6 +190,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         debugPrint(latitude)
         debugPrint(longitude)
 
+
         let currentlocation = CLLocationCoordinate2DMake(latitude,longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
         let region = MKCoordinateRegion(center: currentlocation, span: span)
@@ -185,24 +198,19 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         mapView.region = region
         mapView.delegate = self
         
-        for i in 1..<52{
-            if i % 2 == 0 {
-                let randomDouble1 = Double.random(in: 0.0001...0.001)
-                let randomDouble2 = Double.random(in: 0.0001...0.001)
-                pinlocations.append(CLLocationCoordinate2DMake(latitude+randomDouble1,longitude-randomDouble2))
-            } else {
-                let randomDouble1 = Double.random(in: 0.0001...0.001)
-                let randomDouble2 = Double.random(in: 0.0001...0.001)
-                pinlocations.append(CLLocationCoordinate2DMake(latitude-randomDouble1,longitude+randomDouble2))
-            }
+        for i in 1..<pinTitles.count{
+            let mod = i % 10
+            pinLocationAppend(count: mod)
         }
         
         for (index,pinTitle) in self.pinTitles.enumerated(){
             let pin = MapAnnotationSetting()
             let coordinate = self.pinlocations[index]
+            print("coordinate",coordinate)
             pin.title = pinTitle
             pin.pinImage = pinImagges[index]
             pin.coordinate = coordinate
+            debugPrint(pin)
             self.mapView.addAnnotation(pin)
         }
 
@@ -237,7 +245,8 @@ extension MapViewController{
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         tapLatitude = view.annotation?.coordinate.latitude
         tapLongitude = view.annotation?.coordinate.longitude
-        targetTitle = (view.annotation?.title)!!
+
+        targetTitle = (view.annotation?.title)!
         targetCharacterImage = view.image
         targetRemoveAnnotaion = view.annotation
         
@@ -269,16 +278,17 @@ extension MapViewController{
 
 // ARに情報を渡す
 extension MapViewController{
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if segue.identifier == "toARView" {
-        let nextView = segue.destination as! ARViewController
-          nextView.characterImage = targetCharacterImage
-          nextView.removeAnnotaion = targetRemoveAnnotaion
-          nextView.removeMap = mapView
-      }
+        if segue.identifier == "toARView" {
+            let nextView = segue.destination as! ARViewController
+            nextView.characterImage = targetCharacterImage
+            nextView.characterRerity = targetRarity
+            nextView.characterPlace = targetPlace
+            nextView.removeAnnotaion = targetRemoveAnnotaion
+            nextView.removeMap = mapView
+        }
     }
-    
+
 }
 
 
@@ -289,6 +299,7 @@ extension MapViewController{
         if first{
             first = false
             
+
             if self.myLatitude == nil && self.myLongitude == nil{
                 myLatitude = locationManager.location?.coordinate.latitude
                 myLongitude = locationManager.location?.coordinate.longitude
@@ -299,17 +310,9 @@ extension MapViewController{
                 let region = MKCoordinateRegion(center: currentlocation, span: span)
                 mapView.region = region
                 mapView.delegate = self
-                
                 for i in 1..<52{
-                if i % 2 == 0 {
-                    let randomDouble1 = Double.random(in: 0.0001...0.001)
-                    let randomDouble2 = Double.random(in: 0.0001...0.001)
-                    pinlocations.append(CLLocationCoordinate2DMake(myLatitude+randomDouble1,myLongitude-randomDouble2))
-                } else {
-                    let randomDouble1 = Double.random(in: 0.0001...0.001)
-                    let randomDouble2 = Double.random(in: 0.0001...0.001)
-                    pinlocations.append(CLLocationCoordinate2DMake(myLatitude-randomDouble1,myLongitude+randomDouble2))
-                    }
+                    let mod = i % 10
+                    pinLocationAppend(count: mod)
                 }
                 
                 for (index,pinTitle) in self.pinTitles.enumerated(){
@@ -322,6 +325,36 @@ extension MapViewController{
                 }
                 
             }
+        }
+    }
+    func pinLocationAppend(count: Int) {
+        switch count {
+        case 0://沖縄左下
+            let randomDouble1 = Double.random(in: 0.1...0.23)
+            let randomDouble2 = randomDouble1 + Double.random(in: -0.1...0.03)
+            pinlocations.append(CLLocationCoordinate2DMake(okinawaLatitude-randomDouble1,okinawaLongitude-randomDouble2))
+        case 1://沖縄右上
+            let randomDouble1 = Double.random(in: 0.001...0.3)
+            let randomDouble2 = randomDouble1 + Double.random(in: 0...0.1)
+            pinlocations.append(CLLocationCoordinate2DMake(okinawaLatitude+randomDouble1,okinawaLongitude+randomDouble2))
+        case 2...4://本州右上
+            let randomDouble1 = Double.random(in: -0.01...5)
+            let randomDouble2 = randomDouble1 + Double.random(in: 0.3...2.5)
+            pinlocations.append(CLLocationCoordinate2DMake(honshuLatitude+randomDouble1,honshuLongitude+randomDouble2))
+        case 5...7://本州左下
+            let randomDouble1 = Double.random(in: -0.01...2)
+            let randomDouble2 = randomDouble1 + Double.random(in: 0...3)
+            pinlocations.append(CLLocationCoordinate2DMake(honshuLatitude-randomDouble1,honshuLongitude-randomDouble2))
+        case 8://北海道右上
+            let randomDouble1 = Double.random(in: -1...1)
+            let randomDouble2 = Double.random(in: -1...1)
+            pinlocations.append(CLLocationCoordinate2DMake(hokkaidoLatitude+randomDouble1,hokkaidoLongitude+randomDouble2))
+        case 9://北海道左下
+            let randomDouble1 = Double.random(in: -1...1)
+            let randomDouble2 = Double.random(in: -1...1)
+            pinlocations.append(CLLocationCoordinate2DMake(hokkaidoLatitude-randomDouble1,hokkaidoLongitude-randomDouble2))
+        default:
+            break
         }
     }
     
