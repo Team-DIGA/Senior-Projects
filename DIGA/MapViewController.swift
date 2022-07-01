@@ -34,9 +34,12 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var my_longitude: CLLocationDegrees!
     
     // タップした緯度経度を保持するインスタンス
-    var tap_latitude: CLLocationDegrees!
-    var tap_longitude:CLLocationDegrees!
-    var target_title:String!
+    var tapLatitude: CLLocationDegrees!
+    var tapLongitude: CLLocationDegrees!
+    var targetTitle: String!
+    var targetCharacterImage: UIImage?
+    var targetRarity: Int?
+    var targetPlace: String?
     
     // 位置情報初回のみ表示させる際のグローバル変数
     var first = true
@@ -44,7 +47,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     // 表示させる画像の配列
     let pinImagges:[UIImage?] = [
         UIImage(named: "exeid")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named:"gokuu")?.resized(size:CGSize(width: 50, height: 50)),
+        UIImage(named: "gokuu")?.resized(size:CGSize(width: 50, height: 50)),
         UIImage(named: "luffy")?.resized(size:CGSize(width: 50, height: 50)),
         UIImage(named: "ana")?.resized(size:CGSize(width: 50, height: 50)),
         UIImage(named: "anpanman")?.resized(size:CGSize(width: 50, height: 50)),
@@ -230,20 +233,21 @@ extension MapViewController{
 extension MapViewController{
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        tap_latitude = view.annotation?.coordinate.latitude
-        tap_longitude = view.annotation?.coordinate.longitude
-        target_title = (view.annotation?.title)!
+        tapLatitude = view.annotation?.coordinate.latitude
+        tapLongitude = view.annotation?.coordinate.longitude
+        targetTitle = (view.annotation?.title)!
+        targetCharacterImage = view.image
         reverseGeoCording()
         self.performSegue(withIdentifier: "toARView", sender: self)
     }
     
     func reverseGeoCording(){
-        let location = CLLocation(latitude: tap_latitude!, longitude: tap_longitude!)
+        let location = CLLocation(latitude: tapLatitude!, longitude: tapLongitude!)
         
         CLGeocoder().reverseGeocodeLocation(location){ [self]
             placemarks, error in
             guard let placemark = placemarks?.first, error == nil else {return}
-            debugPrint(target_title!)
+            debugPrint(targetTitle!)
             debugPrint(placemark.administrativeArea! + placemark.locality! + placemark.name!)
         }
     }
@@ -252,12 +256,14 @@ extension MapViewController{
 
 
 extension MapViewController{
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toNext" {
-//            let nextView = segue.destination as! NextViewController
-//            nextView.str = textField.text!
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toARView" {
+            let nextView = segue.destination as! ARViewController
+            nextView.characterImage = targetCharacterImage
+            nextView.characterRerity = targetRarity
+            nextView.characterPlace = targetPlace
+        }
+    }
 }
 
 

@@ -122,18 +122,19 @@
         <!--ARView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="DIGA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ARViewController" customModule="DIGA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="omW-2h-TFi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DcP-nT-fKB">
-                                <rect key="frame" x="0.0" y="88" width="414" height="714"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DcP-nT-fKB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </arView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKc-ye-FNg">
-                                <rect key="frame" x="66" y="810" width="282" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKc-ye-FNg">
+                                <rect key="frame" x="70" y="790" width="274" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="j5L-3W-dQj"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Friends"/>
                                 <connections>
@@ -143,9 +144,19 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lhl-Wk-i5D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DcP-nT-fKB" firstAttribute="top" secondItem="Lhl-Wk-i5D" secondAttribute="top" id="2Sm-0W-fvh"/>
+                            <constraint firstItem="gKc-ye-FNg" firstAttribute="leading" secondItem="Lhl-Wk-i5D" secondAttribute="leading" constant="70" id="5nm-KB-CQM"/>
+                            <constraint firstAttribute="bottom" secondItem="DcP-nT-fKB" secondAttribute="bottom" id="GVR-kF-d46"/>
+                            <constraint firstItem="DcP-nT-fKB" firstAttribute="trailing" secondItem="Lhl-Wk-i5D" secondAttribute="trailing" id="MPQ-x6-1gw"/>
+                            <constraint firstItem="DcP-nT-fKB" firstAttribute="leading" secondItem="Lhl-Wk-i5D" secondAttribute="leading" id="Tbx-S9-jaf"/>
+                            <constraint firstItem="Lhl-Wk-i5D" firstAttribute="trailing" secondItem="gKc-ye-FNg" secondAttribute="trailing" constant="70" id="muD-FF-E41"/>
+                            <constraint firstItem="Lhl-Wk-i5D" firstAttribute="bottom" secondItem="gKc-ye-FNg" secondAttribute="bottom" constant="20" id="u8k-5X-2PL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RQc-U2-JPN"/>
                     <connections>
+                        <outlet property="addFriendButton" destination="gKc-ye-FNg" id="CL5-QP-V6X"/>
                         <outlet property="arView" destination="DcP-nT-fKB" id="TAt-25-RY7"/>
                     </connections>
                 </viewController>
