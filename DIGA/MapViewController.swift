@@ -169,13 +169,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         my_latitude = locationManager.location?.coordinate.latitude
         my_longitude = locationManager.location?.coordinate.longitude
-<<<<<<< HEAD
-//        debugPrint(my_latitude!)
-//        debugPrint(my_longitude!)
-        
-        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        let currentlocation = CLLocationCoordinate2DMake(35.689,139.76)
-=======
         guard let latitude = my_latitude else {return}
         guard let longitude = my_longitude else {return}
         debugPrint(latitude)
@@ -183,7 +176,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
 
         let currentlocation = CLLocationCoordinate2DMake(latitude,longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
->>>>>>> 8f91f2f139efb75b674ce77b26611a234328ac4f
         let region = MKCoordinateRegion(center: currentlocation, span: span)
 
         mapView.region = region
