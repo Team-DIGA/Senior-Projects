@@ -1,0 +1,43 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateCharacter {
+  onCreateCharacter {
+    id
+    name
+    rarity
+    first_met_place
+    met_count
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnUpdateCharacter {
+  onUpdateCharacter {
+    id
+    name
+    rarity
+    first_met_place
+    met_count
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnDeleteCharacter {
+  onDeleteCharacter {
+    id
+    name
+    rarity
+    first_met_place
+    met_count
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}

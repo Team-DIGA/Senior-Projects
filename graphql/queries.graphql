@@ -1,0 +1,65 @@
+# this is an auto generated file. This will be overwritten
+query GetCharacter($id: ID!) {
+  getCharacter(id: $id) {
+    id
+    name
+    rarity
+    first_met_place
+    met_count
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+query ListCharacters(
+  $filter: ModelCharacterFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCharacters(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      rarity
+      first_met_place
+      met_count
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncCharacters(
+  $filter: ModelCharacterFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncCharacters(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      name
+      rarity
+      first_met_place
+      met_count
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
