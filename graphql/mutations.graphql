@@ -1,0 +1,52 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateCharacter(
+  $input: CreateCharacterInput!
+  $condition: ModelCharacterConditionInput
+) {
+  createCharacter(input: $input, condition: $condition) {
+    id
+    name
+    rarity
+    first_met_place
+    met_count
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateCharacter(
+  $input: UpdateCharacterInput!
+  $condition: ModelCharacterConditionInput
+) {
+  updateCharacter(input: $input, condition: $condition) {
+    id
+    name
+    rarity
+    first_met_place
+    met_count
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteCharacter(
+  $input: DeleteCharacterInput!
+  $condition: ModelCharacterConditionInput
+) {
+  deleteCharacter(input: $input, condition: $condition) {
+    id
+    name
+    rarity
+    first_met_place
+    met_count
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
