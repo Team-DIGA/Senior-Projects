@@ -40,6 +40,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var targetCharacterImage: UIImage?
     var targetRarity: Int?
     var targetPlace: String?
+    let hokkaidoLatitude = 43.344778
+    let hokkaidoLongitude = 142.382944
+    let okinawaLatitude = 26.451614
+    let okinawaLongitude = 127.899915
+    
     
     // 位置情報初回のみ表示させる際のグローバル変数
     var first = true
@@ -184,24 +189,27 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         mapView.region = region
         mapView.delegate = self
         
-        for i in 1..<52{
+        for i in 1..<pinTitles.count{
             if i % 2 == 0 {
-                let randomDouble1 = Double.random(in: 0.0001...0.001)
-                let randomDouble2 = Double.random(in: 0.0001...0.001)
+                let randomDouble1 = Double.random(in: 1...10)
+                let randomDouble2 = Double.random(in: 1...10)
                 pinlocations.append(CLLocationCoordinate2DMake(latitude+randomDouble1,longitude-randomDouble2))
             } else {
                 let randomDouble1 = Double.random(in: 0.0001...0.001)
                 let randomDouble2 = Double.random(in: 0.0001...0.001)
                 pinlocations.append(CLLocationCoordinate2DMake(latitude-randomDouble1,longitude+randomDouble2))
+                
             }
         }
         
         for (index,pinTitle) in self.pinTitles.enumerated(){
             let pin = MapAnnotationSetting()
             let coordinate = self.pinlocations[index]
+            print("coordinate",coordinate)
             pin.title = pinTitle
             pin.pinImage = pinImagges[index]
             pin.coordinate = coordinate
+            debugPrint(pin)
             self.mapView.addAnnotation(pin)
         }
 
@@ -248,7 +256,8 @@ extension MapViewController{
             placemarks, error in
             guard let placemark = placemarks?.first, error == nil else {return}
             debugPrint(targetTitle!)
-            debugPrint(placemark.administrativeArea! + placemark.locality! + placemark.name!)
+            debugPrint(placemark.name)
+//            debugPrint(placemark.administrativeArea! + placemark.locality! + placemark.name!)
         }
     }
 
@@ -275,24 +284,67 @@ extension MapViewController{
             first = false
             
             if self.my_latitude == nil && self.my_longitude == nil{
-                my_latitude = locationManager.location?.coordinate.latitude
-                my_longitude = locationManager.location?.coordinate.longitude
+//                my_latitude = locationManager.location?.coordinate.latitude
+//                my_longitude = locationManager.location?.coordinate.longitude
+                my_latitude = 35
+                my_longitude = 135
                 let currentlocation = CLLocationCoordinate2DMake(my_latitude,my_longitude)
-                let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
+                let span = MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
                 let region = MKCoordinateRegion(center: currentlocation, span: span)
                 mapView.region = region
                 mapView.delegate = self
-                
                 for i in 1..<52{
-                if i % 2 == 0 {
-                    let randomDouble1 = Double.random(in: 0.0001...0.001)
-                    let randomDouble2 = Double.random(in: 0.0001...0.001)
-                    pinlocations.append(CLLocationCoordinate2DMake(my_latitude+randomDouble1,my_longitude-randomDouble2))
-                } else {
-                    let randomDouble1 = Double.random(in: 0.0001...0.001)
-                    let randomDouble2 = Double.random(in: 0.0001...0.001)
-                    pinlocations.append(CLLocationCoordinate2DMake(my_latitude-randomDouble1,my_longitude+randomDouble2))
+                    var amari = i % 10
+                    print(amari)
+                    switch amari {
+                    case 0://沖縄左下
+                        let randomDouble1 = Double.random(in: 0.1...0.2)
+                        let randomDouble2 = randomDouble1 + Double.random(in: 0.005...0.01)
+                        pinlocations.append(CLLocationCoordinate2DMake(okinawaLatitude-randomDouble1,okinawaLongitude-randomDouble2))
+                    case 1://沖縄右上
+                        let randomDouble1 = Double.random(in: 0.001...0.25)
+                        let randomDouble2 = randomDouble1 + Double.random(in: 0...0.1)
+                        pinlocations.append(CLLocationCoordinate2DMake(okinawaLatitude+randomDouble1,okinawaLongitude+randomDouble2))
+                    case 2...4://本州右上
+                        let randomDouble1 = Double.random(in: -0.01...5)
+                        let randomDouble2 = randomDouble1 + Double.random(in: 0.3...2.5)
+                        pinlocations.append(CLLocationCoordinate2DMake(my_latitude+randomDouble1,my_longitude+randomDouble2))
+                    case 5...7://本州左下
+                        let randomDouble1 = Double.random(in: -0.01...2)
+                        let randomDouble2 = randomDouble1 + Double.random(in: 0...3)
+                        pinlocations.append(CLLocationCoordinate2DMake(my_latitude-randomDouble1,my_longitude-randomDouble2))
+                    case 8://北海道右上
+                        let randomDouble1 = Double.random(in: -1...1)
+                        let randomDouble2 = Double.random(in: -1...1)
+                        pinlocations.append(CLLocationCoordinate2DMake(hokkaidoLatitude+randomDouble1,hokkaidoLongitude+randomDouble2))
+                    case 9://北海道左下
+                        let randomDouble1 = Double.random(in: -1...1)
+                        let randomDouble2 = Double.random(in: -1...1)
+                        pinlocations.append(CLLocationCoordinate2DMake(hokkaidoLatitude-randomDouble1,hokkaidoLongitude-randomDouble2))
+                    default:
+                        break
                     }
+//                    if i % 10 == 0 {
+//                        let randomDouble1 = Double.random(in: 0.001...0.25)
+//                        let randomDouble2 = randomDouble1 + Double.random(in: 0...0.1)
+//                        pinlocations.append(CLLocationCoordinate2DMake(okinawaLatitude+randomDouble1,okinawaLongitude+randomDouble2))
+//                    } else if i % 10 == 5 {
+//                        let randomDouble1 = Double.random(in: 0.1...0.2)
+//                        let randomDouble2 = randomDouble1 + Double.random(in: 0.005...0.01)
+//                        pinlocations.append(CLLocationCoordinate2DMake(okinawaLatitude-randomDouble1,okinawaLongitude-randomDouble2))
+//                    } else if i % 3 == 0 {
+//                        let randomDouble1 = Double.random(in: -0.01...5)
+//                        let randomDouble2 = randomDouble1 + Double.random(in: 0...3)
+//                        pinlocations.append(CLLocationCoordinate2DMake(my_latitude+randomDouble1,my_longitude+randomDouble2))
+//                    } else if i % 3 == 1 {
+//                        let randomDouble1 = Double.random(in: -0.01...2)
+//                        let randomDouble2 = randomDouble1 + Double.random(in: 0...3)
+//                        pinlocations.append(CLLocationCoordinate2DMake(my_latitude-randomDouble1,my_longitude-randomDouble2))
+//                    } else {
+//                        let randomDouble1 = Double.random(in: -1...1)
+//                        let randomDouble2 = Double.random(in: -1...1)
+//                        pinlocations.append(CLLocationCoordinate2DMake(hokkaidoLatitude-randomDouble1,hokkaidoLongitude-randomDouble2))
+//                    }
                 }
                 
                 for (index,pinTitle) in self.pinTitles.enumerated(){
