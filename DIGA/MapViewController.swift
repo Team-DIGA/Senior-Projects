@@ -5,6 +5,8 @@
 //  Created by Rintaro Kimura on 2022/06/29.
 //
 
+//branch test by yuta
+
 import UIKit
 import MapKit
 import CoreLocation
@@ -36,7 +38,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
 //        debugPrint(my_longitude!)
         
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        let currentlocation = CLLocationCoordinate2DMake(my_latitude!,my_longitude!)
+        let currentlocation = CLLocationCoordinate2DMake(35.689,139.76)
         let region = MKCoordinateRegion(center: currentlocation, span: span)
         
         let pin = MKPointAnnotation()
