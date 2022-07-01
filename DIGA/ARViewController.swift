@@ -29,6 +29,10 @@ class ARViewController: UIViewController {
         view.addSubview(arView)
         view.bringSubviewToFront(addFriendButton)
         //オブジェ作成表示
+        createObjImage()
+
+    }
+    func createObjImage() {
         let anchor = AnchorEntity(world: [0, -0.5, -1])
         let plane = ModelEntity(mesh: .generatePlane(width: 0.5, height: 0.5, cornerRadius: 0.25))
         let box = ModelEntity(mesh: .generateBox(size: simd_make_float3(0.6, 0.2, 0.4)))
@@ -41,15 +45,10 @@ class ARViewController: UIViewController {
             box.model?.materials = [imageMaterial]
             plane.model?.materials = [imageMaterial]
         }
-       
-        
-      //    anchor.addChild(box)
-      
         Task{
             arView.scene.anchors.append(anchor)
             anchor.addChild(plane)
-            
+//            anchor.addChild(box)
         }
-
     }
 }

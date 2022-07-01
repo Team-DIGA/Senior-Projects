@@ -44,6 +44,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     let hokkaidoLongitude = 142.382944
     let okinawaLatitude = 26.451614
     let okinawaLongitude = 127.899915
+    let honshuLatitude = 35.0
+    let honshuLongitude = 135.0
     
     
     // 位置情報初回のみ表示させる際のグローバル変数
@@ -179,8 +181,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         my_longitude = locationManager.location?.coordinate.longitude
         guard let latitude = my_latitude else {return}
         guard let longitude = my_longitude else {return}
-        debugPrint(latitude)
-        debugPrint(longitude)
 
         let currentlocation = CLLocationCoordinate2DMake(latitude,longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
@@ -190,16 +190,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         mapView.delegate = self
         
         for i in 1..<pinTitles.count{
-            if i % 2 == 0 {
-                let randomDouble1 = Double.random(in: 1...10)
-                let randomDouble2 = Double.random(in: 1...10)
-                pinlocations.append(CLLocationCoordinate2DMake(latitude+randomDouble1,longitude-randomDouble2))
-            } else {
-                let randomDouble1 = Double.random(in: 0.0001...0.001)
-                let randomDouble2 = Double.random(in: 0.0001...0.001)
-                pinlocations.append(CLLocationCoordinate2DMake(latitude-randomDouble1,longitude+randomDouble2))
-                
-            }
+            let mod = i % 10
+            pinLocationAppend(count: mod)
         }
         
         for (index,pinTitle) in self.pinTitles.enumerated(){
@@ -255,8 +247,6 @@ extension MapViewController{
         CLGeocoder().reverseGeocodeLocation(location){ [self]
             placemarks, error in
             guard let placemark = placemarks?.first, error == nil else {return}
-            debugPrint(targetTitle!)
-            debugPrint(placemark.name)
 //            debugPrint(placemark.administrativeArea! + placemark.locality! + placemark.name!)
         }
     }
@@ -284,67 +274,16 @@ extension MapViewController{
             first = false
             
             if self.my_latitude == nil && self.my_longitude == nil{
-//                my_latitude = locationManager.location?.coordinate.latitude
-//                my_longitude = locationManager.location?.coordinate.longitude
-                my_latitude = 35
-                my_longitude = 135
+                my_latitude = locationManager.location?.coordinate.latitude
+                my_longitude = locationManager.location?.coordinate.longitude
                 let currentlocation = CLLocationCoordinate2DMake(my_latitude,my_longitude)
                 let span = MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
                 let region = MKCoordinateRegion(center: currentlocation, span: span)
                 mapView.region = region
                 mapView.delegate = self
                 for i in 1..<52{
-                    var amari = i % 10
-                    print(amari)
-                    switch amari {
-                    case 0://沖縄左下
-                        let randomDouble1 = Double.random(in: 0.1...0.2)
-                        let randomDouble2 = randomDouble1 + Double.random(in: 0.005...0.01)
-                        pinlocations.append(CLLocationCoordinate2DMake(okinawaLatitude-randomDouble1,okinawaLongitude-randomDouble2))
-                    case 1://沖縄右上
-                        let randomDouble1 = Double.random(in: 0.001...0.25)
-                        let randomDouble2 = randomDouble1 + Double.random(in: 0...0.1)
-                        pinlocations.append(CLLocationCoordinate2DMake(okinawaLatitude+randomDouble1,okinawaLongitude+randomDouble2))
-                    case 2...4://本州右上
-                        let randomDouble1 = Double.random(in: -0.01...5)
-                        let randomDouble2 = randomDouble1 + Double.random(in: 0.3...2.5)
-                        pinlocations.append(CLLocationCoordinate2DMake(my_latitude+randomDouble1,my_longitude+randomDouble2))
-                    case 5...7://本州左下
-                        let randomDouble1 = Double.random(in: -0.01...2)
-                        let randomDouble2 = randomDouble1 + Double.random(in: 0...3)
-                        pinlocations.append(CLLocationCoordinate2DMake(my_latitude-randomDouble1,my_longitude-randomDouble2))
-                    case 8://北海道右上
-                        let randomDouble1 = Double.random(in: -1...1)
-                        let randomDouble2 = Double.random(in: -1...1)
-                        pinlocations.append(CLLocationCoordinate2DMake(hokkaidoLatitude+randomDouble1,hokkaidoLongitude+randomDouble2))
-                    case 9://北海道左下
-                        let randomDouble1 = Double.random(in: -1...1)
-                        let randomDouble2 = Double.random(in: -1...1)
-                        pinlocations.append(CLLocationCoordinate2DMake(hokkaidoLatitude-randomDouble1,hokkaidoLongitude-randomDouble2))
-                    default:
-                        break
-                    }
-//                    if i % 10 == 0 {
-//                        let randomDouble1 = Double.random(in: 0.001...0.25)
-//                        let randomDouble2 = randomDouble1 + Double.random(in: 0...0.1)
-//                        pinlocations.append(CLLocationCoordinate2DMake(okinawaLatitude+randomDouble1,okinawaLongitude+randomDouble2))
-//                    } else if i % 10 == 5 {
-//                        let randomDouble1 = Double.random(in: 0.1...0.2)
-//                        let randomDouble2 = randomDouble1 + Double.random(in: 0.005...0.01)
-//                        pinlocations.append(CLLocationCoordinate2DMake(okinawaLatitude-randomDouble1,okinawaLongitude-randomDouble2))
-//                    } else if i % 3 == 0 {
-//                        let randomDouble1 = Double.random(in: -0.01...5)
-//                        let randomDouble2 = randomDouble1 + Double.random(in: 0...3)
-//                        pinlocations.append(CLLocationCoordinate2DMake(my_latitude+randomDouble1,my_longitude+randomDouble2))
-//                    } else if i % 3 == 1 {
-//                        let randomDouble1 = Double.random(in: -0.01...2)
-//                        let randomDouble2 = randomDouble1 + Double.random(in: 0...3)
-//                        pinlocations.append(CLLocationCoordinate2DMake(my_latitude-randomDouble1,my_longitude-randomDouble2))
-//                    } else {
-//                        let randomDouble1 = Double.random(in: -1...1)
-//                        let randomDouble2 = Double.random(in: -1...1)
-//                        pinlocations.append(CLLocationCoordinate2DMake(hokkaidoLatitude-randomDouble1,hokkaidoLongitude-randomDouble2))
-//                    }
+                    let mod = i % 10
+                    pinLocationAppend(count: mod)
                 }
                 
                 for (index,pinTitle) in self.pinTitles.enumerated(){
@@ -357,6 +296,36 @@ extension MapViewController{
                 }
                 
             }
+        }
+    }
+    func pinLocationAppend(count: Int) {
+        switch count {
+        case 0://沖縄左下
+            let randomDouble1 = Double.random(in: 0.1...0.23)
+            let randomDouble2 = randomDouble1 + Double.random(in: -0.1...0.03)
+            pinlocations.append(CLLocationCoordinate2DMake(okinawaLatitude-randomDouble1,okinawaLongitude-randomDouble2))
+        case 1://沖縄右上
+            let randomDouble1 = Double.random(in: 0.001...0.3)
+            let randomDouble2 = randomDouble1 + Double.random(in: 0...0.1)
+            pinlocations.append(CLLocationCoordinate2DMake(okinawaLatitude+randomDouble1,okinawaLongitude+randomDouble2))
+        case 2...4://本州右上
+            let randomDouble1 = Double.random(in: -0.01...5)
+            let randomDouble2 = randomDouble1 + Double.random(in: 0.3...2.5)
+            pinlocations.append(CLLocationCoordinate2DMake(honshuLatitude+randomDouble1,honshuLongitude+randomDouble2))
+        case 5...7://本州左下
+            let randomDouble1 = Double.random(in: -0.01...2)
+            let randomDouble2 = randomDouble1 + Double.random(in: 0...3)
+            pinlocations.append(CLLocationCoordinate2DMake(honshuLatitude-randomDouble1,honshuLongitude-randomDouble2))
+        case 8://北海道右上
+            let randomDouble1 = Double.random(in: -1...1)
+            let randomDouble2 = Double.random(in: -1...1)
+            pinlocations.append(CLLocationCoordinate2DMake(hokkaidoLatitude+randomDouble1,hokkaidoLongitude+randomDouble2))
+        case 9://北海道左下
+            let randomDouble1 = Double.random(in: -1...1)
+            let randomDouble2 = Double.random(in: -1...1)
+            pinlocations.append(CLLocationCoordinate2DMake(hokkaidoLatitude-randomDouble1,hokkaidoLongitude-randomDouble2))
+        default:
+            break
         }
     }
     
