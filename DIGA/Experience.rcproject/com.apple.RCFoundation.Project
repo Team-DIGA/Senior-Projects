@@ -27,10 +27,7 @@
                   "632E476F-1E55-4E30-9723-1C51DD2E8B89" : null,
                   "878F182E-4721-4631-A0A3-DC110F1B4067" : null,
                   "3376FBF4-F168-42BF-969A-0330917AE0D6" : null,
-                  "333579E9-B219-489A-A9EB-7939F4B1E243" : null,
-                  "B91C7CA3-4AB1-4253-9A84-07383168A8A8" : null,
-                  "B5234F1F-88D1-49CA-87CD-EA96D4AA9277" : null,
-                  "C9A616CE-F62D-4FAB-AC46-4C067BC01D5A" : {
+                  "118974C5-4F85-4637-9585-D3CAA84E55D8" : {
                     "overrides" : {
                       "children" : {
                         "USDScene" : {
@@ -54,7 +51,7 @@
                                 "url",
                                 {
                                   "typeName" : "String",
-                                  "value" : "model:c0a8065e02babb66b2139e86535575ce\/coilUSDP.usdz"
+                                  "value" : "model:281545288cd3e33c2f14396dbbae75d4\/toy_robot_vintage.usdz"
                                 }
                               ],
                               [
@@ -74,24 +71,24 @@
                                 "RuntimeIdentifier",
                                 {
                                   "typeName" : "UUID",
-                                  "value" : "FB6051D2-57AA-4C97-B7C2-954843A70709"
+                                  "value" : "A1B72006-E8C3-4015-A2AE-7B08AC257127"
                                 }
                               ]
                             ]
                           },
                           "transform" : {
                             "matrix" : [
-                              1,
+                              0.0099999997764825821,
                               0,
                               0,
                               0,
                               0,
-                              1,
+                              0.0099999997764825821,
                               0,
                               0,
                               0,
                               0,
-                              1,
+                              0.0099999997764825821,
                               0,
                               0,
                               0,
@@ -110,28 +107,138 @@
                           "RuntimeIdentifier",
                           {
                             "typeName" : "UUID",
-                            "value" : "3AA8BF57-7CCD-4AA4-B056-4F402D2D3E5F"
+                            "value" : "D56DDB39-469B-4831-8E92-FC7470DFCF8E"
                           }
                         ]
                       ]
                     },
                     "transform" : {
                       "matrix" : [
-                        0.11942000687122345,
+                        1,
                         0,
                         0,
                         0,
                         0,
-                        0.11942000687122345,
+                        1,
                         0,
                         0,
                         0,
                         0,
-                        0.11942000687122345,
+                        1,
+                        0,
+                        0.21042364835739136,
+                        0,
+                        0,
+                        1
+                      ]
+                    }
+                  },
+                  "333579E9-B219-489A-A9EB-7939F4B1E243" : null,
+                  "B91C7CA3-4AB1-4253-9A84-07383168A8A8" : null,
+                  "B5234F1F-88D1-49CA-87CD-EA96D4AA9277" : null,
+                  "C9A616CE-F62D-4FAB-AC46-4C067BC01D5A" : null,
+                  "E2D69F98-EE23-41AA-B618-13E0D6FA5213" : {
+                    "overrides" : {
+                      "children" : {
+                        "USDScene" : {
+                          "overrides" : {
+                            "arguments" : [
+                              [
+                                "includeSceneScaling",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : false
+                                }
+                              ],
+                              [
+                                "subpath",
+                                {
+                                  "typeName" : "String",
+                                  "value" : ""
+                                }
+                              ],
+                              [
+                                "url",
+                                {
+                                  "typeName" : "String",
+                                  "value" : "model:4269b593af91a7e1367e7a8a4efea90e\/toy_drummer.usdz"
+                                }
+                              ],
+                              [
+                                "withDescendants",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : true
+                                }
+                              ]
+                            ],
+                            "factory" : {
+                              "identifier" : "com.apple.af.FileImportAssetFactory",
+                              "version" : "0.0"
+                            },
+                            "runtimeAttributes" : [
+                              [
+                                "RuntimeIdentifier",
+                                {
+                                  "typeName" : "UUID",
+                                  "value" : "D83745C3-0452-4187-9217-9B2307FC5AF6"
+                                }
+                              ]
+                            ]
+                          },
+                          "transform" : {
+                            "matrix" : [
+                              0.0099999997764825821,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0.0099999997764825821,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0.0099999997764825821,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1
+                            ]
+                          }
+                        }
+                      },
+                      "factory" : {
+                        "identifier" : "com.apple.af.Group",
+                        "version" : "0.0"
+                      },
+                      "runtimeAttributes" : [
+                        [
+                          "RuntimeIdentifier",
+                          {
+                            "typeName" : "UUID",
+                            "value" : "574194F5-0AD3-4373-8619-57C8B89B9A44"
+                          }
+                        ]
+                      ]
+                    },
+                    "transform" : {
+                      "matrix" : [
+                        1,
                         0,
                         0,
                         0,
                         0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        -0.099930822849273682,
+                        0,
+                        2.9802322387695312e-08,
                         1
                       ]
                     }
