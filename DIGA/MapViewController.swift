@@ -264,9 +264,9 @@ extension MapViewController{
             placemarks, error in
             guard let placemark = placemarks?.first, error == nil else {return}
             
-            debugPrint(placemark)
-            debugPrint(placemark.areasOfInterest ?? "nil")
-            debugPrint(placemark.administrativeArea! + placemark.locality! + placemark.name!)
+//            debugPrint(placemark)
+//            debugPrint(placemark.areasOfInterest ?? "nil")
+//            debugPrint(placemark.administrativeArea! + placemark.locality! + placemark.name!)
         }
         
         
@@ -284,8 +284,8 @@ extension MapViewController{
             nextView.characterImage = targetCharacterImage
             nextView.characterRerity = targetRarity
             nextView.characterPlace = targetPlace
-            nextView.removeAnnotaion = targetRemoveAnnotaion
-            nextView.removeMap = mapView
+//            nextView.removeAnnotaion = targetRemoveAnnotaion
+//            nextView.removeMap = mapView
         }
     }
 

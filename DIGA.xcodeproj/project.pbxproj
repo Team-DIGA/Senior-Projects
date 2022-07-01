@@ -25,9 +25,13 @@
 		3ADF1E6C286E962F007EB643 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E69286E962F007EB643 /* AmplifyModels.swift */; };
 		3ADF1E6D286E962F007EB643 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6A286E962F007EB643 /* Character.swift */; };
 		3ADF1E6F286E9819007EB643 /* AddFriendsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6E286E9819007EB643 /* AddFriendsTestViewController.swift */; };
-		3ADF1E71286EB8B9007EB643 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF1E70286EB8B9007EB643 /* amplifyconfiguration.json */; };
-		3ADF1E73286EB8C0007EB643 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF1E72286EB8C0007EB643 /* awsconfiguration.json */; };
 		B4D38D6EFCC4A3349B23F34E /* Pods_DIGA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094F1BB6423B2EECF004A6A /* Pods_DIGA.framework */; };
+		E172055E286EE93300A9D300 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E172055C286EE93300A9D300 /* awsconfiguration.json */; };
+		E172055F286EE93300A9D300 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E172055D286EE93300A9D300 /* amplifyconfiguration.json */; };
+		E1720561286EF3FF00A9D300 /* amongs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E1720560286EF3FF00A9D300 /* amongs.mp4 */; };
+		E1720563286EF5BA00A9D300 /* undefined.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1720562286EF5BA00A9D300 /* undefined.mp3 */; };
+		E1720566286F087400A9D300 /* morning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1720564286F087400A9D300 /* morning.mp3 */; };
+		E1720567286F087400A9D300 /* hello.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1720565286F087400A9D300 /* hello.mp3 */; };
 		E687EF08938B7D1517E9798C /* Pods_DIGA_DIGAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19848E6E9DCDD5ED7ACE72A /* Pods_DIGA_DIGAUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,8 +75,6 @@
 		3ADF1E69286E962F007EB643 /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplifyModels.swift; sourceTree = "<group>"; };
 		3ADF1E6A286E962F007EB643 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		3ADF1E6E286E9819007EB643 /* AddFriendsTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsTestViewController.swift; sourceTree = "<group>"; };
-		3ADF1E70286EB8B9007EB643 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
-		3ADF1E72286EB8C0007EB643 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		3F9F833CC2E20B6FBD539CE9 /* Pods-DIGATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGATests.release.xcconfig"; path = "Target Support Files/Pods-DIGATests/Pods-DIGATests.release.xcconfig"; sourceTree = "<group>"; };
 		41143A7C211BB9552B42443C /* Pods-DIGA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA.release.xcconfig"; path = "Target Support Files/Pods-DIGA/Pods-DIGA.release.xcconfig"; sourceTree = "<group>"; };
 		B8BBAAB8BB94B309B6FAE108 /* Pods-DIGA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA.debug.xcconfig"; path = "Target Support Files/Pods-DIGA/Pods-DIGA.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +82,12 @@
 		C094F1BB6423B2EECF004A6A /* Pods_DIGA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D19848E6E9DCDD5ED7ACE72A /* Pods_DIGA_DIGAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA_DIGAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D9E66A57DDE9024533B580 /* Pods-DIGA-DIGAUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA-DIGAUITests.debug.xcconfig"; path = "Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E172055C286EE93300A9D300 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		E172055D286EE93300A9D300 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		E1720560286EF3FF00A9D300 /* amongs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = amongs.mp4; sourceTree = "<group>"; };
+		E1720562286EF5BA00A9D300 /* undefined.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = undefined.mp3; sourceTree = "<group>"; };
+		E1720564286F087400A9D300 /* morning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = morning.mp3; sourceTree = "<group>"; };
+		E1720565286F087400A9D300 /* hello.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hello.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,8 @@
 		0D78B0E0286C2B01002CFB48 = {
 			isa = PBXGroup;
 			children = (
+				E172055D286EE93300A9D300 /* amplifyconfiguration.json */,
+				E172055C286EE93300A9D300 /* awsconfiguration.json */,
 				0D78B0EB286C2B01002CFB48 /* DIGA */,
 				0D78B101286C2B03002CFB48 /* DIGATests */,
 				0D78B10B286C2B03002CFB48 /* DIGAUITests */,
@@ -136,8 +146,10 @@
 		0D78B0EB286C2B01002CFB48 /* DIGA */ = {
 			isa = PBXGroup;
 			children = (
-				3ADF1E70286EB8B9007EB643 /* amplifyconfiguration.json */,
-				3ADF1E72286EB8C0007EB643 /* awsconfiguration.json */,
+				E1720562286EF5BA00A9D300 /* undefined.mp3 */,
+				E1720564286F087400A9D300 /* morning.mp3 */,
+				E1720565286F087400A9D300 /* hello.mp3 */,
+				E1720560286EF3FF00A9D300 /* amongs.mp4 */,
 				3ADF1E67286E962F007EB643 /* models */,
 				0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */,
 				0D78B11B286C2BD5002CFB48 /* TopViewContoroller.swift */,
@@ -314,11 +326,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ADF1E73286EB8C0007EB643 /* awsconfiguration.json in Resources */,
+				E172055E286EE93300A9D300 /* awsconfiguration.json in Resources */,
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
+				E1720567286F087400A9D300 /* hello.mp3 in Resources */,
+				E172055F286EE93300A9D300 /* amplifyconfiguration.json in Resources */,
+				E1720563286EF5BA00A9D300 /* undefined.mp3 in Resources */,
+				E1720566286F087400A9D300 /* morning.mp3 in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
+				E1720561286EF3FF00A9D300 /* amongs.mp4 in Resources */,
 				0D78B0F4286C2B01002CFB48 /* Main.storyboard in Resources */,
-				3ADF1E71286EB8B9007EB643 /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +467,7 @@
 				3ADF1E6B286E962F007EB643 /* Character+Schema.swift in Sources */,
 				0D78B12E286DD2A2002CFB48 /* Picturebook.swift in Sources */,
 				3ADF1E6F286E9819007EB643 /* AddFriendsTestViewController.swift in Sources */,
-				0D78B0EF286C2B01002CFB48 /* ViewController.swift in Sources */,
+				0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */,
 				3ADF1E6C286E962F007EB643 /* AmplifyModels.swift in Sources */,
 				0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */,
 				0D78B0ED286C2B01002CFB48 /* AppDelegate.swift in Sources */,

@@ -198,35 +198,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="diga" translatesAutoresizingMaskIntoConstraints="NO" id="93c-df-wHb">
-                                <rect key="frame" x="20" y="173" width="212" height="292"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DIGAwhite2" translatesAutoresizingMaskIntoConstraints="NO" id="93c-df-wHb">
+                                <rect key="frame" x="-5" y="25" width="254" height="330"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="330" id="Dkg-Fc-r56"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHh-fE-aQo">
-                                <rect key="frame" x="118" y="680" width="179" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHh-fE-aQo">
+                                <rect key="frame" x="100" y="700" width="214" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="hox-sd-91d"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Show Friends"/>
                                 <connections>
                                     <segue destination="MlP-QX-Ik5" kind="show" id="G19-3u-FYO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPp-1T-vaF">
-                                <rect key="frame" x="118" y="557" width="179" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="DIGA GO"/>
-                                <connections>
-                                    <segue destination="vDF-6D-jcR" kind="show" id="Q3R-DT-ujN"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="go" translatesAutoresizingMaskIntoConstraints="NO" id="DCZ-wA-qwU">
-                                <rect key="frame" x="269" y="227" width="125" height="183"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoRef2" translatesAutoresizingMaskIntoConstraints="NO" id="DCZ-wA-qwU">
+                                <rect key="frame" x="189" y="0.0" width="238" height="281"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="281" id="enL-Yu-hnE"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzL-24-GE4">
-                                <rect key="frame" x="118" y="804" width="179" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzL-24-GE4">
+                                <rect key="frame" x="100" y="796" width="214" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="hTe-HE-nid"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Friends"/>
@@ -234,9 +233,52 @@
                                     <segue destination="Tly-3R-M8P" kind="show" id="57k-Ye-c5b"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLL-Nz-0Uh">
+                                <rect key="frame" x="157" y="499" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ChL-co-NrD"/>
+                                    <constraint firstAttribute="height" constant="100" id="TO6-oC-nCr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="amongsTappedButton:" destination="uty-ZU-OTc" eventType="touchUpInside" id="PMS-kF-MkD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPp-1T-vaF">
+                                <rect key="frame" x="100" y="609" width="214" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="W7d-cE-izd"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="DIGA GO"/>
+                                <connections>
+                                    <action selector="digagoButton:" destination="uty-ZU-OTc" eventType="touchUpInside" id="uGH-2n-k2T"/>
+                                    <segue destination="vDF-6D-jcR" kind="show" id="Q3R-DT-ujN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X3P-G4-nkZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="93c-df-wHb" firstAttribute="leading" secondItem="SF9-xr-BIC" secondAttribute="leading" constant="-5" id="2Oy-p4-FOG"/>
+                            <constraint firstItem="DCZ-wA-qwU" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="189" id="8Mx-Ct-jCF"/>
+                            <constraint firstItem="MPp-1T-vaF" firstAttribute="top" secondItem="aLL-Nz-0Uh" secondAttribute="bottom" constant="10" id="EkD-AQ-bXt"/>
+                            <constraint firstItem="DHh-fE-aQo" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="100" id="LKW-2s-wwp"/>
+                            <constraint firstItem="MPp-1T-vaF" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="100" id="N86-Y9-sOs"/>
+                            <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="DHh-fE-aQo" secondAttribute="trailing" constant="100" id="QGP-Z5-AJE"/>
+                            <constraint firstItem="EzL-24-GE4" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="100" id="Tog-OB-wxD"/>
+                            <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="93c-df-wHb" secondAttribute="trailing" constant="165" id="TrX-M2-osc"/>
+                            <constraint firstItem="EzL-24-GE4" firstAttribute="top" secondItem="DHh-fE-aQo" secondAttribute="bottom" constant="50" id="Wxs-o1-5mE"/>
+                            <constraint firstItem="X3P-G4-nkZ" firstAttribute="bottom" secondItem="EzL-24-GE4" secondAttribute="bottom" constant="20" id="XOW-Xm-eh4"/>
+                            <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="EzL-24-GE4" secondAttribute="trailing" constant="100" id="ec6-Kj-Nce"/>
+                            <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="MPp-1T-vaF" secondAttribute="trailing" constant="100" id="gnE-Cd-sux"/>
+                            <constraint firstItem="DCZ-wA-qwU" firstAttribute="top" secondItem="SF9-xr-BIC" secondAttribute="top" id="hJb-37-dMj"/>
+                            <constraint firstItem="93c-df-wHb" firstAttribute="top" secondItem="SF9-xr-BIC" secondAttribute="top" constant="25" id="l2l-k4-DDx"/>
+                            <constraint firstAttribute="trailing" secondItem="DCZ-wA-qwU" secondAttribute="trailing" constant="-13" id="oNK-sX-ptQ"/>
+                            <constraint firstItem="aLL-Nz-0Uh" firstAttribute="centerX" secondItem="SF9-xr-BIC" secondAttribute="centerX" id="pDy-dJ-fTU"/>
+                            <constraint firstItem="DHh-fE-aQo" firstAttribute="top" secondItem="MPp-1T-vaF" secondAttribute="bottom" constant="50" id="zWf-nZ-eV4"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q27-3l-3nf"/>
                 </viewController>
@@ -286,40 +328,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-
                             <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DcP-nT-fKB">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </arView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKc-ye-FNg">
-                                <rect key="frame" x="70" y="790" width="274" height="52"/>
+                                <rect key="frame" x="50" y="790" width="314" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="j5L-3W-dQj"/>
                                 </constraints>
-
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Friends"/>
-                                <connections>
-                                    <action selector="PushAddFriendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QNk-zy-fN2"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lhl-Wk-i5D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DcP-nT-fKB" firstAttribute="top" secondItem="Lhl-Wk-i5D" secondAttribute="top" id="2Sm-0W-fvh"/>
-                            <constraint firstItem="gKc-ye-FNg" firstAttribute="leading" secondItem="Lhl-Wk-i5D" secondAttribute="leading" constant="70" id="5nm-KB-CQM"/>
+                            <constraint firstItem="gKc-ye-FNg" firstAttribute="leading" secondItem="Lhl-Wk-i5D" secondAttribute="leading" constant="50" id="5nm-KB-CQM"/>
                             <constraint firstAttribute="bottom" secondItem="DcP-nT-fKB" secondAttribute="bottom" id="GVR-kF-d46"/>
                             <constraint firstItem="DcP-nT-fKB" firstAttribute="trailing" secondItem="Lhl-Wk-i5D" secondAttribute="trailing" id="MPQ-x6-1gw"/>
                             <constraint firstItem="DcP-nT-fKB" firstAttribute="leading" secondItem="Lhl-Wk-i5D" secondAttribute="leading" id="Tbx-S9-jaf"/>
-                            <constraint firstItem="Lhl-Wk-i5D" firstAttribute="trailing" secondItem="gKc-ye-FNg" secondAttribute="trailing" constant="70" id="muD-FF-E41"/>
+                            <constraint firstItem="Lhl-Wk-i5D" firstAttribute="trailing" secondItem="gKc-ye-FNg" secondAttribute="trailing" constant="50" id="muD-FF-E41"/>
                             <constraint firstItem="Lhl-Wk-i5D" firstAttribute="bottom" secondItem="gKc-ye-FNg" secondAttribute="bottom" constant="20" id="u8k-5X-2PL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RQc-U2-JPN"/>
                     <connections>
-
                         <outlet property="addFriendButton" destination="gKc-ye-FNg" id="CL5-QP-V6X"/>
-
                         <outlet property="arView" destination="DcP-nT-fKB" id="TAt-25-RY7"/>
                     </connections>
                 </viewController>
@@ -347,8 +382,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="diga" width="274" height="96"/>
-        <image name="go" width="142" height="96"/>
+        <image name="DIGAwhite2" width="293" height="118"/>
+        <image name="GoRef2" width="238" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

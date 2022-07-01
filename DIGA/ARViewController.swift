@@ -20,10 +20,7 @@ class ARViewController: UIViewController {
     @IBOutlet var arView: ARView!
     
     @IBOutlet weak var addFriendButton: UIButton!
-    @IBAction func AddFriends(_ sender: UIButton) {
-        debugPrint("Hello")
-        self.navigationController?.popViewController(animated: true)
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
