@@ -6,9 +6,8 @@
           "__content" : [
             {
               "arAnchorSpecification" : {
-                "name" : "image",
-                "physicalWidth" : 0.30118256807327271,
-                "url" : "image:530e541ef356394e9a45352c2d0ebd29\/go.png"
+                "alignment" : "horizontal",
+                "name" : "surface"
               },
               "behaviors" : [
 
@@ -31,6 +30,112 @@
                   "333579E9-B219-489A-A9EB-7939F4B1E243" : null,
                   "B91C7CA3-4AB1-4253-9A84-07383168A8A8" : null,
                   "B5234F1F-88D1-49CA-87CD-EA96D4AA9277" : null,
+                  "C9A616CE-F62D-4FAB-AC46-4C067BC01D5A" : {
+                    "overrides" : {
+                      "children" : {
+                        "USDScene" : {
+                          "overrides" : {
+                            "arguments" : [
+                              [
+                                "includeSceneScaling",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : false
+                                }
+                              ],
+                              [
+                                "subpath",
+                                {
+                                  "typeName" : "String",
+                                  "value" : ""
+                                }
+                              ],
+                              [
+                                "url",
+                                {
+                                  "typeName" : "String",
+                                  "value" : "model:c0a8065e02babb66b2139e86535575ce\/coilUSDP.usdz"
+                                }
+                              ],
+                              [
+                                "withDescendants",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : true
+                                }
+                              ]
+                            ],
+                            "factory" : {
+                              "identifier" : "com.apple.af.FileImportAssetFactory",
+                              "version" : "0.0"
+                            },
+                            "runtimeAttributes" : [
+                              [
+                                "RuntimeIdentifier",
+                                {
+                                  "typeName" : "UUID",
+                                  "value" : "FB6051D2-57AA-4C97-B7C2-954843A70709"
+                                }
+                              ]
+                            ]
+                          },
+                          "transform" : {
+                            "matrix" : [
+                              1,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1
+                            ]
+                          }
+                        }
+                      },
+                      "factory" : {
+                        "identifier" : "com.apple.af.Group",
+                        "version" : "0.0"
+                      },
+                      "runtimeAttributes" : [
+                        [
+                          "RuntimeIdentifier",
+                          {
+                            "typeName" : "UUID",
+                            "value" : "3AA8BF57-7CCD-4AA4-B056-4F402D2D3E5F"
+                          }
+                        ]
+                      ]
+                    },
+                    "transform" : {
+                      "matrix" : [
+                        0.11942000687122345,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0.11942000687122345,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0.11942000687122345,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1
+                      ]
+                    }
+                  },
                   "EA141B30-2C65-44F8-97FB-0C9E766821C9" : null
                 },
                 "factory" : null,
@@ -60,9 +165,9 @@
                   0.58980107307434082,
                   0.79958391189575195,
                   0,
-                  0.47782203555107117,
-                  0.9879755973815918,
-                  0.59524375200271606,
+                  0.37677246332168579,
+                  0.79473304748535156,
+                  0.75208419561386108,
                   1
                 ],
                 "sceneTransform" : [
