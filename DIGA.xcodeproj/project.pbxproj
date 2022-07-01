@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D78B0ED286C2B01002CFB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */; };
-		0D78B0EF286C2B01002CFB48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EE286C2B01002CFB48 /* ViewController.swift */; };
+		0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EE286C2B01002CFB48 /* ARViewController.swift */; };
 		0D78B0F1286C2B01002CFB48 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0F0286C2B01002CFB48 /* Experience.rcproject */; };
 		0D78B0F4286C2B01002CFB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D78B0F2286C2B01002CFB48 /* Main.storyboard */; };
 		0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D78B0F5286C2B02002CFB48 /* Assets.xcassets */; };
@@ -42,7 +42,7 @@
 /* Begin PBXFileReference section */
 		0D78B0E9286C2B01002CFB48 /* DIGA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIGA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D78B0EE286C2B01002CFB48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0D78B0EE286C2B01002CFB48 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		0D78B0F0286C2B01002CFB48 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		0D78B0F3286C2B01002CFB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D78B0F5286C2B02002CFB48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 				0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */,
 				0D78B11B286C2BD5002CFB48 /* TopViewContoroller.swift */,
 				0D78B11D286C2BEE002CFB48 /* MapViewController.swift */,
-				0D78B0EE286C2B01002CFB48 /* ViewController.swift */,
+				0D78B0EE286C2B01002CFB48 /* ARViewController.swift */,
 				0D78B12D286DD2A1002CFB48 /* Picturebook.swift */,
 				0D78B0F0286C2B01002CFB48 /* Experience.rcproject */,
 				0D78B0F5286C2B02002CFB48 /* Assets.xcassets */,
@@ -279,7 +279,7 @@
 			files = (
 				0D78B11C286C2BD5002CFB48 /* TopViewContoroller.swift in Sources */,
 				0D78B12E286DD2A2002CFB48 /* Picturebook.swift in Sources */,
-				0D78B0EF286C2B01002CFB48 /* ViewController.swift in Sources */,
+				0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */,
 				0D78B0ED286C2B01002CFB48 /* AppDelegate.swift in Sources */,
 				0D78B11E286C2BEE002CFB48 /* MapViewController.swift in Sources */,
 				0D78B0F1286C2B01002CFB48 /* Experience.rcproject in Sources */,
