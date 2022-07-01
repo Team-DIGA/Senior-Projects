@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import MapKit
 import CoreLocation
+import MapKit
 
 class MapAnnotationSetting:MKPointAnnotation{
     var pinImage:UIImage?
@@ -30,12 +30,13 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var locationManager: CLLocationManager!
     
     // 取得した緯度経度を保持するインスタンス
-    var my_latitude: CLLocationDegrees!
-    var my_longitude: CLLocationDegrees!
+    var myLatitude: CLLocationDegrees!
+    var myLongitude: CLLocationDegrees!
     
     // タップした緯度経度を保持するインスタンス
     var tapLatitude: CLLocationDegrees!
     var tapLongitude: CLLocationDegrees!
+
     var targetTitle: String!
     var targetCharacterImage: UIImage?
     var targetRarity: Int?
@@ -46,13 +47,15 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     let okinawaLongitude = 127.899915
     let honshuLatitude = 35.0
     let honshuLongitude = 135.0
+    var targetRemoveAnnotaion: MKAnnotation?
     
+
     
     // 位置情報初回のみ表示させる際のグローバル変数
     var first = true
     
     // 表示させる画像の配列
-    let pinImagges:[UIImage?] = [
+    var pinImagges:[UIImage?] = [
         UIImage(named: "exeid")?.resized(size:CGSize(width: 50, height: 50)),
         UIImage(named: "gokuu")?.resized(size:CGSize(width: 50, height: 50)),
         UIImage(named: "luffy")?.resized(size:CGSize(width: 50, height: 50)),
@@ -105,7 +108,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         UIImage(named: "zenitu")?.resized(size:CGSize(width: 50, height: 50)),
         UIImage(named: "zoro")?.resized(size:CGSize(width: 50, height: 50)),
     ]
-    let pinTitles:[String] = [
+    var pinTitles:[String] = [
         "exeid",
         "gokuu",
         "luffy",
@@ -177,10 +180,16 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         locationManager!.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        my_latitude = locationManager.location?.coordinate.latitude
-        my_longitude = locationManager.location?.coordinate.longitude
-        guard let latitude = my_latitude else {return}
-        guard let longitude = my_longitude else {return}
+
+        myLatitude = locationManager.location?.coordinate.latitude
+        myLongitude = locationManager.location?.coordinate.longitude
+//        myLatitude = 35.1707
+//        myLongitude = 136.8826
+        guard let latitude = myLatitude else {return}
+        guard let longitude = myLongitude else {return}
+        debugPrint(latitude)
+        debugPrint(longitude)
+
 
         let currentlocation = CLLocationCoordinate2DMake(latitude,longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
@@ -212,6 +221,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
 
 // 現在地取得の許可
 extension MapViewController{
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined:
@@ -235,8 +245,14 @@ extension MapViewController{
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         tapLatitude = view.annotation?.coordinate.latitude
         tapLongitude = view.annotation?.coordinate.longitude
+
         targetTitle = (view.annotation?.title)!
         targetCharacterImage = view.image
+        targetRemoveAnnotaion = view.annotation
+        
+        // ピンの情報削除
+        self.mapView.removeAnnotation(view.annotation!)
+        
         reverseGeoCording()
         self.performSegue(withIdentifier: "toARView", sender: self)
     }
@@ -247,13 +263,20 @@ extension MapViewController{
         CLGeocoder().reverseGeocodeLocation(location){ [self]
             placemarks, error in
             guard let placemark = placemarks?.first, error == nil else {return}
-//            debugPrint(placemark.administrativeArea! + placemark.locality! + placemark.name!)
+            
+            debugPrint(placemark)
+            debugPrint(placemark.areasOfInterest ?? "nil")
+            debugPrint(placemark.administrativeArea! + placemark.locality! + placemark.name!)
         }
+        
+        
     }
 
 }
 
 
+
+// ARに情報を渡す
 extension MapViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toARView" {
@@ -261,8 +284,11 @@ extension MapViewController{
             nextView.characterImage = targetCharacterImage
             nextView.characterRerity = targetRarity
             nextView.characterPlace = targetPlace
+            nextView.removeAnnotaion = targetRemoveAnnotaion
+            nextView.removeMap = mapView
         }
     }
+
 }
 
 
@@ -273,11 +299,14 @@ extension MapViewController{
         if first{
             first = false
             
-            if self.my_latitude == nil && self.my_longitude == nil{
-                my_latitude = locationManager.location?.coordinate.latitude
-                my_longitude = locationManager.location?.coordinate.longitude
-                let currentlocation = CLLocationCoordinate2DMake(my_latitude,my_longitude)
-                let span = MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
+
+            if self.myLatitude == nil && self.myLongitude == nil{
+                myLatitude = locationManager.location?.coordinate.latitude
+                myLongitude = locationManager.location?.coordinate.longitude
+//                myLatitude = 35.1707
+//                myLongitude = 136.8826
+                let currentlocation = CLLocationCoordinate2DMake(myLatitude,myLongitude)
+                let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
                 let region = MKCoordinateRegion(center: currentlocation, span: span)
                 mapView.region = region
                 mapView.delegate = self
@@ -360,4 +389,3 @@ extension MapViewController{
     }
     
 }
-

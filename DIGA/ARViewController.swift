@@ -1,17 +1,19 @@
 //
-//  ViewController.swift
-//  DIGA
-//
-//  Created by Rintaro Kimura on 2022/06/29.
-//
 
+// ViewController.swift
+// DIGA
+//
+// Created by Rintaro Kimura on 2022/06/29.
+//
 import UIKit
 import RealityKit
+import MapKit
 
 class ARViewController: UIViewController {
     
     var imageValue: String!
     var characterImage: UIImage!
+
     var characterRerity: Int!
     var characterPlace: String!
     
@@ -51,4 +53,5 @@ class ARViewController: UIViewController {
 //            anchor.addChild(box)
         }
     }
+
 }
