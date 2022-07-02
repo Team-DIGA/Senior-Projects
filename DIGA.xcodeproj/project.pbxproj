@@ -21,13 +21,26 @@
 		0D78B11E286C2BEE002CFB48 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B11D286C2BEE002CFB48 /* MapViewController.swift */; };
 		0D78B121286C2F91002CFB48 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D78B120286C2F91002CFB48 /* CoreLocation.framework */; };
 		0D78B12E286DD2A2002CFB48 /* Picturebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B12D286DD2A1002CFB48 /* Picturebook.swift */; };
-		0D78B133286EEB91002CFB48 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D78B131286EEB91002CFB48 /* amplifyconfiguration.json */; };
-		0D78B134286EEB91002CFB48 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D78B132286EEB91002CFB48 /* awsconfiguration.json */; };
 		3ADF1E6B286E962F007EB643 /* Character+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E68286E962F007EB643 /* Character+Schema.swift */; };
 		3ADF1E6C286E962F007EB643 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E69286E962F007EB643 /* AmplifyModels.swift */; };
 		3ADF1E6D286E962F007EB643 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6A286E962F007EB643 /* Character.swift */; };
 		3ADF1E6F286E9819007EB643 /* AddFriendsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6E286E9819007EB643 /* AddFriendsTestViewController.swift */; };
 		B4D38D6EFCC4A3349B23F34E /* Pods_DIGA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094F1BB6423B2EECF004A6A /* Pods_DIGA.framework */; };
+		E172058B28706EB100A9D300 /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057E28706EB100A9D300 /* 7.mp3 */; };
+		E172058C28706EB100A9D300 /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057F28706EB100A9D300 /* 6.mp3 */; };
+		E172058D28706EB100A9D300 /* 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058028706EB100A9D300 /* 4.mp3 */; };
+		E172058E28706EB100A9D300 /* 5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058128706EB100A9D300 /* 5.mp3 */; };
+		E172058F28706EB100A9D300 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058228706EB100A9D300 /* 1.mp3 */; };
+		E172059028706EB100A9D300 /* 0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058328706EB100A9D300 /* 0.mp3 */; };
+		E172059128706EB100A9D300 /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058428706EB100A9D300 /* 2.mp3 */; };
+		E172059228706EB100A9D300 /* 3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058528706EB100A9D300 /* 3.mp3 */; };
+		E172059328706EB100A9D300 /* undefined.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058628706EB100A9D300 /* undefined.mp3 */; };
+		E172059428706EB100A9D300 /* 200.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058728706EB100A9D300 /* 200.mp3 */; };
+		E172059528706EB100A9D300 /* 8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058828706EB100A9D300 /* 8.mp3 */; };
+		E172059628706EB100A9D300 /* 9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058928706EB100A9D300 /* 9.mp3 */; };
+		E172059728706EB100A9D300 /* amongs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E172058A28706EB100A9D300 /* amongs.mp4 */; };
+		E172059A28706EC900A9D300 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E172059828706EC900A9D300 /* awsconfiguration.json */; };
+		E172059B28706EC900A9D300 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E172059928706EC900A9D300 /* amplifyconfiguration.json */; };
 		E687EF08938B7D1517E9798C /* Pods_DIGA_DIGAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19848E6E9DCDD5ED7ACE72A /* Pods_DIGA_DIGAUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +79,6 @@
 		0D78B11D286C2BEE002CFB48 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0D78B120286C2F91002CFB48 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0D78B12D286DD2A1002CFB48 /* Picturebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picturebook.swift; sourceTree = "<group>"; };
-		0D78B131286EEB91002CFB48 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
-		0D78B132286EEB91002CFB48 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		1941D7930360F076521EA176 /* Pods-DIGA-DIGAUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA-DIGAUITests.release.xcconfig"; path = "Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3ADF1E68286E962F007EB643 /* Character+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+Schema.swift"; sourceTree = "<group>"; };
 		3ADF1E69286E962F007EB643 /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplifyModels.swift; sourceTree = "<group>"; };
@@ -80,6 +91,21 @@
 		C094F1BB6423B2EECF004A6A /* Pods_DIGA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D19848E6E9DCDD5ED7ACE72A /* Pods_DIGA_DIGAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA_DIGAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D9E66A57DDE9024533B580 /* Pods-DIGA-DIGAUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA-DIGAUITests.debug.xcconfig"; path = "Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E172057E28706EB100A9D300 /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
+		E172057F28706EB100A9D300 /* 6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6.mp3; sourceTree = "<group>"; };
+		E172058028706EB100A9D300 /* 4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4.mp3; sourceTree = "<group>"; };
+		E172058128706EB100A9D300 /* 5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5.mp3; sourceTree = "<group>"; };
+		E172058228706EB100A9D300 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
+		E172058328706EB100A9D300 /* 0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0.mp3; sourceTree = "<group>"; };
+		E172058428706EB100A9D300 /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
+		E172058528706EB100A9D300 /* 3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3.mp3; sourceTree = "<group>"; };
+		E172058628706EB100A9D300 /* undefined.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = undefined.mp3; sourceTree = "<group>"; };
+		E172058728706EB100A9D300 /* 200.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 200.mp3; sourceTree = "<group>"; };
+		E172058828706EB100A9D300 /* 8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 8.mp3; sourceTree = "<group>"; };
+		E172058928706EB100A9D300 /* 9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 9.mp3; sourceTree = "<group>"; };
+		E172058A28706EB100A9D300 /* amongs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = amongs.mp4; sourceTree = "<group>"; };
+		E172059828706EC900A9D300 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		E172059928706EC900A9D300 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +140,7 @@
 		0D78B0E0286C2B01002CFB48 = {
 			isa = PBXGroup;
 			children = (
+				E172057D28706EB100A9D300 /* Audio */,
 				0D78B0EB286C2B01002CFB48 /* DIGA */,
 				0D78B101286C2B03002CFB48 /* DIGATests */,
 				0D78B10B286C2B03002CFB48 /* DIGAUITests */,
@@ -136,8 +163,8 @@
 		0D78B0EB286C2B01002CFB48 /* DIGA */ = {
 			isa = PBXGroup;
 			children = (
-				0D78B131286EEB91002CFB48 /* amplifyconfiguration.json */,
-				0D78B132286EEB91002CFB48 /* awsconfiguration.json */,
+				E172059928706EC900A9D300 /* amplifyconfiguration.json */,
+				E172059828706EC900A9D300 /* awsconfiguration.json */,
 				3ADF1E67286E962F007EB643 /* models */,
 				0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */,
 				0D78B11B286C2BD5002CFB48 /* TopViewContoroller.swift */,
@@ -203,6 +230,26 @@
 				3F9F833CC2E20B6FBD539CE9 /* Pods-DIGATests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E172057D28706EB100A9D300 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				E172057E28706EB100A9D300 /* 7.mp3 */,
+				E172057F28706EB100A9D300 /* 6.mp3 */,
+				E172058028706EB100A9D300 /* 4.mp3 */,
+				E172058128706EB100A9D300 /* 5.mp3 */,
+				E172058228706EB100A9D300 /* 1.mp3 */,
+				E172058328706EB100A9D300 /* 0.mp3 */,
+				E172058428706EB100A9D300 /* 2.mp3 */,
+				E172058528706EB100A9D300 /* 3.mp3 */,
+				E172058628706EB100A9D300 /* undefined.mp3 */,
+				E172058728706EB100A9D300 /* 200.mp3 */,
+				E172058828706EB100A9D300 /* 8.mp3 */,
+				E172058928706EB100A9D300 /* 9.mp3 */,
+				E172058A28706EB100A9D300 /* amongs.mp4 */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,11 +361,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D78B134286EEB91002CFB48 /* awsconfiguration.json in Resources */,
+				E172059228706EB100A9D300 /* 3.mp3 in Resources */,
+				E172059428706EB100A9D300 /* 200.mp3 in Resources */,
+				E172058E28706EB100A9D300 /* 5.mp3 in Resources */,
+				E172059628706EB100A9D300 /* 9.mp3 in Resources */,
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
+				E172059028706EB100A9D300 /* 0.mp3 in Resources */,
+				E172059B28706EC900A9D300 /* amplifyconfiguration.json in Resources */,
+				E172059328706EB100A9D300 /* undefined.mp3 in Resources */,
+				E172058B28706EB100A9D300 /* 7.mp3 in Resources */,
+				E172059A28706EC900A9D300 /* awsconfiguration.json in Resources */,
+				E172058F28706EB100A9D300 /* 1.mp3 in Resources */,
+				E172059528706EB100A9D300 /* 8.mp3 in Resources */,
+				E172058D28706EB100A9D300 /* 4.mp3 in Resources */,
+				E172059128706EB100A9D300 /* 2.mp3 in Resources */,
 				0D78B0F4286C2B01002CFB48 /* Main.storyboard in Resources */,
-				0D78B133286EEB91002CFB48 /* amplifyconfiguration.json in Resources */,
+				E172059728706EB100A9D300 /* amongs.mp4 in Resources */,
+				E172058C28706EB100A9D300 /* 6.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
