@@ -198,7 +198,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         mapView.region = region
         mapView.delegate = self
         
-        for i in 1..<pinTitles.count{
+        for i in 1..<52{
             let mod = i % 10
             pinLocationAppend(count: mod)
         }

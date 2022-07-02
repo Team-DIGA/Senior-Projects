@@ -14,28 +14,24 @@ class TopViewController: UIViewController {
     @IBAction func digagoButton(_ sender: UIButton) {
 //        avPlayer.stop()
     }
+    var randomNum = 0
+    var nameNum = ""
     @IBAction func amongsTappedButton(_ sender: UIButton) {
-        print("push")
-        buttonAvPlayer.currentTime = 0         // 再生箇所を頭に移す
+        randomNum = Int.random(in: 0...200)
+        nameNum = randomNum == 200 ? String(200) : String(randomNum % 10)
+        //音声セット
+        soundSet(name: nameNum)
+        buttonAvPlayer.currentTime = 0
         buttonAvPlayer.play()
     }
     var avPlayer: AVAudioPlayer!
     var buttonAvPlayer : AVAudioPlayer!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let soundFilePath = Bundle.main.path(forResource: "hello", ofType: "mp3")!
-        let sound:URL = URL(fileURLWithPath: soundFilePath)
-        // AVAudioPlayerのインスタンスを作成,ファイルの読み込み
-        do {
-            buttonAvPlayer = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
-        } catch {
-            print("AVAudioPlayerインスタンス作成でエラー")
-        }
-        // 再生準備
-        buttonAvPlayer.prepareToPlay()
+        
         // Bundle Resourcesからsample.mp4を読み込んで再生
         let path = Bundle.main.path(forResource: "amongs", ofType: "mp4")!
-        var player = AVPlayer(url: URL(fileURLWithPath: path))
+        let player = AVPlayer(url: URL(fileURLWithPath: path))
         player.play()
 
 
@@ -51,7 +47,10 @@ class TopViewController: UIViewController {
                 playerLayer?.player?.seek(to: CMTime.zero)
                 playerLayer?.player?.play()
         }
+        //BGMstart
         playSound(name: "undefined")
+        //soundSet
+        soundSet(name: "0")
         
     }
     func playSound(name: String) {
@@ -70,10 +69,19 @@ class TopViewController: UIViewController {
                 print("error", error)
             }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func soundSet (name: String) {
+        let soundFilePath = Bundle.main.path(forResource: name, ofType: "mp3")!
+        let sound:URL = URL(fileURLWithPath: soundFilePath)
+        do {
+            buttonAvPlayer = try AVAudioPlayer(contentsOf: sound, fileTypeHint:nil)
+        } catch {
+            print("AVAudioPlayerinstance error")
+        }
+        buttonAvPlayer.prepareToPlay()
     }
+
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//    }
     
 }

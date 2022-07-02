@@ -30,8 +30,17 @@
 		E172055F286EE93300A9D300 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E172055D286EE93300A9D300 /* amplifyconfiguration.json */; };
 		E1720561286EF3FF00A9D300 /* amongs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E1720560286EF3FF00A9D300 /* amongs.mp4 */; };
 		E1720563286EF5BA00A9D300 /* undefined.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1720562286EF5BA00A9D300 /* undefined.mp3 */; };
-		E1720566286F087400A9D300 /* morning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1720564286F087400A9D300 /* morning.mp3 */; };
-		E1720567286F087400A9D300 /* hello.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1720565286F087400A9D300 /* hello.mp3 */; };
+		E1720566286F087400A9D300 /* 0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1720564286F087400A9D300 /* 0.mp3 */; };
+		E1720567286F087400A9D300 /* 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1720565286F087400A9D300 /* 1.mp3 */; };
+		E172056F286F0D8800A9D300 /* 3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1720569286F0D8800A9D300 /* 3.mp3 */; };
+		E1720570286F0D8800A9D300 /* 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172056A286F0D8800A9D300 /* 2.mp3 */; };
+		E1720571286F0D8800A9D300 /* 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172056B286F0D8800A9D300 /* 4.mp3 */; };
+		E1720573286F0D8800A9D300 /* 5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172056D286F0D8800A9D300 /* 5.mp3 */; };
+		E1720574286F0D8800A9D300 /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172056E286F0D8800A9D300 /* 6.mp3 */; };
+		E1720576286F0EBB00A9D300 /* 200.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1720575286F0EBB00A9D300 /* 200.mp3 */; };
+		E172057A286F12D800A9D300 /* 9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1720577286F12D800A9D300 /* 9.mp3 */; };
+		E172057B286F12D800A9D300 /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1720578286F12D800A9D300 /* 7.mp3 */; };
+		E172057C286F12D800A9D300 /* 8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1720579286F12D800A9D300 /* 8.mp3 */; };
 		E687EF08938B7D1517E9798C /* Pods_DIGA_DIGAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19848E6E9DCDD5ED7ACE72A /* Pods_DIGA_DIGAUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,8 +95,17 @@
 		E172055D286EE93300A9D300 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		E1720560286EF3FF00A9D300 /* amongs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = amongs.mp4; sourceTree = "<group>"; };
 		E1720562286EF5BA00A9D300 /* undefined.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = undefined.mp3; sourceTree = "<group>"; };
-		E1720564286F087400A9D300 /* morning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = morning.mp3; sourceTree = "<group>"; };
-		E1720565286F087400A9D300 /* hello.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hello.mp3; sourceTree = "<group>"; };
+		E1720564286F087400A9D300 /* 0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0.mp3; sourceTree = "<group>"; };
+		E1720565286F087400A9D300 /* 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.mp3; sourceTree = "<group>"; };
+		E1720569286F0D8800A9D300 /* 3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3.mp3; sourceTree = "<group>"; };
+		E172056A286F0D8800A9D300 /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
+		E172056B286F0D8800A9D300 /* 4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4.mp3; sourceTree = "<group>"; };
+		E172056D286F0D8800A9D300 /* 5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5.mp3; sourceTree = "<group>"; };
+		E172056E286F0D8800A9D300 /* 6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 6.mp3; sourceTree = "<group>"; };
+		E1720575286F0EBB00A9D300 /* 200.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 200.mp3; sourceTree = "<group>"; };
+		E1720577286F12D800A9D300 /* 9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 9.mp3; sourceTree = "<group>"; };
+		E1720578286F12D800A9D300 /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
+		E1720579286F12D800A9D300 /* 8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 8.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +142,7 @@
 			children = (
 				E172055D286EE93300A9D300 /* amplifyconfiguration.json */,
 				E172055C286EE93300A9D300 /* awsconfiguration.json */,
+				E1720568286F0CDA00A9D300 /* Audio */,
 				0D78B0EB286C2B01002CFB48 /* DIGA */,
 				0D78B101286C2B03002CFB48 /* DIGATests */,
 				0D78B10B286C2B03002CFB48 /* DIGAUITests */,
@@ -146,10 +165,6 @@
 		0D78B0EB286C2B01002CFB48 /* DIGA */ = {
 			isa = PBXGroup;
 			children = (
-				E1720562286EF5BA00A9D300 /* undefined.mp3 */,
-				E1720564286F087400A9D300 /* morning.mp3 */,
-				E1720565286F087400A9D300 /* hello.mp3 */,
-				E1720560286EF3FF00A9D300 /* amongs.mp4 */,
 				3ADF1E67286E962F007EB643 /* models */,
 				0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */,
 				0D78B11B286C2BD5002CFB48 /* TopViewContoroller.swift */,
@@ -215,6 +230,26 @@
 				3F9F833CC2E20B6FBD539CE9 /* Pods-DIGATests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E1720568286F0CDA00A9D300 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				E172056E286F0D8800A9D300 /* 6.mp3 */,
+				E172056D286F0D8800A9D300 /* 5.mp3 */,
+				E1720575286F0EBB00A9D300 /* 200.mp3 */,
+				E172056B286F0D8800A9D300 /* 4.mp3 */,
+				E1720577286F12D800A9D300 /* 9.mp3 */,
+				E1720579286F12D800A9D300 /* 8.mp3 */,
+				E1720578286F12D800A9D300 /* 7.mp3 */,
+				E1720569286F0D8800A9D300 /* 3.mp3 */,
+				E172056A286F0D8800A9D300 /* 2.mp3 */,
+				E1720562286EF5BA00A9D300 /* undefined.mp3 */,
+				E1720564286F087400A9D300 /* 0.mp3 */,
+				E1720565286F087400A9D300 /* 1.mp3 */,
+				E1720560286EF3FF00A9D300 /* amongs.mp4 */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,15 +361,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1720574286F0D8800A9D300 /* 6.mp3 in Resources */,
+				E172057C286F12D800A9D300 /* 8.mp3 in Resources */,
+				E1720576286F0EBB00A9D300 /* 200.mp3 in Resources */,
 				E172055E286EE93300A9D300 /* awsconfiguration.json in Resources */,
+				E172057B286F12D800A9D300 /* 7.mp3 in Resources */,
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
-				E1720567286F087400A9D300 /* hello.mp3 in Resources */,
+				E1720571286F0D8800A9D300 /* 4.mp3 in Resources */,
+				E1720567286F087400A9D300 /* 1.mp3 in Resources */,
 				E172055F286EE93300A9D300 /* amplifyconfiguration.json in Resources */,
 				E1720563286EF5BA00A9D300 /* undefined.mp3 in Resources */,
-				E1720566286F087400A9D300 /* morning.mp3 in Resources */,
+				E172057A286F12D800A9D300 /* 9.mp3 in Resources */,
+				E1720573286F0D8800A9D300 /* 5.mp3 in Resources */,
+				E1720566286F087400A9D300 /* 0.mp3 in Resources */,
+				E172056F286F0D8800A9D300 /* 3.mp3 in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
 				E1720561286EF3FF00A9D300 /* amongs.mp4 in Resources */,
 				0D78B0F4286C2B01002CFB48 /* Main.storyboard in Resources */,
+				E1720570286F0D8800A9D300 /* 2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,7 +694,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4W9BJUAY8P;
+				DEVELOPMENT_TEAM = H45P7L6Y4K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "常に許可";
@@ -668,7 +712,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DIG-DIGA";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DIG-DIGA5";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -684,7 +728,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4W9BJUAY8P;
+				DEVELOPMENT_TEAM = H45P7L6Y4K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "常に許可";
@@ -702,7 +746,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DIG-DIGA";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DIG-DIGA5";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
