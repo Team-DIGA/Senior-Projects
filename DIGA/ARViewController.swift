@@ -13,9 +13,11 @@ class ARViewController: UIViewController {
     
     var imageValue: String!
     var characterImage: UIImage!
-
     var characterRerity: Int!
     var characterPlace: String!
+    var characterTitle: String!
+    
+    let dataUtils = DataUtils()
     
     @IBOutlet var arView: ARView!
     
@@ -23,6 +25,8 @@ class ARViewController: UIViewController {
     @IBAction func AddFriends(_ sender: UIButton) {
         debugPrint("Hello")
         self.navigationController?.popViewController(animated: true)
+        dataUtils.updateData(name: characterTitle)
+        
     }
     
     override func viewDidLoad() {

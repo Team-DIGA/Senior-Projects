@@ -125,8 +125,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         "cririn",
         "cyopper",
         "donarud",
-        "doremon",
-        "dormi",
+        "doraemon",
+        "dorami",
         "eluza",
         "eren",
         "eriko",
@@ -284,8 +284,9 @@ extension MapViewController{
             nextView.characterImage = targetCharacterImage
             nextView.characterRerity = targetRarity
             nextView.characterPlace = targetPlace
-            nextView.removeAnnotaion = targetRemoveAnnotaion
-            nextView.removeMap = mapView
+            nextView.characterTitle = targetTitle
+//            nextView.removeAnnotaion = targetRemoveAnnotaion
+//            nextView.removeMap = mapView
         }
     }
 

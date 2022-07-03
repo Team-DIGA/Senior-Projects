@@ -8,12 +8,15 @@
 import UIKit
 import Amplify
 
+
 final class AddFriendsTestViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var rarityTextField: UITextField!
     @IBOutlet weak var firstMetPlaceTextField: UITextField!
     @IBOutlet weak var metCountTextField: UITextField!
+    
+    let dataUtils = DataUtils()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +36,7 @@ final class AddFriendsTestViewController: UIViewController {
         
         print("name: \(name), rarity: \(rarity), first_ met_place: \(first_met_place), met_count: \(met_count)")
                     
-        let character = Character(name: name, rarity: Int(rarity)!, first_met_place: first_met_place, met_count: Int(met_count)!)
+        let character = Character(name: name, rarity: Int(rarity)!, first_met_place: first_met_place, met_count: Int(met_count)!, meet_stauts: false)
         
         // mutateで新規メッセージを作成
         Amplify.API.mutate(request: .create(character)) { event in
@@ -64,18 +67,18 @@ final class AddFriendsTestViewController: UIViewController {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        outputText.text = inputText.text
         self.view.endEditing(true)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func createAllData(_ sender: Any) {
+        dataUtils.createAllData()
     }
-    */
-
+    
+    @IBAction func deleteAllFriends(_ sender: Any) {
+//        dataUtils.deleteAllData()
+    }
+    
+    @IBAction func getFriend(_ sender: Any) {
+        dataUtils.updateData(name: "cririn")
+    }
 }

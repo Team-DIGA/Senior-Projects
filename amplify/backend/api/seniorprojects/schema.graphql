@@ -9,4 +9,5 @@ type Character @model {
   rarity: Int!
   first_met_place: String!
   met_count: Int!
+  meet_stauts: Boolean!
 }

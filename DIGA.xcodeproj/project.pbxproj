@@ -21,6 +21,7 @@
 		0D78B11E286C2BEE002CFB48 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B11D286C2BEE002CFB48 /* MapViewController.swift */; };
 		0D78B121286C2F91002CFB48 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D78B120286C2F91002CFB48 /* CoreLocation.framework */; };
 		0D78B12E286DD2A2002CFB48 /* Picturebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B12D286DD2A1002CFB48 /* Picturebook.swift */; };
+		3A600497286F0472009DA69E /* devFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A600496286F0472009DA69E /* devFunctions.swift */; };
 		3ADF1E6B286E962F007EB643 /* Character+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E68286E962F007EB643 /* Character+Schema.swift */; };
 		3ADF1E6C286E962F007EB643 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E69286E962F007EB643 /* AmplifyModels.swift */; };
 		3ADF1E6D286E962F007EB643 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6A286E962F007EB643 /* Character.swift */; };
@@ -67,6 +68,7 @@
 		0D78B120286C2F91002CFB48 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0D78B12D286DD2A1002CFB48 /* Picturebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picturebook.swift; sourceTree = "<group>"; };
 		1941D7930360F076521EA176 /* Pods-DIGA-DIGAUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA-DIGAUITests.release.xcconfig"; path = "Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3A600496286F0472009DA69E /* devFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = devFunctions.swift; sourceTree = "<group>"; };
 		3ADF1E68286E962F007EB643 /* Character+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+Schema.swift"; sourceTree = "<group>"; };
 		3ADF1E69286E962F007EB643 /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplifyModels.swift; sourceTree = "<group>"; };
 		3ADF1E6A286E962F007EB643 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				0D78B0F2286C2B01002CFB48 /* Main.storyboard */,
 				0D78B0F7286C2B02002CFB48 /* LaunchScreen.storyboard */,
 				3ADF1E6E286E9819007EB643 /* AddFriendsTestViewController.swift */,
+				3A600496286F0472009DA69E /* devFunctions.swift */,
 			);
 			path = DIGA;
 			sourceTree = "<group>";
@@ -451,7 +454,8 @@
 				3ADF1E6B286E962F007EB643 /* Character+Schema.swift in Sources */,
 				0D78B12E286DD2A2002CFB48 /* Picturebook.swift in Sources */,
 				3ADF1E6F286E9819007EB643 /* AddFriendsTestViewController.swift in Sources */,
-				0D78B0EF286C2B01002CFB48 /* ViewController.swift in Sources */,
+				3A600497286F0472009DA69E /* devFunctions.swift in Sources */,
+				0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */,
 				3ADF1E6C286E962F007EB643 /* AmplifyModels.swift in Sources */,
 				0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */,
 				0D78B0ED286C2B01002CFB48 /* AppDelegate.swift in Sources */,

@@ -9,6 +9,7 @@ mutation CreateCharacter(
     rarity
     first_met_place
     met_count
+    meet_stauts
     createdAt
     updatedAt
     _version
@@ -26,6 +27,7 @@ mutation UpdateCharacter(
     rarity
     first_met_place
     met_count
+    meet_stauts
     createdAt
     updatedAt
     _version
@@ -43,6 +45,7 @@ mutation DeleteCharacter(
     rarity
     first_met_place
     met_count
+    meet_stauts
     createdAt
     updatedAt
     _version
