@@ -431,9 +431,20 @@
                                     <constraint firstAttribute="height" constant="52" id="j5L-3W-dQj"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add Friends"/>
+                                <buttonConfiguration key="configuration" style="filled" title="食べ物をあげる"/>
                                 <connections>
                                     <action selector="AddFriend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ep9-yX-yH3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNR-KE-YIi">
+                                <rect key="frame" x="70" y="718" width="274" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Ffq-dc-aJj"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="お金をあげる"/>
+                                <connections>
+                                    <action selector="AddFriend2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3DO-eq-lBx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -445,13 +456,18 @@
                             <constraint firstAttribute="bottom" secondItem="DcP-nT-fKB" secondAttribute="bottom" id="GVR-kF-d46"/>
                             <constraint firstItem="DcP-nT-fKB" firstAttribute="trailing" secondItem="Lhl-Wk-i5D" secondAttribute="trailing" id="MPQ-x6-1gw"/>
                             <constraint firstItem="DcP-nT-fKB" firstAttribute="leading" secondItem="Lhl-Wk-i5D" secondAttribute="leading" id="Tbx-S9-jaf"/>
+                            <constraint firstItem="iNR-KE-YIi" firstAttribute="centerX" secondItem="omW-2h-TFi" secondAttribute="centerX" id="lWu-G6-d0G"/>
                             <constraint firstItem="Lhl-Wk-i5D" firstAttribute="trailing" secondItem="gKc-ye-FNg" secondAttribute="trailing" constant="70" id="muD-FF-E41"/>
+                            <constraint firstItem="gKc-ye-FNg" firstAttribute="top" secondItem="iNR-KE-YIi" secondAttribute="bottom" constant="20" id="muh-fZ-1gs"/>
+                            <constraint firstItem="Lhl-Wk-i5D" firstAttribute="trailing" secondItem="iNR-KE-YIi" secondAttribute="trailing" constant="70" id="n2m-O7-YIg"/>
                             <constraint firstItem="Lhl-Wk-i5D" firstAttribute="bottom" secondItem="gKc-ye-FNg" secondAttribute="bottom" constant="20" id="u8k-5X-2PL"/>
+                            <constraint firstItem="iNR-KE-YIi" firstAttribute="leading" secondItem="Lhl-Wk-i5D" secondAttribute="leading" constant="70" id="vbz-3b-DzC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RQc-U2-JPN"/>
                     <connections>
-                        <outlet property="addFriendButton" destination="gKc-ye-FNg" id="GOO-ul-fXs"/>
+                        <outlet property="addFriendButton" destination="gKc-ye-FNg" id="J3p-az-LpO"/>
+                        <outlet property="addFriendButton2" destination="iNR-KE-YIi" id="rmm-nM-Sft"/>
                         <outlet property="arView" destination="DcP-nT-fKB" id="TAt-25-RY7"/>
                     </connections>
                 </viewController>
