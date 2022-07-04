@@ -36,7 +36,10 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
                         self.tableView.reloadData()
 //                        達成率を更新
                         let maxcount = friendsArray.count
-                        self.metcount = 5
+                        let meetArray = friendsArray.filter{
+                            $0.meet_stauts == true
+                        }
+                        self.metcount = Double(meetArray.count)
                         var completeRate = 0.0
                         completeRate = self.metcount / Double(maxcount) * 100
                         debugPrint(maxcount, self.metcount, completeRate)
@@ -84,11 +87,11 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             rareText = "レアリティ： \(friendsArray[indexPath.row].rarity)"
             
-            self.metcount += 1
-            let maxcount = friendsArray.count
-            var completeRate = 0.0
-            completeRate = floor(self.metcount / Double(maxcount) * 1000)
-            self.completeLabelView.text = "達成率：　\(completeRate/10)％"
+//            self.metcount += 1
+//            let maxcount = friendsArray.count
+//            var completeRate = 0.0
+//            completeRate = floor(self.metcount / Double(maxcount) * 1000)
+//            self.completeLabelView.text = "達成率：　\(completeRate/10)％"
         }
         // UIImageをUIImageViewのimageとして設定
         imageView.image = cellImage
