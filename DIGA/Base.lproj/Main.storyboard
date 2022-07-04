@@ -383,8 +383,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Friends"/>
                                 <connections>
-                                    <action selector="AddFriends:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qIg-fc-U6N"/>
-                                    <action selector="PushAddFriendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QNk-zy-fN2"/>
+                                    <action selector="AddFriend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GpK-cA-62Z"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -432,6 +431,9 @@
     <resources>
         <image name="DIGAwhite2" width="293" height="118"/>
         <image name="GoRef2" width="238" height="200"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

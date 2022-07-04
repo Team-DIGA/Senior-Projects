@@ -26,11 +26,11 @@ class ARViewController: UIViewController {
     
     
     // 前の画面に戻る処理
-    @IBAction func AddFriend(_ sender: UIButton) {
+    @IBAction func AddFriend(_ sender: Any) {
         debugPrint("Hello")
-        self.navigationController?.popViewController(animated: true)
         dataUtils.updateData(name: characterTitle)
-        
+        self.navigationController?.popViewController(animated: true)
+
     }
     
     override func viewDidLoad() {
@@ -68,3 +68,4 @@ class ARViewController: UIViewController {
     }
 
 }
+

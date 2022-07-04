@@ -54,7 +54,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         // 画像配列の番号で指定された要素の名前の画像をUIImageとする
         let cellImage: UIImage?
-        if friendsArray[indexPath.row].meet_stauts == false {
+        if friendsArray[indexPath.row].meet_status == false {
             cellImage = UIImage(named: "noImage")
         } else {
             cellImage = UIImage(named: friendsArray[indexPath.row].name)
