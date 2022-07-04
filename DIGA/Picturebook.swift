@@ -87,11 +87,6 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             rareText = "レアリティ： \(friendsArray[indexPath.row].rarity)"
             
-//            self.metcount += 1
-//            let maxcount = friendsArray.count
-//            var completeRate = 0.0
-//            completeRate = floor(self.metcount / Double(maxcount) * 1000)
-//            self.completeLabelView.text = "達成率：　\(completeRate/10)％"
         }
         // UIImageをUIImageViewのimageとして設定
         imageView.image = cellImage
