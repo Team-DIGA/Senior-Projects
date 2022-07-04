@@ -163,12 +163,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     ]
     var pinlocations:[CLLocationCoordinate2D] = []
     
-    var randomInt: Int {
-        get {
-            return Int.random(in: 2..<pinTitles.count)
-        }
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -183,8 +177,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
 
         myLatitude = locationManager.location?.coordinate.latitude
         myLongitude = locationManager.location?.coordinate.longitude
-//        myLatitude = 35.1707
-//        myLongitude = 136.8826
         guard let latitude = myLatitude else {return}
         guard let longitude = myLongitude else {return}
         debugPrint(latitude)
@@ -198,7 +190,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         mapView.region = region
         mapView.delegate = self
         
-        for i in 1..<pinTitles.count{
+        for i in 1..<52{
             let mod = i % 10
             pinLocationAppend(count: mod)
         }
@@ -245,7 +237,6 @@ extension MapViewController{
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         tapLatitude = view.annotation?.coordinate.latitude
         tapLongitude = view.annotation?.coordinate.longitude
-
         targetTitle = (view.annotation?.title)!
         targetCharacterImage = view.image
         targetRemoveAnnotaion = view.annotation
@@ -253,14 +244,20 @@ extension MapViewController{
         // ピンの情報削除
         self.mapView.removeAnnotation(view.annotation!)
         
+        // 現在地を押してもARに切り替わらない処理
+        if view.annotation is MKUserLocation{
+            return
+        }
+        
         reverseGeoCording()
         self.performSegue(withIdentifier: "toARView", sender: self)
     }
     
     func reverseGeoCording(){
         let location = CLLocation(latitude: tapLatitude!, longitude: tapLongitude!)
+//        let location = CLLocation(latitude: 35.658608, longitude: 139.745396)
         
-        CLGeocoder().reverseGeocodeLocation(location){ [self]
+        CLGeocoder().reverseGeocodeLocation(location){
             placemarks, error in
             guard let placemark = placemarks?.first, error == nil else {return}
             
@@ -268,7 +265,6 @@ extension MapViewController{
             debugPrint(placemark.areasOfInterest ?? "nil")
             debugPrint(placemark.administrativeArea! + placemark.locality! + placemark.name!)
         }
-        
         
     }
 
@@ -304,8 +300,6 @@ extension MapViewController{
             if self.myLatitude == nil && self.myLongitude == nil{
                 myLatitude = locationManager.location?.coordinate.latitude
                 myLongitude = locationManager.location?.coordinate.longitude
-//                myLatitude = 35.1707
-//                myLongitude = 136.8826
                 let currentlocation = CLLocationCoordinate2DMake(myLatitude,myLongitude)
                 let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
                 let region = MKCoordinateRegion(center: currentlocation, span: span)
@@ -328,6 +322,13 @@ extension MapViewController{
             }
         }
     }
+    
+}
+
+
+// ピンを全国にランダム配置する関数
+extension MapViewController{
+    
     func pinLocationAppend(count: Int) {
         switch count {
         case 0://沖縄左下
@@ -361,7 +362,6 @@ extension MapViewController{
     
 }
 
-
 // マップに画像やピンを立てる処理
 extension MapViewController{
     
@@ -384,8 +384,6 @@ extension MapViewController{
         }
         
         annotationView.annotation = annotation
-//        吹き出しの表示
-//        annotationView.canShowCallout = true
         return annotationView
     }
     

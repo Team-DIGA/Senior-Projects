@@ -30,28 +30,28 @@ class TopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        // Bundle Resourcesからsample.mp4を読み込んで再生
-//        let path = Bundle.main.path(forResource: "amongs", ofType: "mp4")!
-//        let player = AVPlayer(url: URL(fileURLWithPath: path))
-//        player.play()
-//
-//
-//        let playerLayer = AVPlayerLayer(player: player)
-//        playerLayer.frame = view.bounds
-//        playerLayer.videoGravity = .resizeAspectFill
-//        playerLayer.zPosition = -1
-//        view.layer.insertSublayer(playerLayer, at: 0)
-//        let playerObserver = NotificationCenter.default.addObserver(
-//            forName: .AVPlayerItemDidPlayToEndTime,
-//            object: player.currentItem,
-//            queue: .main) { [weak playerLayer] _ in
-//                playerLayer?.player?.seek(to: CMTime.zero)
-//                playerLayer?.player?.play()
-//        }
-//        //BGMstart
-//        playSound(name: "undefined")
-//        //soundSet
-//        soundSet(name: "0")
+        // Bundle Resourcesからsample.mp4を読み込んで再生
+        let path = Bundle.main.path(forResource: "amongs", ofType: "mp4")!
+        let player = AVPlayer(url: URL(fileURLWithPath: path))
+        player.play()
+
+
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = view.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        playerLayer.zPosition = -1
+        view.layer.insertSublayer(playerLayer, at: 0)
+        let playerObserver = NotificationCenter.default.addObserver(
+            forName: .AVPlayerItemDidPlayToEndTime,
+            object: player.currentItem,
+            queue: .main) { [weak playerLayer] _ in
+                playerLayer?.player?.seek(to: CMTime.zero)
+                playerLayer?.player?.play()
+        }
+        //BGMstart
+        playSound(name: "undefined")
+        //soundSet
+        soundSet(name: "0")
         
     }
     func playSound(name: String) {

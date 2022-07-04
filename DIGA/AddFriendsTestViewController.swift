@@ -27,14 +27,23 @@ final class AddFriendsTestViewController: UIViewController {
     @IBAction func sendButton(_ sender: Any) {
         
         guard let name = self.nameTextField.text,
-              let rarity = self.rarityTextField.text,
+              var rarity = self.rarityTextField.text,
               let first_met_place = self.firstMetPlaceTextField.text,
-              let met_count = self.metCountTextField.text else {
+              var met_count = self.metCountTextField.text else {
             print("Error : There is no input value in the text field...")
             return
         }
         
         print("name: \(name), rarity: \(rarity), first_ met_place: \(first_met_place), met_count: \(met_count)")
+        
+        // クラッシュ回避のためのif文
+        if rarity == "" {
+            rarity = "1"
+        }
+        if met_count == "" {
+            met_count = "1"
+        }
+        
                     
         let character = Character(name: name, rarity: Int(rarity)!, first_met_place: first_met_place, met_count: Int(met_count)!, meet_stauts: false)
         
@@ -59,6 +68,8 @@ final class AddFriendsTestViewController: UIViewController {
         self.rarityTextField.text = ""
         self.firstMetPlaceTextField.text = ""
         self.metCountTextField.text = ""
+        
+        self.navigationController?.popViewController(animated: true)
 
     }
     
