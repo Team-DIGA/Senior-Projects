@@ -10,8 +10,12 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var tableView: UITableView!
 //    @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var completeLabelView: UILabel!
+    var metcount = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         self.fetchMessage()
     }
     
@@ -30,6 +34,16 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     DispatchQueue.main.async {
                         // tableViewを更新
                         self.tableView.reloadData()
+//                        達成率を更新
+                        let maxcount = friendsArray.count
+                        let meetArray = friendsArray.filter{
+                            $0.meet_stauts == true
+                        }
+                        self.metcount = Double(meetArray.count)
+                        var completeRate = 0.0
+                        completeRate = self.metcount / Double(maxcount) * 100
+                        debugPrint(maxcount, self.metcount, completeRate)
+                        self.completeLabelView.text = "達成率：　\(floor(completeRate))％"
                     }
                 case .failure(let graphQLError):
                     // サーバーから返されるエラーはこっち
@@ -50,18 +64,37 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsCell", for: indexPath as IndexPath)
         
         let imageView = cell.contentView.viewWithTag(1) as! UIImageView
-//        let label = cell.viewWithTag(2) as! UILabel
+        let nameLabel = cell.viewWithTag(2) as! UILabel
+        let rareLabel = cell.viewWithTag(3) as! UILabel
+        let placeLabel = cell.viewWithTag(4) as! UILabel
+        let countLabel = cell.viewWithTag(5) as! UILabel
         
         // 画像配列の番号で指定された要素の名前の画像をUIImageとする
         let cellImage: UIImage?
+        let rareText: String?
         if friendsArray[indexPath.row].meet_stauts == false {
             cellImage = UIImage(named: "noImage")
+            
+            nameLabel.text = "不明"
+            nameLabel.textColor = UIColor.black
+            nameLabel.font = nameLabel.font.withSize(12)
+            
+            rareText = "レアリティ： 不明"
         } else {
             cellImage = UIImage(named: friendsArray[indexPath.row].name)
+            
+            nameLabel.text = friendsArray[indexPath.row].name
+            
+            rareText = "レアリティ： \(friendsArray[indexPath.row].rarity)"
+            nameLabel.textColor = UIColor.orange
+            nameLabel.font = nameLabel.font.withSize(19)
+            
         }
         // UIImageをUIImageViewのimageとして設定
         imageView.image = cellImage
-//        label.text = friendsArray[indexPath.row].name
+        rareLabel.text = rareText
+        placeLabel.text = "出会った場所： \(friendsArray[indexPath.row].first_met_place)"
+        countLabel.text = "出会った回数： \(friendsArray[indexPath.row].met_count)"
         return cell
     }
     
