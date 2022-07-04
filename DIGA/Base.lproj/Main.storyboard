@@ -11,7 +11,6 @@
         <!--Picturebook-->
         <scene sceneID="r2R-pu-8GA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ImN-Bk-bPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="MlP-QX-Ik5" customClass="Picturebook" customModule="DIGA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="meW-JN-1ZB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -111,6 +110,7 @@
                         <outlet property="tableView" destination="4Sb-Na-WGP" id="l1y-mQ-3f2"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ImN-Bk-bPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-878.26086956521749" y="543.75"/>
         </scene>

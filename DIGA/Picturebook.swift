@@ -86,6 +86,8 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
             nameLabel.text = friendsArray[indexPath.row].name
             
             rareText = "レアリティ： \(friendsArray[indexPath.row].rarity)"
+            nameLabel.textColor = UIColor.orange
+            nameLabel.font = nameLabel.font.withSize(19)
             
         }
         // UIImageをUIImageViewのimageとして設定
