@@ -73,8 +73,8 @@ class ARViewController: UIViewController {
         view.bringSubviewToFront(addFriendButton2)
         //オブジェ作成表示
         createObjImage()
-        let text1 = textArray[Int.random(in: 0...textArray.count)]
-        let text2 = textArray[Int.random(in: 0...textArray.count)]
+        let text1 = textArray[Int.random(in: 0...textArray.count - 1)]
+        let text2 = textArray[Int.random(in: 0...textArray.count - 1)]
         addFriendButton.setTitle(text1, for: .normal)
         addFriendButton2.setTitle(text2, for: .normal)
         

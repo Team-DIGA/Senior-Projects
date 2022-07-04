@@ -58,7 +58,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     // 表示させる画像の配列
     var pinImagges:[UIImage?] = [
-        UIImage(named: "masashi2")?.resized(size:CGSize(width: 50, height: 50)),
+        UIImage(named: "shimabuicon")?.resized(size:CGSize(width: 50, height: 50)),
         UIImage(named: "exeid")?.resized(size:CGSize(width: 50, height: 50)),
         UIImage(named: "gokuu")?.resized(size:CGSize(width: 50, height: 50)),
         UIImage(named: "luffy")?.resized(size:CGSize(width: 50, height: 50)),
@@ -110,9 +110,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         UIImage(named: "usop")?.resized(size:CGSize(width: 50, height: 50)),
         UIImage(named: "zenitu")?.resized(size:CGSize(width: 50, height: 50)),
         UIImage(named: "zoro")?.resized(size:CGSize(width: 50, height: 50)),
+        UIImage(named: "masashi2")?.resized(size:CGSize(width: 50, height: 50)),
             ]
     var pinTitles:[String] = [
-        "masashi",
+        "shimabuicon",
         "exeid",
         "gokuu",
         "luffy",
@@ -164,6 +165,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         "usop",
         "zenitu",
         "zoro",
+        "masashi2",
 
     ]
     var pinlocations:[CLLocationCoordinate2D] = []
