@@ -21,8 +21,17 @@
 		0D78B11E286C2BEE002CFB48 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B11D286C2BEE002CFB48 /* MapViewController.swift */; };
 		0D78B121286C2F91002CFB48 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D78B120286C2F91002CFB48 /* CoreLocation.framework */; };
 		0D78B12E286DD2A2002CFB48 /* Picturebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B12D286DD2A1002CFB48 /* Picturebook.swift */; };
-		3A6004992872625A009DA69E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A6004982872625A009DA69E /* amplifyconfiguration.json */; };
-		3AA5E62228727D93003366E8 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AA5E62128727D93003366E8 /* awsconfiguration.json */; };
+		3A600497286F0472009DA69E /* devFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A600496286F0472009DA69E /* devFunctions.swift */; };
+		3A6004A728726260009DA69E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60049B28726260009DA69E /* MapViewController.swift */; };
+		3A6004A828726260009DA69E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A60049C28726260009DA69E /* Assets.xcassets */; };
+		3A6004A928726260009DA69E /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 3A60049D28726260009DA69E /* Experience.rcproject */; };
+		3A6004AA28726260009DA69E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A60049E28726260009DA69E /* LaunchScreen.storyboard */; };
+		3A6004AB28726260009DA69E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6004A028726260009DA69E /* Main.storyboard */; };
+		3A6004AC28726260009DA69E /* Picturebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6004A228726260009DA69E /* Picturebook.swift */; };
+		3A6004AD28726260009DA69E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6004A328726260009DA69E /* AppDelegate.swift */; };
+		3A6004AE28726260009DA69E /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6004A428726260009DA69E /* ARViewController.swift */; };
+		3A6004AF28726260009DA69E /* AddFriendsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6004A528726260009DA69E /* AddFriendsTestViewController.swift */; };
+		3A6004B028726260009DA69E /* TopViewContoroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6004A628726260009DA69E /* TopViewContoroller.swift */; };
 		3ADF1E6B286E962F007EB643 /* Character+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E68286E962F007EB643 /* Character+Schema.swift */; };
 		3ADF1E6C286E962F007EB643 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E69286E962F007EB643 /* AmplifyModels.swift */; };
 		3ADF1E6D286E962F007EB643 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6A286E962F007EB643 /* Character.swift */; };
@@ -41,6 +50,8 @@
 		E172059528706EB100A9D300 /* 8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058828706EB100A9D300 /* 8.mp3 */; };
 		E172059628706EB100A9D300 /* 9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058928706EB100A9D300 /* 9.mp3 */; };
 		E172059728706EB100A9D300 /* amongs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E172058A28706EB100A9D300 /* amongs.mp4 */; };
+		E17205AA2873029500A9D300 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E17205A82873029500A9D300 /* amplifyconfiguration.json */; };
+		E17205AB2873029500A9D300 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = E17205A92873029500A9D300 /* awsconfiguration.json */; };
 		E687EF08938B7D1517E9798C /* Pods_DIGA_DIGAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19848E6E9DCDD5ED7ACE72A /* Pods_DIGA_DIGAUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,8 +92,16 @@
 		0D78B12D286DD2A1002CFB48 /* Picturebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picturebook.swift; sourceTree = "<group>"; };
 		1941D7930360F076521EA176 /* Pods-DIGA-DIGAUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA-DIGAUITests.release.xcconfig"; path = "Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3A600496286F0472009DA69E /* devFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = devFunctions.swift; sourceTree = "<group>"; };
-		3A6004982872625A009DA69E /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
-		3AA5E62128727D93003366E8 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
+		3A60049B28726260009DA69E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3A60049C28726260009DA69E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A60049D28726260009DA69E /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
+		3A60049F28726260009DA69E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A6004A128726260009DA69E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A6004A228726260009DA69E /* Picturebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picturebook.swift; sourceTree = "<group>"; };
+		3A6004A328726260009DA69E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A6004A428726260009DA69E /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		3A6004A528726260009DA69E /* AddFriendsTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendsTestViewController.swift; sourceTree = "<group>"; };
+		3A6004A628726260009DA69E /* TopViewContoroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewContoroller.swift; sourceTree = "<group>"; };
 		3ADF1E68286E962F007EB643 /* Character+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+Schema.swift"; sourceTree = "<group>"; };
 		3ADF1E69286E962F007EB643 /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplifyModels.swift; sourceTree = "<group>"; };
 		3ADF1E6A286E962F007EB643 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -107,6 +126,8 @@
 		E172058828706EB100A9D300 /* 8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 8.mp3; sourceTree = "<group>"; };
 		E172058928706EB100A9D300 /* 9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 9.mp3; sourceTree = "<group>"; };
 		E172058A28706EB100A9D300 /* amongs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = amongs.mp4; sourceTree = "<group>"; };
+		E17205A82873029500A9D300 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		E17205A92873029500A9D300 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +185,9 @@
 		0D78B0EB286C2B01002CFB48 /* DIGA */ = {
 			isa = PBXGroup;
 			children = (
-				3AA5E62128727D93003366E8 /* awsconfiguration.json */,
-				3A6004982872625A009DA69E /* amplifyconfiguration.json */,
+				E17205A82873029500A9D300 /* amplifyconfiguration.json */,
+				E17205A92873029500A9D300 /* awsconfiguration.json */,
+				3A60049A28726260009DA69E /* DIGA */,
 				3ADF1E67286E962F007EB643 /* models */,
 				0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */,
 				0D78B11B286C2BD5002CFB48 /* TopViewContoroller.swift */,
@@ -369,6 +391,9 @@
 				E172059628706EB100A9D300 /* 9.mp3 in Resources */,
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
+				3A6004AA28726260009DA69E /* LaunchScreen.storyboard in Resources */,
+				E17205AA2873029500A9D300 /* amplifyconfiguration.json in Resources */,
+				E17205AB2873029500A9D300 /* awsconfiguration.json in Resources */,
 				E172059028706EB100A9D300 /* 0.mp3 in Resources */,
 				3AA5E62228727D93003366E8 /* awsconfiguration.json in Resources */,
 				E172059328706EB100A9D300 /* undefined.mp3 in Resources */,
@@ -379,7 +404,7 @@
 				E172059128706EB100A9D300 /* 2.mp3 in Resources */,
 				0D78B0F4286C2B01002CFB48 /* Main.storyboard in Resources */,
 				E172059728706EB100A9D300 /* amongs.mp4 in Resources */,
-				3A6004992872625A009DA69E /* amplifyconfiguration.json in Resources */,
+				3A6004A828726260009DA69E /* Assets.xcassets in Resources */,
 				E172058C28706EB100A9D300 /* 6.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
