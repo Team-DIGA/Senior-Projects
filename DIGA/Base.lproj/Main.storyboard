@@ -391,26 +391,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nGg-fl-2S3">
-                                <rect key="frame" x="0.0" y="88" width="414" height="722"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nGg-fl-2S3">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWT-Mk-edj">
-                                <rect key="frame" x="74" y="809" width="172" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toARView" id="8qM-A8-C2B"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r3z-tp-uk5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="r3z-tp-uk5" firstAttribute="bottom" secondItem="nGg-fl-2S3" secondAttribute="bottom" id="ANy-4f-fJ8"/>
+                            <constraint firstItem="nGg-fl-2S3" firstAttribute="trailing" secondItem="r3z-tp-uk5" secondAttribute="trailing" id="O0U-gP-rRF"/>
+                            <constraint firstItem="nGg-fl-2S3" firstAttribute="top" secondItem="r3z-tp-uk5" secondAttribute="top" id="mzU-en-oAk"/>
+                            <constraint firstItem="nGg-fl-2S3" firstAttribute="leading" secondItem="r3z-tp-uk5" secondAttribute="leading" id="wwC-h7-cwI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9aC-nW-qeY"/>
                     <connections>
                         <outlet property="mapView" destination="nGg-fl-2S3" id="uTu-wK-146"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toARView" id="OTG-63-0bA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mnq-zc-9el" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -420,6 +417,7 @@
         <!--ARView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ARViewController" customModule="DIGA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="omW-2h-TFi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -436,8 +434,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Friends"/>
                                 <connections>
-                                    <action selector="AddFriends:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qIg-fc-U6N"/>
-                                    <action selector="PushAddFriendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QNk-zy-fN2"/>
+                                    <action selector="AddFriend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ep9-yX-yH3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -455,11 +452,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="RQc-U2-JPN"/>
                     <connections>
-                        <outlet property="addFriendButton" destination="gKc-ye-FNg" id="CL5-QP-V6X"/>
+                        <outlet property="addFriendButton" destination="gKc-ye-FNg" id="GOO-ul-fXs"/>
                         <outlet property="arView" destination="DcP-nT-fKB" id="TAt-25-RY7"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="857.97101449275374" y="-313.39285714285711"/>
         </scene>
