@@ -64,7 +64,7 @@ class TopViewController: UIViewController {
                 avPlayer.enableRate = true
                 avPlayer.rate = 1.0
                 avPlayer.numberOfLoops = -1
-                avPlayer.volume = 0.2
+                avPlayer.volume = 0
                 avPlayer.play()
             } catch {
                 print("error", error)
