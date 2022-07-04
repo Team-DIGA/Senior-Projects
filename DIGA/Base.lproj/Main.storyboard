@@ -417,7 +417,6 @@
         <!--ARView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ARViewController" customModule="DIGA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="omW-2h-TFi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -456,6 +455,7 @@
                         <outlet property="arView" destination="DcP-nT-fKB" id="TAt-25-RY7"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="857.97101449275374" y="-313.39285714285711"/>
         </scene>
