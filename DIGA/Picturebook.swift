@@ -1,10 +1,3 @@
-//
-//  Picturebook.swift
-//  DIGA
-//
-//  Created by Rintaro Kimura on 2022/06/30.
-//
-
 import UIKit
 import MapKit
 import CoreLocation
@@ -31,6 +24,8 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 switch result {
                 case .success(let friend):
                     friendsArray = friend
+                    print("====================================================")
+                    print("friendsArray : \(friendsArray)")
                     
                     DispatchQueue.main.async {
                         // tableViewを更新
@@ -58,7 +53,12 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
 //        let label = cell.viewWithTag(2) as! UILabel
         
         // 画像配列の番号で指定された要素の名前の画像をUIImageとする
-        let cellImage = UIImage(named: friendsArray[indexPath.row].name)
+        let cellImage: UIImage?
+        if friendsArray[indexPath.row].meet_stauts == false {
+            cellImage = UIImage(named: "noImage")
+        } else {
+            cellImage = UIImage(named: friendsArray[indexPath.row].name)
+        }
         // UIImageをUIImageViewのimageとして設定
         imageView.image = cellImage
 //        label.text = friendsArray[indexPath.row].name

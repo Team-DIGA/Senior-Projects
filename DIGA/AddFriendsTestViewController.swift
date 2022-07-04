@@ -8,12 +8,15 @@
 import UIKit
 import Amplify
 
+
 final class AddFriendsTestViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var rarityTextField: UITextField!
     @IBOutlet weak var firstMetPlaceTextField: UITextField!
     @IBOutlet weak var metCountTextField: UITextField!
+    
+    let dataUtils = DataUtils()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,18 +78,18 @@ final class AddFriendsTestViewController: UIViewController {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        outputText.text = inputText.text
         self.view.endEditing(true)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func createAllData(_ sender: Any) {
+        dataUtils.createAllData()
     }
-    */
-
+    
+    @IBAction func deleteAllFriends(_ sender: Any) {
+//        dataUtils.deleteAllData()
+    }
+    
+    @IBAction func getFriend(_ sender: Any) {
+        dataUtils.updateData(name: "cririn")
+    }
 }
