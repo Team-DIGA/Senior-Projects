@@ -48,6 +48,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     let honshuLatitude = 35.0
     let honshuLongitude = 135.0
     var targetRemoveAnnotaion: MKAnnotation?
+    var mapTargetTitle: [String?] = []
+    var mapTargetImage: [UIImage?] = []
     
 
     
@@ -189,13 +191,19 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
 
         mapView.region = region
         mapView.delegate = self
-        
+        //表示するキャラの数
+        let numChara = Int.random(in:1...10)
+        var countChara = 0
         for i in 1..<52{
-            let mod = i % 10
-            pinLocationAppend(count: mod)
+            appendMap(i: i, countChara: countChara, numChara: numChara)
+            countChara += 1
+            
+            //area map
+//            let mod = i % 10
+//            pinLocationAppend(count: mod)
         }
         
-        for (index,pinTitle) in self.pinTitles.enumerated(){
+        for (index,pinTitle) in self.mapTargetTitle.enumerated(){
             let pin = MapAnnotationSetting()
             let coordinate = self.pinlocations[index]
             print("coordinate",coordinate)
@@ -305,12 +313,19 @@ extension MapViewController{
                 let region = MKCoordinateRegion(center: currentlocation, span: span)
                 mapView.region = region
                 mapView.delegate = self
+                //表示するキャラの数
+                let numChara = Int.random(in:1...10)
+                var countChara = 0
                 for i in 1..<52{
-                    let mod = i % 10
-                    pinLocationAppend(count: mod)
+                    appendMap(i: i, countChara: countChara, numChara: numChara)
+                    countChara += 1
+                    
+                    //area map
+//                    let mod = i % 10
+//                    pinLocationAppend(count: mod)
                 }
                 
-                for (index,pinTitle) in self.pinTitles.enumerated(){
+                for (index,pinTitle) in self.mapTargetTitle.enumerated(){
                     let pin = MapAnnotationSetting()
                     let coordinate = self.pinlocations[index]
                     pin.title = pinTitle
@@ -328,6 +343,20 @@ extension MapViewController{
 
 // ピンを全国にランダム配置する関数
 extension MapViewController{
+    
+    func appendMap(i: Int, countChara: Int, numChara: Int) {
+        //表示するキャラの選択
+        let selectChara = Int.random(in: 1...2)
+        //表示するかどうか
+        if selectChara == 1 && countChara < numChara {
+            //表示する場所
+            let randomDouble1 = Double.random(in: -0.02...0.02)
+            let randomDouble2 = Double.random(in: -0.02...0.02)
+            pinlocations.append(CLLocationCoordinate2DMake(myLatitude+randomDouble1,myLongitude+randomDouble2))
+            mapTargetTitle.append(pinTitles[i])
+            mapTargetImage.append(pinImagges[i])
+        }
+    }
     
     func pinLocationAppend(count: Int) {
         switch count {
