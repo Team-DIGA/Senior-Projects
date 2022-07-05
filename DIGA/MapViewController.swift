@@ -123,11 +123,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         mapView.region = region
         mapView.delegate = self
         //表示するキャラの数
-        let numChara = Int.random(in:5...10)
+        let numChara = Int.random(in:5...7)
         var countChara = 0
-        for i in 0..<52{
+        for i in 0..<self.pinTitles.count - 1 {
             //表示するキャラの選択
-            let selectChara = Int.random(in: 1...raritiesArray[i]+2)
+            let selectChara = Int.random(in: 1...raritiesArray[i] + 2)
             if selectChara == 1 && countChara < numChara {
                 appendMap(i: i, countChara: countChara, numChara: numChara)
                 countChara += 1
@@ -203,7 +203,7 @@ extension MapViewController{
         
         CLGeocoder().reverseGeocodeLocation(location){
             placemarks, error in
-            guard let placemark = placemarks?.first, error == nil else {return}
+            guard let placemark = placemarks?.first, error == nil else {return self.targetPlace = "地上"}
             self.targetPlace = placemark.name!
         }
         
@@ -247,12 +247,11 @@ extension MapViewController{
                 mapView.region = region
                 mapView.delegate = self
                 //表示するキャラの数
-                let numChara = Int.random(in:5...10)
+                let numChara = Int.random(in:5...7)
                 var countChara = 0
-                for i in 0..<52{
+                for i in 0..<self.pinTitles.count - 1 {
                     //表示するキャラの選択
                     let selectChara = Int.random(in: 1...5)
-//                    print("seleect", selectChara)
                     if selectChara == 1 && countChara < numChara {
                         appendMap(i: i, countChara: countChara, numChara: numChara)
                         countChara += 1

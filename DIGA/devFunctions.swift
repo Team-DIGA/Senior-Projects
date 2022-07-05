@@ -123,7 +123,7 @@ struct DataUtils {
     //データ更新
     func updateData(name: String, place:String) {
         getData(name: name)
-        updateFriend?.meet_stauts = true
+        updateFriend?.meet_status = true
         updateFriend?.first_met_place = place
         guard let updateFriend = updateFriend else {
             print("updateFriend is nil...")
