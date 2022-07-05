@@ -10,8 +10,8 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 30,
-              "apiKeyExpirationDate": "2022-08-04T04:45:12.864Z",
-              "description": "sineordiga's API key"
+              "apiKeyExpirationDate": "2022-08-04T05:24:17.654Z",
+              "description": "sineordev's API key."
             }
           },
           "additionalAuthenticationProviders": []
