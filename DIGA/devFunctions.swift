@@ -53,6 +53,12 @@ let friendArray: [String] = [
     "usop",
     "zenitu",
     "zoro",
+    "coil",
+    "shimabu",
+    "abiru",
+    "anmika",
+    "isaji",
+    "wpeace"
 ]
 
 var gotDataArray: [Character] = []
