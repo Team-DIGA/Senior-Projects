@@ -42,8 +42,7 @@ class ARViewController: UIViewController {
         "新しい顔を投げつける",
         "pufpufする"
     ]
-//    var text1: String
-//    var text2: String
+
     
     let itemArray:[UIImage?] = [
         UIImage(named: "アンパンマンの顔")?.resized(size:CGSize(width: 50, height: 50)),
@@ -89,7 +88,7 @@ class ARViewController: UIViewController {
     }
     
     func addOrEscape(){
-        let randomNum = Int.random(in: 1...characterRerity)
+        let randomNum = Int.random(in: 1...1)
         if randomNum == 1 {
             dataUtils.updateData(name: characterTitle, place: characterPlace)
             alertFunc(title: "\(characterTitle!)は\n仲間になった！", message: "",addFlag:true)
@@ -104,9 +103,26 @@ class ARViewController: UIViewController {
         view.addSubview(arView)
         view.bringSubviewToFront(addFriendButton)
         view.bringSubviewToFront(addFriendButton2)
+        if characterTitle! == "コイル" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, -0.1, -8)
 
-        //オブジェ作成表示
-        createObjImage()
+            if let usdzModel = try? Entity.load(named: "coil") {
+                anchor.addChild(usdzModel)
+            }
+            arView.scene.anchors.append(anchor)
+        } else if characterTitle! == "Amongs" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, 0, -0.1)
+
+            if let usdzModel = try? Entity.load(named: "AMONGS") {
+                anchor.addChild(usdzModel)
+            }
+            arView.scene.anchors.append(anchor)
+        } else {
+            //オブジェ作成表示
+            createObjImage()
+        }
         let text1 = textArray[Int.random(in: 0...textArray.count - 1)]
         let text2 = textArray[Int.random(in: 0...textArray.count - 1)]
         addFriendButton.setTitle(text1, for: .normal)

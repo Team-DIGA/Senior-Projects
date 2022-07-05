@@ -44,6 +44,9 @@
 		E172059528706EB100A9D300 /* 8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058828706EB100A9D300 /* 8.mp3 */; };
 		E172059628706EB100A9D300 /* 9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058928706EB100A9D300 /* 9.mp3 */; };
 		E172059728706EB100A9D300 /* amongs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E172058A28706EB100A9D300 /* amongs.mp4 */; };
+		E18EF65C287472ED004AF827 /* AMONGS.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E18EF65B287472ED004AF827 /* AMONGS.usdz */; };
+		E18EF65E287472F9004AF827 /* coil.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E18EF65D287472F9004AF827 /* coil.usdz */; };
+		E18EF660287476C2004AF827 /* coil2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = E18EF65F287476C2004AF827 /* coil2.usdz */; };
 		E687EF08938B7D1517E9798C /* Pods_DIGA_DIGAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19848E6E9DCDD5ED7ACE72A /* Pods_DIGA_DIGAUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +116,9 @@
 		E172058828706EB100A9D300 /* 8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 8.mp3; sourceTree = "<group>"; };
 		E172058928706EB100A9D300 /* 9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 9.mp3; sourceTree = "<group>"; };
 		E172058A28706EB100A9D300 /* amongs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = amongs.mp4; sourceTree = "<group>"; };
+		E18EF65B287472ED004AF827 /* AMONGS.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = AMONGS.usdz; sourceTree = "<group>"; };
+		E18EF65D287472F9004AF827 /* coil.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = coil.usdz; sourceTree = "<group>"; };
+		E18EF65F287476C2004AF827 /* coil2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = coil2.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +268,9 @@
 		E172057D28706EB100A9D300 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				E18EF65D287472F9004AF827 /* coil.usdz */,
+				E18EF65F287476C2004AF827 /* coil2.usdz */,
+				E18EF65B287472ED004AF827 /* AMONGS.usdz */,
 				E172057E28706EB100A9D300 /* 7.mp3 */,
 				E172057F28706EB100A9D300 /* 6.mp3 */,
 				E172058028706EB100A9D300 /* 4.mp3 */,
@@ -388,6 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18EF65E287472F9004AF827 /* coil.usdz in Resources */,
 				3A55CFE72874070E00CAEA22 /* awsconfiguration.json in Resources */,
 				E172059228706EB100A9D300 /* 3.mp3 in Resources */,
 				E172059428706EB100A9D300 /* 200.mp3 in Resources */,
@@ -395,6 +405,8 @@
 				E172059628706EB100A9D300 /* 9.mp3 in Resources */,
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
+				E18EF660287476C2004AF827 /* coil2.usdz in Resources */,
+				E18EF65C287472ED004AF827 /* AMONGS.usdz in Resources */,
 				3A6004AA28726260009DA69E /* (null) in Resources */,
 				E172059028706EB100A9D300 /* 0.mp3 in Resources */,
 				E172059328706EB100A9D300 /* undefined.mp3 in Resources */,

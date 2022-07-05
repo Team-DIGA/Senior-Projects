@@ -1067,7 +1067,7 @@
 		22452FF1B416AB0784B11C2B2E2B4977 /* LoggingCategoryClientBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoggingCategoryClientBehavior.swift; path = Amplify/Categories/Logging/LoggingCategoryClientBehavior.swift; sourceTree = "<group>"; };
 		224618261A920AFD3D2A5117E6B5BD16 /* Geo+Country.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Geo+Country.swift"; path = "Amplify/Categories/Geo/Types/Geo+Country.swift"; sourceTree = "<group>"; };
 		225DC8B1F249B71ACF89E1759E36C60B /* AuthCognitoTokensProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthCognitoTokensProvider.swift; path = AmplifyPlugins/Core/AWSPluginsCore/Auth/Provider/AuthCognitoTokensProvider.swift; sourceTree = "<group>"; };
-		2273C48E79B975FE01C517781DDEC1D6 /* Pods-DIGA */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DIGA"; path = Pods_DIGA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2273C48E79B975FE01C517781DDEC1D6 /* Pods_DIGA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		228D08F46BBD5C5350C4DFA85C8B8C28 /* AWSClientContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AWSClientContext.m; path = AWSCore/Service/AWSClientContext.m; sourceTree = "<group>"; };
 		22E97B399CA5C8E2D7A44CBC2C427920 /* AWSCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCore.h; path = AWSCore/AWSCore.h; sourceTree = "<group>"; };
 		23726C6101DF2C66CDA32F89B7E45CC7 /* AWSCredentialsProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSCredentialsProvider.h; path = AWSCore/Authentication/AWSCredentialsProvider.h; sourceTree = "<group>"; };
@@ -2390,7 +2390,7 @@
 				751A6187D3152BF6DA848D2DC39ECD2A /* AppSyncRealTimeClient.framework */,
 				CCFB8F03867DB892EFC47B53186590C4 /* AWSCore.framework */,
 				BABAB0B403C0FA58F04F9274AB97A470 /* AWSPluginsCore.framework */,
-				2273C48E79B975FE01C517781DDEC1D6 /* Pods-DIGA */,
+				2273C48E79B975FE01C517781DDEC1D6 /* Pods_DIGA.framework */,
 				96877C30E09ADA6958A5359A819DB228 /* Pods-DIGA-DIGAUITests */,
 				D1F30F7820812B7C586E1D4DF3011C42 /* Pods-DIGATests */,
 				891B2270823847ED23F2ECFC28F935EC /* Starscream.framework */,
@@ -3254,7 +3254,7 @@
 			);
 			name = "Pods-DIGA";
 			productName = Pods_DIGA;
-			productReference = 2273C48E79B975FE01C517781DDEC1D6 /* Pods-DIGA */;
+			productReference = 2273C48E79B975FE01C517781DDEC1D6 /* Pods_DIGA.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		CA272F3BABD58C268E586A1C13E03BF9 /* Pods-DIGA-DIGAUITests */ = {
