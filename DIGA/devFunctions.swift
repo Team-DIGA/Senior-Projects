@@ -138,7 +138,8 @@ struct DataUtils {
             return
         }
         // mutateで新規メッセージを作成
-        Amplify.API.mutate(request: .updateMutation(of: updateFriend, version: met_count_key)) { event in
+        print("------",name,"=====",met_count_key)
+        Amplify.API.mutate(request: .updateMutation(of: updateFriend, version: met_count_key+1)) { event in
 //          Amplify.API.mutate(request: .updateMutation(of: updateFriend)) { event in
             switch event {
             case .success(let result):

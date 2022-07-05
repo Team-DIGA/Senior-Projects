@@ -206,8 +206,7 @@ extension MapViewController{
         
         CLGeocoder().reverseGeocodeLocation(location){
             placemarks, error in
-            guard let placemark = placemarks?.first,
-                  let _ = error
+            guard let placemark = placemarks?.first, error == nil
             else {
                 return self.targetPlace = "地上"
             }
