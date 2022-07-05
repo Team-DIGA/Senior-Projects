@@ -8,6 +8,7 @@
 import UIKit
 import CoreLocation
 import MapKit
+import Amplify
 
 class MapAnnotationSetting:MKPointAnnotation{
     var pinImage:UIImage?
@@ -56,118 +57,45 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     // 位置情報初回のみ表示させる際のグローバル変数
     var first = true
     
-    // 表示させる画像の配列
-    var pinImagges:[UIImage?] = [
-        UIImage(named: "shimabuicon")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "exeid")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "gokuu")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "luffy")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "ana")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "anpanman")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "arumin")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "asitaka")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "baikinman")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "bejiita")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "blook")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "bou")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "carrepanman")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "cheeze")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "cririn")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "cyopper")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "donarud")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "doremon")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "dormi")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "eluza")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "eren")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "eriko")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "flankey")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "aguufyye")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "hauru")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "inosuke")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "jyian")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "mickey")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "mikasa")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "minnie")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "nakkuruz")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "nami")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "nausika")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "nezuko")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "nobita")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "pikkoro")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "puyo")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "robin")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "san")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "sanji")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "shadow")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "sizuka")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "sonic")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "suneo")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "syokupanman")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "tanjiro")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "teirus")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "titan")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "totoro")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "usop")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "zenitu")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "zoro")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "masashi2")?.resized(size:CGSize(width: 50, height: 50)),
-            ]
-    var pinTitles:[String] = [
-        "shimabuicon",
-        "exeid",
-        "gokuu",
-        "luffy",
-        "ana",
-        "anpanman",
-        "arumin",
-        "asitaka",
-        "baikinman",
-        "bejiita",
-        "blook",
-        "bou",
-        "carrepanman",
-        "cheeze",
-        "cririn",
-        "cyopper",
-        "donarud",
-        "doraemon",
-        "dorami",
-        "eluza",
-        "eren",
-        "eriko",
-        "flankey",
-        "guufyye",
-        "hauru",
-        "inosuke",
-        "jyian",
-        "mickey",
-        "mikasa",
-        "minnie",
-        "nakkuruz",
-        "nami",
-        "nausika",
-        "nezuko",
-        "nobita",
-        "pikkoro",
-        "puyo",
-        "robin",
-        "san",
-        "sanji",
-        "shadow",
-        "sizuka",
-        "sonic",
-        "suneo",
-        "syokupanman",
-        "tanjiro",
-        "teirus",
-        "titan",
-        "totoro",
-        "usop",
-        "zenitu",
-        "zoro",
-        "masashi2",
-
-    ]
+    //    サーバのデータ取り込み（名前とイメージ）
+    var allData: [Character] = []
+    var pinImages:[UIImage?] = []
+    var pinTitles:[String] = []
+    
+    
+    
+    func getAllNamesAndImages() {
+        let semaphore = DispatchSemaphore(value: 0)
+        // Amplify SDK経由でqueryオペレーションを実行しCharacterの配列を取得
+        Amplify.API.query(request: .list(Character.self, where: nil)) { event in
+            switch event {
+            case .success(let result):
+                // GraphQLの場合、Query失敗時のerrorもレスポンスに含まれる
+                switch result {
+                case .success(let friends):
+                    
+                    self.allData = friends
+                    for friend in friends {
+                        self.pinTitles.append(friend.name)
+                        self.pinImages.append(UIImage(named: friend.name)?.resized(size:CGSize(width: 50, height: 50)))
+                    }
+                    
+                    semaphore.signal()
+                    
+                case .failure(let graphQLError):
+                    // サーバーから返されるエラーはこっち
+                    print("Failed to getAllData graphql \(graphQLError)")
+                    semaphore.signal()
+                }
+            case .failure(let apiError):
+                // 通信エラー等の場合はこっち
+                print("Failed to getAllData a message", apiError)
+                semaphore.signal()
+            }
+        }
+        semaphore.wait()
+    }
+    
     var pinlocations:[CLLocationCoordinate2D] = []
     
     override func didReceiveMemoryWarning() {
@@ -176,6 +104,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getAllNamesAndImages()
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager!.requestWhenInUseAuthorization()
@@ -223,6 +152,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             self.mapView.addAnnotation(pin)
         }
 
+
     }
     
 }
@@ -257,7 +187,7 @@ extension MapViewController{
         targetTitle = (view.annotation?.title)!
         targetCharacterImage = view.image
         targetRemoveAnnotaion = view.annotation
-        
+        reverseGeoCording() //処理の順番変更検討
         // ピンの情報削除
         self.mapView.removeAnnotation(view.annotation!)
         
@@ -266,8 +196,9 @@ extension MapViewController{
             return
         }
         
-        reverseGeoCording()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
         self.performSegue(withIdentifier: "toARView", sender: self)
+        }
     }
     
     func reverseGeoCording(){
@@ -281,6 +212,7 @@ extension MapViewController{
             debugPrint(placemark)
             debugPrint(placemark.areasOfInterest ?? "nil")
             debugPrint(placemark.administrativeArea! + placemark.locality! + placemark.name!)
+            self.targetPlace = placemark.name!
         }
         
     }
@@ -367,7 +299,7 @@ extension MapViewController{
         let randomDouble2 = Double.random(in: -0.001...0.001)
         pinlocations.append(CLLocationCoordinate2DMake(myLatitude+randomDouble1,myLongitude+randomDouble2))
         mapTargetTitle.append(pinTitles[i])
-        mapTargetImage.append(pinImagges[i])
+        mapTargetImage.append(pinImages[i])
     }
     
     func pinLocationAppend(count: Int) {

@@ -44,7 +44,7 @@ class ARViewController: UIViewController {
 
     let randomNum = Int.random(in: 1...2)
     if randomNum == 1 {
-        dataUtils.updateData(name: characterTitle)
+        dataUtils.updateData(name: characterTitle, place: characterPlace)
         alertFunc(title: "\(characterTitle!)は\n仲間になった！", message: "")
     } else {
         alertFunc(title: "\( characterTitle!)は\n去っていった！", message: "")
@@ -57,7 +57,7 @@ class ARViewController: UIViewController {
 //        self.navigationController?.popViewController(animated: true)
         let randomNum = Int.random(in: 1...2)
         if randomNum == 1 {
-            dataUtils.updateData(name: characterTitle)
+            dataUtils.updateData(name: characterTitle, place: characterPlace)
             alertFunc(title: "\(characterTitle!)は\n仲間になった！", message: "")
         } else {
             alertFunc(title: "\( characterTitle!)は\n去っていった！", message: "")
@@ -71,6 +71,7 @@ class ARViewController: UIViewController {
         view.addSubview(arView)
         view.bringSubviewToFront(addFriendButton)
         view.bringSubviewToFront(addFriendButton2)
+        print("渡された場所情報", characterPlace)
         //オブジェ作成表示
         createObjImage()
         let text1 = textArray[Int.random(in: 0...textArray.count - 1)]
