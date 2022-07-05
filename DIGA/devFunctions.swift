@@ -123,12 +123,14 @@ struct DataUtils {
     func updateData(name: String) {
         getData(name: name)
         updateFriend?.meet_stauts = true
+        updateFriend?.met_count += 1
         guard let updateFriend = updateFriend else {
             print("updateFriend is nil...")
             return
         }
         // mutateで新規メッセージを作成
-        Amplify.API.mutate(request: .updateMutation(of: updateFriend, version: 1)) { event in
+//        Amplify.API.mutate(request: .updateMutation(of: updateFriend, version: 1)) { event in
+          Amplify.API.mutate(request: .updateMutation(of: updateFriend)) { event in
             switch event {
             case .success(let result):
                 switch result {
