@@ -23,6 +23,7 @@ class ARViewController: UIViewController {
     var characterRerity: Int!
     var characterPlace: String!
     var characterTitle: String!
+    var characterMetObj: [String:Int] = [:]
     
     let testUtiols = testStruct()
     
@@ -91,7 +92,11 @@ class ARViewController: UIViewController {
     func addOrEscape(){
         let randomNum = Int.random(in: 1...characterRerity)
         if randomNum == 1 {
-            dataUtils.updateData(name: characterTitle, place: characterPlace)
+            guard let metCount = characterMetObj[characterTitle] else {
+                print("metCountError")
+                return
+            }
+            dataUtils.updateData(name: characterTitle, place: characterPlace, met_count_key:metCount)
             alertFunc(title: "\(characterTitle!)は\n仲間になった！", message: "",addFlag:true)
         } else {
             alertFunc(title: "\( characterTitle!)は\n去っていった！", message: "",addFlag:false)
