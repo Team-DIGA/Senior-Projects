@@ -89,9 +89,9 @@ class ARViewController: UIViewController {
     }
     
     func addOrEscape(){
-        let randomNum = Int.random(in: 1...2)
+        let randomNum = Int.random(in: 1...characterRerity)
         if randomNum == 1 {
-            dataUtils.updateData(name: characterTitle)
+            dataUtils.updateData(name: characterTitle, place: characterPlace)
             alertFunc(title: "\(characterTitle!)は\n仲間になった！", message: "",addFlag:true)
         } else {
             alertFunc(title: "\( characterTitle!)は\n去っていった！", message: "",addFlag:false)
@@ -104,6 +104,7 @@ class ARViewController: UIViewController {
         view.addSubview(arView)
         view.bringSubviewToFront(addFriendButton)
         view.bringSubviewToFront(addFriendButton2)
+
         //オブジェ作成表示
         createObjImage()
         let text1 = textArray[Int.random(in: 0...textArray.count - 1)]

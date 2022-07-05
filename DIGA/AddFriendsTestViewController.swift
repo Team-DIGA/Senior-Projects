@@ -88,7 +88,7 @@ final class AddFriendsTestViewController: UIViewController {
 //        dataUtils.deleteAllData()
     }
     
-    @IBAction func getFriend(_ sender: Any) {
-        dataUtils.updateData(name: "cririn")
-    }
+//    @IBAction func getFriend(_ sender: Any) {
+//        dataUtils.updateData(name: "cririn")
+//    }
 }
