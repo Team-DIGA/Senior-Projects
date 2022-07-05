@@ -42,7 +42,7 @@ class ARViewController: UIViewController {
     @IBOutlet weak var addFriendButton2: UIButton!
     @IBAction func AddFriend2(_ sender: UIButton) {
 
-    let randomNum = Int.random(in: 1...2)
+    let randomNum = Int.random(in: 1...characterRerity)
     if randomNum == 1 {
         dataUtils.updateData(name: characterTitle, place: characterPlace)
         alertFunc(title: "\(characterTitle!)は\n仲間になった！", message: "")
@@ -55,7 +55,7 @@ class ARViewController: UIViewController {
     // 前の画面に戻る処理
     @IBAction func AddFriend(_ sender: UIButton) {
 //        self.navigationController?.popViewController(animated: true)
-        let randomNum = Int.random(in: 1...2)
+        let randomNum = Int.random(in: 1...characterRerity)
         if randomNum == 1 {
             dataUtils.updateData(name: characterTitle, place: characterPlace)
             alertFunc(title: "\(characterTitle!)は\n仲間になった！", message: "")
@@ -71,7 +71,7 @@ class ARViewController: UIViewController {
         view.addSubview(arView)
         view.bringSubviewToFront(addFriendButton)
         view.bringSubviewToFront(addFriendButton2)
-        print("渡された場所情報", characterPlace)
+
         //オブジェ作成表示
         createObjImage()
         let text1 = textArray[Int.random(in: 0...textArray.count - 1)]

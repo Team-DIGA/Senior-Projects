@@ -61,8 +61,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var allData: [Character] = []
     var pinImages:[UIImage?] = []
     var pinTitles:[String] = []
-    
-    
+    var rarelitiesObj:[String:Int] = [:]
+    var rarelitiesArray:[Int] = []
     
     func getAllNamesAndImages() {
         let semaphore = DispatchSemaphore(value: 0)
@@ -78,6 +78,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                     for friend in friends {
                         self.pinTitles.append(friend.name)
                         self.pinImages.append(UIImage(named: friend.name)?.resized(size:CGSize(width: 50, height: 50)))
+                        self.rarelitiesObj[friend.name] = friend.rarity
+                        self.rarelitiesArray.append(friend.rarity)
                     }
                     
                     semaphore.signal()
@@ -109,15 +111,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         locationManager.delegate = self
         locationManager!.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
-
         myLatitude = locationManager.location?.coordinate.latitude
         myLongitude = locationManager.location?.coordinate.longitude
         guard let latitude = myLatitude else {return}
         guard let longitude = myLongitude else {return}
-        debugPrint(latitude)
-        debugPrint(longitude)
-
 
         let currentlocation = CLLocationCoordinate2DMake(latitude,longitude)
         let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
@@ -130,7 +127,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         var countChara = 0
         for i in 0..<52{
             //表示するキャラの選択
-            let selectChara = Int.random(in: 1...5)
+            let selectChara = Int.random(in: 1...rarelitiesArray[i]+2)
             if selectChara == 1 && countChara < numChara {
                 appendMap(i: i, countChara: countChara, numChara: numChara)
                 countChara += 1
@@ -144,11 +141,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         for (index,pinTitle) in self.mapTargetTitle.enumerated(){
             let pin = MapAnnotationSetting()
             let coordinate = self.pinlocations[index]
-            print("coordinate",coordinate)
             pin.title = pinTitle
             pin.pinImage = mapTargetImage[index]
+            pin.subtitle = String(rarelitiesObj[pinTitle!]!)
             pin.coordinate = coordinate
-            debugPrint(pin)
             self.mapView.addAnnotation(pin)
         }
 
@@ -187,7 +183,8 @@ extension MapViewController{
         targetTitle = (view.annotation?.title)!
         targetCharacterImage = view.image
         targetRemoveAnnotaion = view.annotation
-        reverseGeoCording() //処理の順番変更検討
+        targetRarity = Int((view.annotation?.subtitle)!!)
+        reverseGeoCording()
         // ピンの情報削除
         self.mapView.removeAnnotation(view.annotation!)
         
@@ -203,15 +200,11 @@ extension MapViewController{
     
     func reverseGeoCording(){
         let location = CLLocation(latitude: tapLatitude!, longitude: tapLongitude!)
-//        let location = CLLocation(latitude: 35.658608, longitude: 139.745396)
         
         CLGeocoder().reverseGeocodeLocation(location){
             placemarks, error in
             guard let placemark = placemarks?.first, error == nil else {return}
             
-            debugPrint(placemark)
-            debugPrint(placemark.areasOfInterest ?? "nil")
-            debugPrint(placemark.administrativeArea! + placemark.locality! + placemark.name!)
             self.targetPlace = placemark.name!
         }
         
@@ -264,7 +257,6 @@ extension MapViewController{
                     if selectChara == 1 && countChara < numChara {
                         appendMap(i: i, countChara: countChara, numChara: numChara)
                         countChara += 1
-                        print("test", pinTitles[i])
                         
                     }
                     
@@ -277,6 +269,7 @@ extension MapViewController{
                     let pin = MapAnnotationSetting()
                     let coordinate = self.pinlocations[index]
                     pin.title = pinTitle
+                    pin.subtitle = String(rarelitiesObj[pinTitle!]!)
                     pin.pinImage = mapTargetImage[index]
                     pin.coordinate = coordinate
                     self.mapView.addAnnotation(pin)
