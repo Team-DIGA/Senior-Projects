@@ -9,6 +9,12 @@ import UIKit
 import RealityKit
 import MapKit
 
+struct testStruct {
+    func tests() {
+        print("test")
+    }
+}
+
 class ARViewController: UIViewController {
     
     var imageValue: String!
@@ -17,6 +23,8 @@ class ARViewController: UIViewController {
     var characterRerity: Int!
     var characterPlace: String!
     var characterTitle: String!
+    
+    let testUtiols = testStruct()
     
     let dataUtils = DataUtils()
     let textArray: [String] = [
