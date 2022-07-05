@@ -199,7 +199,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         //表示するキャラの数
         let numChara = Int.random(in:5...10)
         var countChara = 0
-        for i in 0..<52{
+        for i in 0..<self.pinTitles.count - 1{
             //表示するキャラの選択
             let selectChara = Int.random(in: 1...5)
             if selectChara == 1 && countChara < numChara {
@@ -325,7 +325,7 @@ extension MapViewController{
                 //表示するキャラの数
                 let numChara = Int.random(in:5...10)
                 var countChara = 0
-                for i in 0..<52{
+                for i in 0..<self.pinTitles.count - 1{
                     //表示するキャラの選択
                     let selectChara = Int.random(in: 1...5)
 //                    print("seleect", selectChara)
