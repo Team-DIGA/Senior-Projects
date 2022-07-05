@@ -37,7 +37,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
 //                        達成率を更新
                         let maxcount = friendsArray.count
                         let meetArray = friendsArray.filter{
-                            $0.meet_stauts == true
+                            $0.meet_status == true
                         }
                         self.metcount = Double(meetArray.count)
                         var completeRate = 0.0
@@ -72,7 +72,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
         // 画像配列の番号で指定された要素の名前の画像をUIImageとする
         let cellImage: UIImage?
         let rareText: String?
-        if friendsArray[indexPath.row].meet_stauts == false {
+        if friendsArray[indexPath.row].meet_status == false {
             cellImage = UIImage(named: "noImage")
             
             nameLabel.text = "不明"

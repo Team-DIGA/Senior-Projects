@@ -6,7 +6,7 @@ subscription OnCreateCharacter {
     rarity
     first_met_place
     met_count
-    meet_stauts
+    meet_status
     createdAt
     updatedAt
     _version
@@ -21,7 +21,7 @@ subscription OnUpdateCharacter {
     rarity
     first_met_place
     met_count
-    meet_stauts
+    meet_status
     createdAt
     updatedAt
     _version
@@ -36,7 +36,7 @@ subscription OnDeleteCharacter {
     rarity
     first_met_place
     met_count
-    meet_stauts
+    meet_status
     createdAt
     updatedAt
     _version

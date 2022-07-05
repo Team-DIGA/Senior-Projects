@@ -6,10 +6,10 @@
             "awsAPIPlugin": {
                 "seniorprojects": {
                     "endpointType": "GraphQL",
-                    "endpoint": "https://wotigtsccrchpo2xwsn437ri64.appsync-api.ap-northeast-1.amazonaws.com/graphql",
+                    "endpoint": "https://2p6czkwefzdgte3znujncqbsu4.appsync-api.us-east-1.amazonaws.com/graphql",
                     "region": "ap-northeast-1",
                     "authorizationType": "API_KEY",
-                    "apiKey": "da2-fo4vlyhrwvb5fkczizu6rrhtku"
+                    "apiKey": "da2-x4sxe3hayja3jkzqpftjjrbfvu"
                 }
             }
         }

@@ -278,9 +278,9 @@ extension MapViewController{
             placemarks, error in
             guard let placemark = placemarks?.first, error == nil else {return}
             
-            debugPrint(placemark)
-            debugPrint(placemark.areasOfInterest ?? "nil")
-            debugPrint(placemark.administrativeArea! + placemark.locality! + placemark.name!)
+//            debugPrint(placemark)
+//            debugPrint(placemark.areasOfInterest ?? "nil")
+//            debugPrint(placemark.administrativeArea! + placemark.locality! + placemark.name!)
         }
         
     }
