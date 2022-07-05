@@ -127,17 +127,18 @@ struct DataUtils {
     }
     
     //データ更新
-    func updateData(name: String, place:String) {
+    func updateData(name: String, place:String, met_count_key:Int) {
         getData(name: name)
         updateFriend?.meet_status = true
         updateFriend?.first_met_place = place
+        updateFriend?.met_count += 1
         guard let updateFriend = updateFriend else {
             print("updateFriend is nil...")
             return
         }
         // mutateで新規メッセージを作成
-//        Amplify.API.mutate(request: .updateMutation(of: updateFriend, version: 1)) { event in
-          Amplify.API.mutate(request: .updateMutation(of: updateFriend)) { event in
+        Amplify.API.mutate(request: .updateMutation(of: updateFriend, version: met_count_key+1)) { event in
+//          Amplify.API.mutate(request: .updateMutation(of: updateFriend)) { event in
             switch event {
             case .success(let result):
                 switch result {
