@@ -6,7 +6,7 @@ query GetCharacter($id: ID!) {
     rarity
     first_met_place
     met_count
-    meet_stauts
+    meet_status
     createdAt
     updatedAt
     _version
@@ -26,7 +26,7 @@ query ListCharacters(
       rarity
       first_met_place
       met_count
-      meet_stauts
+      meet_status
       createdAt
       updatedAt
       _version
@@ -55,7 +55,7 @@ query SyncCharacters(
       rarity
       first_met_place
       met_count
-      meet_stauts
+      meet_status
       createdAt
       updatedAt
       _version

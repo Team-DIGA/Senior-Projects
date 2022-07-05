@@ -65,7 +65,7 @@ struct DataUtils {
     }
     
     //名前で絞って1レコード取得
-    func getData(name: String) {
+    func getData(name: String) -> DIGA.Character.CodingKeys.Type {
         let semaphore = DispatchSemaphore(value: 0)
         let char = Character.keys
         Amplify.API.query(request: .list(Character.self, where: char.name == name)) { event in
@@ -89,6 +89,7 @@ struct DataUtils {
             }
         }
         semaphore.wait()
+        return char
     }
     
     //全データ取得
@@ -147,7 +148,7 @@ struct DataUtils {
     //全データ挿入
     func createAllData() -> Void {
         for name in friendArray {
-            let character = Character(name: name, rarity: random(), first_met_place: "no_data", met_count: 0, meet_stauts: false)
+            let character = Character(name: name, rarity: random(), first_met_place: "no_data", met_count: 0, meet_status: false)
             // mutateで新規メッセージを作成
             Amplify.API.mutate(request: .create(character)) { event in
                 switch event {
