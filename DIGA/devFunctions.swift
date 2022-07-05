@@ -26,7 +26,7 @@ let friendArray: [String] = [
     "gokuu",
     "guufyye",
     "hauru",
-    "inoduke",
+    "inosuke",
     "jyian",
     "luffy",
     "mickey",
