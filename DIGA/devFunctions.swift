@@ -3,62 +3,63 @@ import AWSPluginsCore
 import Combine
 
 let friendArray: [String] = [
-    "ana",
-    "anpanman",
-    "arumin",
-    "asitaka",
-    "baikinman",
-    "bejiita",
-    "blook",
-    "bou",
-    "carrepanman",
-    "cheeze",
-    "cririn",
-    "cyopper",
-    "donarud",
-    "doraemon",
-    "dorami",
-    "eluza",
-    "eren",
-    "eriko",
-    "exeid",
-    "flankey",
-    "gokuu",
-    "guufyye",
-    "hauru",
-    "inoduke",
-    "jyian",
-    "luffy",
-    "mickey",
-    "mikasa",
-    "minnie",
-    "nakkuruz",
-    "nami",
-    "nausika",
-    "nezuko",
-    "nobita",
-    "pikkoro",
-    "puyo",
-    "robin",
-    "san",
-    "sanji",
-    "shadow",
-    "sizuka",
-    "sonic",
-    "syokupanman",
-    "tanjiro",
-    "teirus",
-    "titan",
-    "totoro",
-    "usop",
-    "zenitu",
-    "zoro",
-    "coil",
-    "shimabu",
-    "abiru",
-    "anmika",
-    "isaji",
-    "wpeace"
+    "アナ",
+    "アンパンマン",
+    "アルミン",
+    "アシタカ",
+    "バイキンマン",
+    "ベジータ",
+    "ブルック",
+    "坊",
+    "カレーパンマン",
+    "チーズ",
+    "クリリン",
+    "チョッパー",
+    "ドナルド",
+    "ドラえもん",
+    "ドラミ",
+    "エルザ",
+    "エレン",
+    "エリーザ",
+    "エグゼイド",
+    "フランキー",
+    "悟空",
+    "グーフィー",
+    "ハウル",
+    "伊之助",
+    "ジャイアン",
+    "ルフィー",
+    "ミッキー",
+    "ミカサ",
+    "ミニー",
+    "ナックル",
+    "ナミ",
+    "ナウシカ",
+    "禰󠄀豆子",
+    "のび太",
+    "ピッコロ",
+    "ぷよ",
+    "ロビン",
+    "サン",
+    "サンジ",
+    "シャドウ",
+    "静香",
+    "ソニック",
+    "食パンマン",
+    "炭治郎",
+    "テイルズ",
+    "巨人化したエレン",
+    "トロロ",
+    "ウソップ",
+    "善逸",
+    "ゾロ",
+    "コイル",
+    "Shimabu",
+    "Abiru",
+    "アンミカ",
+    "イサージ",
+    "ご機嫌な島袋",
+    "Masashi"
 ]
 
 var gotDataArray: [Character] = []
@@ -127,16 +128,19 @@ struct DataUtils {
     }
     
     //データ更新
-    func updateData(name: String, place:String) {
+    func updateData(name: String, place:String, met_count_key:Int) {
         getData(name: name)
         updateFriend?.meet_status = true
         updateFriend?.first_met_place = place
+        updateFriend?.met_count += 1
         guard let updateFriend = updateFriend else {
             print("updateFriend is nil...")
             return
         }
         // mutateで新規メッセージを作成
-        Amplify.API.mutate(request: .updateMutation(of: updateFriend, version: 1)) { event in
+        print("------",name,"=====",met_count_key)
+        Amplify.API.mutate(request: .updateMutation(of: updateFriend, version: met_count_key+1)) { event in
+//          Amplify.API.mutate(request: .updateMutation(of: updateFriend)) { event in
             switch event {
             case .success(let result):
                 switch result {
