@@ -167,37 +167,37 @@ struct DataUtils {
         }
     }
     
-//    func deleteAllData() -> AnyCancellable  {
-//
-//        getAllData()
-//
-//        for character in gotDataArray {
-//        var char = Character(name: "baikinman", rarity: 2, first_met_place: "", met_count: 0, meet_stauts: false)
-//        print(char)
-//        char.meet_stauts = true
-//        print(char)
-//            // mutateで新規メッセージを作成
-//            let sink = Amplify.API.mutate(request: .update(char))
-//            .resultPublisher
-//            .sink {
-//                print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-//                if case let .failure(error) = $0 {
-//                    print("Got failed event with error \(error)")
-//                } else {
-//                    print("else")
-//                }
-//            }
-//            receiveValue: { result in
-//                switch result {
-//                case .success(let todo):
-//                    print("Successfully created todo: \(todo)")
-//                case .failure(let error):
-//                    print("Got failed result with \(error.errorDescription)")
-//                }
-//                print("??????????????????????")
-//            }
-//        }
-//        return sink
-//    }
+    func deleteAllData() -> AnyCancellable  {
+
+        getAllData()
+
+        for character in gotDataArray {
+        var char = Character(name: "baikinman", rarity: 2, first_met_place: "", met_count: 0, meet_stauts: false)
+        print(char)
+        char.meet_stauts = true
+        print(char)
+            // mutateで新規メッセージを作成
+            let sink = Amplify.API.mutate(request: .update(char))
+            .resultPublisher
+            .sink {
+                print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                if case let .failure(error) = $0 {
+                    print("Got failed event with error \(error)")
+                } else {
+                    print("else")
+                }
+            }
+            receiveValue: { result in
+                switch result {
+                case .success(let todo):
+                    print("Successfully created todo: \(todo)")
+                case .failure(let error):
+                    print("Got failed result with \(error.errorDescription)")
+                }
+                print("??????????????????????")
+            }
+        }
+        return sink
+    }
 
 }

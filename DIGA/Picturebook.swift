@@ -37,7 +37,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
 //                        達成率を更新
                         let maxcount = friendsArray.count
                         let meetArray = friendsArray.filter{
-                            $0.meet_stauts == true
+                            $0.meet_status == true
                         }
                         self.metcount = Double(meetArray.count)
                         var completeRate = 0.0

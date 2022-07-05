@@ -8,9 +8,8 @@
 import UIKit
 import Amplify
 
-
 final class AddFriendsTestViewController: UIViewController {
-
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var rarityTextField: UITextField!
     @IBOutlet weak var firstMetPlaceTextField: UITextField!
