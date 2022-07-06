@@ -151,7 +151,7 @@ class ARViewController: UIViewController {
 //        arView.scene.anchors.append(boxAnchor)
         
         for itemTitle in itemTitles {
-            itemArray.append(UIImage(named: itemTitle)?.resized(size: CGSize(width: 50, height: 50)))
+            itemArray.append(UIImage(named: itemTitle))
         }
         
         uiDesign.buttonDesign(button: addFriendButton)
@@ -216,6 +216,7 @@ class ARViewController: UIViewController {
         let randomItemNum = Int.random(in: 0...itemTitles.count-1)
         let alert = UIAlertController(title: String("\(itemTitles[randomItemNum])を手に入れた！"), message: "", preferredStyle: .alert)
         let imageView = UIImageView(frame: CGRect(x: 10, y: 70, width: 250, height: 250))
+        
         let height = NSLayoutConstraint(item: alert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)
         alert.view.addConstraint(height)
         imageView.image = itemArray[randomItemNum]

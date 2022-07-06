@@ -71,7 +71,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
         
         // 画像配列の番号で指定された要素の名前の画像をUIImageとする
         let cellImage: UIImage?
-        var rareText: String = "レアリティ： "
+        var rareText: String = "  レアリティ　： "
         
         for i in 1...10 {
             if i <= friendsArray[indexPath.row].rarity {
@@ -113,15 +113,20 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
         
         guardColor()
         
-        let newColor = UIColor(red: redFloat + 0.564706, green: greenFloat + 0.30, blue: blueFloat + 0.65, alpha: alphaFloat)
+//        let newColor = UIColor(red: redFloat + 0.564706, green: greenFloat + 0.30, blue: blueFloat + 0.65, alpha: alphaFloat)
+        let newColor = UIColor(red: redFloat, green: greenFloat, blue: blueFloat, alpha: alphaFloat)
         
         cell.backgroundColor = newColor
         
         nameLabel.text = " " + friendsArray[indexPath.row].name
-        nameLabel.textColor = newColor
+//        nameLabel.textColor = newColor
+//        nameLabel.textColor = UIColor(complementaryFlatColorOf: newColor)
+        nameLabel.textColor = UIColor.white
         nameLabel.font = UIFont(name:"Arial-BoldMT", size: 20.0)
         nameLabel.font = nameLabel.font.withSize(19)
-        nameLabel.backgroundColor = UIColor.black
+//        nameLabel.backgroundColor = UIColor.white
+        nameLabel.addBorder(width: 3, color: .gray, position: .bottom)
+        
         
         rareLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
         rareLabel.text = rareText
@@ -147,3 +152,37 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
     
 }
 
+enum BorderPosition {
+    case top, left, right, bottom
+}
+
+extension UIView {
+
+    /// viewに枠線を表示する
+    /// - Parameters:
+    ///   - width: 太さ
+    ///   - color: 色
+    ///   - position: 場所
+    func addBorder(width: CGFloat, color: UIColor, position: BorderPosition) {
+        let border = CALayer()
+
+        switch position {
+        case .top:
+            border.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: width)
+            border.backgroundColor = color.cgColor
+            self.layer.addSublayer(border)
+        case .left:
+            border.frame = CGRect(x: 0, y: 0, width: width, height: self.frame.height)
+            border.backgroundColor = color.cgColor
+            self.layer.addSublayer(border)
+        case .right:
+            border.frame = CGRect(x: self.frame.width - width, y: 0, width: width, height: self.frame.height)
+            border.backgroundColor = color.cgColor
+            self.layer.addSublayer(border)
+        case .bottom:
+            border.frame = CGRect(x: 0, y: self.frame.height - width, width: self.frame.width, height: width)
+            border.backgroundColor = color.cgColor
+            self.layer.addSublayer(border)
+        }
+    }
+}
