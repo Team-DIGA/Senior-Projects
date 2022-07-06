@@ -1012,7 +1012,7 @@
 		0323E03521538AC73A8A5262876BD777 /* AuthCategory+UserBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AuthCategory+UserBehavior.swift"; path = "Amplify/Categories/Auth/AuthCategory+UserBehavior.swift"; sourceTree = "<group>"; };
 		0328EDD99D279C7C507F1E97494B2BB2 /* PredictionsError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PredictionsError.swift; path = Amplify/Categories/Predictions/Error/PredictionsError.swift; sourceTree = "<group>"; };
 		033843D0F5977ED24531B791E413E9F9 /* AuthUpdateUserAttributeRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthUpdateUserAttributeRequest.swift; path = Amplify/Categories/Auth/Request/AuthUpdateUserAttributeRequest.swift; sourceTree = "<group>"; };
-		0383903D05EDD5C442C682C1F7A1752D /* ChameleonFramework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChameleonFramework; path = ChameleonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0383903D05EDD5C442C682C1F7A1752D /* ChameleonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChameleonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0390BB290FA9F1D83212D087486B5C3A /* Selection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Selection.swift; path = Amplify/Categories/Predictions/Models/Selection.swift; sourceTree = "<group>"; };
 		03AF033ED1A84122273CD916E3A3D408 /* DeviceInfoItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeviceInfoItem.swift; path = Amplify/DevMenu/Data/DeviceInfoItem.swift; sourceTree = "<group>"; };
 		03C4B1CF97FCEC98BD6C108DAD15AADE /* AWSSTS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AWSSTS.h; path = AWSCore/STS/AWSSTS.h; sourceTree = "<group>"; };
@@ -1123,7 +1123,7 @@
 		2150B9B6B1E2887AF07DC01D04962541 /* AmplifyAPICategory+APICategory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AmplifyAPICategory+APICategory.swift"; path = "Amplify/Categories/API/AmplifyAPICategory+APICategory.swift"; sourceTree = "<group>"; };
 		218EC30902E4F89C2268E691C75C5E93 /* AuthWebUISignInRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthWebUISignInRequest.swift; path = Amplify/Categories/Auth/Request/AuthWebUISignInRequest.swift; sourceTree = "<group>"; };
 		2248ADFF69406CD326DCB46363641B33 /* PaginationDecorator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaginationDecorator.swift; path = AmplifyPlugins/Core/AWSPluginsCore/Model/Decorator/PaginationDecorator.swift; sourceTree = "<group>"; };
-		2273C48E79B975FE01C517781DDEC1D6 /* Pods-DIGA */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DIGA"; path = Pods_DIGA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2273C48E79B975FE01C517781DDEC1D6 /* Pods_DIGA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22821B35B4BCEAC86F47026642CAAED3 /* DevMenuStringConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DevMenuStringConstants.swift; path = Amplify/DevMenu/DevMenuStringConstants.swift; sourceTree = "<group>"; };
 		228C300277171FB234FBDD015B686D28 /* AWSCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AWSCore.modulemap; sourceTree = "<group>"; };
 		22BBF2D6090577ED3A425F4F51745EF4 /* NSDictionary+AWSMTLManipulationAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+AWSMTLManipulationAdditions.m"; path = "AWSCore/Mantle/NSDictionary+AWSMTLManipulationAdditions.m"; sourceTree = "<group>"; };
@@ -1541,7 +1541,7 @@
 		9CB42B0FD092E732330B24C25E88BDBF /* AgeRange.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AgeRange.swift; path = Amplify/Categories/Predictions/Models/AgeRange.swift; sourceTree = "<group>"; };
 		9D151F2D0F209D910C36B7380C428F7F /* AWSGraphQLOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AWSGraphQLOperation.swift; path = AmplifyPlugins/API/AWSAPICategoryPlugin/Operation/AWSGraphQLOperation.swift; sourceTree = "<group>"; };
 		9D468E1B4B10610004E1524CC92EA240 /* Operation+StoragePublishers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Operation+StoragePublishers.swift"; path = "Amplify/Categories/Storage/Operation/Operation+StoragePublishers.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DA696F5A0636A6737C58CBED1532824 /* ChameleonConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ChameleonConstants.m; path = "Pod/Classes/Objective-C/ChameleonConstants.m"; sourceTree = "<group>"; };
 		9DDE85C4EC395E48CFCAA06B9136CA97 /* StorageDownloadDataOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StorageDownloadDataOperation.swift; path = Amplify/Categories/Storage/Operation/StorageDownloadDataOperation.swift; sourceTree = "<group>"; };
 		9DE4D3985B43E32ACD1208A81A9E5444 /* TranslateTextResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TranslateTextResult.swift; path = Amplify/Categories/Predictions/Result/TranslateTextResult.swift; sourceTree = "<group>"; };
@@ -2435,7 +2435,6 @@
 				5A5103126DF7B43430302E748CCA48C2 /* VoiceType.swift */,
 				02FA80850C4CF300E8698280EF8CC390 /* Support Files */,
 			);
-			name = Amplify;
 			path = Amplify;
 			sourceTree = "<group>";
 		};
@@ -2492,8 +2491,8 @@
 				751A6187D3152BF6DA848D2DC39ECD2A /* AppSyncRealTimeClient */,
 				CCFB8F03867DB892EFC47B53186590C4 /* AWSCore */,
 				BABAB0B403C0FA58F04F9274AB97A470 /* AWSPluginsCore */,
-				0383903D05EDD5C442C682C1F7A1752D /* ChameleonFramework */,
-				2273C48E79B975FE01C517781DDEC1D6 /* Pods-DIGA */,
+				0383903D05EDD5C442C682C1F7A1752D /* ChameleonFramework.framework */,
+				2273C48E79B975FE01C517781DDEC1D6 /* Pods_DIGA.framework */,
 				96877C30E09ADA6958A5359A819DB228 /* Pods-DIGA-DIGAUITests */,
 				D1F30F7820812B7C586E1D4DF3011C42 /* Pods-DIGATests */,
 				891B2270823847ED23F2ECFC28F935EC /* Starscream */,
@@ -2564,7 +2563,6 @@
 				92C92B31E8452545DF01165B542E67E9 /* Support Files */,
 				57D3448DF39A92687DB0CBD227A82031 /* Swift */,
 			);
-			name = ChameleonFramework;
 			path = ChameleonFramework;
 			sourceTree = "<group>";
 		};
@@ -2643,7 +2641,6 @@
 				F44624618D3143F85BF270E7CA8F3118 /* TaskQueue.swift */,
 				98C83ADD7CECA56C09AF1991857419CE /* Support Files */,
 			);
-			name = AppSyncRealTimeClient;
 			path = AppSyncRealTimeClient;
 			sourceTree = "<group>";
 		};
@@ -2672,7 +2669,6 @@
 				77A83905F827819ACD9E0691AA021B95 /* WSEngine.swift */,
 				26DB3D1E47E01BBC8C3D629F97887438 /* Support Files */,
 			);
-			name = Starscream;
 			path = Starscream;
 			sourceTree = "<group>";
 		};
@@ -2838,7 +2834,6 @@
 				15F3B7F1FB758EAB9B44FB498D5C98B0 /* NSValueTransformer+AWSMTLPredefinedTransformerAdditions.m */,
 				F9180F3D229D1C4D59FFEABCEDCB04A9 /* Support Files */,
 			);
-			name = AWSCore;
 			path = AWSCore;
 			sourceTree = "<group>";
 		};
@@ -2878,7 +2873,6 @@
 				E8FE8ACBDD6FF4DE3998C73AA7C6FFD6 /* AWSAPIPlugin */,
 				F1E4392DFFD3C9D18A3DE6283A3E5775 /* Support Files */,
 			);
-			name = AmplifyPlugins;
 			path = AmplifyPlugins;
 			sourceTree = "<group>";
 		};
@@ -3087,7 +3081,6 @@
 				A9E495D85EBC91F4D3EAD96F1862ACF9 /* SingleDirectiveGraphQLDocument.swift */,
 				629B274011EB98815366FAE04920B017 /* Support Files */,
 			);
-			name = AWSPluginsCore;
 			path = AWSPluginsCore;
 			sourceTree = "<group>";
 		};
@@ -3368,7 +3361,7 @@
 			);
 			name = ChameleonFramework;
 			productName = ChameleonFramework;
-			productReference = 0383903D05EDD5C442C682C1F7A1752D /* ChameleonFramework */;
+			productReference = 0383903D05EDD5C442C682C1F7A1752D /* ChameleonFramework.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7EB99089F636301B8DA4D71378C37014 /* Pods-DIGATests */ = {
@@ -3469,7 +3462,7 @@
 			);
 			name = "Pods-DIGA";
 			productName = Pods_DIGA;
-			productReference = 2273C48E79B975FE01C517781DDEC1D6 /* Pods-DIGA */;
+			productReference = 2273C48E79B975FE01C517781DDEC1D6 /* Pods_DIGA.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		CA272F3BABD58C268E586A1C13E03BF9 /* Pods-DIGA-DIGAUITests */ = {
