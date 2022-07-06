@@ -181,16 +181,15 @@ extension MapViewController{
 extension MapViewController{
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
         tapLatitude = view.annotation?.coordinate.latitude
         tapLongitude = view.annotation?.coordinate.longitude
         targetTitle = (view.annotation?.title)!
         targetCharacterImage = view.image
         targetRemoveAnnotaion = view.annotation
         targetRarity = Int((view.annotation?.subtitle)!!)
-//        reverseGeoCording()
         
         let location = CLLocation(latitude: tapLatitude!, longitude: tapLongitude!)
-        
         CLGeocoder().reverseGeocodeLocation(location){
             placemarks, error in
             guard let placemark = placemarks?.first, error == nil
@@ -203,8 +202,19 @@ extension MapViewController{
             debugPrint("placeMark=============: \(placemark)")
             debugPrint("placeMark.name=============: \(placemark.name)")
             self.targetPlace = placemark.name!
-//            self.targetPlace = "宇宙"
         }
+//        print("async check 1=================================")
+//        let semaphore = DispatchSemaphore(value: 0)
+//        reverseGeoCording(latitude: tapLatitude, longitude: tapLongitude) {
+//            postalCode in
+//            if let postalCode = postalCode {
+//                print("postalCode : \(postalCode)")
+//                self.targetPlace = postalCode
+//                semaphore.signal()
+//            }
+//        }
+//        semaphore.wait()
+//        print("async check 4=================================")
         
         // ピンの情報削除
         self.mapView.removeAnnotation(view.annotation!)
@@ -214,13 +224,16 @@ extension MapViewController{
             return
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
-        self.performSegue(withIdentifier: "toARView", sender: self)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+            self.performSegue(withIdentifier: "toARView", sender: self)
         }
+        
     }
     
 //    func reverseGeoCording(){
 //        let location = CLLocation(latitude: tapLatitude!, longitude: tapLongitude!)
+//        let semaphore = DispatchSemaphore(value: 0)
+//        print("async check 2=================================")
 //
 //        CLGeocoder().reverseGeocodeLocation(location){
 //            placemarks, error in
@@ -229,14 +242,25 @@ extension MapViewController{
 ////            guard let placemark = test, error == nil
 //            else {
 //                debugPrint("placeMark============= :  地上です")
+//                semaphore.signal()
 //                return self.targetPlace = "地上"
 //            }
 //            debugPrint("placeMark=============: \(placemark)")
 //            debugPrint("placeMark.name=============: \(placemark.name)")
 //            self.targetPlace = placemark.name!
-////            self.targetPlace = "宇宙"
+//            semaphore.signal()
 //        }
+//        semaphore.wait()
+//    }
+//    func reverseGeoCording(latitude: CLLocationDegrees, longitude: CLLocationDegrees, compltion: ((String?) -> Void)?){
+//        let location = CLLocation(latitude: latitude, longitude: longitude)
+//        print("async check 2=================================")
 //
+//        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
+//            let place = placemarks?.first
+//            compltion?(place?.name)
+//        })
+//        debugPrint("async check 3=================================")
 //    }
 
 }
