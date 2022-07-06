@@ -28,5 +28,10 @@
     "libraryIdentifier" : "281545288cd3e33c2f14396dbbae75d4",
     "format" : "model",
     "displayName" : "toy_robot_vintage.usdz"
+  },
+  {
+    "libraryIdentifier" : "401fb33a4f085b4f80e4e57626a6965e",
+    "format" : "model",
+    "displayName" : "coil.usdz"
   }
 ]
