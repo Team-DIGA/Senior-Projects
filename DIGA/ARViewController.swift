@@ -99,7 +99,7 @@ class ARViewController: UIViewController {
             dataUtils.updateData(name: characterTitle, place: characterPlace, met_count_key:metCount)
             alertFunc(title: "\(characterTitle!)は\n仲間になった！", message: "",addFlag:true)
         } else {
-            alertFunc(title: "\( characterTitle!)は\n去っていった！", message: "",addFlag:false)
+            alertFunc(title: "\(characterTitle!)は\n去っていった！", message: "",addFlag:false)
         }
     }
     
