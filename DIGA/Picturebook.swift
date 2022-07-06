@@ -130,12 +130,15 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
         
         rareLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
         rareLabel.text = rareText
+        rareLabel.textColor = UIColor.white
         
         placeLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
         placeLabel.text = "  出会った場所： \(friendsArray[indexPath.row].first_met_place)"
+        placeLabel.textColor = UIColor.white
         
         countLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
         countLabel.text = "  出会った回数： \(friendsArray[indexPath.row].met_count)"
+        countLabel.textColor = UIColor.white
 
         imageView.image = cellImage
         
