@@ -126,11 +126,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         mapView.region = region
         mapView.delegate = self
         //表示するキャラの数
-        let numChara = Int.random(in:5...7)
+        let numChara = Int.random(in:7...10)
         var countChara = 0
         for i in 0..<self.pinTitles.count - 1 {
             //表示するキャラの選択
-            let selectChara = Int.random(in: 1...raritiesArray[i] + 2)
+            let selectChara = Int.random(in: 1...raritiesArray[i] + 1)
             if selectChara == 1 && countChara < numChara {
                 appendMap(i: i, countChara: countChara, numChara: numChara)
                 countChara += 1
@@ -254,11 +254,11 @@ extension MapViewController{
                 mapView.region = region
                 mapView.delegate = self
                 //表示するキャラの数
-                let numChara = Int.random(in:5...7)
+                let numChara = Int.random(in:7...10)
                 var countChara = 0
                 for i in 0..<self.pinTitles.count - 1 {
                     //表示するキャラの選択
-                    let selectChara = Int.random(in: 1...5)
+                    let selectChara = Int.random(in: 1...raritiesArray[i] + 1)
                     if selectChara == 1 && countChara < numChara {
                         appendMap(i: i, countChara: countChara, numChara: numChara)
                         countChara += 1
