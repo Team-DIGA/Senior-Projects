@@ -318,8 +318,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="53x-zN-q86"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="DIGA GO"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="DIGA GO"/>
                                 <connections>
                                     <segue destination="vDF-6D-jcR" kind="show" id="Q3R-DT-ujN"/>
                                 </connections>
