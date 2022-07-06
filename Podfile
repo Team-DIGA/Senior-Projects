@@ -8,6 +8,7 @@ target 'DIGA' do
   # Pods for DIGA
   pod 'Amplify'
   pod 'AmplifyPlugins/AWSAPIPlugin'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 
   target 'DIGATests' do
     inherit! :search_paths

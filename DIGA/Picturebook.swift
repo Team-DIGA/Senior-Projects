@@ -2,10 +2,11 @@ import UIKit
 import MapKit
 import CoreLocation
 import Amplify
+import ChameleonFramework
 
 var friendsArray: [Character] = []
 
-class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
 //    @IBOutlet weak var nameLabel: UILabel!
@@ -15,7 +16,8 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        tableView.delegate = self
+        tableView.dataSource = self
         self.fetchMessage()
     }
     
@@ -28,8 +30,6 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 switch result {
                 case .success(let friend):
                     friendsArray = friend
-                    print("====================================================")
-                    print("friendsArray : \(friendsArray)")
                     
                     DispatchQueue.main.async {
                         // tableViewを更新
@@ -71,30 +71,69 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         // 画像配列の番号で指定された要素の名前の画像をUIImageとする
         let cellImage: UIImage?
-        let rareText: String?
+        var rareText: String = "レアリティ： "
+        
+        for i in 1...10 {
+            if i <= friendsArray[indexPath.row].rarity {
+                rareText += "★"
+            } else {
+                rareText += "☆"
+            }
+        }
+        
         if friendsArray[indexPath.row].meet_status == false {
             cellImage = UIImage(named: "noImage")
-            
-            nameLabel.text = "不明"
-            nameLabel.textColor = UIColor.black
-            nameLabel.font = nameLabel.font.withSize(12)
-            
-            rareText = "レアリティ： 不明"
         } else {
             cellImage = UIImage(named: friendsArray[indexPath.row].name)
-            
-            nameLabel.text = friendsArray[indexPath.row].name
-            
-            rareText = "レアリティ： \(friendsArray[indexPath.row].rarity)"
-            nameLabel.textColor = UIColor.orange
-            nameLabel.font = nameLabel.font.withSize(19)
-            
         }
-        // UIImageをUIImageViewのimageとして設定
-        imageView.image = cellImage
+        
+        let color = UIColor(averageColorFrom: cellImage!)
+        let array: [String] = color.description.components(separatedBy: " ")
+        let redNum = NumberFormatter().number(from: array[1])
+        let greenNum = NumberFormatter().number(from: array[2])
+        let blueNum = NumberFormatter().number(from: array[3])
+        let redAlphaNum = NumberFormatter().number(from: array[4])
+        
+        var redFloat: CGFloat = 0.0
+        var greenFloat: CGFloat = 0.0
+        var blueFloat: CGFloat = 0.0
+        var alphaFloat: CGFloat = 0.0
+        
+        func guardColor() {
+            guard let red = redNum else { return }
+            guard let blue = blueNum else { return }
+            guard let green = greenNum else { return }
+            guard let alpha = redAlphaNum else { return }
+            
+            redFloat = CGFloat(truncating: red)
+            blueFloat = CGFloat(truncating: blue)
+            greenFloat = CGFloat(truncating: green)
+            alphaFloat = CGFloat(truncating: alpha)
+        }
+        
+        guardColor()
+        
+        let newColor = UIColor(red: redFloat + 0.564706, green: greenFloat + 0.30, blue: blueFloat + 0.65, alpha: alphaFloat)
+        
+        cell.backgroundColor = newColor
+        
+        nameLabel.text = " " + friendsArray[indexPath.row].name
+        nameLabel.textColor = newColor
+        nameLabel.font = UIFont(name:"Arial-BoldMT", size: 20.0)
+        nameLabel.font = nameLabel.font.withSize(19)
+        nameLabel.backgroundColor = UIColor.black
+        
+        rareLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
         rareLabel.text = rareText
-        placeLabel.text = "出会った場所： \(friendsArray[indexPath.row].first_met_place)"
-        countLabel.text = "出会った回数： \(friendsArray[indexPath.row].met_count)"
+        
+        placeLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
+        placeLabel.text = "  出会った場所： \(friendsArray[indexPath.row].first_met_place)"
+        
+        countLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
+        countLabel.text = "  出会った回数： \(friendsArray[indexPath.row].met_count)"
+
+        imageView.image = cellImage
+        
         return cell
     }
     
@@ -102,4 +141,9 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
         return 110
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }
+

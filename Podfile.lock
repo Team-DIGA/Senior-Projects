@@ -12,11 +12,15 @@ PODS:
   - AWSPluginsCore (1.26.2):
     - Amplify (= 1.26.2)
     - AWSCore (~> 2.27.0)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - Starscream (4.0.4)
 
 DEPENDENCIES:
   - Amplify
   - AmplifyPlugins/AWSAPIPlugin
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
 
 SPEC REPOS:
   trunk:
@@ -27,14 +31,24 @@ SPEC REPOS:
     - AWSPluginsCore
     - Starscream
 
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
 SPEC CHECKSUMS:
   Amplify: a4747a22276b4994cfdb29ea8cdbe6eed7964e9f
   AmplifyPlugins: c5af5605be693b8c21afa5e69a8f787f02f55165
   AppSyncRealTimeClient: 656ab4215e05f6ca47fe6d8c73f416d9984a8aac
   AWSCore: dbad318b7ff0fd86fb8387d3ad1f30049c05bc58
   AWSPluginsCore: a75501823aa5599a63570a750389073f47dd16bc
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: badbff49a667acc230f15ae287ec6ea90e14c14d
+PODFILE CHECKSUM: ed64fcf485025de67902e7850c99d037a1e0c771
 
 COCOAPODS: 1.11.3
