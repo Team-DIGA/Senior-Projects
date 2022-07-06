@@ -42,6 +42,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var targetCharacterImage: UIImage?
     var targetRarity: Int?
     var targetPlace: String?
+    var targetMetCount: Int?
     let hokkaidoLatitude = 43.344778
     let hokkaidoLongitude = 142.382944
     let okinawaLatitude = 26.451614
@@ -63,6 +64,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var pinTitles:[String] = []
     var raritiesObj:[String:Int] = [:]
     var raritiesArray:[Int] = []
+    var metCountObj:[String:Int] = [:]
     
     func getAllNamesAndImages() {
         let semaphore = DispatchSemaphore(value: 0)
@@ -79,6 +81,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                         self.pinTitles.append(friend.name)
                         self.pinImages.append(UIImage(named: friend.name)?.resized(size:CGSize(width: 50, height: 50)))
                         self.raritiesObj[friend.name] = friend.rarity
+                        self.metCountObj[friend.name] = friend.met_count
                         self.raritiesArray.append(friend.rarity)
                     }
                     
@@ -203,8 +206,7 @@ extension MapViewController{
         
         CLGeocoder().reverseGeocodeLocation(location){
             placemarks, error in
-            guard let placemark = placemarks?.first,
-                  let _ = error
+            guard let placemark = placemarks?.first, error == nil
             else {
                 return self.targetPlace = "地上"
             }
@@ -226,6 +228,7 @@ extension MapViewController{
             nextView.characterRerity = targetRarity
             nextView.characterPlace = targetPlace
             nextView.characterTitle = targetTitle
+            nextView.characterMetObj = metCountObj
 //            nextView.removeAnnotaion = targetRemoveAnnotaion
 //            nextView.removeMap = mapView
         }
