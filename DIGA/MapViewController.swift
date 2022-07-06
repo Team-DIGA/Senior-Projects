@@ -128,7 +128,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         //表示するキャラの数
         let numChara = Int.random(in:7...10)
         var countChara = 0
-        for i in 0..<self.pinTitles.count - 1 {
+        for i in 0..<self.pinTitles.count {
             //表示するキャラの選択
             let selectChara = Int.random(in: 1...raritiesArray[i] + 1)
             if selectChara == 1 && countChara < numChara {
@@ -187,7 +187,33 @@ extension MapViewController{
         targetCharacterImage = view.image
         targetRemoveAnnotaion = view.annotation
         targetRarity = Int((view.annotation?.subtitle)!!)
-        reverseGeoCording()
+        
+//        let location = CLLocation(latitude: tapLatitude!, longitude: tapLongitude!)
+        
+        print("11111")
+        reverseGeoCording(latitude: tapLatitude!, longitude: tapLongitude!){ name in
+            if let name = name {
+                print("44444")
+                print(name)
+                self.targetPlace = name
+                print(self.targetPlace ?? "Hello")
+            }
+        }
+        print("55555")
+        
+        
+//        CLGeocoder().reverseGeocodeLocation(location){
+//            placemarks, error in
+//            guard let placemark = placemarks?.first, error == nil
+//            else {
+//                debugPrint("placeMark============= :  地上です")
+//                return self.targetPlace = "地上"
+//            }
+//            debugPrint("placeMark=============: \(placemark)")
+//            debugPrint("placeMark.name=============: \(placemark.name)")
+//            self.targetPlace = placemark.name!
+//        }
+        
         // ピンの情報削除
         self.mapView.removeAnnotation(view.annotation!)
         
@@ -201,20 +227,17 @@ extension MapViewController{
         }
     }
     
-    func reverseGeoCording(){
-        let location = CLLocation(latitude: tapLatitude!, longitude: tapLongitude!)
-        
-        CLGeocoder().reverseGeocodeLocation(location){
-            placemarks, error in
-            guard let placemark = placemarks?.first, error == nil
-            else {
-                return self.targetPlace = "地上"
-            }
-            self.targetPlace = placemark.name!
-        }
-        
+    func reverseGeoCording(latitude: CLLocationDegrees,longitude: CLLocationDegrees,completion: ((String?) -> Void)?) {
+        print("22222")
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error)-> Void in
+            let place = placemarks?.first
+            completion?(place?.name)
+        })
+        print("33333")
     }
-
+    
+    
 }
 
 
@@ -225,12 +248,13 @@ extension MapViewController{
         if segue.identifier == "toARView" {
             let nextView = segue.destination as! ARViewController
             nextView.characterImage = targetCharacterImage
-            nextView.characterRerity = targetRarity
+            nextView.characterRarity = targetRarity
             nextView.characterPlace = targetPlace
             nextView.characterTitle = targetTitle
             nextView.characterMetObj = metCountObj
 //            nextView.removeAnnotaion = targetRemoveAnnotaion
 //            nextView.removeMap = mapView
+            print(targetPlace ?? "Hello")
         }
     }
 
@@ -256,7 +280,7 @@ extension MapViewController{
                 //表示するキャラの数
                 let numChara = Int.random(in:7...10)
                 var countChara = 0
-                for i in 0..<self.pinTitles.count - 1 {
+                for i in 0..<self.pinTitles.count {
                     //表示するキャラの選択
                     let selectChara = Int.random(in: 1...raritiesArray[i] + 1)
                     if selectChara == 1 && countChara < numChara {

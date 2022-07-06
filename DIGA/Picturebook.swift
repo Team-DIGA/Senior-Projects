@@ -2,10 +2,11 @@ import UIKit
 import MapKit
 import CoreLocation
 import Amplify
+import ChameleonFramework
 
 var friendsArray: [Character] = []
 
-class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
 //    @IBOutlet weak var nameLabel: UILabel!
@@ -15,7 +16,8 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        tableView.delegate = self
+        tableView.dataSource = self
         self.fetchMessage()
     }
     
@@ -28,8 +30,6 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 switch result {
                 case .success(let friend):
                     friendsArray = friend
-                    print("====================================================")
-                    print("friendsArray : \(friendsArray)")
                     
                     DispatchQueue.main.async {
                         // tableViewを更新
@@ -71,30 +71,74 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         // 画像配列の番号で指定された要素の名前の画像をUIImageとする
         let cellImage: UIImage?
-        let rareText: String?
+        var rareText: String = "  レアリティ　： "
+        
+        for i in 1...10 {
+            if i <= friendsArray[indexPath.row].rarity {
+                rareText += "★"
+            } else {
+                rareText += "☆"
+            }
+        }
+        
         if friendsArray[indexPath.row].meet_status == false {
             cellImage = UIImage(named: "noImage")
-            
-            nameLabel.text = "不明"
-            nameLabel.textColor = UIColor.black
-            nameLabel.font = nameLabel.font.withSize(12)
-            
-            rareText = "レアリティ： 不明"
         } else {
             cellImage = UIImage(named: friendsArray[indexPath.row].name)
-            
-            nameLabel.text = friendsArray[indexPath.row].name
-            
-            rareText = "レアリティ： \(friendsArray[indexPath.row].rarity)"
-            nameLabel.textColor = UIColor.orange
-            nameLabel.font = nameLabel.font.withSize(19)
-            
         }
-        // UIImageをUIImageViewのimageとして設定
-        imageView.image = cellImage
+        
+        let color = UIColor(averageColorFrom: cellImage!)
+        let array: [String] = color.description.components(separatedBy: " ")
+        let redNum = NumberFormatter().number(from: array[1])
+        let greenNum = NumberFormatter().number(from: array[2])
+        let blueNum = NumberFormatter().number(from: array[3])
+        let redAlphaNum = NumberFormatter().number(from: array[4])
+        
+        var redFloat: CGFloat = 0.0
+        var greenFloat: CGFloat = 0.0
+        var blueFloat: CGFloat = 0.0
+        var alphaFloat: CGFloat = 0.0
+        
+        func guardColor() {
+            guard let red = redNum else { return }
+            guard let blue = blueNum else { return }
+            guard let green = greenNum else { return }
+            guard let alpha = redAlphaNum else { return }
+            
+            redFloat = CGFloat(truncating: red)
+            blueFloat = CGFloat(truncating: blue)
+            greenFloat = CGFloat(truncating: green)
+            alphaFloat = CGFloat(truncating: alpha)
+        }
+        
+        guardColor()
+        
+//        let newColor = UIColor(red: redFloat + 0.564706, green: greenFloat + 0.30, blue: blueFloat + 0.65, alpha: alphaFloat)
+        let newColor = UIColor(red: redFloat, green: greenFloat, blue: blueFloat, alpha: alphaFloat)
+        
+        cell.backgroundColor = newColor
+        
+        nameLabel.text = " " + friendsArray[indexPath.row].name
+//        nameLabel.textColor = newColor
+//        nameLabel.textColor = UIColor(complementaryFlatColorOf: newColor)
+        nameLabel.textColor = UIColor.white
+        nameLabel.font = UIFont(name:"Arial-BoldMT", size: 20.0)
+        nameLabel.font = nameLabel.font.withSize(19)
+//        nameLabel.backgroundColor = UIColor.white
+        nameLabel.addBorder(width: 3, color: .gray, position: .bottom)
+        
+        
+        rareLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
         rareLabel.text = rareText
-        placeLabel.text = "出会った場所： \(friendsArray[indexPath.row].first_met_place)"
-        countLabel.text = "出会った回数： \(friendsArray[indexPath.row].met_count)"
+        
+        placeLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
+        placeLabel.text = "  出会った場所： \(friendsArray[indexPath.row].first_met_place)"
+        
+        countLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
+        countLabel.text = "  出会った回数： \(friendsArray[indexPath.row].met_count)"
+
+        imageView.image = cellImage
+        
         return cell
     }
     
@@ -102,4 +146,43 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource 
         return 110
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+}
+
+enum BorderPosition {
+    case top, left, right, bottom
+}
+
+extension UIView {
+
+    /// viewに枠線を表示する
+    /// - Parameters:
+    ///   - width: 太さ
+    ///   - color: 色
+    ///   - position: 場所
+    func addBorder(width: CGFloat, color: UIColor, position: BorderPosition) {
+        let border = CALayer()
+
+        switch position {
+        case .top:
+            border.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: width)
+            border.backgroundColor = color.cgColor
+            self.layer.addSublayer(border)
+        case .left:
+            border.frame = CGRect(x: 0, y: 0, width: width, height: self.frame.height)
+            border.backgroundColor = color.cgColor
+            self.layer.addSublayer(border)
+        case .right:
+            border.frame = CGRect(x: self.frame.width - width, y: 0, width: width, height: self.frame.height)
+            border.backgroundColor = color.cgColor
+            self.layer.addSublayer(border)
+        case .bottom:
+            border.frame = CGRect(x: 0, y: self.frame.height - width, width: self.frame.width, height: width)
+            border.backgroundColor = color.cgColor
+            self.layer.addSublayer(border)
+        }
+    }
 }

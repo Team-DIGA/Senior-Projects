@@ -20,12 +20,14 @@ class ARViewController: UIViewController {
     var imageValue: String!
     var characterImage: UIImage?
 
-    var characterRerity: Int!
+    var characterRarity: Int!
     var characterPlace: String!
     var characterTitle: String!
     var characterMetObj: [String:Int] = [:]
     
     let testUtiols = testStruct()
+    
+    let uiDesign = UiDesign()
     
     let dataUtils = DataUtils()
     let textArray: [String] = [
@@ -43,23 +45,10 @@ class ARViewController: UIViewController {
         "新しい顔を投げつける",
         "pufpufする"
     ]
-
     
-    let itemArray:[UIImage?] = [
-        UIImage(named: "アンパンマンの顔")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "エリクサー")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "ゴムゴムの実")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "スカウター")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "タケコプター")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "どこでもドア")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "ポーション")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "メラメラの実")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "胡蝶しのぶの日輪刀")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "仙豆")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "立体機動装置")?.resized(size:CGSize(width: 50, height: 50)),
-        UIImage(named: "煉獄杏寿郎の日輪刀")?.resized(size:CGSize(width: 50, height: 50)),
-    ]
-    let itemTitle:[String] = [
+    var itemArray:[UIImage?] = []
+    
+    let itemTitles:[String] = [
         "アンパンマンの顔",
         "エリクサー",
         "ゴムゴムの実",
@@ -78,6 +67,9 @@ class ARViewController: UIViewController {
     
     @IBOutlet weak var addFriendButton: UIButton!
     @IBOutlet weak var addFriendButton2: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var rarityLabel: UILabel!
+    @IBOutlet weak var metCountLabel: UILabel!
     
     @IBAction func AddFriend2(_ sender: UIButton) {
         addOrEscape()
@@ -90,6 +82,7 @@ class ARViewController: UIViewController {
     
     func addOrEscape(){
         let randomNum = Int.random(in: 1...1)
+        print(characterPlace ?? "Hello")
         if randomNum == 1 {
             guard let metCount = characterMetObj[characterTitle] else {
                 print("metCountError")
@@ -108,6 +101,9 @@ class ARViewController: UIViewController {
         view.addSubview(arView)
         view.bringSubviewToFront(addFriendButton)
         view.bringSubviewToFront(addFriendButton2)
+        view.bringSubviewToFront(nameLabel)
+        view.bringSubviewToFront(rarityLabel)
+        view.bringSubviewToFront(metCountLabel)
         if characterTitle! == "コイル" {
             let anchor = AnchorEntity()
             anchor.position = simd_make_float3(0, -0.1, -8)
@@ -132,9 +128,36 @@ class ARViewController: UIViewController {
         let text2 = textArray[Int.random(in: 0...textArray.count - 1)]
         addFriendButton.setTitle(text1, for: .normal)
         addFriendButton2.setTitle(text2, for: .normal)
+        nameLabel.text = characterTitle
+        nameLabel.font = UIFont(name:"Arial-BoldMT", size: 30.0)
+        
+        var rareText: String = ""
+        
+        for i in 1...10 {
+            if i <= characterRarity {
+                rareText += "★"
+            } else {
+                rareText += "☆"
+            }
+        }
+        
+        rarityLabel.text = rareText
+        rarityLabel.font = UIFont(name:"Arial-BoldMT", size: 20.0)
+        
+        guard let characterMetCount = characterMetObj[characterTitle] else { return }
+        metCountLabel.text = "出会った回数： \(characterMetCount)"
+        metCountLabel.font = UIFont(name:"Arial-BoldMT", size: 20.0)
         
 //        let boxAnchor = try! Experience.loadBox()
 //        arView.scene.anchors.append(boxAnchor)
+        
+        for itemTitle in itemTitles {
+            itemArray.append(UIImage(named: itemTitle))
+        }
+        
+        uiDesign.buttonDesign(button: addFriendButton)
+        uiDesign.buttonDesign(button: addFriendButton2)
+        
     }
     
     func createObjImage() {
@@ -191,9 +214,10 @@ class ARViewController: UIViewController {
     
     
     func alertFunc2(){
-        let randomItemNum = Int.random(in: 0...itemTitle.count-1)
-        let alert = UIAlertController(title: String("\(itemTitle[randomItemNum])を手に入れた！"), message: "", preferredStyle: .alert)
+        let randomItemNum = Int.random(in: 0...itemTitles.count-1)
+        let alert = UIAlertController(title: String("\(itemTitles[randomItemNum])を手に入れた！"), message: "", preferredStyle: .alert)
         let imageView = UIImageView(frame: CGRect(x: 10, y: 70, width: 250, height: 250))
+        
         let height = NSLayoutConstraint(item: alert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)
         alert.view.addConstraint(height)
         imageView.image = itemArray[randomItemNum]

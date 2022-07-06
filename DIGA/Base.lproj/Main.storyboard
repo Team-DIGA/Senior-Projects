@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Sb-Na-WGP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Sb-Na-WGP">
                                 <rect key="frame" x="0.0" y="129.5" width="414" height="766.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -46,19 +46,19 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="レアリティ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZP-b7-iWI">
                                                             <rect key="frame" x="0.0" y="97.5" width="304" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出会った場所：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVz-P9-yw5">
                                                             <rect key="frame" x="0.0" y="186.5" width="304" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出会った回数：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tu-1P-3Ys">
                                                             <rect key="frame" x="0.0" y="275.5" width="304" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -112,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ImN-Bk-bPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-878.26086956521749" y="543.75"/>
+            <point key="canvasLocation" x="-812" y="544"/>
         </scene>
         <!--Add Friends Test View Controller-->
         <scene sceneID="Iwe-yv-mqh">
@@ -196,6 +196,7 @@
                                     <constraint firstAttribute="width" constant="200" id="8nL-nB-03F"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
+                                <size key="titleShadowOffset" width="10" height="10"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add Friends"/>
                                 <connections>
@@ -304,22 +305,32 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHh-fE-aQo">
                                 <rect key="frame" x="100" y="720" width="214" height="46"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="od4-Vm-TVb"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Show Friends"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Show Friends">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="MlP-QX-Ik5" kind="show" id="G19-3u-FYO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPp-1T-vaF">
                                 <rect key="frame" x="100" y="634" width="214" height="46"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="53x-zN-q86"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="DIGA GO"/>
+                                <size key="titleShadowOffset" width="10" height="10"/>
+                                <state key="normal" title="DIGA GO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="vDF-6D-jcR" kind="show" id="Q3R-DT-ujN"/>
                                 </connections>
@@ -378,6 +389,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q27-3l-3nf"/>
+                    <connections>
+                        <outlet property="digaGoButton" destination="MPp-1T-vaF" id="kJX-QD-8Rc"/>
+                        <outlet property="showFriendsButton" destination="DHh-fE-aQo" id="UI2-Kl-eAG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WBj-3L-lEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -427,40 +442,82 @@
                             </arView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKc-ye-FNg">
                                 <rect key="frame" x="70" y="790" width="274" height="52"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="j5L-3W-dQj"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="食べ物をあげる"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="食べ物をあげる">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="AddFriend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ep9-yX-yH3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNR-KE-YIi">
                                 <rect key="frame" x="70" y="718" width="274" height="52"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="Ffq-dc-aJj"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="お金をあげる"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="お金をあげる">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="AddFriend2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3DO-eq-lBx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkK-8Z-hvQ">
+                                <rect key="frame" x="10" y="98" width="394" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6oV-dD-OD5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw6-Nt-uPR">
+                                <rect key="frame" x="10" y="128" width="394" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BmW-4v-idT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrO-Fy-OtP">
+                                <rect key="frame" x="10" y="158" width="394" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="uKi-ym-Aeb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lhl-Wk-i5D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DcP-nT-fKB" firstAttribute="top" secondItem="Lhl-Wk-i5D" secondAttribute="top" id="2Sm-0W-fvh"/>
                             <constraint firstItem="gKc-ye-FNg" firstAttribute="leading" secondItem="Lhl-Wk-i5D" secondAttribute="leading" constant="70" id="5nm-KB-CQM"/>
+                            <constraint firstItem="qkK-8Z-hvQ" firstAttribute="top" secondItem="Lhl-Wk-i5D" secondAttribute="top" constant="10" id="F3N-AN-w8s"/>
                             <constraint firstAttribute="bottom" secondItem="DcP-nT-fKB" secondAttribute="bottom" id="GVR-kF-d46"/>
+                            <constraint firstItem="Mw6-Nt-uPR" firstAttribute="top" secondItem="qkK-8Z-hvQ" secondAttribute="bottom" id="K6e-zb-bWk"/>
                             <constraint firstItem="DcP-nT-fKB" firstAttribute="trailing" secondItem="Lhl-Wk-i5D" secondAttribute="trailing" id="MPQ-x6-1gw"/>
                             <constraint firstItem="DcP-nT-fKB" firstAttribute="leading" secondItem="Lhl-Wk-i5D" secondAttribute="leading" id="Tbx-S9-jaf"/>
+                            <constraint firstItem="Mw6-Nt-uPR" firstAttribute="leading" secondItem="Lhl-Wk-i5D" secondAttribute="leading" constant="10" id="e1u-bs-gGw"/>
+                            <constraint firstItem="Lhl-Wk-i5D" firstAttribute="trailing" secondItem="qkK-8Z-hvQ" secondAttribute="trailing" constant="10" id="hPT-di-Ijg"/>
                             <constraint firstItem="iNR-KE-YIi" firstAttribute="centerX" secondItem="omW-2h-TFi" secondAttribute="centerX" id="lWu-G6-d0G"/>
                             <constraint firstItem="Lhl-Wk-i5D" firstAttribute="trailing" secondItem="gKc-ye-FNg" secondAttribute="trailing" constant="70" id="muD-FF-E41"/>
                             <constraint firstItem="gKc-ye-FNg" firstAttribute="top" secondItem="iNR-KE-YIi" secondAttribute="bottom" constant="20" id="muh-fZ-1gs"/>
                             <constraint firstItem="Lhl-Wk-i5D" firstAttribute="trailing" secondItem="iNR-KE-YIi" secondAttribute="trailing" constant="70" id="n2m-O7-YIg"/>
+                            <constraint firstItem="YrO-Fy-OtP" firstAttribute="top" secondItem="Mw6-Nt-uPR" secondAttribute="bottom" id="nYB-EF-Ctc"/>
+                            <constraint firstItem="Lhl-Wk-i5D" firstAttribute="trailing" secondItem="YrO-Fy-OtP" secondAttribute="trailing" constant="10" id="qSr-Js-S3W"/>
+                            <constraint firstItem="qkK-8Z-hvQ" firstAttribute="leading" secondItem="Lhl-Wk-i5D" secondAttribute="leading" constant="10" id="r6E-mr-N9f"/>
+                            <constraint firstItem="Lhl-Wk-i5D" firstAttribute="trailing" secondItem="Mw6-Nt-uPR" secondAttribute="trailing" constant="10" id="rwL-VP-WbL"/>
                             <constraint firstItem="Lhl-Wk-i5D" firstAttribute="bottom" secondItem="gKc-ye-FNg" secondAttribute="bottom" constant="20" id="u8k-5X-2PL"/>
+                            <constraint firstItem="YrO-Fy-OtP" firstAttribute="leading" secondItem="Lhl-Wk-i5D" secondAttribute="leading" constant="10" id="vBD-ea-4mH"/>
                             <constraint firstItem="iNR-KE-YIi" firstAttribute="leading" secondItem="Lhl-Wk-i5D" secondAttribute="leading" constant="70" id="vbz-3b-DzC"/>
                         </constraints>
                     </view>
@@ -469,6 +526,9 @@
                         <outlet property="addFriendButton" destination="gKc-ye-FNg" id="J3p-az-LpO"/>
                         <outlet property="addFriendButton2" destination="iNR-KE-YIi" id="rmm-nM-Sft"/>
                         <outlet property="arView" destination="DcP-nT-fKB" id="TAt-25-RY7"/>
+                        <outlet property="metCountLabel" destination="YrO-Fy-OtP" id="69A-T5-gTb"/>
+                        <outlet property="nameLabel" destination="qkK-8Z-hvQ" id="oYB-nS-RBb"/>
+                        <outlet property="rarityLabel" destination="Mw6-Nt-uPR" id="3Vu-7u-bzh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

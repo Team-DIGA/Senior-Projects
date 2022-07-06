@@ -16,6 +16,12 @@ class TopViewController: UIViewController {
     }
     var randomNum = 0
     var nameNum = ""
+    
+    let uiDesign = UiDesign()
+    
+    @IBOutlet weak var digaGoButton: UIButton!
+    @IBOutlet weak var showFriendsButton: UIButton!
+    
     @IBAction func amongsTappedButton(_ sender: UIButton) {
         randomNum = Int.random(in: 0...200)
         nameNum = randomNum == 200 ? String(200) : String(randomNum % 10)
@@ -52,6 +58,9 @@ class TopViewController: UIViewController {
         playSound(name: "undefined")
         //soundSet
         soundSet(name: "0")
+        
+        uiDesign.buttonDesign(button: digaGoButton)
+        uiDesign.buttonDesign(button: showFriendsButton)
         
     }
     func playSound(name: String) {
