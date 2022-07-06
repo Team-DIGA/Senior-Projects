@@ -107,10 +107,12 @@ class ARViewController: UIViewController {
             let anchor = AnchorEntity()
             anchor.position = simd_make_float3(0, -0.1, -8)
 
-            if let usdzModel = try? Entity.load(named: "coil") {
-                anchor.addChild(usdzModel)
-            }
+            let usdzModel = try! Entity.load(named: "coil3")
+            anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
+            for animation in usdzModel.availableAnimations {
+                usdzModel.playAnimation(animation.repeat())
+            }
         } else if characterTitle! == "Amongs" {
             let anchor = AnchorEntity()
             anchor.position = simd_make_float3(0, 0, -0.1)
