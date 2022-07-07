@@ -262,7 +262,6 @@ extension MapViewController{
 //        })
 //        debugPrint("async check 3=================================")
 //    }
-
 }
 
 
@@ -279,6 +278,7 @@ extension MapViewController{
             nextView.characterMetObj = metCountObj
 //            nextView.removeAnnotaion = targetRemoveAnnotaion
 //            nextView.removeMap = mapView
+            print(targetPlace ?? "Hello")
         }
     }
 
