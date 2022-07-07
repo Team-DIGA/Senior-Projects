@@ -59,7 +59,8 @@ let friendArray: [String] = [
     "アンミカ",
     "イサージ",
     "ご機嫌な島袋",
-    "Masashi"
+    "Masashi",
+    "Amongs"
 ]
 
 var gotDataArray: [Character] = []
