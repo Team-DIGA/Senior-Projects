@@ -21,7 +21,10 @@
 		0D78B11E286C2BEE002CFB48 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B11D286C2BEE002CFB48 /* MapViewController.swift */; };
 		0D78B121286C2F91002CFB48 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D78B120286C2F91002CFB48 /* CoreLocation.framework */; };
 		0D78B12E286DD2A2002CFB48 /* Picturebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B12D286DD2A1002CFB48 /* Picturebook.swift */; };
-		3A55CFE32873EAF500CAEA22 /* devFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A55CFE22873EAF500CAEA22 /* devFunctions.swift */; };
+		3A0B5CB328785B2100B42A43 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B5CB128785B2100B42A43 /* Items.swift */; };
+		3A0B5CB428785B2100B42A43 /* Items+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B5CB228785B2100B42A43 /* Items+Schema.swift */; };
+		3A0B5CB628785E3200B42A43 /* ItemDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B5CB528785E3200B42A43 /* ItemDataUtils.swift */; };
+		3A55CFE32873EAF500CAEA22 /* CharacterDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A55CFE22873EAF500CAEA22 /* CharacterDataUtils.swift */; };
 		3A55CFE52874070800CAEA22 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A55CFE42874070800CAEA22 /* amplifyconfiguration.json */; };
 		3A55CFE928754C1700CAEA22 /* UIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A55CFE828754C1700CAEA22 /* UIDesign.swift */; };
 		3A6004A828726260009DA69E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A60049C28726260009DA69E /* Assets.xcassets */; };
@@ -88,7 +91,10 @@
 		0DD8F86128731B2800315476 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		0DD8F86228731B2800315476 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		1941D7930360F076521EA176 /* Pods-DIGA-DIGAUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA-DIGAUITests.release.xcconfig"; path = "Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests.release.xcconfig"; sourceTree = "<group>"; };
-		3A55CFE22873EAF500CAEA22 /* devFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = devFunctions.swift; sourceTree = "<group>"; };
+		3A0B5CB128785B2100B42A43 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		3A0B5CB228785B2100B42A43 /* Items+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Items+Schema.swift"; sourceTree = "<group>"; };
+		3A0B5CB528785E3200B42A43 /* ItemDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataUtils.swift; sourceTree = "<group>"; };
+		3A55CFE22873EAF500CAEA22 /* CharacterDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDataUtils.swift; sourceTree = "<group>"; };
 		3A55CFE42874070800CAEA22 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
 		3A55CFE828754C1700CAEA22 /* UIDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDesign.swift; sourceTree = "<group>"; };
 		3A60049C28726260009DA69E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,8 +197,9 @@
 				0D78B0F2286C2B01002CFB48 /* Main.storyboard */,
 				0D78B0F7286C2B02002CFB48 /* LaunchScreen.storyboard */,
 				3ADF1E6E286E9819007EB643 /* AddFriendsTestViewController.swift */,
-				3A55CFE22873EAF500CAEA22 /* devFunctions.swift */,
+				3A55CFE22873EAF500CAEA22 /* CharacterDataUtils.swift */,
 				3A55CFE828754C1700CAEA22 /* UIDesign.swift */,
+				3A0B5CB528785E3200B42A43 /* ItemDataUtils.swift */,
 			);
 			path = DIGA;
 			sourceTree = "<group>";
@@ -247,6 +254,8 @@
 				3ADF1E68286E962F007EB643 /* Character+Schema.swift */,
 				3ADF1E69286E962F007EB643 /* AmplifyModels.swift */,
 				3ADF1E6A286E962F007EB643 /* Character.swift */,
+				3A0B5CB128785B2100B42A43 /* Items.swift */,
+				3A0B5CB228785B2100B42A43 /* Items+Schema.swift */,
 			);
 			name = models;
 			path = amplify/generated/models;
@@ -550,8 +559,11 @@
 				0D78B11C286C2BD5002CFB48 /* TopViewContoroller.swift in Sources */,
 				3ADF1E6B286E962F007EB643 /* Character+Schema.swift in Sources */,
 				0D78B12E286DD2A2002CFB48 /* Picturebook.swift in Sources */,
+				3A0B5CB328785B2100B42A43 /* Items.swift in Sources */,
+				3A0B5CB428785B2100B42A43 /* Items+Schema.swift in Sources */,
 				3ADF1E6F286E9819007EB643 /* AddFriendsTestViewController.swift in Sources */,
-				3A55CFE32873EAF500CAEA22 /* devFunctions.swift in Sources */,
+				3A55CFE32873EAF500CAEA22 /* CharacterDataUtils.swift in Sources */,
+				3A0B5CB628785E3200B42A43 /* ItemDataUtils.swift in Sources */,
 				3A55CFE928754C1700CAEA22 /* UIDesign.swift in Sources */,
 				0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */,
 				3ADF1E6C286E962F007EB643 /* AmplifyModels.swift in Sources */,

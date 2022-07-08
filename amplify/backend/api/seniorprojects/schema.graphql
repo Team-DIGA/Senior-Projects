@@ -11,3 +11,10 @@ type Character @model {
   met_count: Int!
   meet_status: Boolean!
 }
+
+type Items @model {
+  id: ID!
+  name: String!
+  rarity: Int!
+  effect: String!
+}

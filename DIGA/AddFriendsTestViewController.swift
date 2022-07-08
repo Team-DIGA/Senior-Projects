@@ -15,7 +15,8 @@ final class AddFriendsTestViewController: UIViewController {
     @IBOutlet weak var firstMetPlaceTextField: UITextField!
     @IBOutlet weak var metCountTextField: UITextField!
     
-    let dataUtils = DataUtils()
+    let characterDataUtils = CharacterDataUtils()
+    let itemDataUtils = ItemDataUtils()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,14 +82,15 @@ final class AddFriendsTestViewController: UIViewController {
     }
 
     @IBAction func createAllData(_ sender: Any) {
-        dataUtils.createAllData()
+        characterDataUtils.createAllCharacter()
     }
     
-    @IBAction func deleteAllFriends(_ sender: Any) {
-//        dataUtils.deleteAllData()
+    @IBAction func addItem(_ sender: Any) {
+        //
     }
     
-//    @IBAction func getFriend(_ sender: Any) {
-//        dataUtils.updateData(name: "cririn")
-//    }
+    @IBAction func addAllItems(_ sender: Any) {
+        itemDataUtils.createAllItem()
+    }
+    
 }

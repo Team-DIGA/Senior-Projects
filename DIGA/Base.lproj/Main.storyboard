@@ -198,7 +198,7 @@
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <size key="titleShadowOffset" width="10" height="10"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add Friends"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Character"/>
                                 <connections>
                                     <action selector="sendButton:" destination="Tly-3R-M8P" eventType="touchUpInside" id="FBK-NT-0JJ"/>
                                 </connections>
@@ -211,7 +211,7 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="AddAllFriends"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add All Character"/>
                                 <connections>
                                     <action selector="createAllData:" destination="Tly-3R-M8P" eventType="touchUpInside" id="rb2-h3-9GU"/>
                                 </connections>
@@ -223,8 +223,9 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="GetFriend"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Item"/>
                                 <connections>
+                                    <action selector="addItem:" destination="Tly-3R-M8P" eventType="touchUpInside" id="lW7-aA-LqV"/>
                                     <action selector="getFriend:" destination="Tly-3R-M8P" eventType="touchUpInside" id="zb0-x3-GBi"/>
                                 </connections>
                             </button>
@@ -237,9 +238,9 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="linkColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="DeleteAllFriends"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add All Item"/>
                                 <connections>
-                                    <action selector="deleteAllFriends:" destination="Tly-3R-M8P" eventType="touchUpInside" id="5xK-1j-Eaf"/>
+                                    <action selector="addAllItems:" destination="Tly-3R-M8P" eventType="touchUpInside" id="90X-FA-F4u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -335,14 +336,14 @@
                                     <segue destination="vDF-6D-jcR" kind="show" id="Q3R-DT-ujN"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzL-24-GE4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzL-24-GE4">
                                 <rect key="frame" x="100" y="806" width="214" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="V7O-SI-5cm"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add Friends"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add "/>
                                 <connections>
                                     <segue destination="Tly-3R-M8P" kind="show" id="57k-Ye-c5b"/>
                                 </connections>

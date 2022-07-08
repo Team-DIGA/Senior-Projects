@@ -29,7 +29,7 @@ class ARViewController: UIViewController {
     
     let uiDesign = UiDesign()
     
-    let dataUtils = DataUtils()
+    let characterDataUtils = CharacterDataUtils()
     let textArray: [String] = [
         "１万円をあげる",
         "戦いを助ける",
@@ -87,7 +87,7 @@ class ARViewController: UIViewController {
                 print("metCountError")
                 return
             }
-            dataUtils.updateData(name: characterTitle, place: characterPlace, met_count_key:metCount)
+            characterDataUtils.updateCharacter(name: characterTitle, place: characterPlace, met_count_key:metCount)
             alertFunc(title: "\(characterTitle!)は\n仲間になった！", message: "",addFlag:true)
         } else {
             alertFunc(title: "\( characterTitle!)は\n去っていった！", message: "",addFlag:false)
