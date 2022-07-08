@@ -6,11 +6,63 @@
     },
     "AppSync": {
         "Default": {
-            "ApiUrl": "https://2p6czkwefzdgte3znujncqbsu4.appsync-api.us-east-1.amazonaws.com/graphql",
+            "ApiUrl": "https://oiyq7d4xibbftlblqmexcb24zi.appsync-api.us-east-1.amazonaws.com/graphql",
             "Region": "us-east-1",
             "AuthMode": "API_KEY",
-            "ApiKey": "da2-x4sxe3hayja3jkzqpftjjrbfvu",
+            "ApiKey": "da2-5urvduxakjbk5bvd23apfbkd6y",
             "ClientDatabasePrefix": "seniorprojects_API_KEY"
+        }
+    },
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "us-east-1:ec9f5fb1-3f33-4277-8077-a23a62d69984",
+                "Region": "us-east-1"
+            }
+        }
+    },
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "us-east-1_KsoRh8C9q",
+            "AppClientId": "38nor8n37merjtrat2tiflcpvk",
+            "Region": "us-east-1"
+        }
+    },
+    "Auth": {
+        "Default": {
+            "OAuth": {
+                "WebDomain": "seniorprojects056e6eb7-056e6eb7-diga.auth.us-east-1.amazoncognito.com",
+                "AppClientId": "38nor8n37merjtrat2tiflcpvk",
+                "SignInRedirectURI": "DIGA://",
+                "SignOutRedirectURI": "DIGA://",
+                "Scopes": [
+                    "phone",
+                    "email",
+                    "openid",
+                    "profile",
+                    "aws.cognito.signin.user.admin"
+                ]
+            },
+            "authenticationFlowType": "USER_SRP_AUTH",
+            "socialProviders": [
+                "GOOGLE"
+            ],
+            "usernameAttributes": [],
+            "signupAttributes": [
+                "EMAIL",
+                "PHONE_NUMBER"
+            ],
+            "passwordProtectionSettings": {
+                "passwordPolicyMinLength": 8,
+                "passwordPolicyCharacters": []
+            },
+            "mfaConfiguration": "OFF",
+            "mfaTypes": [
+                "SMS"
+            ],
+            "verificationMechanisms": [
+                "EMAIL"
+            ]
         }
     }
 }

@@ -9,8 +9,25 @@ import UIKit
 import MapKit
 import CoreLocation
 import AVFoundation
+import Amplify
+import AWSMobileClient
 
 class TopViewController: UIViewController {
+    @IBAction func signOutButton(_ sender: UIButton) {
+        // サインアウト処理
+        AWSMobileClient.sharedInstance().signOut()
+
+        // サインイン画面を表示
+        AWSMobileClient.sharedInstance().showSignIn(navigationController: self.navigationController!, { (userState, error) in
+            if(error == nil){       //Successful signin
+                DispatchQueue.main.async {
+                    print("Sign In")
+                }
+            }
+        })
+    }
+    
+    @IBOutlet weak var signOutButton: UIButton!
     @IBAction func digagoButton(_ sender: UIButton) {
 //        avPlayer.stop()
     }
@@ -35,6 +52,31 @@ class TopViewController: UIViewController {
     var buttonAvPlayer : AVAudioPlayer!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 認証
+            AWSMobileClient.sharedInstance().initialize { (userState, error) in
+                if let userState = userState {
+                    switch(userState){
+                    case .signedIn:
+                        DispatchQueue.main.async {
+                            print("Sign In")
+                        }
+                    case .signedOut:
+                        AWSMobileClient.sharedInstance().showSignIn(navigationController: self.navigationController!, { (userState, error) in
+                            if(error == nil){       //Successful signin
+                                DispatchQueue.main.async {
+                                    print("Sign In")
+                                }
+                            }
+                        })
+                    default:
+                        AWSMobileClient.sharedInstance().signOut()
+                    }
+                } else if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
+        
         
         // Bundle Resourcesからsample.mp4を読み込んで再生
         let path = Bundle.main.path(forResource: "amongs", ofType: "mp4")!
@@ -61,6 +103,9 @@ class TopViewController: UIViewController {
         
         uiDesign.buttonDesign(button: digaGoButton)
         uiDesign.buttonDesign(button: showFriendsButton)
+        uiDesign.buttonDesign(button: signOutButton)
+
+        fetchCurrentAuthSession()
         
     }
     func playSound(name: String) {
@@ -88,6 +133,17 @@ class TopViewController: UIViewController {
             print("AVAudioPlayerinstance error")
         }
         buttonAvPlayer.prepareToPlay()
+    }
+    
+    func fetchCurrentAuthSession() {
+        _ = Amplify.Auth.fetchAuthSession { result in
+            switch result {
+            case .success(let session):
+                print("Is user signed in - \(session.isSignedIn)")
+            case .failure(let error):
+                print("Fetch session failed with error \(error)")
+            }
+        }
     }
 
 //    override func didReceiveMemoryWarning() {

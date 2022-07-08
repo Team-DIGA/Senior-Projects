@@ -1,7 +1,32 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## AWSAuthCore
+
+The AWS Mobile SDK for iOS is generally licensed under the Apache 2.0 License, with the AWSLex/Bluefront folder under the AWS Customer Agreement (https://aws.amazon.com/agreement/ ). 
+
+
+## AWSAuthUI
+
+The AWS Mobile SDK for iOS is generally licensed under the Apache 2.0 License, with the AWSLex/Bluefront folder under the AWS Customer Agreement (https://aws.amazon.com/agreement/ ). 
+
+
+## AWSCognitoIdentityProvider
+
+The AWS Mobile SDK for iOS is generally licensed under the Apache 2.0 License, with the AWSLex/Bluefront folder under the AWS Customer Agreement (https://aws.amazon.com/agreement/ ). 
+
+
+## AWSCognitoIdentityProviderASF
+
+The AWS Mobile SDK for iOS is generally licensed under the Apache 2.0 License, with the AWSLex/Bluefront folder under the AWS Customer Agreement (https://aws.amazon.com/agreement/ ). 
+
+
 ## AWSCore
+
+The AWS Mobile SDK for iOS is generally licensed under the Apache 2.0 License, with the AWSLex/Bluefront folder under the AWS Customer Agreement (https://aws.amazon.com/agreement/ ). 
+
+
+## AWSMobileClient
 
 The AWS Mobile SDK for iOS is generally licensed under the Apache 2.0 License, with the AWSLex/Bluefront folder under the AWS Customer Agreement (https://aws.amazon.com/agreement/ ). 
 
@@ -183,6 +208,11 @@ The AWS Mobile SDK for iOS is generally licensed under the Apache 2.0 License, w
       defend, and hold each Contributor harmless for any liability
       incurred by, or claims asserted against, such Contributor by reason
       of your accepting any such warranty or additional liability.
+
+
+## AWSUserPoolsSignIn
+
+The AWS Mobile SDK for iOS is generally licensed under the Apache 2.0 License, with the AWSLex/Bluefront folder under the AWS Customer Agreement (https://aws.amazon.com/agreement/ ). 
 
 
 ## Amplify

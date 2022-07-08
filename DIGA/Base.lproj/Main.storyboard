@@ -303,8 +303,8 @@
                                     <constraint firstAttribute="height" constant="292" id="dMJ-7D-Dby"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHh-fE-aQo">
-                                <rect key="frame" x="100" y="720" width="214" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHh-fE-aQo">
+                                <rect key="frame" x="100" y="688" width="214" height="46"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="od4-Vm-TVb"/>
@@ -335,8 +335,8 @@
                                     <segue destination="vDF-6D-jcR" kind="show" id="Q3R-DT-ujN"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzL-24-GE4">
-                                <rect key="frame" x="100" y="806" width="214" height="46"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzL-24-GE4">
+                                <rect key="frame" x="100" y="742" width="214" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="V7O-SI-5cm"/>
                                 </constraints>
@@ -365,6 +365,23 @@
                                     <constraint firstAttribute="height" constant="262" id="pUv-Hz-huS"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O34-bz-VY9">
+                                <rect key="frame" x="100" y="811" width="214" height="46"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="214" id="3bV-PV-8Hd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="EGR-MT-trM"/>
+                                    <constraint firstAttribute="height" constant="46" id="nW4-hc-4li"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutButton:" destination="uty-ZU-OTc" eventType="touchUpInside" id="4Ng-eu-Cdi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X3P-G4-nkZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -378,6 +395,8 @@
                             <constraint firstItem="DCZ-wA-qwU" firstAttribute="trailing" secondItem="X3P-G4-nkZ" secondAttribute="trailing" id="URU-ku-F0x"/>
                             <constraint firstItem="EzL-24-GE4" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="100" id="USF-ho-Nj1"/>
                             <constraint firstItem="DCZ-wA-qwU" firstAttribute="top" secondItem="SF9-xr-BIC" secondAttribute="top" constant="-16" id="WIt-YB-qpu"/>
+                            <constraint firstItem="X3P-G4-nkZ" firstAttribute="bottom" secondItem="O34-bz-VY9" secondAttribute="bottom" constant="5" id="WoR-Fr-tZR"/>
+                            <constraint firstItem="O34-bz-VY9" firstAttribute="centerX" secondItem="SF9-xr-BIC" secondAttribute="centerX" id="XkZ-Vb-Poc"/>
                             <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="MPp-1T-vaF" secondAttribute="trailing" constant="100" id="XpH-Dz-ky8"/>
                             <constraint firstItem="DHh-fE-aQo" firstAttribute="top" secondItem="MPp-1T-vaF" secondAttribute="bottom" constant="40" id="bRu-ac-N3L"/>
                             <constraint firstItem="X3P-G4-nkZ" firstAttribute="bottom" secondItem="EzL-24-GE4" secondAttribute="bottom" constant="10" id="bY9-Pu-w0U"/>
@@ -392,6 +411,7 @@
                     <connections>
                         <outlet property="digaGoButton" destination="MPp-1T-vaF" id="kJX-QD-8Rc"/>
                         <outlet property="showFriendsButton" destination="DHh-fE-aQo" id="UI2-Kl-eAG"/>
+                        <outlet property="signOutButton" destination="O34-bz-VY9" id="AZe-cH-hwg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WBj-3L-lEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
