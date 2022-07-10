@@ -10,6 +10,7 @@ import MapKit
 import CoreLocation
 import AVFoundation
 import Amplify
+import AmplifyPlugins
 import AWSMobileClient
 
 class TopViewController: UIViewController {
@@ -52,7 +53,58 @@ class TopViewController: UIViewController {
     var buttonAvPlayer : AVAudioPlayer!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //ユーザー登録のメソッド
+//        func signUp(username: String, password: String, email: String) {
+//            let userAttributes = [AuthUserAttribute(.email, value: email)]
+//            let options = AuthSignUpRequest.Options(userAttributes: userAttributes)
+//            Amplify.Auth.signUp(username: username, password: password, options: options) { result in
+//                switch result {
+//                case .success(let signUpResult):
+//                    if case let .confirmUser(deliveryDetails, _) = signUpResult.nextStep {
+//                        print("Delivery details \(String(describing: deliveryDetails))")
+//                    } else {
+//                        print("SignUp Complete")
+//                    }
+//                case .failure(let error):
+//                    print("An error occurred while registering a user \(error)")
+//                }
+//            }
+//        }
+        //確認コード入力のメソッド
+//        func confirmSignUp(for username: String, with confirmationCode: String) {
+//            Amplify.Auth.confirmSignUp(for: username, confirmationCode: confirmationCode) { result in
+//                switch result {
+//                case .success:
+//                    print("Confirm signUp succeeded")
+//                case .failure(let error):
+//                    print("An error occurred while confirming sign up \(error)")
+//                }
+//            }
+//        }
+        //ユーザー名とパスワードが入力されたらサインインするメソッド
+//        func signIn(username: String, password: String) {
+//            Amplify.Auth.signIn(username: username, password: password) { result in
+//                switch result {
+//                case .success:
+//                    print("Sign in succeeded")
+//                case .failure(let error):
+//                    print("Sign in failed \(error)")
+//                }
+//            }
+//        }
+//        //認証
+//        let hostedUIOptions = HostedUIOptions(scopes: ["openid", "email", "profile", "aws.cognito.signin.user.admin"])
+//
+//        // Present the Hosted UI sign in.
+//        AWSMobileClient.default().showSignIn(navigationController: self.navigationController!, hostedUIOptions: hostedUIOptions) { (userState, error) in
+//            if let error = error as? AWSMobileClientError {
+//                print(error.localizedDescription)
+//            }
+//            if let userState = userState {
+//                // サインインが完了するとサインイン後のステータスが返却される
+//                print("Status: \(userState.rawValue)")
+//            }
+//        }
         // 認証
             AWSMobileClient.sharedInstance().initialize { (userState, error) in
                 if let userState = userState {

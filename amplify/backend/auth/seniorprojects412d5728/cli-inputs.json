@@ -58,16 +58,16 @@
     "breakCircularDependency": true,
     "dependsOn": [],
     "hostedUI": true,
-    "hostedUIDomainName": "seniorprojects056e6eb7-056e6eb7",
+    "parentStack": {
+      "Ref": "AWS::StackId"
+    },
+    "permissions": [],
+    "hostedUIDomainName": "seniorprojectsad291c88-ad291c88",
     "authProvidersUserPool": [
       "Google"
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"phone_number\":\"phoneNumbers\",\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"DIGA://\"],\"LogoutURLs\":[\"DIGA://\"]}",
     "authProviders": [],
-    "parentStack": {
-      "Ref": "AWS::StackId"
-    },
-    "permissions": []
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"DIGA://\"],\"LogoutURLs\":[\"DIGA://\"]}"
   }
 }

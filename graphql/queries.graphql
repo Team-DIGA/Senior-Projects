@@ -1,68 +1,26 @@
 # this is an auto generated file. This will be overwritten
-query GetCharacter($id: ID!) {
-  getCharacter(id: $id) {
+query GetTodo($id: ID!) {
+  getTodo(id: $id) {
     id
     name
-    rarity
-    first_met_place
-    met_count
-    meet_status
+    description
     createdAt
     updatedAt
-    _version
-    _deleted
-    _lastChangedAt
   }
 }
-query ListCharacters(
-  $filter: ModelCharacterFilterInput
+query ListTodos(
+  $filter: ModelTodoFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listCharacters(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       name
-      rarity
-      first_met_place
-      met_count
-      meet_status
+      description
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
     nextToken
-    startedAt
-  }
-}
-query SyncCharacters(
-  $filter: ModelCharacterFilterInput
-  $limit: Int
-  $nextToken: String
-  $lastSync: AWSTimestamp
-) {
-  syncCharacters(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    lastSync: $lastSync
-  ) {
-    items {
-      id
-      name
-      rarity
-      first_met_place
-      met_count
-      meet_status
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-    nextToken
-    startedAt
   }
 }

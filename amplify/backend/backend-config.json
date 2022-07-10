@@ -9,9 +9,7 @@
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 30,
-              "apiKeyExpirationDate": "2022-08-04T05:24:17.654Z",
-              "description": "sineordev's API key."
+              "apiKeyExpirationDays": 7
             }
           },
           "additionalAuthenticationProviders": []

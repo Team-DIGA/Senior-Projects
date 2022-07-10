@@ -20,6 +20,7 @@ target 'DIGA' do
   pod 'AWSMobileClient'
   pod 'AWSAuthUI'
   pod 'AWSUserPoolsSignIn'
+#  pod 'SSCustomTabbar'
 
   target 'DIGATests' do
     inherit! :search_paths

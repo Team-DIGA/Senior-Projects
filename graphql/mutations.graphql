@@ -1,55 +1,37 @@
 # this is an auto generated file. This will be overwritten
-mutation CreateCharacter(
-  $input: CreateCharacterInput!
-  $condition: ModelCharacterConditionInput
+mutation CreateTodo(
+  $input: CreateTodoInput!
+  $condition: ModelTodoConditionInput
 ) {
-  createCharacter(input: $input, condition: $condition) {
+  createTodo(input: $input, condition: $condition) {
     id
     name
-    rarity
-    first_met_place
-    met_count
-    meet_status
+    description
     createdAt
     updatedAt
-    _version
-    _deleted
-    _lastChangedAt
   }
 }
-mutation UpdateCharacter(
-  $input: UpdateCharacterInput!
-  $condition: ModelCharacterConditionInput
+mutation UpdateTodo(
+  $input: UpdateTodoInput!
+  $condition: ModelTodoConditionInput
 ) {
-  updateCharacter(input: $input, condition: $condition) {
+  updateTodo(input: $input, condition: $condition) {
     id
     name
-    rarity
-    first_met_place
-    met_count
-    meet_status
+    description
     createdAt
     updatedAt
-    _version
-    _deleted
-    _lastChangedAt
   }
 }
-mutation DeleteCharacter(
-  $input: DeleteCharacterInput!
-  $condition: ModelCharacterConditionInput
+mutation DeleteTodo(
+  $input: DeleteTodoInput!
+  $condition: ModelTodoConditionInput
 ) {
-  deleteCharacter(input: $input, condition: $condition) {
+  deleteTodo(input: $input, condition: $condition) {
     id
     name
-    rarity
-    first_met_place
-    met_count
-    meet_status
+    description
     createdAt
     updatedAt
-    _version
-    _deleted
-    _lastChangedAt
   }
 }

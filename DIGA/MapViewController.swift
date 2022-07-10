@@ -118,9 +118,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         myLongitude = locationManager.location?.coordinate.longitude
         guard let latitude = myLatitude else {return}
         guard let longitude = myLongitude else {return}
+        
         let currentlocation = CLLocationCoordinate2DMake(latitude,longitude)
         
-//        // MapViewに中心を設定.
+        // MapViewに中心を設定.
 //        mapView.setCenter(currentlocation, animated: true)
         
         let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
@@ -129,13 +130,13 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         mapView.region = region
         mapView.delegate = self
         
-//        // 自分の視点の座標.
-//        let fromCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude-0.000001, longitude+0.001)
-//        // 上空から見下ろす高さ.
-//        let myAltitude: CLLocationDistance = 0.00000000000001
+        // 自分の視点の座標.
+//        var fromCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude-0.000001, longitude+0.001)
+        // 上空から見下ろす高さ.
+//        var myAltitude: CLLocationDistance = 0.00000000000001
 //        // MapCameraに中心点、視点、高さを設定.
 //        let myCamera: MKMapCamera =
-//        MKMapCamera(lookingAtCenter: currentlocation, fromDistance: 1000, pitch: 75, heading: 0)
+//        MKMapCamera(lookingAtCenter: currentlocation, fromDistance: 1000, pitch: 75, heading: 360)
 //
 //        // CameraをMapViewに設定.
 //        mapView.setCamera(myCamera, animated: true)
@@ -153,13 +154,13 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             if selectChara == 1 && countChara < numChara {
                 appendMap(i: i, countChara: countChara, numChara: numChara)
                 countChara += 1
-                
+
             }
             //area map
 //            let mod = i % 10
 //            pinLocationAppend(count: mod)
         }
-        
+
         for (index,pinTitle) in self.mapTargetTitle.enumerated(){
             let pin = MapAnnotationSetting()
             let coordinate = self.pinlocations[index]
