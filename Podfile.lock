@@ -42,6 +42,7 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - SSCustomTabbar (2.0.6)
   - Starscream (4.0.4)
 
 DEPENDENCIES:
@@ -53,6 +54,7 @@ DEPENDENCIES:
   - AWSMobileClient
   - AWSUserPoolsSignIn
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - SSCustomTabbar
 
 SPEC REPOS:
   trunk:
@@ -67,6 +69,7 @@ SPEC REPOS:
     - AWSMobileClient
     - AWSPluginsCore
     - AWSUserPoolsSignIn
+    - SSCustomTabbar
     - Starscream
 
 EXTERNAL SOURCES:
@@ -91,8 +94,9 @@ SPEC CHECKSUMS:
   AWSPluginsCore: a75501823aa5599a63570a750389073f47dd16bc
   AWSUserPoolsSignIn: 6337f244e7ec47edc932f7a0b861a9ec38a25f1e
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  SSCustomTabbar: a52533e429bd40f52ce8d7ecb801f3521fbd56a0
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: 47a95d5d29f285357b5fab2aa57f50975cba52d3
+PODFILE CHECKSUM: 5536548e4e4b3136e5efbf20e127a00eb8116e8f
 
 COCOAPODS: 1.11.3

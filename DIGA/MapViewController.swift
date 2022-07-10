@@ -120,8 +120,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         guard let longitude = myLongitude else {return}
         let currentlocation = CLLocationCoordinate2DMake(latitude,longitude)
         
-//        // MapViewに中心を設定.
-//        mapView.setCenter(currentlocation, animated: true)
+        // MapViewに中心を設定.
+        mapView.setCenter(currentlocation, animated: true)
         
         let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
         let region = MKCoordinateRegion(center: currentlocation, span: span)
@@ -129,20 +129,20 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         mapView.region = region
         mapView.delegate = self
         
-//        // 自分の視点の座標.
-//        let fromCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude-0.000001, longitude+0.001)
-//        // 上空から見下ろす高さ.
-//        let myAltitude: CLLocationDistance = 0.00000000000001
-//        // MapCameraに中心点、視点、高さを設定.
-//        let myCamera: MKMapCamera =
-//        MKMapCamera(lookingAtCenter: currentlocation, fromDistance: 1000, pitch: 75, heading: 0)
-//
-//        // CameraをMapViewに設定.
-//        mapView.setCamera(myCamera, animated: true)
-//        // ビルを3Dに見えるようにする.
-//        mapView.showsBuildings = true
-//        // MapViewをviewに追加.
-//        self.view.addSubview(mapView)
+        // 自分の視点の座標.
+        let fromCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude-0.000001, longitude+0.001)
+        // 上空から見下ろす高さ.
+        let myAltitude: CLLocationDistance = 0.00000000000001
+        // MapCameraに中心点、視点、高さを設定.
+        let myCamera: MKMapCamera =
+        MKMapCamera(lookingAtCenter: currentlocation, fromDistance: 750, pitch: 75, heading: 0)
+
+        // CameraをMapViewに設定.
+        mapView.setCamera(myCamera, animated: true)
+        // ビルを3Dに見えるようにする.
+        mapView.showsBuildings = true
+        // MapViewをviewに追加.
+        self.view.addSubview(mapView)
         
         //表示するキャラの数
         let numChara = Int.random(in:7...10)
