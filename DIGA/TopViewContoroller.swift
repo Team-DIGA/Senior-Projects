@@ -53,7 +53,7 @@ class TopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 認証
+        // 認証 通常の認証画面を表示
             AWSMobileClient.sharedInstance().initialize { (userState, error) in
                 if let userState = userState {
                     switch(userState){
