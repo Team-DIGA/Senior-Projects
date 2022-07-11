@@ -133,7 +133,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         let fromCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude-0.000001, longitude+0.001)
         // 上空から見下ろす高さ.
         let myAltitude: CLLocationDistance = 0.00000000000001
-        // MapCameraに中心点、視点、高さを設定.
+        // MapCameraに中心点、視点、高さを設定./
         let myCamera: MKMapCamera =
         MKMapCamera(lookingAtCenter: currentlocation, fromDistance: 750, pitch: 75, heading: 0)
 
