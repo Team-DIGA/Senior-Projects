@@ -30,6 +30,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
                 switch result {
                 case .success(let friend):
                     characterArray = friend
+                    print("aaaaaaaa",friend)
                     
                     DispatchQueue.main.async {
                         // tableViewを更新

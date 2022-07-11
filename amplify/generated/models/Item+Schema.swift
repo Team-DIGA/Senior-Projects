@@ -17,17 +17,17 @@ extension Item {
   //  MARK: - ModelSchema 
   
   public static let schema = defineSchema { model in
-    let items = Item.keys
+    let item = Item.keys
     
     model.pluralName = "Items"
     
     model.fields(
       .id(),
-      .field(items.name, is: .required, ofType: .string),
-      .field(items.rarity, is: .required, ofType: .int),
-      .field(items.effect, is: .required, ofType: .string),
-      .field(items.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
-      .field(items.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)
+      .field(item.name, is: .required, ofType: .string),
+      .field(item.rarity, is: .required, ofType: .int),
+      .field(item.effect, is: .required, ofType: .string),
+      .field(item.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
+      .field(item.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)
     )
     }
 }

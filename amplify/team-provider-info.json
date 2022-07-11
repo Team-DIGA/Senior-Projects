@@ -81,5 +81,23 @@
         "seniorprojectsfc97dcdc": {}
       }
     }
+  },
+  "knckgo": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-seniorprojects-knckgo-185444-authRole",
+      "UnauthRoleArn": "arn:aws:iam::552853051669:role/amplify-seniorprojects-knckgo-185444-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::552853051669:role/amplify-seniorprojects-knckgo-185444-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-seniorprojects-knckgo-185444-deployment",
+      "UnauthRoleName": "amplify-seniorprojects-knckgo-185444-unauthRole",
+      "StackName": "amplify-seniorprojects-knckgo-185444",
+      "StackId": "arn:aws:cloudformation:us-east-1:552853051669:stack/amplify-seniorprojects-knckgo-185444/80062420-00ff-11ed-b577-0e3804d233ab",
+      "AmplifyAppId": "d2yvaxlel99n5l"
+    },
+    "categories": {
+      "auth": {
+        "seniorprojectsfc97dcdc": {}
+      }
+    }
   }
 }

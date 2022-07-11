@@ -66,8 +66,8 @@ query SyncCharacters(
     startedAt
   }
 }
-query GetItems($id: ID!) {
-  getItems(id: $id) {
+query GetItem($id: ID!) {
+  getItem(id: $id) {
     id
     name
     rarity
@@ -80,7 +80,7 @@ query GetItems($id: ID!) {
   }
 }
 query ListItems(
-  $filter: ModelItemsFilterInput
+  $filter: ModelItemFilterInput
   $limit: Int
   $nextToken: String
 ) {
@@ -101,7 +101,7 @@ query ListItems(
   }
 }
 query SyncItems(
-  $filter: ModelItemsFilterInput
+  $filter: ModelItemFilterInput
   $limit: Int
   $nextToken: String
   $lastSync: AWSTimestamp
@@ -127,8 +127,8 @@ query SyncItems(
     startedAt
   }
 }
-query GetUsers($id: ID!) {
-  getUsers(id: $id) {
+query GetUser($id: ID!) {
+  getUser(id: $id) {
     id
     name
     friends
@@ -144,7 +144,7 @@ query GetUsers($id: ID!) {
   }
 }
 query ListUsers(
-  $filter: ModelUsersFilterInput
+  $filter: ModelUserFilterInput
   $limit: Int
   $nextToken: String
 ) {
@@ -168,7 +168,7 @@ query ListUsers(
   }
 }
 query SyncUsers(
-  $filter: ModelUsersFilterInput
+  $filter: ModelUserFilterInput
   $limit: Int
   $nextToken: String
   $lastSync: AWSTimestamp

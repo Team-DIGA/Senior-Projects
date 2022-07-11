@@ -2,7 +2,7 @@
 import Amplify
 import Foundation
 
-extension Users {
+extension User {
   // MARK: - CodingKeys 
    public enum CodingKeys: String, ModelKey {
     case id
@@ -20,7 +20,7 @@ extension Users {
   //  MARK: - ModelSchema 
   
   public static let schema = defineSchema { model in
-    let users = Users.keys
+    let users = User.keys
     
     model.pluralName = "Users"
     

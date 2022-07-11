@@ -44,8 +44,8 @@ subscription OnDeleteCharacter {
     _lastChangedAt
   }
 }
-subscription OnCreateItems {
-  onCreateItems {
+subscription OnCreateItem {
+  onCreateItem {
     id
     name
     rarity
@@ -57,8 +57,8 @@ subscription OnCreateItems {
     _lastChangedAt
   }
 }
-subscription OnUpdateItems {
-  onUpdateItems {
+subscription OnUpdateItem {
+  onUpdateItem {
     id
     name
     rarity
@@ -70,8 +70,8 @@ subscription OnUpdateItems {
     _lastChangedAt
   }
 }
-subscription OnDeleteItems {
-  onDeleteItems {
+subscription OnDeleteItem {
+  onDeleteItem {
     id
     name
     rarity
@@ -83,8 +83,8 @@ subscription OnDeleteItems {
     _lastChangedAt
   }
 }
-subscription OnCreateUsers {
-  onCreateUsers {
+subscription OnCreateUser {
+  onCreateUser {
     id
     name
     friends
@@ -99,8 +99,8 @@ subscription OnCreateUsers {
     _lastChangedAt
   }
 }
-subscription OnUpdateUsers {
-  onUpdateUsers {
+subscription OnUpdateUser {
+  onUpdateUser {
     id
     name
     friends
@@ -115,8 +115,8 @@ subscription OnUpdateUsers {
     _lastChangedAt
   }
 }
-subscription OnDeleteUsers {
-  onDeleteUsers {
+subscription OnDeleteUser {
+  onDeleteUser {
     id
     name
     friends

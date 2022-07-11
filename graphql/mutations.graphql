@@ -53,11 +53,11 @@ mutation DeleteCharacter(
     _lastChangedAt
   }
 }
-mutation CreateItems(
-  $input: CreateItemsInput!
-  $condition: ModelItemsConditionInput
+mutation CreateItem(
+  $input: CreateItemInput!
+  $condition: ModelItemConditionInput
 ) {
-  createItems(input: $input, condition: $condition) {
+  createItem(input: $input, condition: $condition) {
     id
     name
     rarity
@@ -69,11 +69,11 @@ mutation CreateItems(
     _lastChangedAt
   }
 }
-mutation UpdateItems(
-  $input: UpdateItemsInput!
-  $condition: ModelItemsConditionInput
+mutation UpdateItem(
+  $input: UpdateItemInput!
+  $condition: ModelItemConditionInput
 ) {
-  updateItems(input: $input, condition: $condition) {
+  updateItem(input: $input, condition: $condition) {
     id
     name
     rarity
@@ -85,11 +85,11 @@ mutation UpdateItems(
     _lastChangedAt
   }
 }
-mutation DeleteItems(
-  $input: DeleteItemsInput!
-  $condition: ModelItemsConditionInput
+mutation DeleteItem(
+  $input: DeleteItemInput!
+  $condition: ModelItemConditionInput
 ) {
-  deleteItems(input: $input, condition: $condition) {
+  deleteItem(input: $input, condition: $condition) {
     id
     name
     rarity
@@ -101,11 +101,11 @@ mutation DeleteItems(
     _lastChangedAt
   }
 }
-mutation CreateUsers(
-  $input: CreateUsersInput!
-  $condition: ModelUsersConditionInput
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
 ) {
-  createUsers(input: $input, condition: $condition) {
+  createUser(input: $input, condition: $condition) {
     id
     name
     friends
@@ -120,11 +120,11 @@ mutation CreateUsers(
     _lastChangedAt
   }
 }
-mutation UpdateUsers(
-  $input: UpdateUsersInput!
-  $condition: ModelUsersConditionInput
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
 ) {
-  updateUsers(input: $input, condition: $condition) {
+  updateUser(input: $input, condition: $condition) {
     id
     name
     friends
@@ -139,11 +139,11 @@ mutation UpdateUsers(
     _lastChangedAt
   }
 }
-mutation DeleteUsers(
-  $input: DeleteUsersInput!
-  $condition: ModelUsersConditionInput
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
 ) {
-  deleteUsers(input: $input, condition: $condition) {
+  deleteUser(input: $input, condition: $condition) {
     id
     name
     friends

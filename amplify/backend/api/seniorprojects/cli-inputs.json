@@ -3,12 +3,12 @@
   "serviceConfiguration": {
     "apiName": "seniorprojects",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/Users/yutashoji/Desktop/DIG BTC-Sprint/swift-project/Senior-Projects/amplify/backend/api/seniorprojects/schema.graphql",
+    "gqlSchemaPath": "/Users/s-kanechi/Public/Senior-Projects/amplify/backend/api/seniorprojects/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 30,
-      "apiKeyExpirationDate": "2022-08-10T07:24:27.113Z",
-      "keyDescription": "DIGAGO's API key"
+      "expirationTime": 7,
+      "apiKeyExpirationDate": "2022-07-18T14:00:27.674Z",
+      "keyDescription": ""
     },
     "conflictResolution": {
       "defaultResolutionStrategy": {
