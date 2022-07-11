@@ -45,7 +45,7 @@ final class AddFriendsTestViewController: UIViewController {
         }
         
                     
-        let character = Character(name: name, rarity: Int(rarity)!, first_met_place: first_met_place, met_count: Int(met_count)!, meet_status: false)
+        let character = Character(name: name, rarity: Int(rarity)!, first_met_place: first_met_place, met_count: Int(met_count)!, have_met: false)
         
         // mutateで新規メッセージを作成
         Amplify.API.mutate(request: .create(character)) { event in

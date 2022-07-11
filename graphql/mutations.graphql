@@ -9,7 +9,7 @@ mutation CreateCharacter(
     rarity
     first_met_place
     met_count
-    meet_status
+    have_met
     createdAt
     updatedAt
     _version
@@ -27,7 +27,7 @@ mutation UpdateCharacter(
     rarity
     first_met_place
     met_count
-    meet_status
+    have_met
     createdAt
     updatedAt
     _version
@@ -45,7 +45,112 @@ mutation DeleteCharacter(
     rarity
     first_met_place
     met_count
-    meet_status
+    have_met
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation CreateItems(
+  $input: CreateItemsInput!
+  $condition: ModelItemsConditionInput
+) {
+  createItems(input: $input, condition: $condition) {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateItems(
+  $input: UpdateItemsInput!
+  $condition: ModelItemsConditionInput
+) {
+  updateItems(input: $input, condition: $condition) {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteItems(
+  $input: DeleteItemsInput!
+  $condition: ModelItemsConditionInput
+) {
+  deleteItems(input: $input, condition: $condition) {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation CreateUsers(
+  $input: CreateUsersInput!
+  $condition: ModelUsersConditionInput
+) {
+  createUsers(input: $input, condition: $condition) {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateUsers(
+  $input: UpdateUsersInput!
+  $condition: ModelUsersConditionInput
+) {
+  updateUsers(input: $input, condition: $condition) {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteUsers(
+  $input: DeleteUsersInput!
+  $condition: ModelUsersConditionInput
+) {
+  deleteUsers(input: $input, condition: $condition) {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
     createdAt
     updatedAt
     _version

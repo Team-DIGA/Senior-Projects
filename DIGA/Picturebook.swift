@@ -37,7 +37,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
 //                        達成率を更新
                         let maxcount = characterArray.count
                         let meetArray = characterArray.filter{
-                            $0.meet_status == true
+                            $0.have_met == true
                         }
                         self.metcount = Double(meetArray.count)
                         var completeRate = 0.0
@@ -81,7 +81,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
             }
         }
         
-        if characterArray[indexPath.row].meet_status == false {
+        if characterArray[indexPath.row].have_met == false {
             cellImage = UIImage(named: "noImage")
         } else {
             cellImage = UIImage(named: characterArray[indexPath.row].name)

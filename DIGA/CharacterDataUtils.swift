@@ -131,7 +131,7 @@ struct CharacterDataUtils {
     //データ更新
     func updateCharacter(name: String, place:String, met_count_key:Int) {
         getCharacter(name: name)
-        DIGA.updateCharacter?.meet_status = true
+        DIGA.updateCharacter?.have_met = true
         DIGA.updateCharacter?.first_met_place = place
         DIGA.updateCharacter?.met_count += 1
         guard let updateFriend = DIGA.updateCharacter else {
@@ -159,7 +159,7 @@ struct CharacterDataUtils {
     //全データ挿入
     func createAllCharacter() -> Void {
         for name in friendArray {
-            let character = Character(name: name, rarity: random(), first_met_place: "no_data", met_count: 0, meet_status: false)
+            let character = Character(name: name, rarity: random(), first_met_place: "no_data", met_count: 0, have_met: false)
             // mutateで新規メッセージを作成
             Amplify.API.mutate(request: .create(character)) { event in
                 switch event {

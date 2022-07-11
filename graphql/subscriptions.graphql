@@ -6,7 +6,7 @@ subscription OnCreateCharacter {
     rarity
     first_met_place
     met_count
-    meet_status
+    have_met
     createdAt
     updatedAt
     _version
@@ -21,7 +21,7 @@ subscription OnUpdateCharacter {
     rarity
     first_met_place
     met_count
-    meet_status
+    have_met
     createdAt
     updatedAt
     _version
@@ -36,7 +36,94 @@ subscription OnDeleteCharacter {
     rarity
     first_met_place
     met_count
-    meet_status
+    have_met
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnCreateItems {
+  onCreateItems {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnUpdateItems {
+  onUpdateItems {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnDeleteItems {
+  onDeleteItems {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnCreateUsers {
+  onCreateUsers {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnUpdateUsers {
+  onUpdateUsers {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnDeleteUsers {
+  onDeleteUsers {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
     createdAt
     updatedAt
     _version

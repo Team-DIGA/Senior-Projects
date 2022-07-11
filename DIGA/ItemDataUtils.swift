@@ -8,7 +8,7 @@ var devGetItem: Items?
 let itemObj: [[String: String]] = [
     ["name": "ポーション", "rarity": "5", "effect": "SurelyGet"],
     ["name": "どこでもドア", "rarity": "2", "effect": "GotoLondon"],
-    ["name": "スカウター", "rarity": "4", "effect": "IncreasedProbability"],
+    ["name": "スカウター!!!!!", "rarity": "4", "effect": "IncreasedProbability"],
 ]
 
 struct ItemDataUtils {

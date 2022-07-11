@@ -6,7 +6,7 @@ query GetCharacter($id: ID!) {
     rarity
     first_met_place
     met_count
-    meet_status
+    have_met
     createdAt
     updatedAt
     _version
@@ -26,7 +26,7 @@ query ListCharacters(
       rarity
       first_met_place
       met_count
-      meet_status
+      have_met
       createdAt
       updatedAt
       _version
@@ -55,7 +55,138 @@ query SyncCharacters(
       rarity
       first_met_place
       met_count
-      meet_status
+      have_met
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetItems($id: ID!) {
+  getItems(id: $id) {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+query ListItems(
+  $filter: ModelItemsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listItems(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      rarity
+      effect
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncItems(
+  $filter: ModelItemsFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncItems(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      name
+      rarity
+      effect
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetUsers($id: ID!) {
+  getUsers(id: $id) {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+query ListUsers(
+  $filter: ModelUsersFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      friends
+      items
+      level
+      money
+      exp
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncUsers(
+  $filter: ModelUsersFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncUsers(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      name
+      friends
+      items
+      level
+      money
+      exp
       createdAt
       updatedAt
       _version
