@@ -281,8 +281,7 @@ extension MapViewController{
 //            compltion?(place?.name)
 //        })
 //        debugPrint("async check 3=================================")
-//    }testtest
-
+//    }
 }
 
 
@@ -299,6 +298,7 @@ extension MapViewController{
             nextView.characterMetObj = metCountObj
 //            nextView.removeAnnotaion = targetRemoveAnnotaion
 //            nextView.removeMap = mapView
+            print(targetPlace ?? "Hello")
         }
     }
 
