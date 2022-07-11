@@ -1,29 +1,16 @@
 {
-    "UserAgent": "aws-amplify/cli",
-    "Version": "0.1.0",
-    "IdentityManager": {
-        "Default": {}
-    },
-    "AppSync": {
-        "Default": {
-            "ApiUrl": "https://2p6czkwefzdgte3znujncqbsu4.appsync-api.us-east-1.amazonaws.com/graphql",
-            "Region": "us-east-1",
-            "AuthMode": "API_KEY",
-            "ApiKey": "da2-x4sxe3hayja3jkzqpftjjrbfvu",
-            "ClientDatabasePrefix": "seniorprojects_API_KEY"
-        }
+  "UserAgent": "aws-amplify/cli",
+  "Version": "0.1.0",
+  "IdentityManager": {
+    "Default": {}
+  },
+  "AppSync": {
+    "Default": {
+      "ApiUrl": "https://2p6czkwefzdgte3znujncqbsu4.appsync-api.us-east-1.amazonaws.com/graphql",
+      "Region": "us-east-1",
+      "AuthMode": "API_KEY",
+      "ApiKey": "da2-x4sxe3hayja3jkzqpftjjrbfvu",
+      "ClientDatabasePrefix": "seniorprojects_API_KEY"
     }
-    
-    "Auth": {
-        "Default": {
-            "OAuth": {
-                "WebDomain": "seniorprojects056e6eb7-056e6eb7-diga.auth.us-east-1.amazoncognito.com",
-                "AppClientId": "38nor8n37merjtrat2tiflcpvk",
-                "AppClientSecret": "",
-                "SignInRedirectURI": "DIGA://",
-                "SignOutRedirectURI": "DIGA://",
-                "Scopes": ["openid", "email","aws.cognito.signin.user.admin","profile","phone"]
-            }
-        }
-    },
+  }
 }

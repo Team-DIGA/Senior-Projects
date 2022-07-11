@@ -1,27 +1,102 @@
 # this is an auto generated file. This will be overwritten
-subscription OnCreateTodo {
-  onCreateTodo {
+subscription OnCreateCharacter {
+  onCreateCharacter {
     id
     name
-    description
+    rarity
+    first_met_place
+    met_count
     createdAt
     updatedAt
   }
 }
-subscription OnUpdateTodo {
-  onUpdateTodo {
+subscription OnUpdateCharacter {
+  onUpdateCharacter {
     id
     name
-    description
+    rarity
+    first_met_place
+    met_count
     createdAt
     updatedAt
   }
 }
-subscription OnDeleteTodo {
-  onDeleteTodo {
+subscription OnDeleteCharacter {
+  onDeleteCharacter {
     id
     name
-    description
+    rarity
+    first_met_place
+    met_count
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateItems {
+  onCreateItems {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateItems {
+  onUpdateItems {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteItems {
+  onDeleteItems {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateUsers {
+  onCreateUsers {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateUsers {
+  onUpdateUsers {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteUsers {
+  onDeleteUsers {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
     createdAt
     updatedAt
   }

@@ -1,23 +1,87 @@
 # this is an auto generated file. This will be overwritten
-query GetTodo($id: ID!) {
-  getTodo(id: $id) {
+query GetCharacter($id: ID!) {
+  getCharacter(id: $id) {
     id
     name
-    description
+    rarity
+    first_met_place
+    met_count
     createdAt
     updatedAt
   }
 }
-query ListTodos(
-  $filter: ModelTodoFilterInput
+query ListCharacters(
+  $filter: ModelCharacterFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listCharacters(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       name
-      description
+      rarity
+      first_met_place
+      met_count
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetItems($id: ID!) {
+  getItems(id: $id) {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+  }
+}
+query ListItems(
+  $filter: ModelItemsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listItems(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      rarity
+      effect
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetUsers($id: ID!) {
+  getUsers(id: $id) {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
+    createdAt
+    updatedAt
+  }
+}
+query ListUsers(
+  $filter: ModelUsersFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      friends
+      items
+      level
+      money
+      exp
       createdAt
       updatedAt
     }

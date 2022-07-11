@@ -10,3 +10,20 @@ type Character @model {
   first_met_place: String!
   met_count: Int!
 }
+
+type Items @model {
+  id: ID!
+  name: String!
+  rarity: Int!
+  effect: String!
+}
+
+type Users @model {
+  id: ID!
+  name: String!
+  friends: [Int]
+  items: [Int]
+  level: Int
+  money: Int
+  exp: Int
+}

@@ -81,7 +81,8 @@ class ARViewController: UIViewController {
     }
     
     func addOrEscape(){
-        let randomNum = Int.random(in: 1...characterRarity+1)
+//        let randomNum = Int.random(in: 1...characterRarity+1)
+        let randomNum = Int.random(in: 1...1)
         if randomNum == 1 {
             guard let metCount = characterMetObj[characterTitle] else {
                 print("metCountError")
