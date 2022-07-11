@@ -18,8 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Setup Amplify
         do {
-            try Amplify.add(plugin: AWSAPIPlugin(modelRegistration: AmplifyModels()))
+//            try Amplify.add(plugin: AWSAPIPlugin(modelRegistration: AmplifyModels()))
+            try Amplify.add(plugin: AWSCognitoAuthPlugin())
             try Amplify.configure()
+            print("Amplify configured with auth plugin")
         } catch {
             print("An error occurred setting up Amplify: \(error)")
         }
@@ -42,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
+    
+    
 
 
 }

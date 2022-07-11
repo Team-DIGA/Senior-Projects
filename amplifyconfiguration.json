@@ -6,10 +6,82 @@
             "awsAPIPlugin": {
                 "seniorprojects": {
                     "endpointType": "GraphQL",
-                    "endpoint": "https://2p6czkwefzdgte3znujncqbsu4.appsync-api.us-east-1.amazonaws.com/graphql",
+                    "endpoint": "https://oodsxirqkbfw5cdihanf4ygzha.appsync-api.us-east-1.amazonaws.com/graphql",
                     "region": "us-east-1",
                     "authorizationType": "API_KEY",
-                    "apiKey": "da2-x4sxe3hayja3jkzqpftjjrbfvu"
+                    "apiKey": "da2-ahoebmziovbqreujv3g63spiq4"
+                }
+            }
+        }
+    },
+    "auth": {
+        "plugins": {
+            "awsCognitoAuthPlugin": {
+                "UserAgent": "aws-amplify/cli",
+                "Version": "0.1.0",
+                "IdentityManager": {
+                    "Default": {}
+                },
+                "AppSync": {
+                    "Default": {
+                        "ApiUrl": "https://oodsxirqkbfw5cdihanf4ygzha.appsync-api.us-east-1.amazonaws.com/graphql",
+                        "Region": "us-east-1",
+                        "AuthMode": "API_KEY",
+                        "ApiKey": "da2-ahoebmziovbqreujv3g63spiq4",
+                        "ClientDatabasePrefix": "seniorprojects_API_KEY"
+                    }
+                },
+                "CredentialsProvider": {
+                    "CognitoIdentity": {
+                        "Default": {
+                            "PoolId": "us-east-1:ec9f5fb1-3f33-4277-8077-a23a62d69984",
+                            "Region": "us-east-1"
+                        }
+                    }
+                },
+                "CognitoUserPool": {
+                    "Default": {
+                        "PoolId": "us-east-1_KsoRh8C9q",
+                        "AppClientId": "38nor8n37merjtrat2tiflcpvk",
+                        "Region": "us-east-1"
+                    }
+                },
+                "Auth": {
+                    "Default": {
+                        "OAuth": {
+                            "WebDomain": "seniorprojectsad291c88-ad291c88-diga.auth.us-east-1.amazoncognito.com",
+                            "AppClientId": "38nor8n37merjtrat2tiflcpvk",
+                            "SignInRedirectURI": "DIGA://",
+                            "SignOutRedirectURI": "DIGA://",
+                            "Scopes": [
+                                "phone",
+                                "email",
+                                "openid",
+                                "profile",
+                                "aws.cognito.signin.user.admin"
+                            ]
+                        },
+                        "authenticationFlowType": "USER_SRP_AUTH",
+                        "socialProviders": [
+                            "GOOGLE"
+                        ],
+                        "usernameAttributes": [],
+                        "signupAttributes": [
+                            "EMAIL",
+                            "PHONE_NUMBER"
+                        ],
+                        "passwordProtectionSettings": {
+                            "passwordPolicyMinLength": 8,
+                            "passwordPolicyCharacters": []
+                        },
+                        "mfaConfiguration": "OFF",
+                        "mfaTypes": [
+                            "SMS"
+                        ],
+                        "verificationMechanisms": [
+                            "EMAIL"
+                        ]
+                    }
                 }
             }
         }

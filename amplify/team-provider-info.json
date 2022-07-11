@@ -63,5 +63,23 @@
       "StackId": "arn:aws:cloudformation:us-east-1:552853051669:stack/amplify-seniorprojects-seniordev-134309/f9e2ffd0-fc1c-11ec-bc3a-120fe4731aad",
       "AmplifyAppId": "d2yvaxlel99n5l"
     }
+  },
+  "diga": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-seniorprojects-diga-145847-authRole",
+      "UnauthRoleArn": "arn:aws:iam::552853051669:role/amplify-seniorprojects-diga-145847-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::552853051669:role/amplify-seniorprojects-diga-145847-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-seniorprojects-diga-145847-deployment",
+      "UnauthRoleName": "amplify-seniorprojects-diga-145847-unauthRole",
+      "StackName": "amplify-seniorprojects-diga-145847",
+      "StackId": "arn:aws:cloudformation:us-east-1:552853051669:stack/amplify-seniorprojects-diga-145847/0a5d2490-fe83-11ec-8dea-0add654a614d",
+      "AmplifyAppId": "d2yvaxlel99n5l"
+    },
+    "categories": {
+      "auth": {
+        "seniorprojects412d5728": {}
+      }
+    }
   }
 }

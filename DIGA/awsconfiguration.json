@@ -13,4 +13,17 @@
             "ClientDatabasePrefix": "seniorprojects_API_KEY"
         }
     }
+    
+    "Auth": {
+        "Default": {
+            "OAuth": {
+                "WebDomain": "seniorprojects056e6eb7-056e6eb7-diga.auth.us-east-1.amazoncognito.com",
+                "AppClientId": "38nor8n37merjtrat2tiflcpvk",
+                "AppClientSecret": "",
+                "SignInRedirectURI": "DIGA://",
+                "SignOutRedirectURI": "DIGA://",
+                "Scopes": ["openid", "email","aws.cognito.signin.user.admin","profile","phone"]
+            }
+        }
+    },
 }

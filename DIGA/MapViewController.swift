@@ -16,9 +16,9 @@ class MapAnnotationSetting:MKPointAnnotation{
 
 extension UIImage {
     func resized(size: CGSize) -> UIImage {
-            // リサイズ後のサイズを指定してUIGraphicsImageRendererを作成する
-            let renderer = UIGraphicsImageRenderer(size: size)
-            return renderer.image { (context) in
+        // リサイズ後のサイズを指定してUIGraphicsImageRendererを作成する
+        let renderer = UIGraphicsImageRenderer(size: size)
+        return renderer.image { (context) in
             draw(in: CGRect(origin: .zero, size: size))
         }
     }
@@ -71,10 +71,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         // Amplify SDK経由でqueryオペレーションを実行しCharacterの配列を取得
         Amplify.API.query(request: .list(Character.self, where: nil)) { event in
             switch event {
-            case .success(let result):
+                case .success(let result):
                 // GraphQLの場合、Query失敗時のerrorもレスポンスに含まれる
                 switch result {
-                case .success(let friends):
+                    case .success(let friends):
                     
                     self.allData = friends
                     for friend in friends {
@@ -118,13 +118,33 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         myLongitude = locationManager.location?.coordinate.longitude
         guard let latitude = myLatitude else {return}
         guard let longitude = myLongitude else {return}
-
+        
         let currentlocation = CLLocationCoordinate2DMake(latitude,longitude)
+        
+        // MapViewに中心を設定.
+//        mapView.setCenter(currentlocation, animated: true)
+        
         let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
         let region = MKCoordinateRegion(center: currentlocation, span: span)
 
         mapView.region = region
         mapView.delegate = self
+        
+        // 自分の視点の座標.
+//        var fromCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude-0.000001, longitude+0.001)
+        // 上空から見下ろす高さ.
+//        var myAltitude: CLLocationDistance = 0.00000000000001
+//        // MapCameraに中心点、視点、高さを設定.
+//        let myCamera: MKMapCamera =
+//        MKMapCamera(lookingAtCenter: currentlocation, fromDistance: 1000, pitch: 75, heading: 360)
+//
+//        // CameraをMapViewに設定.
+//        mapView.setCamera(myCamera, animated: true)
+//        // ビルを3Dに見えるようにする.
+//        mapView.showsBuildings = true
+//        // MapViewをviewに追加.
+//        self.view.addSubview(mapView)
+        
         //表示するキャラの数
         let numChara = Int.random(in:7...10)
         var countChara = 0
@@ -134,13 +154,13 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             if selectChara == 1 && countChara < numChara {
                 appendMap(i: i, countChara: countChara, numChara: numChara)
                 countChara += 1
-                
+
             }
             //area map
 //            let mod = i % 10
 //            pinLocationAppend(count: mod)
         }
-        
+
         for (index,pinTitle) in self.mapTargetTitle.enumerated(){
             let pin = MapAnnotationSetting()
             let coordinate = self.pinlocations[index]
