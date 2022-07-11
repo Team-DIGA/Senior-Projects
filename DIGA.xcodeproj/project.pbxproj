@@ -31,6 +31,8 @@
 		3A6004AA28726260009DA69E /* (null) in Resources */ = {isa = PBXBuildFile; };
 		3A60F6EE287C09D00002395E /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60F6EC287C09D00002395E /* Users.swift */; };
 		3A60F6EF287C09D00002395E /* Users+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60F6ED287C09D00002395E /* Users+Schema.swift */; };
+		3A60F6F2287C16C20002395E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A60F6F0287C16C20002395E /* amplifyconfiguration.json */; };
+		3A60F6F3287C16C20002395E /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A60F6F1287C16C20002395E /* awsconfiguration.json */; };
 		3ADF1E6B286E962F007EB643 /* Character+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E68286E962F007EB643 /* Character+Schema.swift */; };
 		3ADF1E6C286E962F007EB643 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E69286E962F007EB643 /* AmplifyModels.swift */; };
 		3ADF1E6D286E962F007EB643 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6A286E962F007EB643 /* Character.swift */; };
@@ -90,8 +92,6 @@
 		0D78B11D286C2BEE002CFB48 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0D78B120286C2F91002CFB48 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0D78B12D286DD2A1002CFB48 /* Picturebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picturebook.swift; sourceTree = "<group>"; };
-		0DD8F86128731B2800315476 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
-		0DD8F86228731B2800315476 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		1941D7930360F076521EA176 /* Pods-DIGA-DIGAUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA-DIGAUITests.release.xcconfig"; path = "Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3A0B5CB128785B2100B42A43 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		3A0B5CB228785B2100B42A43 /* Items+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Items+Schema.swift"; sourceTree = "<group>"; };
@@ -102,6 +102,8 @@
 		3A60049C28726260009DA69E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A60F6EC287C09D00002395E /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		3A60F6ED287C09D00002395E /* Users+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Users+Schema.swift"; sourceTree = "<group>"; };
+		3A60F6F0287C16C20002395E /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
+		3A60F6F1287C16C20002395E /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		3ADF1E68286E962F007EB643 /* Character+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+Schema.swift"; sourceTree = "<group>"; };
 		3ADF1E69286E962F007EB643 /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplifyModels.swift; sourceTree = "<group>"; };
 		3ADF1E6A286E962F007EB643 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -187,8 +189,8 @@
 		0D78B0EB286C2B01002CFB48 /* DIGA */ = {
 			isa = PBXGroup;
 			children = (
-				0DD8F86128731B2800315476 /* awsconfiguration.json */,
-				0DD8F86228731B2800315476 /* amplifyconfiguration.json */,
+				3A60F6F0287C16C20002395E /* amplifyconfiguration.json */,
+				3A60F6F1287C16C20002395E /* awsconfiguration.json */,
 				3A60049A28726260009DA69E /* Recovered References */,
 				3ADF1E67286E962F007EB643 /* models */,
 				0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */,
@@ -420,8 +422,10 @@
 				E172059628706EB100A9D300 /* 9.mp3 in Resources */,
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
+				3A60F6F3287C16C20002395E /* awsconfiguration.json in Resources */,
 				E18EF65C287472ED004AF827 /* AMONGS.usdz in Resources */,
 				3A6004AA28726260009DA69E /* (null) in Resources */,
+				3A60F6F2287C16C20002395E /* amplifyconfiguration.json in Resources */,
 				E172059028706EB100A9D300 /* 0.mp3 in Resources */,
 				E172059328706EB100A9D300 /* undefined.mp3 in Resources */,
 				3A55CFE52874070800CAEA22 /* amplifyconfiguration.json in Resources */,

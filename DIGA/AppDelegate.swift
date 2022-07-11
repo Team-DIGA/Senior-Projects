@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Setup Amplify
         do {
             try Amplify.add(plugin: AWSAPIPlugin(modelRegistration: AmplifyModels()))
+            try Amplify.add(plugin: AWSCognitoAuthPlugin())
             try Amplify.configure()
         } catch {
             print("An error occurred setting up Amplify: \(error)")

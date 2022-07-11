@@ -9,6 +9,16 @@ target 'DIGA' do
   pod 'Amplify'
   pod 'AmplifyPlugins/AWSAPIPlugin'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'Amplify/Tools'
+  # allows to call amplify CLI from within Xcode
+
+  pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
+  # support for Cognito user authentication
+  
+  pod 'AWSMobileClient'
+  pod 'AWSAuthUI'
+  pod 'AWSUserPoolsSignIn'
+  pod 'SSCustomTabbar'
 
   target 'DIGATests' do
     inherit! :search_paths

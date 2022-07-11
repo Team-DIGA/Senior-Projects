@@ -75,6 +75,11 @@
       "StackName": "amplify-seniorprojects-digagooo-161251",
       "StackId": "arn:aws:cloudformation:us-east-1:552853051669:stack/amplify-seniorprojects-digagooo-161251/e2117140-00e8-11ed-b961-1286e6a3c6a7",
       "AmplifyAppId": "d2yvaxlel99n5l"
+    },
+    "categories": {
+      "auth": {
+        "seniorprojectsfc97dcdc": {}
+      }
     }
   }
 }

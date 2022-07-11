@@ -9,8 +9,26 @@ import UIKit
 import MapKit
 import CoreLocation
 import AVFoundation
+import Amplify
+import AWSMobileClient
 
 class TopViewController: UIViewController {
+    
+    @IBAction func signOutButton(_ sender: UIButton) {
+        // サインアウト処理
+        AWSMobileClient.sharedInstance().signOut()
+
+        // サインイン画面を表示
+        AWSMobileClient.sharedInstance().showSignIn(navigationController: self.navigationController!, { (userState, error) in
+            if(error == nil){       //Successful signin
+                DispatchQueue.main.async {
+                    print("Sign In")
+                }
+            }
+        })
+    }
+    
+    @IBOutlet weak var signOutButton: UIButton!
     @IBAction func digagoButton(_ sender: UIButton) {
 //        avPlayer.stop()
     }
@@ -35,6 +53,30 @@ class TopViewController: UIViewController {
     var buttonAvPlayer : AVAudioPlayer!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 認証 通常の認証画面を表示
+        AWSMobileClient.sharedInstance().initialize { (userState, error) in
+            if let userState = userState {
+                switch(userState){
+                case .signedIn:
+                    DispatchQueue.main.async {
+                        print("Sign In")
+                    }
+                case .signedOut:
+                    AWSMobileClient.sharedInstance().showSignIn(navigationController: self.navigationController!, { (userState, error) in
+                        if(error == nil){       //Successful signin
+                            DispatchQueue.main.async {
+                                print("Sign In")
+                            }
+                        }
+                    })
+                default:
+                    AWSMobileClient.sharedInstance().signOut()
+                }
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
         
         // Bundle Resourcesからsample.mp4を読み込んで再生
         let path = Bundle.main.path(forResource: "amongs", ofType: "mp4")!

@@ -366,6 +366,23 @@
                                     <constraint firstAttribute="height" constant="262" id="pUv-Hz-huS"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubg-dY-O9H">
+                                <rect key="frame" x="100" y="558" width="214" height="46"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="4PR-K9-nbZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <size key="titleShadowOffset" width="10" height="10"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutButton:" destination="uty-ZU-OTc" eventType="touchUpInside" id="Vyh-WF-D9t"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X3P-G4-nkZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -393,6 +410,7 @@
                     <connections>
                         <outlet property="digaGoButton" destination="MPp-1T-vaF" id="kJX-QD-8Rc"/>
                         <outlet property="showFriendsButton" destination="DHh-fE-aQo" id="UI2-Kl-eAG"/>
+                        <outlet property="signOutButton" destination="ubg-dY-O9H" id="T48-YS-1u5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WBj-3L-lEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
