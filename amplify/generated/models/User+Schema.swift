@@ -27,8 +27,8 @@ extension User {
     model.fields(
       .id(),
       .field(user.name, is: .required, ofType: .string),
-      .field(user.friends, is: .optional, ofType: .embeddedCollection(of: Int.self)),
-      .field(user.items, is: .optional, ofType: .embeddedCollection(of: Int.self)),
+      .field(user.friends, is: .optional, ofType: .embeddedCollection(of: String.self)),
+      .field(user.items, is: .optional, ofType: .embeddedCollection(of: String.self)),
       .field(user.level, is: .optional, ofType: .int),
       .field(user.money, is: .optional, ofType: .int),
       .field(user.exp, is: .optional, ofType: .int),

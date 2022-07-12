@@ -2,7 +2,7 @@ projects:
   digayuta:
     schemaPath: graphql/schema.json
     includes:
-      - "y"
+      - 'y'
     excludes:
       - ./amplify/**
     extensions:
@@ -10,3 +10,6 @@ projects:
         codeGenTarget: swift
         generatedFileName: API.swift
         docsFilePath: .
+extensions:
+  amplify:
+    version: 3

@@ -9,6 +9,7 @@ import UIKit
 import RealityKit
 import MapKit
 import Amplify
+import AWSMobileClient
 
 struct testStruct {
     func tests() {
@@ -32,6 +33,7 @@ class ARViewController: UIViewController {
     let uiDesign = UiDesign()
     
     let itemDataUtils = ItemDataUtils()
+    let userDataUtils = UserDataUtils()
     
     let characterDataUtils = CharacterDataUtils()
     let textArray: [String] = [
@@ -50,26 +52,7 @@ class ARViewController: UIViewController {
         "pufpufする"
     ]
     
-    
-    
-    var itemArray:[Item] = []
-    
-
-    
-    let itemTitles:[String] = [
-        "アンパンマンの顔",
-        "エリクサー",
-        "ゴムゴムの実",
-        "スカウター",
-        "タケコプター",
-        "どこでもドア",
-        "ポーション",
-        "メラメラの実",
-        "胡蝶しのぶの日輪刀",
-        "仙豆",
-        "立体機動装置",
-        "煉獄杏寿郎の日輪刀",
-    ]
+    var itemTitles:[Item] = []
     
     @IBOutlet var arView: ARView!
     
@@ -104,67 +87,9 @@ class ARViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        func getAllItem() {
-//            let semaphore = DispatchSemaphore(value: 0)
-            var resultArray: [Item] = []
-            // Amplify SDK経由でqueryオペレーションを実行しItemsの配列を取得
-            Amplify.API.query(request: .list(Item.self, where: nil)) { event in
-                switch event {
-                case .success(let result):
-                    print("item",result)
-                    // GraphQLの場合、Query失敗時のerrorもレスポンスに含まれる
-                    switch result {
-                    case .success(let item):
-                        
-                        resultArray = item
-                        print(item,"----------")
-//                        semaphore.signal()
-                        
-                    case .failure(let graphQLError):
-                        // サーバーから返されるエラーはこっち
-                        print("Failed to getAllData graphql \(graphQLError)")
-//                        semaphore.signal()
-                    }
-                case .failure(let apiError):
-                    // 通信エラー等の場合はこっち
-                    print("Failed to getAllData a message", apiError)
-//                    semaphore.signal()
-                }
-            }
-//            Amplify.API.query(request: .list(Character.self, where: nil)) { event in
-//                switch event {
-//                case .success(let result):
-//                    print("chara",result)
-//
-//                    // GraphQLの場合、Query失敗時のerrorもレスポンスに含まれる
-//                    switch result {
-//                    case .success(let item):
-//
-////                        resultArray = item
-//                        print(item,"----------")
-////                        semaphore.signal()
-//
-//                    case .failure(let graphQLError):
-//                        // サーバーから返されるエラーはこっち
-//                        print("Failed to getAllData graphql \(graphQLError)")
-////                        semaphore.signal()
-//                    }
-//                case .failure(let apiError):
-//                    // 通信エラー等の場合はこっち
-//                    print("Failed to getAllData a message", apiError)
-////                    semaphore.signal()
-//                }
-//            }
-        
-//            semaphore.wait()
-    //        return resultArray
-        }
-        getAllItem()
-        
 
+        itemTitles = itemDataUtils.getAllItem() as! [Item]
 
-//        itemDataUtils.getAllItem()
-        print(itemArray)
         view.addSubview(arView)
         view.bringSubviewToFront(addFriendButton)
         view.bringSubviewToFront(addFriendButton2)
@@ -255,7 +180,8 @@ class ARViewController: UIViewController {
         
         if addFlag {
             backAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-                let randomNum = Int.random(in: 1...2)
+//                let randomNum = Int.random(in: 1...2)
+                let randomNum = 1
                 if randomNum == 1 {
                     self.alertFunc2()
                 } else {
@@ -281,12 +207,11 @@ class ARViewController: UIViewController {
     
     func alertFunc2(){
         let randomItemNum = Int.random(in: 0...itemTitles.count-1)
-        let alert = UIAlertController(title: String("\(itemTitles[randomItemNum])を手に入れた！"), message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: String("\(itemTitles[randomItemNum].name)を手に入れた！"), message: "", preferredStyle: .alert)
         let imageView = UIImageView(frame: CGRect(x: 10, y: 70, width: 250, height: 250))
-        
         let height = NSLayoutConstraint(item: alert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)
         alert.view.addConstraint(height)
-        imageView.image = UIImage(named: itemTitles[randomItemNum])
+        imageView.image = UIImage(named: itemTitles[randomItemNum].name)
         alert.view.addSubview(imageView)
         
         let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
@@ -295,7 +220,14 @@ class ARViewController: UIViewController {
         
         alert.addAction(backAction)
         present(alert, animated: true)
+        
+        guard let username = AWSMobileClient.default().username else {
+            print("Error: Uncaught username")
+            return
+        }
+        
+        userDataUtils.updateUserItem(name: username, itemName: itemTitles[randomItemNum].name)
+        
     }
     
-
 }

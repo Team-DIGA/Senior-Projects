@@ -22,8 +22,8 @@ type Item @model {
 type User @model {
   id: ID!
   name: String!
-  friends: [Int]
-  items: [Int]
+  friends: [String]
+  items: [String]
   level: Int
   money: Int
   exp: Int

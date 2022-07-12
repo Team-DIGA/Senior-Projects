@@ -5,8 +5,8 @@ import Foundation
 public struct User: Model {
   public let id: String
   public var name: String
-  public var friends: [Int?]?
-  public var items: [Int?]?
+  public var friends: [String?]?
+  public var items: [String?]?
   public var level: Int?
   public var money: Int?
   public var exp: Int?
@@ -15,8 +15,8 @@ public struct User: Model {
   
   public init(id: String = UUID().uuidString,
       name: String,
-      friends: [Int?]? = nil,
-      items: [Int?]? = nil,
+      friends: [String?]? = nil,
+      items: [String?]? = nil,
       level: Int? = nil,
       money: Int? = nil,
       exp: Int? = nil) {
@@ -32,8 +32,8 @@ public struct User: Model {
   }
   internal init(id: String = UUID().uuidString,
       name: String,
-      friends: [Int?]? = nil,
-      items: [Int?]? = nil,
+      friends: [String?]? = nil,
+      items: [String?]? = nil,
       level: Int? = nil,
       money: Int? = nil,
       exp: Int? = nil,

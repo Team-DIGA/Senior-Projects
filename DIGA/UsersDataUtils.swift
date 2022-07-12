@@ -10,110 +10,84 @@ import Amplify
 import AWSPluginsCore
 import Combine
 
+let itemDataUtild = ItemDataUtils()
 
 struct UserDataUtils {
 
     //名前で絞って1レコード取得
-    func getUser(name: String) -> DIGA.User.CodingKeys.Type {
+    func getUser(name: String) -> Any {
         let semaphore = DispatchSemaphore(value: 0)
         let userKeys = User.keys
+        var resultUser: User?
         Amplify.API.query(request: .list(User.self, where: userKeys.name == name)) { event in
             switch event {
             case .success(let result):
                 switch result {
-                case .success(let user):
-                    print("Successfully retrieved friend: \(String(describing: user.first))")
-//                    devGetItem = user.first
-                    
+                case .success(let friend):
+                    print("Successfully retrieved friend: \(String(describing: friend.first))")
+                    guard let gotUser = friend.first else {
+                        print("Error: Uncaught user")
+                        return
+                    }
+                    resultUser = gotUser
                     semaphore.signal()
                 case .failure(let error):
-                    print("Got failed result with \(error.errorDescription)")
+                    print("Got failed result of getUser with \(error.errorDescription)")
                     
                     semaphore.signal()
                 }
             case .failure(let error):
-                print("Got failed event with error \(error)")
+                print("Got failed event of getUser with error \(error)")
                 
                 semaphore.signal()
             }
         }
         semaphore.wait()
-        return userKeys
+        guard let returnUser = resultUser else {
+            print("Error: Uncaught returnUser")
+            return print("Error")
+        }
+        return returnUser
     }
     
-    //全データ取得
-    func getAllItem() {
-        let semaphore = DispatchSemaphore(value: 0)
-        // Amplify SDK経由でqueryオペレーションを実行しItemsの配列を取得
-        Amplify.API.query(request: .list(Item.self, where: nil)) { event in
+    func updateUserItem(name: String, itemName: String) {
+        //Anyだから暫定でこの書き方。
+        var user: User = getUser(name: name) as! User
+        let item: Item = itemDataUtild.getItem(name: itemName) as! Item
+
+        user.items! = [item.name]
+
+        // mutateで新規メッセージを作成
+        Amplify.API.mutate(request: .updateMutation(of: user, version: nil)) { event in
             switch event {
             case .success(let result):
-                // GraphQLの場合、Query失敗時のerrorもレスポンスに含まれる
                 switch result {
-                case .success(let item):
-                    
-                    devItemArray = item
-                    semaphore.signal()
-                    
-                case .failure(let graphQLError):
-                    // サーバーから返されるエラーはこっち
-                    print("Failed to getAllData graphql \(graphQLError)")
-                    semaphore.signal()
+                case .success(let user):
+                    print("Successfully updated userItem: \(user)")
+                case .failure(let error):
+                    print("Got failed result of updateItem with \(error.errorDescription)")
                 }
-            case .failure(let apiError):
-                // 通信エラー等の場合はこっち
-                print("Failed to getAllData a message", apiError)
-                semaphore.signal()
+            case .failure(let error):
+                print("Got failed event of updateItem with error \(error)")
             }
         }
-        semaphore.wait()
     }
-    
-    
+
     // 1件挿入
     func createUser(user: User) -> Void {
         Amplify.API.mutate(request: .create(user)) { event in
         switch event {
-        case .success(let result):
-            switch result {
-            case .success(let message):
-                print("Successfully created the message: \(message)")
-            case .failure(let graphQLError):
-                // サーバーからのエラーの場合はこっち
-                print("Failed to create graphql \(graphQLError)")
-            }
-        case .failure(let apiError):
-            // 通信まわりなどのErrorになった場合はこっち
-            print("Failed to create a message", apiError)
-        }
-    }
-    }
-    //全データ挿入
-    func createAllItem() -> Void {
-        print("===================================================")
-        for item in itemObj {
-            
-            guard let rarityStr = item["rarity"] else { return }
-            guard let rarity = Int(rarityStr) else { return }
-            
-            let items = Item(name: item["name"]!, rarity: rarity, effect: item["effect"]!)
-            
-            print("=======================", items)
-            // mutateで新規メッセージを作成
-            Amplify.API.mutate(request: .create(items)) { event in
-                switch event {
-                case .success(let result):
-                    switch result {
-                    case .success(let message):
-                        print("Successfully createAllData the message: \(message)")
-                    case .failure(let graphQLError):
-                        // サーバーからのエラーの場合はこっち
-                        print("Failed to createAllData graphql \(graphQLError)")
-                    }
-                case .failure(let apiError):
-                    // 通信まわりなどのErrorになった場合はこっち
-                    print("Failed to createAllData a message", apiError)
+            case .success(let result):
+                switch result {
+                case .success(let message):
+                    print("Successfully created user: \(message)")
+                case .failure(let graphQLError):
+                    // サーバーからのエラーの場合はこっち
+                    print("Failed to createUser by graphql \(graphQLError)")
                 }
+            case .failure(let apiError):
+                // 通信まわりなどのErrorになった場合はこっち
+                print("Failed to createUser by apiError", apiError)
             }
         }
     }
