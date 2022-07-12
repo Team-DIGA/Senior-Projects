@@ -18,5 +18,5 @@ amplifytools.xcconfig
 #amplify-do-not-edit-end
 .DS_Store
 xcuserdata/
-DIGA/awsconfiguration.json
-DIGA/amplifyconfiguration.json
+awsconfiguration.json
+amplifyconfiguration.json
