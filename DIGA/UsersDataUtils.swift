@@ -1,33 +1,29 @@
+//
+//  UsersDataUtils.swift
+//  DIGA
+//
+//  Created by Shogo Kanechika on 2022/07/11.
+//
+
+import Foundation
 import Amplify
 import AWSPluginsCore
 import Combine
 
-var devItemArray: [Item] = []
-var devGetItem: Item?
 
-let itemObj: [[String: String]] = [
-    ["name": "ポーション", "rarity": "5", "effect": "SurelyGet"],
-    ["name": "どこでもドア", "rarity": "2", "effect": "GotoLondon"],
-    ["name": "スカウター!!!!!", "rarity": "4", "effect": "IncreasedProbability"],
-]
+struct UserDataUtils {
 
-struct ItemDataUtils {
-
-    func random() -> Int {
-        return Int.random(in: 1 ..< 11)
-    }
-    
     //名前で絞って1レコード取得
-    func getItem(name: String) -> DIGA.Item.CodingKeys.Type {
+    func getUser(name: String) -> DIGA.User.CodingKeys.Type {
         let semaphore = DispatchSemaphore(value: 0)
-        let itemKeys = Item.keys
-        Amplify.API.query(request: .list(Item.self, where: itemKeys.name == name)) { event in
+        let userKeys = User.keys
+        Amplify.API.query(request: .list(User.self, where: userKeys.name == name)) { event in
             switch event {
             case .success(let result):
                 switch result {
-                case .success(let item):
-                    print("Successfully retrieved friend: \(String(describing: item.first))")
-                    devGetItem = item.first
+                case .success(let user):
+                    print("Successfully retrieved friend: \(String(describing: user.first))")
+//                    devGetItem = user.first
                     
                     semaphore.signal()
                 case .failure(let error):
@@ -42,13 +38,12 @@ struct ItemDataUtils {
             }
         }
         semaphore.wait()
-        return itemKeys
+        return userKeys
     }
     
     //全データ取得
     func getAllItem() {
         let semaphore = DispatchSemaphore(value: 0)
-        var resultArray: [Item] = []
         // Amplify SDK経由でqueryオペレーションを実行しItemsの配列を取得
         Amplify.API.query(request: .list(Item.self, where: nil)) { event in
             switch event {
@@ -57,8 +52,7 @@ struct ItemDataUtils {
                 switch result {
                 case .success(let item):
                     
-                    resultArray = item
-                    print(item,"----------")
+                    devItemArray = item
                     semaphore.signal()
                     
                 case .failure(let graphQLError):
@@ -73,9 +67,27 @@ struct ItemDataUtils {
             }
         }
         semaphore.wait()
-//        return resultArray
     }
     
+    
+    // 1件挿入
+    func createUser(user: User) -> Void {
+        Amplify.API.mutate(request: .create(user)) { event in
+        switch event {
+        case .success(let result):
+            switch result {
+            case .success(let message):
+                print("Successfully created the message: \(message)")
+            case .failure(let graphQLError):
+                // サーバーからのエラーの場合はこっち
+                print("Failed to create graphql \(graphQLError)")
+            }
+        case .failure(let apiError):
+            // 通信まわりなどのErrorになった場合はこっち
+            print("Failed to create a message", apiError)
+        }
+    }
+    }
     //全データ挿入
     func createAllItem() -> Void {
         print("===================================================")

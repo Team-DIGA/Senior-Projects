@@ -28,6 +28,8 @@ class TopViewController: UIViewController {
         })
     }
     
+    
+    
     @IBOutlet weak var signOutButton: UIButton!
     @IBAction func digagoButton(_ sender: UIButton) {
 //        avPlayer.stop()
@@ -36,6 +38,8 @@ class TopViewController: UIViewController {
     var nameNum = ""
     
     let uiDesign = UiDesign()
+    
+    let userDataUtils = UserDataUtils()
     
     @IBOutlet weak var digaGoButton: UIButton!
     @IBOutlet weak var showFriendsButton: UIButton!
@@ -59,7 +63,16 @@ class TopViewController: UIViewController {
             if let userState = userState {
                 switch(userState){
                 case .signedIn:
+                    print("++++++")
                     DispatchQueue.main.async {
+                        print("-------")
+                        guard let userName = AWSMobileClient.default().username else {
+                            print("Error:Uncaught username")
+                            return
+                        }
+                        let addUser = User(name:userName, friends: [], items: [], level: 1, money: 0, exp: 0)
+                        self.userDataUtils.createUser(user: addUser)
+                        
                         print("Sign In")
                         
                         guard let userName = AWSMobileClient.default().username else { return }

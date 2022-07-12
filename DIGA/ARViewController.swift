@@ -8,12 +8,14 @@
 import UIKit
 import RealityKit
 import MapKit
+import Amplify
 
 struct testStruct {
     func tests() {
         print("test")
     }
 }
+
 
 class ARViewController: UIViewController {
     
@@ -28,6 +30,8 @@ class ARViewController: UIViewController {
     let testUtiols = testStruct()
     
     let uiDesign = UiDesign()
+    
+    let itemDataUtils = ItemDataUtils()
     
     let characterDataUtils = CharacterDataUtils()
     let textArray: [String] = [
@@ -46,7 +50,11 @@ class ARViewController: UIViewController {
         "pufpufする"
     ]
     
-    var itemArray:[UIImage?] = []
+    
+    
+    var itemArray:[Item] = []
+    
+
     
     let itemTitles:[String] = [
         "アンパンマンの顔",
@@ -96,7 +104,67 @@ class ARViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        func getAllItem() {
+//            let semaphore = DispatchSemaphore(value: 0)
+            var resultArray: [Item] = []
+            // Amplify SDK経由でqueryオペレーションを実行しItemsの配列を取得
+            Amplify.API.query(request: .list(Item.self, where: nil)) { event in
+                switch event {
+                case .success(let result):
+                    print("item",result)
+                    // GraphQLの場合、Query失敗時のerrorもレスポンスに含まれる
+                    switch result {
+                    case .success(let item):
+                        
+                        resultArray = item
+                        print(item,"----------")
+//                        semaphore.signal()
+                        
+                    case .failure(let graphQLError):
+                        // サーバーから返されるエラーはこっち
+                        print("Failed to getAllData graphql \(graphQLError)")
+//                        semaphore.signal()
+                    }
+                case .failure(let apiError):
+                    // 通信エラー等の場合はこっち
+                    print("Failed to getAllData a message", apiError)
+//                    semaphore.signal()
+                }
+            }
+//            Amplify.API.query(request: .list(Character.self, where: nil)) { event in
+//                switch event {
+//                case .success(let result):
+//                    print("chara",result)
+//
+//                    // GraphQLの場合、Query失敗時のerrorもレスポンスに含まれる
+//                    switch result {
+//                    case .success(let item):
+//
+////                        resultArray = item
+//                        print(item,"----------")
+////                        semaphore.signal()
+//
+//                    case .failure(let graphQLError):
+//                        // サーバーから返されるエラーはこっち
+//                        print("Failed to getAllData graphql \(graphQLError)")
+////                        semaphore.signal()
+//                    }
+//                case .failure(let apiError):
+//                    // 通信エラー等の場合はこっち
+//                    print("Failed to getAllData a message", apiError)
+////                    semaphore.signal()
+//                }
+//            }
         
+//            semaphore.wait()
+    //        return resultArray
+        }
+        getAllItem()
+        
+
+
+//        itemDataUtils.getAllItem()
+        print(itemArray)
         view.addSubview(arView)
         view.bringSubviewToFront(addFriendButton)
         view.bringSubviewToFront(addFriendButton2)
@@ -152,9 +220,6 @@ class ARViewController: UIViewController {
 //        let boxAnchor = try! Experience.loadBox()
 //        arView.scene.anchors.append(boxAnchor)
         
-        for itemTitle in itemTitles {
-            itemArray.append(UIImage(named: itemTitle))
-        }
         
         uiDesign.buttonDesign(button: addFriendButton)
         uiDesign.buttonDesign(button: addFriendButton2)
@@ -221,7 +286,7 @@ class ARViewController: UIViewController {
         
         let height = NSLayoutConstraint(item: alert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)
         alert.view.addConstraint(height)
-        imageView.image = itemArray[randomItemNum]
+        imageView.image = UIImage(named: itemTitles[randomItemNum])
         alert.view.addSubview(imageView)
         
         let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in

@@ -2,7 +2,7 @@ projects:
   digayuta:
     schemaPath: graphql/schema.json
     includes:
-      - 'y'
+      - "y"
     excludes:
       - ./amplify/**
     extensions:
