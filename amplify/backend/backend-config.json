@@ -10,7 +10,7 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 30,
-              "apiKeyExpirationDate": "2022-08-11T02:36:05.846Z",
+              "apiKeyExpirationDate": "2022-08-11T09:08:20.097Z",
               "description": "DIGA's APi key"
             }
           },
