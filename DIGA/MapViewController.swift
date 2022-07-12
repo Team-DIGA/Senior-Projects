@@ -28,6 +28,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var SerchButton: UIButton!
+    @IBAction func didTapSerchButton(_ sender: UIButton) {
+        self.viewDidLoad()
+        
+    }
     var locationManager: CLLocationManager!
     
     // 取得した緯度経度を保持するインスタンス
@@ -109,6 +114,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         getAllNamesAndImages()
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -142,8 +149,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         // ビルを3Dに見えるようにする.
         mapView.showsBuildings = true
         // MapViewをviewに追加.
-        self.view.addSubview(mapView)
-        
+        view.addSubview(mapView)
+        view.bringSubviewToFront(SerchButton)
         //表示するキャラの数
         let numChara = Int.random(in:7...10)
         var countChara = 0

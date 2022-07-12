@@ -6,33 +6,33 @@
     },
     "AppSync": {
         "Default": {
-            "ApiUrl": "https://oodsxirqkbfw5cdihanf4ygzha.appsync-api.us-east-1.amazonaws.com/graphql",
-            "Region": "us-east-1",
+            "ApiUrl": "https://3ibcu5qqczeabmtjqeyiddwv54.appsync-api.ap-northeast-1.amazonaws.com/graphql",
+            "Region": "ap-northeast-1",
             "AuthMode": "API_KEY",
-            "ApiKey": "da2-ahoebmziovbqreujv3g63spiq4",
+            "ApiKey": "da2-sg33c36o5fewvnryyzjlvb3qfu",
             "ClientDatabasePrefix": "seniorprojects_API_KEY"
         }
     },
     "CredentialsProvider": {
         "CognitoIdentity": {
             "Default": {
-                "PoolId": "us-east-1:ec9f5fb1-3f33-4277-8077-a23a62d69984",
-                "Region": "us-east-1"
+                "PoolId": "ap-northeast-1:2f5db8d0-6522-489c-a216-2fe782bc7863",
+                "Region": "ap-northeast-1"
             }
         }
     },
     "CognitoUserPool": {
         "Default": {
-            "PoolId": "us-east-1_KsoRh8C9q",
-            "AppClientId": "38nor8n37merjtrat2tiflcpvk",
-            "Region": "us-east-1"
+            "PoolId": "ap-northeast-1_E8sUYGOs6",
+            "AppClientId": "228esmku4eia078b03aqm6ahgm",
+            "Region": "ap-northeast-1"
         }
     },
     "Auth": {
         "Default": {
             "OAuth": {
-                "WebDomain": "seniorprojects056e6eb7-056e6eb7-diga.auth.us-east-1.amazoncognito.com",
-                "AppClientId": "38nor8n37merjtrat2tiflcpvk",
+                "WebDomain": "seniorprojects056e6eb7-056e6eb7-kazunori.auth.ap-northeast-1.amazoncognito.com",
+                "AppClientId": "228esmku4eia078b03aqm6ahgm",
                 "SignInRedirectURI": "DIGA://",
                 "SignOutRedirectURI": "DIGA://",
                 "Scopes": [

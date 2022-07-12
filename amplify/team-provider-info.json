@@ -81,5 +81,23 @@
         "seniorprojects412d5728": {}
       }
     }
+  },
+  "kazunori": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-seniorprojects-kazunori-233936-authRole",
+      "UnauthRoleArn": "arn:aws:iam::845339839545:role/amplify-seniorprojects-kazunori-233936-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::845339839545:role/amplify-seniorprojects-kazunori-233936-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-seniorprojects-kazunori-233936-deployment",
+      "UnauthRoleName": "amplify-seniorprojects-kazunori-233936-unauthRole",
+      "StackName": "amplify-seniorprojects-kazunori-233936",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:845339839545:stack/amplify-seniorprojects-kazunori-233936/4a12c5d0-0127-11ed-a411-0612f95471f7",
+      "AmplifyAppId": "dogoe7mddeygs"
+    },
+    "categories": {
+      "auth": {
+        "seniorprojects412d5728": {}
+      }
+    }
   }
 }

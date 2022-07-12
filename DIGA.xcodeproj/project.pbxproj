@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06969B1DD0E3A11B46C7766A /* Pods_DIGATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD569AA0F43533696604EA1C /* Pods_DIGATests.framework */; };
+		0A0F86BE287D5B3B003D8C62 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F86BD287D5B3A003D8C62 /* UIViewExtension.swift */; };
 		0D78B0ED286C2B01002CFB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */; };
 		0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EE286C2B01002CFB48 /* ARViewController.swift */; };
 		0D78B0F1286C2B01002CFB48 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0F0286C2B01002CFB48 /* Experience.rcproject */; };
@@ -70,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		0024C87E482DD78D654BAB38 /* Pods-DIGATests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGATests.debug.xcconfig"; path = "Target Support Files/Pods-DIGATests/Pods-DIGATests.debug.xcconfig"; sourceTree = "<group>"; };
+		0A0F86BD287D5B3A003D8C62 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		0D78B0E9286C2B01002CFB48 /* DIGA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIGA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D78B0EE286C2B01002CFB48 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */,
 				0D78B11B286C2BD5002CFB48 /* TopViewContoroller.swift */,
 				0D78B11D286C2BEE002CFB48 /* MapViewController.swift */,
+				0A0F86BD287D5B3A003D8C62 /* UIViewExtension.swift */,
 				0D78B0EE286C2B01002CFB48 /* ARViewController.swift */,
 				0D78B12D286DD2A1002CFB48 /* Picturebook.swift */,
 				0D78B0F0286C2B01002CFB48 /* Experience.rcproject */,
@@ -459,9 +462,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -476,9 +483,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA/Pods-DIGA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA/Pods-DIGA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -562,6 +573,7 @@
 				0D78B11C286C2BD5002CFB48 /* TopViewContoroller.swift in Sources */,
 				3ADF1E6B286E962F007EB643 /* Character+Schema.swift in Sources */,
 				0D78B12E286DD2A2002CFB48 /* Picturebook.swift in Sources */,
+				0A0F86BE287D5B3B003D8C62 /* UIViewExtension.swift in Sources */,
 				3ADF1E6F286E9819007EB643 /* AddFriendsTestViewController.swift in Sources */,
 				3A55CFE32873EAF500CAEA22 /* devFunctions.swift in Sources */,
 				3A55CFE928754C1700CAEA22 /* UIDesign.swift in Sources */,
@@ -767,7 +779,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DIG-DIGA-100";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DIG-DIGA-111";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -785,7 +797,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NHP67Z9BWN;
+				DEVELOPMENT_TEAM = L74DBDRY8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "常に許可";

@@ -15,6 +15,12 @@ struct testStruct {
     }
 }
 
+func delay(_ delay: Double, closure: @escaping ()->()) {
+  DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+    closure()
+  }
+}
+
 class ARViewController: UIViewController {
     
     var imageValue: String!
@@ -63,6 +69,36 @@ class ARViewController: UIViewController {
         "煉獄杏寿郎の日輪刀",
     ]
     
+    @IBOutlet weak var gage1: UIView!
+    @IBOutlet weak var gage2: UIView!
+    @IBOutlet weak var gage3: UIView!
+    @IBOutlet weak var gage4: UIView!
+    @IBOutlet weak var gage5: UIView!
+    @IBOutlet weak var gage6: UIView!
+    @IBOutlet weak var gage7: UIView!
+    @IBOutlet weak var gage8: UIView!
+    @IBOutlet weak var gage9: UIView!
+    @IBOutlet weak var gage10: UIView!
+    @IBOutlet weak var gage11: UIView!
+    @IBOutlet weak var gage12: UIView!
+    @IBOutlet weak var gage13: UIView!
+    @IBOutlet weak var gage14: UIView!
+    @IBOutlet weak var gage15: UIView!
+    @IBOutlet weak var gage16: UIView!
+    @IBOutlet weak var gage17: UIView!
+    @IBOutlet weak var gage18: UIView!
+    @IBOutlet weak var gage19: UIView!
+    @IBOutlet weak var gage20: UIView!
+    @IBOutlet weak var gage21: UIView!
+    @IBOutlet weak var gage22: UIView!
+    @IBOutlet weak var gage23: UIView!
+    
+    @IBOutlet weak var resultImage: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var GageStopButton: UIButton!
+    
+    
+    
     @IBOutlet var arView: ARView!
     
     @IBOutlet weak var addFriendButton: UIButton!
@@ -71,18 +107,60 @@ class ARViewController: UIViewController {
     @IBOutlet weak var rarityLabel: UILabel!
     @IBOutlet weak var metCountLabel: UILabel!
     
-    @IBAction func AddFriend2(_ sender: UIButton) {
-        addOrEscape()
-    }
+//    @IBAction func AddFriend2(_ sender: UIButton) {
+//        addOrEscape(result: Int)
+//    }
+//
+//    // 前の画面に戻る処理
+//    @IBAction func AddFriend(_ sender: UIButton) {
+//        addOrEscape(result: Int)
+//    }
     
-    // 前の画面に戻る処理
-    @IBAction func AddFriend(_ sender: UIButton) {
-        addOrEscape()
-    }
-    
-    func addOrEscape(){
-        let randomNum = Int.random(in: 1...characterRarity+1)
-        if randomNum == 1 {
+    func addOrEscape(result:Int){
+        let arrOfCaptureProbability = [
+            [50,55,60,65,70,75,80,85,90,95],
+            [45,50,55,60,65,70,75,80,85,90],
+            [40,45,50,55,60,65,70,75,80,85],
+            [35,40,45,50,55,60,65,70,75,80],
+            [30,35,40,45,50,55,60,65,70,75],
+            [25,30,35,40,45,50,55,60,65,70],
+            [20,25,30,35,40,45,50,55,60,65],
+            [15,20,25,30,35,40,45,50,55,60],
+            [10,15,20,25,30,35,40,45,50,55],
+            [5,10,15,20,25,30,35,40,45,50],
+        ]
+    let myLevel = 0
+    var myLevelZone = 0
+        if myLevel <= 5 {
+            myLevelZone = 0
+        } else if myLevel <= 10 {
+            myLevelZone = 1
+        } else if myLevel <= 15 {
+            myLevelZone = 2
+        } else if myLevel <= 20 {
+            myLevelZone = 3
+        } else if myLevel <= 25 {
+            myLevelZone = 4
+        } else if myLevel <= 30 {
+            myLevelZone = 5
+        } else if myLevel <= 35 {
+            myLevelZone = 6
+        } else if myLevel <= 40 {
+            myLevelZone = 7
+        } else if myLevel <= 45 {
+            myLevelZone = 8
+        } else {
+            myLevelZone = 9
+        }
+        
+    var captureProbability:Int = arrOfCaptureProbability[characterRarity-1][myLevelZone]
+        
+        captureProbability += result
+        
+        
+//        let randomNum = Int.random(in: 1...characterRarity+1)
+        let randomNum = Int.random(in: 1...100)
+        if randomNum <= captureProbability {
             guard let metCount = characterMetObj[characterTitle] else {
                 print("metCountError")
                 return
@@ -97,12 +175,47 @@ class ARViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         view.addSubview(arView)
         view.bringSubviewToFront(addFriendButton)
         view.bringSubviewToFront(addFriendButton2)
         view.bringSubviewToFront(nameLabel)
         view.bringSubviewToFront(rarityLabel)
         view.bringSubviewToFront(metCountLabel)
+        
+        
+        
+        view.bringSubviewToFront(gage1)
+        view.bringSubviewToFront(gage2)
+        view.bringSubviewToFront(gage3)
+        view.bringSubviewToFront(gage4)
+        view.bringSubviewToFront(gage5)
+        view.bringSubviewToFront(gage6)
+        view.bringSubviewToFront(gage7)
+        view.bringSubviewToFront(gage8)
+        view.bringSubviewToFront(gage9)
+        view.bringSubviewToFront(gage10)
+        view.bringSubviewToFront(gage11)
+        view.bringSubviewToFront(gage12)
+        view.bringSubviewToFront(gage13)
+        view.bringSubviewToFront(gage14)
+        view.bringSubviewToFront(gage15)
+        view.bringSubviewToFront(gage16)
+        view.bringSubviewToFront(gage17)
+        view.bringSubviewToFront(gage18)
+        view.bringSubviewToFront(gage19)
+        view.bringSubviewToFront(gage20)
+        view.bringSubviewToFront(gage21)
+        view.bringSubviewToFront(gage22)
+        view.bringSubviewToFront(gage23)
+        view.bringSubviewToFront(imageView)
+        view.bringSubviewToFront(resultImage)
+        view.bringSubviewToFront(GageStopButton)
+        
+        self.imageView.frame.origin.x = 250
+        self.imageView.frame.origin.y = gage1.top - (imageView.bottom - imageView.top)/2 - 75
+        
         if characterTitle! == "コイル" {
             let anchor = AnchorEntity()
             anchor.position = simd_make_float3(0, -0.1, -8)
@@ -232,5 +345,135 @@ class ARViewController: UIViewController {
         present(alert, animated: true)
     }
     
-
+    
+    //ここからミニゲーム
+    
+   
+   
+    
+    override func viewDidAppear(_ animated: Bool) {
+        var gageSpeed:Double = 1
+        
+        if characterRarity == 1 {
+            gageSpeed = 1.5
+        } else if characterRarity == 2{
+            gageSpeed = 1.3
+        } else if characterRarity == 3{
+            gageSpeed = 1
+        } else if characterRarity == 4{
+            gageSpeed = 0.9
+        } else if characterRarity == 5{
+            gageSpeed = 0.8
+        } else if characterRarity == 6{
+            gageSpeed = 0.7
+        } else if characterRarity == 7{
+            gageSpeed = 0.6
+        } else if characterRarity == 8{
+            gageSpeed = 0.5
+        } else if characterRarity == 9{
+            gageSpeed = 0.4
+        } else if characterRarity == 10{
+            gageSpeed = 0.3
+        }
+        
+        // プロパティのアニメーションの実行
+        UIView.animate(withDuration: gageSpeed , // アニメーション合計継続時間(秒)
+            delay: 0.0, // アニメーション開始時間(秒)
+            options: [.repeat, .autoreverse],
+            animations: {
+                // プロパティの変更
+            print("ゲージの最上端",self.gage1.top)
+            print("ゲージの最下端",self.gage23.bottom)
+            print("矢印の最下端",self.imageView.bottom)
+            print("矢印の最上端",self.imageView.top)
+            self.imageView.frame.origin.y = self.gage23.bottom + (self.imageView.bottom - self.imageView.top)/2 - 75
+            }, completion: {(finished: Bool) in
+            print("animation finished!!")
+        })
+    }
+   
+    // ボタン押下時に呼ばれる
+    @IBAction func onButtonClick(sender: UIButton) {
+        //animationを止める操作
+        let layer = imageView.layer
+        let pausedTime = layer.convertTime(CACurrentMediaTime(), from: nil)
+        layer.speed = 0.0
+        layer.timeOffset = pausedTime
+        print(pausedTime)
+    
+        if let position = layer.presentation()?.position {
+            print(position.y)
+            if position.y < 184 {
+                print("Excelent!!!")
+            } else if position.y < 224 {
+                print("Great!!")
+            } else if position.y < 264 {
+                print("Good job!")
+            } else if position.y < 304 {
+                print("It's OK!")
+            } else if position.y < 344 {
+                print("Not good.")
+            } else if position.y < 384 {
+                print("Not bad.")
+            } else if position.y < 424 {
+                print("Bad!")
+            } else  {
+                print("So bad!!")
+            }
+        }
+            var result = 3
+            delay(0.5) {
+                // do something
+                // 画面遷移のアニメーションの実行
+                UIView.transition(with: self.imageView,
+                duration: 1, // アニメーション合計継続時間(秒)
+                options: [.transitionFlipFromLeft, .curveLinear], // オプション(左からのフリップ, 等速)
+                    animations: {
+                    // 画面の変更
+                        if let position = self.imageView.layer.presentation()?.position {
+                            if position.y < 184 {
+                                print("Excelent!!!")
+                                result = 20
+                                self.resultImage.image = UIImage(named:"Excellent")
+                            } else if position.y < 224 {
+                                print("Great!!")
+                                result = 10
+                                self.resultImage.image = UIImage(named:"Amoungs")
+                            } else if position.y < 264 {
+                                print("Good job!")
+                                result = 10
+                                self.resultImage.image = UIImage(named:"Amoungs")
+                            } else if position.y < 304 {
+                                print("It's OK!")
+                                result = 0
+                                self.resultImage.image = UIImage(named:"Amoungs")
+                            } else if position.y < 344 {
+                                print("Not good.")
+                                result = 0
+                                self.resultImage.image = UIImage(named:"Amoungs")
+                            } else if position.y < 384 {
+                                print("Not bad.")
+                                result = -10
+                                self.resultImage.image = UIImage(named:"Amoungs")
+                            } else if position.y < 424 {
+                                print("Bad!")
+                                result = -10
+                                self.resultImage.image = UIImage(named:"Amoungs")
+                            } else  {
+                                print("So bad!!")
+                                result = 20
+                                self.resultImage.image = UIImage(named:"Amoungs")
+                            }
+                    }
+                },
+                completion:  {(finished: Bool) in
+                // アニメーション完了時の処理
+                }
+            )
+        }
+        delay(1) {
+            // do something
+            self.addOrEscape(result: result)
+        }
+    }
 }
