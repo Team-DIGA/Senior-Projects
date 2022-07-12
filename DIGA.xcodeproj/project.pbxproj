@@ -32,6 +32,8 @@
 		3ADF1E6F286E9819007EB643 /* AddFriendsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6E286E9819007EB643 /* AddFriendsTestViewController.swift */; };
 		4CF59DFB1D72D9526CEFEBC3 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A7DA50810515F8C59199629 /* awsconfiguration.json */; };
 		B4D38D6EFCC4A3349B23F34E /* Pods_DIGA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094F1BB6423B2EECF004A6A /* Pods_DIGA.framework */; };
+		C6EAC466287BF78200763CC3 /* slime_metal.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6EAC465287BF78200763CC3 /* slime_metal.usdz */; };
+		C6EAC46E287D484C00763CC3 /* slime_metal.scn in Resources */ = {isa = PBXBuildFile; fileRef = C6EAC46D287D484C00763CC3 /* slime_metal.scn */; };
 		E172058B28706EB100A9D300 /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057E28706EB100A9D300 /* 7.mp3 */; };
 		E172058C28706EB100A9D300 /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057F28706EB100A9D300 /* 6.mp3 */; };
 		E172058D28706EB100A9D300 /* 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058028706EB100A9D300 /* 4.mp3 */; };
@@ -103,6 +105,8 @@
 		B8BBAAB8BB94B309B6FAE108 /* Pods-DIGA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA.debug.xcconfig"; path = "Target Support Files/Pods-DIGA/Pods-DIGA.debug.xcconfig"; sourceTree = "<group>"; };
 		BD569AA0F43533696604EA1C /* Pods_DIGATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C094F1BB6423B2EECF004A6A /* Pods_DIGA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6EAC465287BF78200763CC3 /* slime_metal.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_metal.usdz; sourceTree = "<group>"; };
+		C6EAC46D287D484C00763CC3 /* slime_metal.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = slime_metal.scn; sourceTree = "<group>"; };
 		D19848E6E9DCDD5ED7ACE72A /* Pods_DIGA_DIGAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA_DIGAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D9E66A57DDE9024533B580 /* Pods-DIGA-DIGAUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA-DIGAUITests.debug.xcconfig"; path = "Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E172057E28706EB100A9D300 /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
@@ -292,6 +296,8 @@
 				E172058528706EB100A9D300 /* 3.mp3 */,
 				E172058628706EB100A9D300 /* undefined.mp3 */,
 				E172058728706EB100A9D300 /* 200.mp3 */,
+				C6EAC465287BF78200763CC3 /* slime_metal.usdz */,
+				C6EAC46D287D484C00763CC3 /* slime_metal.scn */,
 				E172058828706EB100A9D300 /* 8.mp3 */,
 				E172058928706EB100A9D300 /* 9.mp3 */,
 				E172058A28706EB100A9D300 /* amongs.mp4 */,
@@ -416,6 +422,7 @@
 				E172059628706EB100A9D300 /* 9.mp3 in Resources */,
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
+				C6EAC466287BF78200763CC3 /* slime_metal.usdz in Resources */,
 				E18EF65C287472ED004AF827 /* AMONGS.usdz in Resources */,
 				3A6004AA28726260009DA69E /* (null) in Resources */,
 				E172059028706EB100A9D300 /* 0.mp3 in Resources */,
@@ -430,6 +437,7 @@
 				E172059728706EB100A9D300 /* amongs.mp4 in Resources */,
 				3A6004A828726260009DA69E /* Assets.xcassets in Resources */,
 				E172058C28706EB100A9D300 /* 6.mp3 in Resources */,
+				C6EAC46E287D484C00763CC3 /* slime_metal.scn in Resources */,
 				4CF59DFB1D72D9526CEFEBC3 /* awsconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
