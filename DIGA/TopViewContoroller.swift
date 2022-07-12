@@ -61,6 +61,28 @@ class TopViewController: UIViewController {
                 case .signedIn:
                     DispatchQueue.main.async {
                         print("Sign In")
+                        
+                        guard let userName = AWSMobileClient.default().username else { return }
+                        let addUser = User(name: userName, friends: [1, 2], items: [4, 5, 6], level: 1, money: 0, exp: 0)
+                        
+                        // mutateで新規メッセージを作成
+                        Amplify.API.mutate(request: .create(addUser)) { event in
+                            switch event {
+                            case .success(let result):
+                                switch result {
+                                case .success(let message):
+                                    print("Successfully created the message: \(message)")
+                                case .failure(let graphQLError):
+                                    // サーバーからのエラーの場合はこっち
+                                    print("Failed to create graphql \(graphQLError)")
+                                }
+                            case .failure(let apiError):
+                                // 通信まわりなどのErrorになった場合はこっち
+                                print("Failed to create a message", apiError)
+                            }
+                        }
+                        
+                        
                     }
                 case .signedOut:
                     AWSMobileClient.sharedInstance().showSignIn(navigationController: self.navigationController!, { (userState, error) in

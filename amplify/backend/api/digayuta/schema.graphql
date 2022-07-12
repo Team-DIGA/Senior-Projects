@@ -12,14 +12,14 @@ type Character @model {
   have_met: Boolean!
 }
 
-type Items @model {
+type Item @model {
   id: ID!
   name: String!
   rarity: Int!
   effect: String!
 }
 
-type Users @model {
+type User @model {
   id: ID!
   name: String!
   friends: [Int]

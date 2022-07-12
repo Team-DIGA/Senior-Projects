@@ -1,15 +1,12 @@
 projects:
-  seniorprojects:
+  digayuta:
     schemaPath: graphql/schema.json
     includes:
-      - graphql/**/*.graphql
+      - 'y'
     excludes:
       - ./amplify/**
     extensions:
       amplify:
         codeGenTarget: swift
         generatedFileName: API.swift
-        docsFilePath: graphql
-extensions:
-  amplify:
-    version: 3
+        docsFilePath: .

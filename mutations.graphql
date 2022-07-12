@@ -1,0 +1,160 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateCharacter(
+  $input: CreateCharacterInput!
+  $condition: ModelCharacterConditionInput
+) {
+  createCharacter(input: $input, condition: $condition) {
+    id
+    name
+    rarity
+    first_met_place
+    met_count
+    have_met
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateCharacter(
+  $input: UpdateCharacterInput!
+  $condition: ModelCharacterConditionInput
+) {
+  updateCharacter(input: $input, condition: $condition) {
+    id
+    name
+    rarity
+    first_met_place
+    met_count
+    have_met
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteCharacter(
+  $input: DeleteCharacterInput!
+  $condition: ModelCharacterConditionInput
+) {
+  deleteCharacter(input: $input, condition: $condition) {
+    id
+    name
+    rarity
+    first_met_place
+    met_count
+    have_met
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation CreateItem(
+  $input: CreateItemInput!
+  $condition: ModelItemConditionInput
+) {
+  createItem(input: $input, condition: $condition) {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateItem(
+  $input: UpdateItemInput!
+  $condition: ModelItemConditionInput
+) {
+  updateItem(input: $input, condition: $condition) {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteItem(
+  $input: DeleteItemInput!
+  $condition: ModelItemConditionInput
+) {
+  deleteItem(input: $input, condition: $condition) {
+    id
+    name
+    rarity
+    effect
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  createUser(input: $input, condition: $condition) {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
+) {
+  deleteUser(input: $input, condition: $condition) {
+    id
+    name
+    friends
+    items
+    level
+    money
+    exp
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}

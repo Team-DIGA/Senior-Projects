@@ -1,6 +1,0 @@
-{
-  "AppSyncApiName": "seniorprojects",
-  "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2022-07-11T07:24:31.062Z"
-}

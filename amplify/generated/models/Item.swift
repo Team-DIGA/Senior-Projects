@@ -2,7 +2,7 @@
 import Amplify
 import Foundation
 
-public struct Items: Model {
+public struct Item: Model {
   public let id: String
   public var name: String
   public var rarity: Int

@@ -1,6 +1,6 @@
 {
   "api": {
-    "seniorprojects": {
+    "digayuta": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -10,8 +10,8 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 30,
-              "apiKeyExpirationDate": "2022-08-10T07:24:27.113Z",
-              "description": "DIGAGO's API key"
+              "apiKeyExpirationDate": "2022-08-10T23:31:29.857Z",
+              "description": "DIGA's APi key"
             }
           },
           "additionalAuthenticationProviders": []

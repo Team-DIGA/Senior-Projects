@@ -2,8 +2,8 @@ import Amplify
 import AWSPluginsCore
 import Combine
 
-var devItemArray: [Items] = []
-var devGetItem: Items?
+var devItemArray: [Item] = []
+var devGetItem: Item?
 
 let itemObj: [[String: String]] = [
     ["name": "ポーション", "rarity": "5", "effect": "SurelyGet"],
@@ -18,10 +18,10 @@ struct ItemDataUtils {
     }
     
     //名前で絞って1レコード取得
-    func getItem(name: String) -> DIGA.Items.CodingKeys.Type {
+    func getItem(name: String) -> DIGA.Item.CodingKeys.Type {
         let semaphore = DispatchSemaphore(value: 0)
-        let itemKeys = Items.keys
-        Amplify.API.query(request: .list(Items.self, where: itemKeys.name == name)) { event in
+        let itemKeys = Item.keys
+        Amplify.API.query(request: .list(Item.self, where: itemKeys.name == name)) { event in
             switch event {
             case .success(let result):
                 switch result {
@@ -49,7 +49,7 @@ struct ItemDataUtils {
     func getAllItem() {
         let semaphore = DispatchSemaphore(value: 0)
         // Amplify SDK経由でqueryオペレーションを実行しItemsの配列を取得
-        Amplify.API.query(request: .list(Items.self, where: nil)) { event in
+        Amplify.API.query(request: .list(Item.self, where: nil)) { event in
             switch event {
             case .success(let result):
                 // GraphQLの場合、Query失敗時のerrorもレスポンスに含まれる
@@ -81,7 +81,7 @@ struct ItemDataUtils {
             guard let rarityStr = item["rarity"] else { return }
             guard let rarity = Int(rarityStr) else { return }
             
-            let items = Items(name: item["name"]!, rarity: rarity, effect: item["effect"]!)
+            let items = Item(name: item["name"]!, rarity: rarity, effect: item["effect"]!)
             
             print("=======================", items)
             // mutateで新規メッセージを作成

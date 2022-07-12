@@ -4,12 +4,12 @@
     "api": {
         "plugins": {
             "awsAPIPlugin": {
-                "seniorprojects": {
+                "digayuta": {
                     "endpointType": "GraphQL",
-                    "endpoint": "https://7vl2attjc5g4vcrdy2khyouezm.appsync-api.us-east-1.amazonaws.com/graphql",
+                    "endpoint": "https://kqtcqbrtlvc53kz7l3ymo2kvuq.appsync-api.us-east-1.amazonaws.com/graphql",
                     "region": "us-east-1",
                     "authorizationType": "API_KEY",
-                    "apiKey": "da2-omyz7arkhjefxdxdcjrrtmbpge"
+                    "apiKey": "da2-t7zrqfz6j5bujj3mit2i56v6bq"
                 }
             }
         }
@@ -24,11 +24,11 @@
                 },
                 "AppSync": {
                     "Default": {
-                        "ApiUrl": "https://7vl2attjc5g4vcrdy2khyouezm.appsync-api.us-east-1.amazonaws.com/graphql",
+                        "ApiUrl": "https://kqtcqbrtlvc53kz7l3ymo2kvuq.appsync-api.us-east-1.amazonaws.com/graphql",
                         "Region": "us-east-1",
                         "AuthMode": "API_KEY",
-                        "ApiKey": "da2-omyz7arkhjefxdxdcjrrtmbpge",
-                        "ClientDatabasePrefix": "seniorprojects_API_KEY"
+                        "ApiKey": "da2-t7zrqfz6j5bujj3mit2i56v6bq",
+                        "ClientDatabasePrefix": "digayuta_API_KEY"
                     }
                 },
                 "CredentialsProvider": {
