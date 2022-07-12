@@ -292,7 +292,7 @@
             </objects>
             <point key="canvasLocation" x="-20" y="48"/>
         </scene>
-        <!--Item Table View Controller-->
+        <!--アイテム-->
         <scene sceneID="HGs-E1-zws">
             <objects>
                 <viewController id="xy3-5a-GMr" customClass="ItemTableViewController" customModule="DIGA" customModuleProvider="target" sceneMemberID="viewController">
@@ -359,6 +359,7 @@
                         <viewLayoutGuide key="safeArea" id="eYZ-Ly-fEM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="アイテム" image="item" id="Ivj-El-wB6"/>
                     <navigationItem key="navigationItem" id="2Ck-Zp-q0z"/>
                     <connections>
                         <outlet property="tableView" destination="isO-lK-cdE" id="KXG-9L-PU2"/>
@@ -382,20 +383,8 @@
                                     <constraint firstAttribute="height" constant="292" id="dMJ-7D-Dby"/>
                                 </constraints>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHh-fE-aQo">
-                                <rect key="frame" x="100" y="679" width="214" height="46"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="od4-Vm-TVb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Show Friends">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPp-1T-vaF">
-                                <rect key="frame" x="100" y="745" width="214" height="46"/>
+                                <rect key="frame" x="100" y="632" width="214" height="46"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="53x-zN-q86"/>
@@ -408,19 +397,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vDF-6D-jcR" kind="show" id="Q3R-DT-ujN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzL-24-GE4">
-                                <rect key="frame" x="100" y="714" width="214" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="V7O-SI-5cm"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add "/>
-                                <connections>
-                                    <segue destination="Tly-3R-M8P" kind="show" id="57k-Ye-c5b"/>
+                                    <segue destination="KaP-tE-bwa" kind="show" id="zJx-Ip-nk7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMn-q3-pO1">
@@ -442,7 +419,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubg-dY-O9H">
-                                <rect key="frame" x="100" y="770" width="214" height="42"/>
+                                <rect key="frame" x="100" y="728" width="214" height="42"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -455,56 +432,29 @@
                                     <action selector="signOutButton:" destination="uty-ZU-OTc" eventType="touchUpInside" id="Vyh-WF-D9t"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iF1-r7-JrF">
-                                <rect key="frame" x="100" y="266" width="214" height="46"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="3jD-fR-nR4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <size key="titleShadowOffset" width="10" height="10"/>
-                                <state key="normal" title="Item">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="xy3-5a-GMr" kind="show" id="Z14-AI-JYi"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X3P-G4-nkZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MPp-1T-vaF" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="100" id="0Z0-d8-cK1"/>
-                            <constraint firstItem="ubg-dY-O9H" firstAttribute="top" secondItem="EzL-24-GE4" secondAttribute="bottom" constant="10" id="1XT-HP-BCy"/>
                             <constraint firstItem="93c-df-wHb" firstAttribute="top" secondItem="SF9-xr-BIC" secondAttribute="top" constant="40" id="85m-P3-RHK"/>
                             <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="ubg-dY-O9H" secondAttribute="trailing" constant="100" id="BnM-HO-bYM"/>
-                            <constraint firstItem="iF1-r7-JrF" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="100" id="GsQ-St-Rbr"/>
                             <constraint firstItem="ubg-dY-O9H" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="100" id="MiG-ht-b3x"/>
-                            <constraint firstItem="iF1-r7-JrF" firstAttribute="top" secondItem="DCZ-wA-qwU" secondAttribute="bottom" constant="20" id="Ngh-VW-R3n"/>
                             <constraint firstItem="93c-df-wHb" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="14" id="O3f-kl-FPH"/>
-                            <constraint firstItem="DHh-fE-aQo" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="100" id="QNr-YI-oOH"/>
                             <constraint firstItem="uMn-q3-pO1" firstAttribute="centerX" secondItem="SF9-xr-BIC" secondAttribute="centerX" id="R7D-53-MLb"/>
-                            <constraint firstItem="EzL-24-GE4" firstAttribute="top" secondItem="DHh-fE-aQo" secondAttribute="bottom" constant="10" id="ULp-5Z-Aer"/>
                             <constraint firstItem="DCZ-wA-qwU" firstAttribute="trailing" secondItem="X3P-G4-nkZ" secondAttribute="trailing" id="URU-ku-F0x"/>
-                            <constraint firstItem="EzL-24-GE4" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="100" id="USF-ho-Nj1"/>
                             <constraint firstItem="DCZ-wA-qwU" firstAttribute="top" secondItem="SF9-xr-BIC" secondAttribute="top" constant="-16" id="WIt-YB-qpu"/>
                             <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="MPp-1T-vaF" secondAttribute="trailing" constant="100" id="XpH-Dz-ky8"/>
-                            <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="iF1-r7-JrF" secondAttribute="trailing" constant="100" id="aDt-rw-lJ8"/>
-                            <constraint firstItem="DHh-fE-aQo" firstAttribute="top" secondItem="MPp-1T-vaF" secondAttribute="bottom" constant="10" id="bRu-ac-N3L"/>
-                            <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="DHh-fE-aQo" secondAttribute="trailing" constant="100" id="ghT-s4-tnj"/>
                             <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="93c-df-wHb" secondAttribute="trailing" constant="172" id="h16-JM-4rO"/>
                             <constraint firstItem="DCZ-wA-qwU" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="178" id="j47-A2-0g1"/>
+                            <constraint firstItem="ubg-dY-O9H" firstAttribute="top" secondItem="MPp-1T-vaF" secondAttribute="bottom" constant="50" id="jCD-J1-eOn"/>
                             <constraint firstItem="uMn-q3-pO1" firstAttribute="top" secondItem="93c-df-wHb" secondAttribute="bottom" constant="150" id="m0L-VB-2nf"/>
-                            <constraint firstItem="MPp-1T-vaF" firstAttribute="top" secondItem="uMn-q3-pO1" secondAttribute="bottom" constant="20" id="uyW-hd-iNe"/>
-                            <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="EzL-24-GE4" secondAttribute="trailing" constant="100" id="yOW-pL-odx"/>
+                            <constraint firstItem="MPp-1T-vaF" firstAttribute="top" secondItem="uMn-q3-pO1" secondAttribute="bottom" constant="50" id="uyW-hd-iNe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q27-3l-3nf"/>
                     <connections>
                         <outlet property="digaGoButton" destination="MPp-1T-vaF" id="kJX-QD-8Rc"/>
-                        <outlet property="showFriendsButton" destination="DHh-fE-aQo" id="UI2-Kl-eAG"/>
                         <outlet property="signOutButton" destination="ubg-dY-O9H" id="T48-YS-1u5"/>
                     </connections>
                 </viewController>
@@ -573,10 +523,10 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="jVJ-aa-sxB" kind="relationship" relationship="viewControllers" id="OUC-NJ-hKL"/>
-                        <segue destination="1xd-OI-qzW" kind="relationship" relationship="viewControllers" id="JcD-Qm-KDi"/>
                         <segue destination="vDF-6D-jcR" kind="relationship" relationship="viewControllers" id="L7u-GW-ZEF"/>
                         <segue destination="MlP-QX-Ik5" kind="relationship" relationship="viewControllers" id="njU-j9-ic4"/>
                         <segue destination="Tly-3R-M8P" kind="relationship" relationship="viewControllers" id="M5Y-Qb-CaB"/>
+                        <segue destination="xy3-5a-GMr" kind="relationship" relationship="viewControllers" id="ixZ-Cf-RK6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cb2-gc-W37" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1143,13 +1093,13 @@
     <resources>
         <image name="DIGAwhite2" width="293" height="118"/>
         <image name="GoRef2" width="238" height="200"/>
-        <image name="仙豆" width="317" height="317"/>
         <image name="book" width="32" height="32"/>
         <image name="friends" width="32" height="32"/>
         <image name="icon_gacha" width="21" height="32"/>
         <image name="item" width="32" height="32"/>
         <image name="map" width="32" height="32"/>
         <image name="yajirushi" width="206" height="123"/>
+        <image name="仙豆" width="317" height="317"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -29,9 +29,6 @@ class TopViewController: UIViewController {
     }
     
     @IBOutlet weak var signOutButton: UIButton!
-    @IBAction func digagoButton(_ sender: UIButton) {
-//        avPlayer.stop()
-    }
     var randomNum = 0
     var nameNum = ""
     
@@ -40,7 +37,6 @@ class TopViewController: UIViewController {
     let userDataUtils = UserDataUtils()
     
     @IBOutlet weak var digaGoButton: UIButton!
-    @IBOutlet weak var showFriendsButton: UIButton!
     
     @IBAction func amongsTappedButton(_ sender: UIButton) {
         randomNum = Int.random(in: 0...200)
@@ -125,7 +121,6 @@ class TopViewController: UIViewController {
         soundSet(name: "0")
         
         uiDesign.buttonDesign(button: digaGoButton)
-        uiDesign.buttonDesign(button: showFriendsButton)
         uiDesign.buttonDesign(button: signOutButton)
 
         fetchCurrentAuthSession()
