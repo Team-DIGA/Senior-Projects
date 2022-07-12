@@ -20,3 +20,5 @@ amplifytools.xcconfig
 xcuserdata/
 awsconfiguration.json
 amplifyconfiguration.json
+amplify/.DS_Store
+amplify/backend/.DS_Store

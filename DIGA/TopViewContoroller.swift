@@ -13,7 +13,6 @@ import Amplify
 import AWSMobileClient
 
 class TopViewController: UIViewController {
-    
     @IBAction func signOutButton(_ sender: UIButton) {
         // サインアウト処理
         AWSMobileClient.sharedInstance().signOut()
@@ -28,8 +27,6 @@ class TopViewController: UIViewController {
             }
         })
     }
-    
-    
     
     @IBOutlet weak var signOutButton: UIButton!
     @IBAction func digagoButton(_ sender: UIButton) {
@@ -129,6 +126,9 @@ class TopViewController: UIViewController {
         
         uiDesign.buttonDesign(button: digaGoButton)
         uiDesign.buttonDesign(button: showFriendsButton)
+        uiDesign.buttonDesign(button: signOutButton)
+
+        fetchCurrentAuthSession()
         
     }
     func playSound(name: String) {
@@ -156,6 +156,17 @@ class TopViewController: UIViewController {
             print("AVAudioPlayerinstance error")
         }
         buttonAvPlayer.prepareToPlay()
+    }
+    
+    func fetchCurrentAuthSession() {
+        _ = Amplify.Auth.fetchAuthSession { result in
+            switch result {
+            case .success(let session):
+                print("Is user signed in - \(session.isSignedIn)")
+            case .failure(let error):
+                print("Fetch session failed with error \(error)")
+            }
+        }
     }
 
 //    override func didReceiveMemoryWarning() {

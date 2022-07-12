@@ -1,6 +1,9 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+# you need at least version 13.0 for this tutorial, more recent versions are valid too
+platform :ios, '13.0'
+
 target 'DIGA' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!

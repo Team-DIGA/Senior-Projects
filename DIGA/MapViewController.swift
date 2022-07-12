@@ -17,9 +17,9 @@ class MapAnnotationSetting:MKPointAnnotation{
 
 extension UIImage {
     func resized(size: CGSize) -> UIImage {
-            // リサイズ後のサイズを指定してUIGraphicsImageRendererを作成する
-            let renderer = UIGraphicsImageRenderer(size: size)
-            return renderer.image { (context) in
+        // リサイズ後のサイズを指定してUIGraphicsImageRendererを作成する
+        let renderer = UIGraphicsImageRenderer(size: size)
+        return renderer.image { (context) in
             draw(in: CGRect(origin: .zero, size: size))
         }
     }
@@ -29,6 +29,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var SerchButton: UIButton!
+    @IBAction func didTapSerchButton(_ sender: UIButton) {
+        self.viewDidLoad()
+        
+    }
     var locationManager: CLLocationManager!
     
     // 取得した緯度経度を保持するインスタンス
@@ -72,10 +77,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         // Amplify SDK経由でqueryオペレーションを実行しCharacterの配列を取得
         Amplify.API.query(request: .list(Character.self, where: nil)) { event in
             switch event {
-            case .success(let result):
+                case .success(let result):
                 // GraphQLの場合、Query失敗時のerrorもレスポンスに含まれる
                 switch result {
-                case .success(let friends):
+                    case .success(let friends):
                     
                     self.allData = friends
                     for friend in friends {
@@ -110,6 +115,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         getAllNamesAndImages()
         print(AWSMobileClient.default().username)
         locationManager = CLLocationManager()
@@ -120,13 +127,32 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         myLongitude = locationManager.location?.coordinate.longitude
         guard let latitude = myLatitude else {return}
         guard let longitude = myLongitude else {return}
-
         let currentlocation = CLLocationCoordinate2DMake(latitude,longitude)
+        
+        // MapViewに中心を設定.
+        mapView.setCenter(currentlocation, animated: true)
+        
         let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
         let region = MKCoordinateRegion(center: currentlocation, span: span)
 
         mapView.region = region
         mapView.delegate = self
+        
+        // 自分の視点の座標.
+        let fromCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude-0.000001, longitude+0.001)
+        // 上空から見下ろす高さ.
+        let myAltitude: CLLocationDistance = 0.00000000000001
+        // MapCameraに中心点、視点、高さを設定./
+        let myCamera: MKMapCamera =
+        MKMapCamera(lookingAtCenter: currentlocation, fromDistance: 750, pitch: 75, heading: 0)
+
+        // CameraをMapViewに設定.
+        mapView.setCamera(myCamera, animated: true)
+        // ビルを3Dに見えるようにする.
+        mapView.showsBuildings = true
+        // MapViewをviewに追加.
+        view.addSubview(mapView)
+        view.bringSubviewToFront(SerchButton)
         //表示するキャラの数
         let numChara = Int.random(in:7...10)
         var countChara = 0
@@ -263,7 +289,7 @@ extension MapViewController{
 //            compltion?(place?.name)
 //        })
 //        debugPrint("async check 3=================================")
-//    }
+//    }testtest
 
 }
 
