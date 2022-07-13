@@ -4,7 +4,7 @@ import CoreLocation
 import Amplify
 import ChameleonFramework
 
-var friendsArray: [Character] = []
+var characterArray: [Character] = []
 
 class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -29,15 +29,16 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
                 // GraphQLの場合、Query失敗時のerrorもレスポンスに含まれる
                 switch result {
                 case .success(let friend):
-                    friendsArray = friend
+                    characterArray = friend
+                    print("aaaaaaaa",friend)
                     
                     DispatchQueue.main.async {
                         // tableViewを更新
                         self.tableView.reloadData()
 //                        達成率を更新
-                        let maxcount = friendsArray.count
-                        let meetArray = friendsArray.filter{
-                            $0.meet_status == true
+                        let maxcount = characterArray.count
+                        let meetArray = characterArray.filter{
+                            $0.have_met == true
                         }
                         self.metcount = Double(meetArray.count)
                         var completeRate = 0.0
@@ -57,7 +58,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendsArray.count
+        return characterArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,17 +75,17 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
         var rareText: String = "  レアリティ　： "
         
         for i in 1...10 {
-            if i <= friendsArray[indexPath.row].rarity {
+            if i <= characterArray[indexPath.row].rarity {
                 rareText += "★"
             } else {
                 rareText += "☆"
             }
         }
         
-        if friendsArray[indexPath.row].meet_status == false {
+        if characterArray[indexPath.row].have_met == false {
             cellImage = UIImage(named: "noImage")
         } else {
-            cellImage = UIImage(named: friendsArray[indexPath.row].name)
+            cellImage = UIImage(named: characterArray[indexPath.row].name)
         }
         
         let color = UIColor(averageColorFrom: cellImage!)
@@ -118,7 +119,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
         
         cell.backgroundColor = newColor
         
-        nameLabel.text = " " + friendsArray[indexPath.row].name
+        nameLabel.text = " " + characterArray[indexPath.row].name
 //        nameLabel.textColor = newColor
 //        nameLabel.textColor = UIColor(complementaryFlatColorOf: newColor)
         nameLabel.textColor = UIColor.white
@@ -133,11 +134,11 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
         rareLabel.textColor = UIColor.white
         
         placeLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
-        placeLabel.text = "  出会った場所： \(friendsArray[indexPath.row].first_met_place)"
+        placeLabel.text = "  出会った場所： \(characterArray[indexPath.row].first_met_place)"
         placeLabel.textColor = UIColor.white
         
         countLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
-        countLabel.text = "  出会った回数： \(friendsArray[indexPath.row].met_count)"
+        countLabel.text = "  出会った回数： \(characterArray[indexPath.row].met_count)"
         countLabel.textColor = UIColor.white
 
         imageView.image = cellImage

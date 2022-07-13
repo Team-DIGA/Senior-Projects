@@ -9,5 +9,22 @@ type Character @model {
   rarity: Int!
   first_met_place: String!
   met_count: Int!
-  meet_status: Boolean!
+  have_met: Boolean!
+}
+
+type Item @model {
+  id: ID!
+  name: String!
+  rarity: Int!
+  effect: String!
+}
+
+type User @model {
+  id: ID!
+  name: String!
+  friends: [String]
+  items: [String]
+  level: Int
+  money: Int
+  exp: Int
 }

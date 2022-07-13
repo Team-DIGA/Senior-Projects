@@ -63,17 +63,17 @@ let friendArray: [String] = [
     "Amongs"
 ]
 
-var gotDataArray: [Character] = []
-var updateFriend: Character?
+var devCharacterArray: [Character] = []
+var updateCharacter: Character?
 
-struct DataUtils {
+struct CharacterDataUtils {
 
     func random() -> Int {
         return Int.random(in: 1..<11)
     }
     
     //名前で絞って1レコード取得
-    func getData(name: String) -> DIGA.Character.CodingKeys.Type {
+    func getCharacter(name: String) -> DIGA.Character.CodingKeys.Type {
         let semaphore = DispatchSemaphore(value: 0)
         let char = Character.keys
         Amplify.API.query(request: .list(Character.self, where: char.name == name)) { event in
@@ -82,7 +82,7 @@ struct DataUtils {
                 switch result {
                 case .success(let friend):
                     print("Successfully retrieved friend: \(String(describing: friend.first))")
-                    updateFriend = friend.first
+                    DIGA.updateCharacter = friend.first
                     
                     semaphore.signal()
                 case .failure(let error):
@@ -101,7 +101,7 @@ struct DataUtils {
     }
     
     //全データ取得
-    func getAllData() {
+    func getAllCharacter() {
         let semaphore = DispatchSemaphore(value: 0)
         // Amplify SDK経由でqueryオペレーションを実行しCharacterの配列を取得
         Amplify.API.query(request: .list(Character.self, where: nil)) { event in
@@ -111,7 +111,7 @@ struct DataUtils {
                 switch result {
                 case .success(let friend):
                     
-                    gotDataArray = friend
+                    devCharacterArray = friend
                     semaphore.signal()
                     
                 case .failure(let graphQLError):
@@ -129,12 +129,12 @@ struct DataUtils {
     }
     
     //データ更新
-    func updateData(name: String, place:String, met_count_key:Int) {
-        getData(name: name)
-        updateFriend?.meet_status = true
-        updateFriend?.first_met_place = place
-        updateFriend?.met_count += 1
-        guard let updateFriend = updateFriend else {
+    func updateCharacter(name: String, place:String, met_count_key:Int) {
+        getCharacter(name: name)
+        DIGA.updateCharacter?.have_met = true
+        DIGA.updateCharacter?.first_met_place = place
+        DIGA.updateCharacter?.met_count += 1
+        guard let updateFriend = DIGA.updateCharacter else {
             print("updateFriend is nil...")
             return
         }
@@ -157,9 +157,9 @@ struct DataUtils {
     }
     
     //全データ挿入
-    func createAllData() -> Void {
+    func createAllCharacter() -> Void {
         for name in friendArray {
-            let character = Character(name: name, rarity: random(), first_met_place: "no_data", met_count: 0, meet_status: false)
+            let character = Character(name: name, rarity: random(), first_met_place: "no_data", met_count: 0, have_met: false)
             // mutateで新規メッセージを作成
             Amplify.API.mutate(request: .create(character)) { event in
                 switch event {
@@ -183,7 +183,7 @@ struct DataUtils {
 //
 //        getAllData()
 //
-//        for character in gotDataArray {
+//        for character in devCharacterArray {
 //        var char = Character(name: "baikinman", rarity: 2, first_met_place: "", met_count: 0, meet_stauts: false)
 //        print(char)
 //        char.meet_stauts = true

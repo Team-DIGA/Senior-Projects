@@ -1,14 +1,14 @@
 {
   "version": 1,
   "serviceConfiguration": {
-    "apiName": "seniorprojects",
+    "apiName": "digayuta",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/Users/yutashoji/Desktop/DIG BTC-Sprint/swift-project/Senior-Projects/amplify/backend/api/seniorprojects/schema.graphql",
+    "gqlSchemaPath": "/Users/yutashoji/Desktop/DIG BTC-Sprint/swift-project/Senior-Projects/amplify/backend/api/digayuta/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
       "expirationTime": 30,
-      "apiKeyExpirationDate": "2022-08-04T05:24:17.654Z",
-      "keyDescription": "sineordev's API key."
+      "apiKeyExpirationDate": "2022-08-11T02:36:05.846Z",
+      "keyDescription": "DIGA's APi key"
     },
     "conflictResolution": {
       "defaultResolutionStrategy": {

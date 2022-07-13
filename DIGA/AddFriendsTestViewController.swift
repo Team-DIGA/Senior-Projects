@@ -15,7 +15,8 @@ final class AddFriendsTestViewController: UIViewController {
     @IBOutlet weak var firstMetPlaceTextField: UITextField!
     @IBOutlet weak var metCountTextField: UITextField!
     
-    let dataUtils = DataUtils()
+    let characterDataUtils = CharacterDataUtils()
+    let itemDataUtils = ItemDataUtils()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,7 @@ final class AddFriendsTestViewController: UIViewController {
         }
         
                     
-        let character = Character(name: name, rarity: Int(rarity)!, first_met_place: first_met_place, met_count: Int(met_count)!, meet_status: false)
+        let character = Character(name: name, rarity: Int(rarity)!, first_met_place: first_met_place, met_count: Int(met_count)!, have_met: false)
         
         // mutateで新規メッセージを作成
         Amplify.API.mutate(request: .create(character)) { event in
@@ -81,14 +82,15 @@ final class AddFriendsTestViewController: UIViewController {
     }
 
     @IBAction func createAllData(_ sender: Any) {
-        dataUtils.createAllData()
+        characterDataUtils.createAllCharacter()
     }
     
-    @IBAction func deleteAllFriends(_ sender: Any) {
-//        dataUtils.deleteAllData()
+    @IBAction func addItem(_ sender: Any) {
+        //
     }
     
-//    @IBAction func getFriend(_ sender: Any) {
-//        dataUtils.updateData(name: "cririn")
-//    }
+    @IBAction func addAllItems(_ sender: Any) {
+        itemDataUtils.createAllItem()
+    }
+    
 }

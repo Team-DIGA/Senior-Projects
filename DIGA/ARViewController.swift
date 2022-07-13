@@ -8,6 +8,8 @@
 import UIKit
 import RealityKit
 import MapKit
+import Amplify
+import AWSMobileClient
 
 struct testStruct {
     func tests() {
@@ -35,7 +37,10 @@ class ARViewController: UIViewController {
     
     let uiDesign = UiDesign()
     
-    let dataUtils = DataUtils()
+    let itemDataUtils = ItemDataUtils()
+    let userDataUtils = UserDataUtils()
+    
+    let characterDataUtils = CharacterDataUtils()
     let textArray: [String] = [
         "１万円をあげる",
         "戦いを助ける",
@@ -52,22 +57,7 @@ class ARViewController: UIViewController {
         "pufpufする"
     ]
     
-    var itemArray:[UIImage?] = []
-    
-    let itemTitles:[String] = [
-        "アンパンマンの顔",
-        "エリクサー",
-        "ゴムゴムの実",
-        "スカウター",
-        "タケコプター",
-        "どこでもドア",
-        "ポーション",
-        "メラメラの実",
-        "胡蝶しのぶの日輪刀",
-        "仙豆",
-        "立体機動装置",
-        "煉獄杏寿郎の日輪刀",
-    ]
+    var itemTitles:[Item] = []
     
     @IBOutlet weak var gage1: UIView!
     @IBOutlet weak var gage2: UIView!
@@ -165,7 +155,7 @@ class ARViewController: UIViewController {
                 print("metCountError")
                 return
             }
-            dataUtils.updateData(name: characterTitle, place: characterPlace, met_count_key:metCount)
+            characterDataUtils.updateCharacter(name: characterTitle, place: characterPlace, met_count_key:metCount)
             alertFunc(title: "\(characterTitle!)は\n仲間になった！", message: "",addFlag:true)
         } else {
             alertFunc(title: "\( characterTitle!)は\n去っていった！", message: "",addFlag:false)
@@ -174,9 +164,9 @@ class ARViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+
+        itemTitles = itemDataUtils.getAllItem() as! [Item]
+
         view.addSubview(arView)
         view.bringSubviewToFront(addFriendButton)
         view.bringSubviewToFront(addFriendButton2)
@@ -265,9 +255,6 @@ class ARViewController: UIViewController {
 //        let boxAnchor = try! Experience.loadBox()
 //        arView.scene.anchors.append(boxAnchor)
         
-        for itemTitle in itemTitles {
-            itemArray.append(UIImage(named: itemTitle))
-        }
         
         uiDesign.buttonDesign(button: addFriendButton)
         uiDesign.buttonDesign(button: addFriendButton2)
@@ -303,7 +290,8 @@ class ARViewController: UIViewController {
         
         if addFlag {
             backAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-                let randomNum = Int.random(in: 1...2)
+//                let randomNum = Int.random(in: 1...2)
+                let randomNum = 1
                 if randomNum == 1 {
                     self.alertFunc2()
                 } else {
@@ -329,12 +317,11 @@ class ARViewController: UIViewController {
     
     func alertFunc2(){
         let randomItemNum = Int.random(in: 0...itemTitles.count-1)
-        let alert = UIAlertController(title: String("\(itemTitles[randomItemNum])を手に入れた！"), message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: String("\(itemTitles[randomItemNum].name)を手に入れた！"), message: "", preferredStyle: .alert)
         let imageView = UIImageView(frame: CGRect(x: 10, y: 70, width: 250, height: 250))
-        
         let height = NSLayoutConstraint(item: alert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)
         alert.view.addConstraint(height)
-        imageView.image = itemArray[randomItemNum]
+        imageView.image = UIImage(named: itemTitles[randomItemNum].name)
         alert.view.addSubview(imageView)
         
         let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
@@ -343,6 +330,14 @@ class ARViewController: UIViewController {
         
         alert.addAction(backAction)
         present(alert, animated: true)
+        
+        guard let username = AWSMobileClient.default().username else {
+            print("Error: Uncaught username")
+            return
+        }
+        
+        userDataUtils.updateUserItem(name: username, itemName: itemTitles[randomItemNum].name)
+        
     }
     
     

@@ -10,7 +10,7 @@ extension Character {
     case rarity
     case first_met_place
     case met_count
-    case meet_status
+    case have_met
     case createdAt
     case updatedAt
   }
@@ -29,7 +29,7 @@ extension Character {
       .field(character.rarity, is: .required, ofType: .int),
       .field(character.first_met_place, is: .required, ofType: .string),
       .field(character.met_count, is: .required, ofType: .int),
-      .field(character.meet_status, is: .required, ofType: .bool),
+      .field(character.have_met, is: .required, ofType: .bool),
       .field(character.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
       .field(character.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)
     )

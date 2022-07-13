@@ -64,39 +64,39 @@
       "AmplifyAppId": "d2yvaxlel99n5l"
     }
   },
-  "diga": {
+  "digagooo": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-seniorprojects-diga-145847-authRole",
-      "UnauthRoleArn": "arn:aws:iam::552853051669:role/amplify-seniorprojects-diga-145847-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::552853051669:role/amplify-seniorprojects-diga-145847-authRole",
+      "AuthRoleName": "amplify-seniorprojects-digagooo-161251-authRole",
+      "UnauthRoleArn": "arn:aws:iam::552853051669:role/amplify-seniorprojects-digagooo-161251-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::552853051669:role/amplify-seniorprojects-digagooo-161251-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-seniorprojects-diga-145847-deployment",
-      "UnauthRoleName": "amplify-seniorprojects-diga-145847-unauthRole",
-      "StackName": "amplify-seniorprojects-diga-145847",
-      "StackId": "arn:aws:cloudformation:us-east-1:552853051669:stack/amplify-seniorprojects-diga-145847/0a5d2490-fe83-11ec-8dea-0add654a614d",
+      "DeploymentBucketName": "amplify-seniorprojects-digagooo-161251-deployment",
+      "UnauthRoleName": "amplify-seniorprojects-digagooo-161251-unauthRole",
+      "StackName": "amplify-seniorprojects-digagooo-161251",
+      "StackId": "arn:aws:cloudformation:us-east-1:552853051669:stack/amplify-seniorprojects-digagooo-161251/e2117140-00e8-11ed-b961-1286e6a3c6a7",
       "AmplifyAppId": "d2yvaxlel99n5l"
     },
     "categories": {
       "auth": {
-        "seniorprojects412d5728": {}
+        "seniorprojectsfc97dcdc": {}
       }
     }
   },
-  "kazunori": {
+  "knckgo": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-seniorprojects-kazunori-233936-authRole",
-      "UnauthRoleArn": "arn:aws:iam::845339839545:role/amplify-seniorprojects-kazunori-233936-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::845339839545:role/amplify-seniorprojects-kazunori-233936-authRole",
-      "Region": "ap-northeast-1",
-      "DeploymentBucketName": "amplify-seniorprojects-kazunori-233936-deployment",
-      "UnauthRoleName": "amplify-seniorprojects-kazunori-233936-unauthRole",
-      "StackName": "amplify-seniorprojects-kazunori-233936",
-      "StackId": "arn:aws:cloudformation:ap-northeast-1:845339839545:stack/amplify-seniorprojects-kazunori-233936/4a12c5d0-0127-11ed-a411-0612f95471f7",
-      "AmplifyAppId": "dogoe7mddeygs"
+      "AuthRoleName": "amplify-seniorprojects-knckgo-185444-authRole",
+      "UnauthRoleArn": "arn:aws:iam::552853051669:role/amplify-seniorprojects-knckgo-185444-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::552853051669:role/amplify-seniorprojects-knckgo-185444-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-seniorprojects-knckgo-185444-deployment",
+      "UnauthRoleName": "amplify-seniorprojects-knckgo-185444-unauthRole",
+      "StackName": "amplify-seniorprojects-knckgo-185444",
+      "StackId": "arn:aws:cloudformation:us-east-1:552853051669:stack/amplify-seniorprojects-knckgo-185444/80062420-00ff-11ed-b577-0e3804d233ab",
+      "AmplifyAppId": "d2yvaxlel99n5l"
     },
     "categories": {
       "auth": {
-        "seniorprojects412d5728": {}
+        "seniorprojectsfc97dcdc": {}
       }
     }
   }

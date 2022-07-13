@@ -9,6 +9,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import Amplify
+import AWSMobileClient
 
 class MapAnnotationSetting:MKPointAnnotation{
     var pinImage:UIImage?
@@ -117,6 +118,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         
         getAllNamesAndImages()
+        print(AWSMobileClient.default().username)
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager!.requestWhenInUseAuthorization()

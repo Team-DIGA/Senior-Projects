@@ -1,6 +1,6 @@
 {
   "api": {
-    "seniorprojects": {
+    "digayuta": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -10,8 +10,8 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 30,
-              "apiKeyExpirationDate": "2022-08-04T05:24:17.654Z",
-              "description": "sineordev's API key."
+              "apiKeyExpirationDate": "2022-08-11T02:36:05.846Z",
+              "description": "DIGA's APi key"
             }
           },
           "additionalAuthenticationProviders": []
@@ -20,31 +20,22 @@
     }
   },
   "auth": {
-    "seniorprojects412d5728": {
+    "seniorprojectsfc97dcdc": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
-        "socialProviders": [
-          "GOOGLE"
-        ],
+        "socialProviders": [],
         "usernameAttributes": [],
-        "signupAttributes": [
-          "EMAIL",
-          "PHONE_NUMBER"
-        ],
+        "signupAttributes": ["EMAIL", "PHONE_NUMBER"],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": []
         },
         "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
-        ],
-        "verificationMechanisms": [
-          "EMAIL"
-        ]
+        "mfaTypes": ["SMS"],
+        "verificationMechanisms": ["EMAIL"]
       }
     }
   }
