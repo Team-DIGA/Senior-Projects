@@ -163,33 +163,50 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         view.addSubview(mapView)
         view.bringSubviewToFront(SerchButton)
         //表示するキャラの数
-        let numChara:Int
-        if itemRepo.getHoihoi() {
-            print("hoihoi true")
-            numChara = 15
-        } else {
-            numChara = Int.random(in:7...10)
-            print("hoihoi false")
-        }
-        print(numChara)
-        itemRepo.changeHoihoi()
-        var countChara = 0
-        for i in 0..<self.pinTitles.count {
-
-            //表示するキャラの選択
-            //changecCharaで分岐
-            
-            let selectChara = Int.random(in: 1...raritiesArray[i] + 1)
-            if selectChara == 1 && countChara < numChara {
-                print(countChara,"countChara")
-                appendMap(i: i, countChara: countChara, numChara: numChara)
-                countChara += 1
-                
+        if itemRepo.getChara() == 1 {
+            //eriko
+            for i in 0..<self.pinTitles.count {
+                if itemRepo.getDigArray().contains(self.pinTitles[i]) {
+                    appendMap(i: i)
+                }
             }
-            //area map
-//            let mod = i % 10
-//            pinLocationAppend(count: mod)
+        } else if itemRepo.getChara() == 2 {
+            //slime
+            for _ in 0..<30 {
+                guard let indexSlime = pinTitles.firstIndex(of: "スライム") else {
+                    print("Error:slime not found")
+                    return
+                }
+                appendMap(i: indexSlime)
+            }
+        } else  {
+            let numChara:Int
+            if itemRepo.getHoihoi() {
+                numChara = 15
+                itemRepo.changeHoihoi()
+            } else {
+                numChara = Int.random(in:7...10)
+            }
+            var countChara = 0
+            for i in 0..<self.pinTitles.count {
+                let selectChara = Int.random(in: 1...raritiesArray[i] + 1)
+                if selectChara == 1 && countChara < numChara && pinTitles[i] != "Yusuke" {
+                    print(countChara,"countChara")
+                    appendMap(i: i)
+                    countChara += 1
+                }
+            
+            }
+            //Yusuke
+            if itemRepo.getChara() == 3 {
+                guard let indexYusuke = pinTitles.firstIndex(of: "Yusuke") else {
+                    print("Error:Yusuke not found")
+                    return
+                }
+                appendMap(i: indexYusuke)
+            }
         }
+            
         
         for (index,pinTitle) in self.mapTargetTitle.enumerated(){
             let pin = MapAnnotationSetting()
@@ -201,10 +218,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             pin.coordinate = coordinate
             self.mapView.addAnnotation(pin)
             annotation.coordinate = coordinate
-//            annotationArray.append(annotation)
-//            print("annotationArray",annotationArray)
-            
-            print(".count", annotationArray.count)
         }
 
 
@@ -370,7 +383,7 @@ extension MapViewController{
                     //表示するキャラの選択
                     let selectChara = Int.random(in: 1...raritiesArray[i] + 1)
                     if selectChara == 1 && countChara < numChara {
-                        appendMap(i: i, countChara: countChara, numChara: numChara)
+                        appendMap(i: i)
                         countChara += 1
                         
                     }
@@ -402,7 +415,7 @@ extension MapViewController{
 // ピンを全国にランダム配置する関数
 extension MapViewController{
     
-    func appendMap(i: Int, countChara: Int, numChara: Int) {
+    func appendMap(i: Int) {
     //表示するかどうか
         //表示する場所
         let randomDouble1 = Double.random(in: -0.001...0.001)

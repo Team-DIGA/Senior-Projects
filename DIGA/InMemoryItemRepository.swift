@@ -9,16 +9,14 @@ import Foundation
 
 protocol ItemFunc{
     func changeHoihoi()
-    func changeYusuke()
     func switchChara(itemNum:Int)
     func getHoihoi() -> Bool
-    func getYusuke() -> Bool
     func getChara() -> Int
     func getDigArray() -> [String]
 }
 
 struct ItemState {
-    var isHoihoi, isYusuke:Bool
+    var isHoihoi:Bool
     var changeChara:Int
     var digArray:[String]
 }
@@ -26,7 +24,6 @@ struct ItemState {
 func initialItem() -> ItemState{
     return ItemState(
         isHoihoi:false,
-        isYusuke: false,
         changeChara: 0,
         digArray: [ "Masashi", "Shimabu", "Abiru", "エリーザ", "ご機嫌な島袋", "イサージ" ]
     )
@@ -41,9 +38,7 @@ final class InMemoryItemRepository:ItemFunc{
         itemObj.isHoihoi.toggle()
     }
     
-    func changeYusuke(){
-        itemObj.isYusuke.toggle()
-    }
+
 
     func switchChara(itemNum: Int) {
         itemObj.changeChara = itemNum
@@ -53,9 +48,6 @@ final class InMemoryItemRepository:ItemFunc{
         return itemObj.isHoihoi
     }
     
-    func getYusuke() -> Bool{
-        return itemObj.isYusuke
-    }
 
     func getChara() -> Int{
         return itemObj.changeChara
