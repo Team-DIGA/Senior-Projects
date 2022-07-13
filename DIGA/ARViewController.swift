@@ -347,11 +347,15 @@ class ARViewController: UIViewController {
     
     
     //ここからミニゲーム
+    // スクリーン画面のサイズを取得
+    let scWid: CGFloat = UIScreen.main.bounds.width     //画面の幅
+    let scHei: CGFloat = UIScreen.main.bounds.height    //画面の高さ
     
+    var barView:UIView = UIView()
    
    
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         var gageSpeed:Double = 1
         
         if characterRarity == 1 {
@@ -376,26 +380,77 @@ class ARViewController: UIViewController {
             gageSpeed = 0.3
         }
         
-        // プロパティのアニメーションの実行
-        UIView.animate(withDuration: gageSpeed , // アニメーション合計継続時間(秒)
-            delay: 0.0, // アニメーション開始時間(秒)
-            options: [.repeat, .autoreverse],
-            animations: {
-                // プロパティの変更
-            print("ゲージの最上端",self.gage1.top)
-            print("ゲージの最下端",self.gage23.bottom)
-            print("矢印の最下端",self.imageView.bottom)
-            print("矢印の最上端",self.imageView.top)
-            self.imageView.frame.origin.y = self.gage23.bottom + (self.imageView.bottom - self.imageView.top)/2 - 75
-            }, completion: {(finished: Bool) in
-            print("animation finished!!")
+//        // プロパティのアニメーションの実行
+//        UIView.animate(withDuration: gageSpeed , // アニメーション合計継続時間(秒)
+//            delay: 0.0, // アニメーション開始時間(秒)
+//            options: [.repeat, .autoreverse],
+//            animations: {
+//                // プロパティの変更
+//            print("ゲージの最上端",self.gage1.top)
+//            print("ゲージの最下端",self.gage23.bottom)
+//            print("矢印の最下端",self.imageView.bottom)
+//            print("矢印の最上端",self.imageView.top)
+//            self.imageView.frame.origin.y = self.gage23.bottom + (self.imageView.bottom - self.imageView.top)/2 - 75
+//            }, completion: {(finished: Bool) in
+//            print("animation finished!!")
+//        })
+        
+        
+        // バーの高さ・幅
+        let barHeight = scHei*0.6
+        let barWidth = scWid*0.1
+        
+        // バーのX座標・Y座標・終端のX座標
+        let barXPosition = scWid*0.8
+        let barYPosition = scHei*0.2
+        let barYPositionEnd = barYPosition + barHeight
+        
+        
+        
+        // 画像の表示する座標を指定する
+        barView.frame = CGRect(x: barXPosition ,y: barYPosition ,width: barWidth ,height: barHeight)
+        
+//            let gradientLayer = CAGradientLayer()
+//        gradientLayer.frame.size = barView.frame.size
+//            let topColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0).cgColor
+//            let bottomColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1).cgColor
+//            let gradientColors: [CGColor] = [topColor, bottomColor]
+//        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+//        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+//            gradientLayer.colors = gradientColors
+//            barView.layer.insertSublayer(gradientLayer, at: 0)
+        // バーに色を付ける
+        barView.backgroundColor = .orange
+    
+        // barViewをViewに追加する
+        
+        view.addSubview(barView)
+        
+        // バーをアニメーションさせる
+        // 1秒かけてバーを下から上に減少させる
+        UIView.animate(withDuration: 1, delay: 0.0, options : [.repeat, .autoreverse], animations: {() -> Void  in
+            // アニメーション終了後の座標とサイズを指定
+            self.barView.frame = CGRect(x: barXPosition, y: barYPositionEnd, width: barWidth, height: 0)
+        },
+                       completion: {(finished: Bool) -> Void in
+                        // アニメーション終了後の処理
+                        
         })
+        
     }
+ 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+        
+        
+    
    
     // ボタン押下時に呼ばれる
     @IBAction func onButtonClick(sender: UIButton) {
         //animationを止める操作
-        let layer = imageView.layer
+        let layer = barView.layer
         let pausedTime = layer.convertTime(CACurrentMediaTime(), from: nil)
         layer.speed = 0.0
         layer.timeOffset = pausedTime

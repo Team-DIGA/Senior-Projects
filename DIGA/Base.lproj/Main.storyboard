@@ -434,10 +434,23 @@
         <!--ガチャ-->
         <scene sceneID="xbG-LM-gz5">
             <objects>
-                <viewController id="jVJ-aa-sxB" sceneMemberID="viewController">
+                <viewController id="jVJ-aa-sxB" customClass="AnimationViewController" customModule="DIGA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ywr-Gy-CuW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOR-ii-cXO">
+                                <rect key="frame" x="50" y="283" width="173" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Stop">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="37"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="StopButton:" destination="jVJ-aa-sxB" eventType="touchUpInside" id="4HJ-kD-OfV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="pN8-ig-jx2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -445,7 +458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFW-Rf-iRy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19" y="-2586"/>
+            <point key="canvasLocation" x="-20.289855072463769" y="-2586.1607142857142"/>
         </scene>
         <!--Custom Tab Bar View Controller-->
         <scene sceneID="1hA-PP-xUK">
