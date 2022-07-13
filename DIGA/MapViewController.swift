@@ -189,13 +189,24 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             }
             var countChara = 0
             for i in 0..<self.pinTitles.count {
-                let selectChara = Int.random(in: 1...raritiesArray[i] + 1)
+                var rarity:Int
+                if itemRepo.getLegacy() {
+                    rarity = 11 - raritiesArray[i]
+                } else {
+                    rarity = raritiesArray[i]
+                }
+                let selectChara = Int.random(in: 1...rarity + 1)
                 if selectChara == 1 && countChara < numChara && pinTitles[i] != "Yusuke" {
-                    print(countChara,"countChara")
+                    print("name", pinTitles[i])
+                    print("motomoto", raritiesArray[i])
+                    print("hanten",rarity)
                     appendMap(i: i)
                     countChara += 1
                 }
             
+            }
+            if itemRepo.getLegacy() {
+                itemRepo.changeLegacy()
             }
             //Yusuke
             if itemRepo.getChara() == 3 {

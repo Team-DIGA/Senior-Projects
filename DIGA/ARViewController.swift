@@ -39,6 +39,7 @@ class ARViewController: UIViewController {
     
     let itemDataUtils = ItemDataUtils()
     let userDataUtils = UserDataUtils()
+    let itemRepo = InMemoryItemRepository()
     
     let characterDataUtils = CharacterDataUtils()
     let textArray: [String] = [
@@ -119,33 +120,42 @@ class ARViewController: UIViewController {
             [10,15,20,25,30,35,40,45,50,55],
             [5,10,15,20,25,30,35,40,45,50],
         ]
-    let myLevel = 0
-    var myLevelZone = 0
-        if myLevel <= 5 {
-            myLevelZone = 0
-        } else if myLevel <= 10 {
-            myLevelZone = 1
-        } else if myLevel <= 15 {
-            myLevelZone = 2
-        } else if myLevel <= 20 {
-            myLevelZone = 3
-        } else if myLevel <= 25 {
-            myLevelZone = 4
-        } else if myLevel <= 30 {
-            myLevelZone = 5
-        } else if myLevel <= 35 {
-            myLevelZone = 6
-        } else if myLevel <= 40 {
-            myLevelZone = 7
-        } else if myLevel <= 45 {
-            myLevelZone = 8
-        } else {
-            myLevelZone = 9
-        }
-        
-    var captureProbability:Int = arrOfCaptureProbability[characterRarity-1][myLevelZone]
+        let myLevel = 0
+        var myLevelZone = 0
+            if myLevel <= 5 {
+                myLevelZone = 0
+            } else if myLevel <= 10 {
+                myLevelZone = 1
+            } else if myLevel <= 15 {
+                myLevelZone = 2
+            } else if myLevel <= 20 {
+                myLevelZone = 3
+            } else if myLevel <= 25 {
+                myLevelZone = 4
+            } else if myLevel <= 30 {
+                myLevelZone = 5
+            } else if myLevel <= 35 {
+                myLevelZone = 6
+            } else if myLevel <= 40 {
+                myLevelZone = 7
+            } else if myLevel <= 45 {
+                myLevelZone = 8
+            } else {
+                myLevelZone = 9
+            }
+            
+        var captureProbability:Int = arrOfCaptureProbability[characterRarity-1][myLevelZone]
         
         captureProbability += result
+        print("アイテム使われる前", captureProbability)
+        print("result", result)
+        if itemRepo.getEasyCap() {
+            captureProbability += 30
+            print("アイテム使った後", captureProbability)
+            itemRepo.changeEasyCap()
+        }
+        
+        
         
         
 //        let randomNum = Int.random(in: 1...characterRarity+1)
@@ -164,6 +174,9 @@ class ARViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        itemRepo.changeEasyCap()
+//        itemRepo.changeMaashi()
+        userDataUtils.updateUserExp(name: AWSMobileClient.default().username!, getExp: 30)
 
         itemTitles = itemDataUtils.getAllItem() as! [Item]
 
@@ -370,6 +383,12 @@ class ARViewController: UIViewController {
         } else if characterRarity == 10{
             gageSpeed = 0.3
         }
+        
+        if itemRepo.getMaashi() {
+            gageSpeed += 1
+            itemRepo.changeMaashi()
+        }
+        
         
         // プロパティのアニメーションの実行
         UIView.animate(withDuration: gageSpeed , // アニメーション合計継続時間(秒)
