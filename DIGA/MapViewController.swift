@@ -11,6 +11,8 @@ import MapKit
 import Amplify
 import AWSMobileClient
 
+
+
 class MapAnnotationSetting:MKPointAnnotation{
     var pinImage:UIImage?
 }
@@ -31,7 +33,15 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     @IBOutlet weak var SerchButton: UIButton!
     @IBAction func didTapSerchButton(_ sender: UIButton) {
-        self.viewDidLoad()
+        
+        
+//        self.mapView.annotations.removeAll()
+//        self.mapView.removeAnnotations(self.mapView.annotations.removeAll())
+
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.viewDidLoad()
+//        }
+     
         
     }
     var locationManager: CLLocationManager!
@@ -58,8 +68,9 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var targetRemoveAnnotaion: MKAnnotation?
     var mapTargetTitle: [String?] = []
     var mapTargetImage: [UIImage?] = []
+    var annotationArray:[MKAnnotation] = []
     
-
+    private let itemRepo = InMemoryItemRepository()
     
     // 位置情報初回のみ表示させる際のグローバル変数
     var first = true
@@ -115,8 +126,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         getAllNamesAndImages()
         print(AWSMobileClient.default().username)
         locationManager = CLLocationManager()
@@ -154,12 +163,25 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         view.addSubview(mapView)
         view.bringSubviewToFront(SerchButton)
         //表示するキャラの数
-        let numChara = Int.random(in:7...10)
+        let numChara:Int
+        if itemRepo.getHoihoi() {
+            print("hoihoi true")
+            numChara = 15
+        } else {
+            numChara = Int.random(in:7...10)
+            print("hoihoi false")
+        }
+        print(numChara)
+        itemRepo.changeHoihoi()
         var countChara = 0
         for i in 0..<self.pinTitles.count {
+
             //表示するキャラの選択
+            //changecCharaで分岐
+            
             let selectChara = Int.random(in: 1...raritiesArray[i] + 1)
             if selectChara == 1 && countChara < numChara {
+                print(countChara,"countChara")
                 appendMap(i: i, countChara: countChara, numChara: numChara)
                 countChara += 1
                 
@@ -171,12 +193,18 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         for (index,pinTitle) in self.mapTargetTitle.enumerated(){
             let pin = MapAnnotationSetting()
+            let annotation = MKPointAnnotation()
             let coordinate = self.pinlocations[index]
             pin.title = pinTitle
             pin.pinImage = mapTargetImage[index]
             pin.subtitle = String(raritiesObj[pinTitle!]!)
             pin.coordinate = coordinate
             self.mapView.addAnnotation(pin)
+            annotation.coordinate = coordinate
+//            annotationArray.append(annotation)
+//            print("annotationArray",annotationArray)
+            
+            print(".count", annotationArray.count)
         }
 
 
@@ -330,7 +358,13 @@ extension MapViewController{
                 mapView.region = region
                 mapView.delegate = self
                 //表示するキャラの数
-                let numChara = Int.random(in:7...10)
+                let numChara:Int
+                if itemRepo.getHoihoi() {
+                    numChara = 15
+                } else {
+                    numChara = Int.random(in:7...10)
+                }
+                itemRepo.changeHoihoi()
                 var countChara = 0
                 for i in 0..<self.pinTitles.count {
                     //表示するキャラの選択
@@ -354,6 +388,8 @@ extension MapViewController{
                     pin.pinImage = mapTargetImage[index]
                     pin.coordinate = coordinate
                     self.mapView.addAnnotation(pin)
+                    annotationArray.append(pin)
+                    print("annotationArray",annotationArray)
                 }
                 
             }
