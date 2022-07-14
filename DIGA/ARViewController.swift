@@ -174,14 +174,7 @@ class ARViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
         
-=======
-//        itemRepo.changeEasyCap()
-//        itemRepo.changeMaashi()
-//        userDataUtils.updateUserExp(name: AWSMobileClient.default().username!, getExp: 30)
-
->>>>>>> f3ae8f27a42a4e961c5b31a00c0f39d0477701d1
         itemTitles = itemDataUtils.getAllItem() as! [Item]
 
         view.addSubview(arView)
@@ -589,7 +582,13 @@ class ARViewController: UIViewController {
             gageSpeed = 0.3
         }
         
-<<<<<<< HEAD
+
+        if itemRepo.getMaashi() {
+                    gageSpeed += 1
+                    itemRepo.changeMaashi()
+        }
+
+
 //        // プロパティのアニメーションの実行
 //        UIView.animate(withDuration: gageSpeed , // アニメーション合計継続時間(秒)
 //            delay: 0.0, // アニメーション開始時間(秒)
@@ -651,27 +650,7 @@ class ARViewController: UIViewController {
                        completion: {(finished: Bool) -> Void in
                         // アニメーション終了後の処理
                         
-=======
-        if itemRepo.getMaashi() {
-            gageSpeed += 1
-            itemRepo.changeMaashi()
-        }
-        
-        
-        // プロパティのアニメーションの実行
-        UIView.animate(withDuration: gageSpeed , // アニメーション合計継続時間(秒)
-            delay: 0.0, // アニメーション開始時間(秒)
-            options: [.repeat, .autoreverse],
-            animations: {
-                // プロパティの変更
-            print("ゲージの最上端",self.gage1.top)
-            print("ゲージの最下端",self.gage23.bottom)
-            print("矢印の最下端",self.imageView.bottom)
-            print("矢印の最上端",self.imageView.top)
-            self.imageView.frame.origin.y = self.gage23.bottom + (self.imageView.bottom - self.imageView.top)/2 - 75
-            }, completion: {(finished: Bool) in
-            print("animation finished!!")
->>>>>>> f3ae8f27a42a4e961c5b31a00c0f39d0477701d1
+
         })
         
     }

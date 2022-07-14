@@ -30,7 +30,7 @@
 		3A55CFE52874070800CAEA22 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A55CFE42874070800CAEA22 /* amplifyconfiguration.json */; };
 		3A55CFE928754C1700CAEA22 /* UIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A55CFE828754C1700CAEA22 /* UIDesign.swift */; };
 		3A6004A828726260009DA69E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A60049C28726260009DA69E /* Assets.xcassets */; };
-		3A6004AA28726260009DA69E /* (null) in Resources */ = {isa = PBXBuildFile; };
+		3A6004AA28726260009DA69E /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		3A60F6F2287C16C20002395E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A60F6F0287C16C20002395E /* amplifyconfiguration.json */; };
 		3A60F6F3287C16C20002395E /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A60F6F1287C16C20002395E /* awsconfiguration.json */; };
 		3AB938AE287CF1650053FD18 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB938AA287CF1650053FD18 /* User.swift */; };
@@ -450,7 +450,7 @@
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
 				3A60F6F3287C16C20002395E /* awsconfiguration.json in Resources */,
 				E18EF65C287472ED004AF827 /* AMONGS.usdz in Resources */,
-				3A6004AA28726260009DA69E /* (null) in Resources */,
+				3A6004AA28726260009DA69E /* BuildFile in Resources */,
 				3A60F6F2287C16C20002395E /* amplifyconfiguration.json in Resources */,
 				E172059028706EB100A9D300 /* 0.mp3 in Resources */,
 				E172059328706EB100A9D300 /* undefined.mp3 in Resources */,
@@ -492,13 +492,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -513,13 +509,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA/Pods-DIGA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA/Pods-DIGA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
