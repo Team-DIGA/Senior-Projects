@@ -60,32 +60,7 @@ class ARViewController: UIViewController {
     
     var itemTitles:[Item] = []
     
-    @IBOutlet weak var gage1: UIView!
-    @IBOutlet weak var gage2: UIView!
-    @IBOutlet weak var gage3: UIView!
-    @IBOutlet weak var gage4: UIView!
-    @IBOutlet weak var gage5: UIView!
-    @IBOutlet weak var gage6: UIView!
-    @IBOutlet weak var gage7: UIView!
-    @IBOutlet weak var gage8: UIView!
-    @IBOutlet weak var gage9: UIView!
-    @IBOutlet weak var gage10: UIView!
-    @IBOutlet weak var gage11: UIView!
-    @IBOutlet weak var gage12: UIView!
-    @IBOutlet weak var gage13: UIView!
-    @IBOutlet weak var gage14: UIView!
-    @IBOutlet weak var gage15: UIView!
-    @IBOutlet weak var gage16: UIView!
-    @IBOutlet weak var gage17: UIView!
-    @IBOutlet weak var gage18: UIView!
-    @IBOutlet weak var gage19: UIView!
-    @IBOutlet weak var gage20: UIView!
-    @IBOutlet weak var gage21: UIView!
-    @IBOutlet weak var gage22: UIView!
-    @IBOutlet weak var gage23: UIView!
-    
     @IBOutlet weak var resultImage: UIImageView!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var GageStopButton: UIButton!
     
     
@@ -155,10 +130,6 @@ class ARViewController: UIViewController {
             itemRepo.changeEasyCap()
         }
         
-        
-        
-        
-//        let randomNum = Int.random(in: 1...characterRarity+1)
         let randomNum = Int.random(in: 1...100)
         if randomNum <= captureProbability {
             guard let metCount = characterMetObj[characterTitle] else {
@@ -183,38 +154,8 @@ class ARViewController: UIViewController {
         view.bringSubviewToFront(nameLabel)
         view.bringSubviewToFront(rarityLabel)
         view.bringSubviewToFront(metCountLabel)
-        
-        
-        
-        view.bringSubviewToFront(gage1)
-        view.bringSubviewToFront(gage2)
-        view.bringSubviewToFront(gage3)
-        view.bringSubviewToFront(gage4)
-        view.bringSubviewToFront(gage5)
-        view.bringSubviewToFront(gage6)
-        view.bringSubviewToFront(gage7)
-        view.bringSubviewToFront(gage8)
-        view.bringSubviewToFront(gage9)
-        view.bringSubviewToFront(gage10)
-        view.bringSubviewToFront(gage11)
-        view.bringSubviewToFront(gage12)
-        view.bringSubviewToFront(gage13)
-        view.bringSubviewToFront(gage14)
-        view.bringSubviewToFront(gage15)
-        view.bringSubviewToFront(gage16)
-        view.bringSubviewToFront(gage17)
-        view.bringSubviewToFront(gage18)
-        view.bringSubviewToFront(gage19)
-        view.bringSubviewToFront(gage20)
-        view.bringSubviewToFront(gage21)
-        view.bringSubviewToFront(gage22)
-        view.bringSubviewToFront(gage23)
-        view.bringSubviewToFront(imageView)
         view.bringSubviewToFront(resultImage)
         view.bringSubviewToFront(GageStopButton)
-        
-        self.imageView.frame.origin.x = 250
-        self.imageView.frame.origin.y = gage1.top - (imageView.bottom - imageView.top)/2 - 75
         
         if characterTitle! == "コイル" {
             let anchor = AnchorEntity()
@@ -326,6 +267,7 @@ class ARViewController: UIViewController {
     
     func alertFunc2(){
         let expTable : [String : Int] = [
+            "スライム":15,
             "アナ":100,
             "アンパンマン":12,
             "アルミン":30,
@@ -391,7 +333,7 @@ class ARViewController: UIViewController {
             return
         }
         
-        var user : User = userDataUtils.getUser(name: username) as! User
+        let user : User = userDataUtils.getUser(name: username) as! User
         
         let getExp = expTable[characterTitle]
         let myExp = user.exp + getExp!
@@ -426,6 +368,7 @@ class ARViewController: UIViewController {
     }
     func alertFunc3(){
         let moneyTable : [String : Int] = [
+            "スライム":15,
             "アナ":100,
             "アンパンマン":12,
             "アルミン":30,
@@ -491,7 +434,7 @@ class ARViewController: UIViewController {
             return
         }
         
-        var user : User = userDataUtils.getUser(name: username) as! User
+        let user : User = userDataUtils.getUser(name: username) as! User
         
         let getMoney = moneyTable[characterTitle]
         
@@ -612,7 +555,6 @@ class ARViewController: UIViewController {
         // バーのX座標・Y座標・終端のY座標
         let barXPosition = scWid*0.8
         let barYPosition = scHei*0.2
-        let barYPositionEnd = barYPosition + barHeight
         
         
         
@@ -621,29 +563,30 @@ class ARViewController: UIViewController {
         baseBarView.frame = CGRect(x: barXPosition ,y: barYPosition ,width: barWidth ,height: barHeight)
         gageFlameView.frame = CGRect(x: barXPosition-10 ,y: barYPosition-10 ,width: barWidth+20 ,height: barHeight+20)
         
-//            let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame.size = barView.frame.size
-//            let topColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0).cgColor
-//            let bottomColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1).cgColor
-//            let gradientColors: [CGColor] = [topColor, bottomColor]
-//        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-//        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
-//            gradientLayer.colors = gradientColors
-//            barView.layer.insertSublayer(gradientLayer, at: 0)
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame.size = baseBarView.frame.size
+        let topColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0).cgColor
+        let bottomColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1).cgColor
+        let gradientColors: [CGColor] = [topColor, bottomColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+        gradientLayer.colors = gradientColors
+        baseBarView.layer.insertSublayer(gradientLayer, at: 0)
         // バーに色を付ける
         barView.backgroundColor = .gray
-        baseBarView.backgroundColor = .orange
-        gageFlameView.backgroundColor = .black
+//        baseBarView.backgroundColor = .orange
+        gageFlameView.backgroundColor = .darkGray
         
         // barViewをViewに追加する
         
         view.addSubview(gageFlameView)
         view.addSubview(baseBarView)
         view.addSubview(barView)
+        view.bringSubviewToFront(resultImage)
         
         // バーをアニメーションさせる
-        // 1秒かけてバーを下から上に減少させる
-        UIView.animate(withDuration: 1, delay: 0.0, options : [.repeat, .autoreverse], animations: {() -> Void  in
+        // gageSpeed秒かけてバーを上下させる
+        UIView.animate(withDuration: gageSpeed, delay: 0.0, options : [.repeat, .autoreverse], animations: {() -> Void  in
             // アニメーション終了後の座標とサイズを指定
             self.barView.frame = CGRect(x: barXPosition, y: barYPosition, width: barWidth, height: 0)
         },
@@ -671,7 +614,9 @@ class ARViewController: UIViewController {
         layer.speed = 0.0
         layer.timeOffset = pausedTime
         print(pausedTime)
-    
+        
+        print("＝＝＝＝現在地＝＝＝＝",layer.presentation()?.position.y)
+        
         if let position = layer.presentation()?.position {
             print(position.y)
             if position.y < 184 {
@@ -696,13 +641,13 @@ class ARViewController: UIViewController {
             delay(0.5) {
                 // do something
                 // 画面遷移のアニメーションの実行
-                UIView.transition(with: self.imageView,
+                UIView.transition(with: self.barView,
                 duration: 1, // アニメーション合計継続時間(秒)
                 options: [.transitionFlipFromLeft, .curveLinear], // オプション(左からのフリップ, 等速)
                     animations: {
                     // 画面の変更
-                        if let position = self.imageView.layer.presentation()?.position {
-                            if position.y < 184 {
+                        if let position = self.barView.layer.presentation()?.position {
+                            if position.y < 170 {
                                 print("Excelent!!!")
                                 result = 20
                                 self.resultImage.image = UIImage(named:"Excellent")
@@ -742,7 +687,7 @@ class ARViewController: UIViewController {
                 }
             )
         }
-        delay(1) {
+        delay(0.5) {
             // do something
             self.addOrEscape(result: result)
         }
