@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var isEasyCap:Bool = false
     var isMaashi:Bool = false
     var isLegacy:Bool = false
+    var isCursed:Bool = false
 
     var window: UIWindow?
 

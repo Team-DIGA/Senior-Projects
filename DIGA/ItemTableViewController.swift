@@ -6,6 +6,7 @@ let userDataUtils = UserDataUtils()
 let itemDataUtils = ItemDataUtils()
 let itemRepo = InMemoryItemRepository()
 
+
 class ItemTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
@@ -71,20 +72,34 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
             let alert = itemRepo.usePotato(view: self)
             present(alert, animated: true)
         } else if itemName == "山田さん増殖中" {
+            itemRepo.switchChara(itemNum: 1)
         } else if itemName == "ツバサを授ける" {
+            itemRepo.switchBooster(boosterNum: 2)
         } else if itemName == "キャラクターホイホイ" {
             itemRepo.changeHoihoi()
         } else if itemName == "レガシーは突然に。" {
             itemRepo.changeLegacy()
         } else if itemName == "呪いの面" {
+            itemRepo.useCursed(view: self)
         } else if itemName == "ふっかつのじゅもん" {
+            itemRepo.breakCursed()
+            
+            guard let username = AWSMobileClient.default().username else {
+                print("Error: Uncaught username")
+                return
+            }
+            userDataUtils.deleteUserItem(name: username , itemName: "呪いの面")
+            
         }
         guard let username = AWSMobileClient.default().username else {
             print("Error: Uncaught username")
             return
         }
+        if itemName != "呪いの面" {
         userDataUtils.deleteUserItem(name: username , itemName: itemName)
-        
+        } else {
+            
+        }
         let UINavigationController = tabBarController?.viewControllers?[2];
         tabBarController?.selectedViewController = UINavigationController;
 
