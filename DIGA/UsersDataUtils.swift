@@ -76,6 +76,38 @@ struct UserDataUtils {
         }
     }
     
+    func deleteUserItem(name: String, itemName: String) {
+        //Anyだから暫定でこの書き方。
+        var user: User = getUser(name: name) as! User
+        let item: Item = itemDataUtild.getItem(name: itemName) as! Item
+        
+        
+        user.update_count += 1
+        
+        guard let itemIndex = user.items?.firstIndex(of: itemName) else {
+            print("Error:the item is not found in userTable")
+            return  }
+        user.items!.remove(at: itemIndex)
+        print(user)
+
+        // mutateで新規メッセージを作成
+        Amplify.API.mutate(request: .updateMutation(of: user, version: user.update_count-1)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let user):
+                    print("Successfully updated userItem: \(user)")
+                case .failure(let error):
+                    print("Got failed result of updateItem with \(error.errorDescription)")
+                }
+            case .failure(let error):
+                print("Got failed event of updateItem with error \(error)")
+            }
+        }
+    }
+    
+
+    
     func updateUserLevel(name: String, level: Int) {
         //Anyだから暫定でこの書き方。
         var user: User = getUser(name: name) as! User

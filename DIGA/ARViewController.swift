@@ -348,7 +348,7 @@ class ARViewController: UIViewController {
             print("Error: Uncaught username")
             return
         }
-        
+
         userDataUtils.updateUserItem(name: username, itemName: itemTitles[randomItemNum].name)
         
     }

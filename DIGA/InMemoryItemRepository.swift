@@ -42,6 +42,8 @@ struct ItemState {
     var levelState:Bool
 }
 
+
+
 func initialItem() -> ItemState{
     return ItemState(
         isHoihoi:false,
@@ -207,8 +209,9 @@ class InMemoryItemRepository:UIAlertController, ItemFunc{
         let height = NSLayoutConstraint(item: resultAlert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)
         resultAlert.view.addConstraint(height)
         
-        let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-            view.navigationController?.popViewController(animated: true)
+        let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {_ in
+//            (action:UIAlertAction!) -> Void in
+//            view.navigationController?.popViewController(animated: true)
         })
         
         resultAlert.addAction(backAction)

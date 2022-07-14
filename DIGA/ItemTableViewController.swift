@@ -22,8 +22,11 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
         let userData = userDataUtils.getUser(name: username) as! User
         let itemNameArray: [String?] = userData.items!
         itemArray = itemDataUtils.getCurrentItem(itemArray: itemNameArray) as! [Item]
+
         
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
@@ -56,7 +59,6 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
         let itemName = itemArray[indexPath.row].name
         if itemName == "€rikoの権化" {
             itemRepo.switchChara(itemNum: 1)
-            let changeChara = itemRepo.getChara()
         } else if itemName == "スライムフィーバー" {
             itemRepo.switchChara(itemNum: 2)
         } else if itemName == "Yusuke降臨" {
@@ -77,6 +79,12 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
         } else if itemName == "呪いの面" {
         } else if itemName == "ふっかつのじゅもん" {
         }
+        guard let username = AWSMobileClient.default().username else {
+            print("Error: Uncaught username")
+            return
+        }
+        userDataUtils.deleteUserItem(name: username , itemName: itemName)
+        
         let UINavigationController = tabBarController?.viewControllers?[1];
         tabBarController?.selectedViewController = UINavigationController;
 

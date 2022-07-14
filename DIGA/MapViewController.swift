@@ -35,11 +35,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         
 //        self.mapView.annotations.removeAll()
-//        self.mapView.removeAnnotations(self.mapView.annotations.removeAll())
+        self.mapView.removeAnnotations(self.mapView.annotations)
 
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.viewDidLoad()
-//        }
+        }
      
         
     }
@@ -124,8 +124,26 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print("キャラホイ", itemRepo.getHoihoi())
+        print("ヨクツカマール", itemRepo.getEasyCap())
+        print("まーしの微振動", itemRepo.getMaashi())
+        print("レガシーは突然に", itemRepo.getLegacy())
+        print("キャラチェン", itemRepo.getChara())
+        print("ブースター", itemRepo.getBooster())
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("キャラホイ", itemRepo.getHoihoi())
+        print("ヨクツカマール", itemRepo.getEasyCap())
+        print("まーしの微振動", itemRepo.getMaashi())
+        print("レガシーは突然に", itemRepo.getLegacy())
+        print("キャラチェン", itemRepo.getChara())
+        print("ブースター", itemRepo.getBooster())
+        
         print("getChara:",itemRepo.getChara())
 //        itemRepo.switchChara(itemNum:2)
         getAllNamesAndImages()
@@ -170,6 +188,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             for i in 0..<self.pinTitles.count {
                 if itemRepo.getDigArray().contains(self.pinTitles[i]) {
                     appendMap(i: i)
+                    itemRepo.switchChara(itemNum: 0)
                 }
             }
         } else if itemRepo.getChara() == 2 {
@@ -200,9 +219,9 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                 }
                 let selectChara = Int.random(in: 1...rarity + 1)
                 if selectChara == 1 && countChara < numChara && pinTitles[i] != "Yusuke" {
-                    print("name", pinTitles[i])
-                    print("motomoto", raritiesArray[i])
-                    print("hanten",rarity)
+//                    print("name", pinTitles[i])
+//                    print("motomoto", raritiesArray[i])
+//                    print("hanten",rarity)
                     appendMap(i: i)
                     countChara += 1
                 }
@@ -218,6 +237,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                     return
                 }
                 appendMap(i: indexYusuke)
+                itemRepo.switchChara(itemNum: 0)
             }
         }
             
@@ -494,6 +514,7 @@ extension MapViewController{
         }
         
         annotationView.annotation = annotation
+        print("aaaaa",annotationView.annotation)
         return annotationView
     }
     
