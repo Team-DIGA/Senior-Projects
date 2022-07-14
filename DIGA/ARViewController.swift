@@ -330,6 +330,7 @@ class ARViewController: UIViewController {
     
     func alertFunc2(){
         let randomItemNum = Int.random(in: 0...itemTitles.count-1)
+        print("itemTitles", itemTitles)
         let alert = UIAlertController(title: String("\(itemTitles[randomItemNum].name)を手に入れた！"), message: "", preferredStyle: .alert)
         let imageView = UIImageView(frame: CGRect(x: 10, y: 70, width: 250, height: 250))
         let height = NSLayoutConstraint(item: alert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)

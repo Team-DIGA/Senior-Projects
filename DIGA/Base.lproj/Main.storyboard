@@ -244,15 +244,6 @@
                                     <action selector="addAllItems:" destination="Tly-3R-M8P" eventType="touchUpInside" id="90X-FA-F4u"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWy-nR-wwX">
-                                <rect key="frame" x="194" y="448" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="potatoTest:" destination="Tly-3R-M8P" eventType="touchUpInside" id="bYM-Hd-sIt"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kB1-7B-BAU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
