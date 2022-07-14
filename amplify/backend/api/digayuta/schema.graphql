@@ -22,9 +22,10 @@ type Item @model {
 type User @model {
   id: ID!
   name: String!
-  friends: [String]
-  items: [String]
-  level: Int
-  money: Int
-  exp: Int
+  friends: [String!]
+  items: [String!]
+  level: Int!
+  money: Int!
+  exp: Int!
+  _version: Int
 }

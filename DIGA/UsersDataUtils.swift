@@ -72,7 +72,100 @@ struct UserDataUtils {
             }
         }
     }
-
+    
+    func updateUserLvAndExp(name: String, myLv: Int, getExp: Int) {
+        let semaphore = DispatchSemaphore(value: 0)
+        //Anyだから暫定でこの書き方。
+        var user: User = getUser(name: name) as! User
+        
+        print("getExp",getExp)
+        print("user.exp before",user.exp)
+        user.exp += getExp
+        print("user.exp after",user.exp)
+        user.level = myLv
+        user.items! = []
+        var versionNum: Int = 0
+        // mutateで新規メッセージを作成
+        Amplify.API.mutate(request: .updateMutation(of: user, version: versionNum)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let user):
+                    print("Successfully updated userExp:(失敗する方) \(user)")
+                    versionNum = user.syncMetadata.version
+                    semaphore.signal()
+                case .failure(let error):
+                    print("Got failed result of updateExp with \(error.errorDescription)")
+                }
+            case .failure(let error):
+                print("Got failed event of updateExp with error \(error)")
+            }
+        }
+        semaphore.wait()
+        // mutateで新規メッセージを作成
+        print("versionNum2",versionNum)
+        Amplify.API.mutate(request: .updateMutation(of: user, version: versionNum)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let user):
+                    print("Successfully updated userExp:(こっちで登録できるはず) \(user)")
+                    versionNum = user.syncMetadata.version
+                case .failure(let error):
+                    print("Got failed result of updateExp with \(error.errorDescription)")
+                }
+            case .failure(let error):
+                print("Got failed event of updateExp with error \(error)")
+            }
+        }
+    }
+    
+    func updateUserMoney(name: String, getMoney: Int) {
+        let semaphore = DispatchSemaphore(value: 0)
+        //Anyだから暫定でこの書き方。
+        var user: User = getUser(name: name) as! User
+        
+        print("getMoney",getMoney)
+        print("user.money before",user.money)
+        user.money += getMoney
+        print("user.money after",user.money)
+        user.items! = []
+        var versionNum: Int = 0
+        // mutateで新規メッセージを作成
+        Amplify.API.mutate(request: .updateMutation(of: user, version: versionNum)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let user):
+                    print("Successfully updated userExp:(失敗する方) \(user)")
+                    versionNum = user.syncMetadata.version
+                    semaphore.signal()
+                case .failure(let error):
+                    print("Got failed result of updateExp with \(error.errorDescription)")
+                }
+            case .failure(let error):
+                print("Got failed event of updateExp with error \(error)")
+            }
+        }
+        semaphore.wait()
+        // mutateで新規メッセージを作成
+        print("versionNum2",versionNum)
+        Amplify.API.mutate(request: .updateMutation(of: user, version: versionNum)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let user):
+                    print("Successfully updated userExp:(こっちで登録できるはず) \(user)")
+                    versionNum = user.syncMetadata.version
+                case .failure(let error):
+                    print("Got failed result of updateExp with \(error.errorDescription)")
+                }
+            case .failure(let error):
+                print("Got failed event of updateExp with error \(error)")
+            }
+        }
+    }
+    
     // 1件挿入
     func createUser(user: User) -> Void {
         Amplify.API.mutate(request: .create(user)) { event in

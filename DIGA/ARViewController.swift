@@ -156,15 +156,15 @@ class ARViewController: UIViewController {
                 return
             }
             characterDataUtils.updateCharacter(name: characterTitle, place: characterPlace, met_count_key:metCount)
-            alertFunc(title: "\(characterTitle!)は\n仲間になった！", message: "",addFlag:true)
+            alertFunc1(title: "\(characterTitle!)は\n仲間になった！", message: "",addFlag:true)
         } else {
-            alertFunc(title: "\( characterTitle!)は\n去っていった！", message: "",addFlag:false)
+            alertFunc1(title: "\( characterTitle!)は\n去っていった！", message: "",addFlag:false)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         itemTitles = itemDataUtils.getAllItem() as! [Item]
 
         view.addSubview(arView)
@@ -283,7 +283,7 @@ class ARViewController: UIViewController {
         }
     }
     
-    func alertFunc(title: String, message: String, addFlag:Bool) {
+    func alertFunc1(title: String, message: String, addFlag:Bool) {
         let alert: UIAlertController =  UIAlertController(title: title,message: message, preferredStyle: UIAlertController.Style.alert)
         
         let backAction:UIAlertAction?
@@ -314,8 +314,203 @@ class ARViewController: UIViewController {
         present(alert, animated: true, completion:nil)
     }
     
-    
     func alertFunc2(){
+        let expTable : [String : Int] = [
+            "アナ":100,
+            "アンパンマン":12,
+            "アルミン":30,
+            "アシタカ":50,
+            "バイキンマン":10,
+            "ベジータ":350,
+            "ブルック":120,
+            "坊":5000,
+            "カレーパンマン":23,
+            "チーズ":2,
+            "クリリン":20,
+            "チョッパー":35,
+            "ドナルド":20,
+            "ドラえもん":25,
+            "ドラミ":20,
+            "エルザ":35,
+            "エレン":100,
+            "エリーザ":530000,
+            "エグゼイド":1031,
+            "フランキー":262,
+            "悟空":500,
+            "グーフィー":120,
+            "ハウル":100,
+            "伊之助":380,
+            "ジャイアン":30,
+            "ルフィー":150,
+            "ミッキー":200,
+            "ミカサ":130,
+            "ミニー":32,
+            "ナックル":79,
+            "ナミ":73,
+            "ナウシカ":74,
+            "禰󠄀豆子":222,
+            "のび太":25,
+            "ピッコロ":24,
+            "ぷよ":10,
+            "ロビン":620,
+            "サン":3,
+            "サンジ":32,
+            "シャドウ":410,
+            "静香":42,
+            "ソニック":429,
+            "食パンマン":498,
+            "炭治郎":126,
+            "テイルズ":650,
+            "巨人化したエレン":333,
+            "トロロ":166,
+            "ウソップ":657,
+            "善逸":258,
+            "ゾロ":666,
+            "コイル":516,
+            "Shimabu":36,
+            "Abiru":55,
+            "アンミカ":200,
+            "イサージ":3,
+            "ご機嫌な島袋":1,
+            "Masashi":9999999999,
+            "Amongs":5
+        ]
+        
+        guard let username = AWSMobileClient.default().username else {
+            print("Error: Uncaught username")
+            return
+        }
+        
+        var user : User = userDataUtils.getUser(name: username) as! User
+        
+        let getExp = expTable[characterTitle]
+        let myExp = user.exp + getExp!
+        let myLv  = Int(floor(pow(Double(myExp),0.33)))
+        var alert : UIAlertController
+        
+        if myLv > user.level {
+            alert = UIAlertController(title: String(
+                "経験値　\(getExp!)　を獲得した！\nレベルが　\(myLv - user.level) 上がった！！"
+            ), message: "", preferredStyle: .alert)
+        } else {
+            alert = UIAlertController(title: String(
+                "経験値　\(getExp!)　を獲得した！"
+            ), message: "", preferredStyle: .alert)
+        }
+        
+        let backAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
+            //let randomNum = Int.random(in: 1...2)
+            let randomNum = 1
+            if randomNum == 1 {
+                self.alertFunc3()
+            } else {
+                self.navigationController?.popViewController(animated: true)
+            }
+        })
+        
+        alert.addAction(backAction)
+        present(alert, animated: true)
+        
+        userDataUtils.updateUserLvAndExp(name: username, myLv: myLv ,getExp: Int(getExp!))
+
+    }
+    func alertFunc3(){
+        let moneyTable : [String : Int] = [
+            "アナ":100,
+            "アンパンマン":12,
+            "アルミン":30,
+            "アシタカ":50,
+            "バイキンマン":10,
+            "ベジータ":350,
+            "ブルック":120,
+            "坊":5000,
+            "カレーパンマン":23,
+            "チーズ":2,
+            "クリリン":20,
+            "チョッパー":35,
+            "ドナルド":20,
+            "ドラえもん":25,
+            "ドラミ":20,
+            "エルザ":35,
+            "エレン":100,
+            "エリーザ":530000,
+            "エグゼイド":1031,
+            "フランキー":262,
+            "悟空":500,
+            "グーフィー":120,
+            "ハウル":100,
+            "伊之助":380,
+            "ジャイアン":30,
+            "ルフィー":150,
+            "ミッキー":200,
+            "ミカサ":130,
+            "ミニー":32,
+            "ナックル":79,
+            "ナミ":73,
+            "ナウシカ":74,
+            "禰󠄀豆子":222,
+            "のび太":25,
+            "ピッコロ":24,
+            "ぷよ":10,
+            "ロビン":620,
+            "サン":3,
+            "サンジ":32,
+            "シャドウ":410,
+            "静香":42,
+            "ソニック":429,
+            "食パンマン":498,
+            "炭治郎":126,
+            "テイルズ":650,
+            "巨人化したエレン":333,
+            "トロロ":166,
+            "ウソップ":657,
+            "善逸":258,
+            "ゾロ":666,
+            "コイル":516,
+            "Shimabu":36,
+            "Abiru":55,
+            "アンミカ":200,
+            "イサージ":3,
+            "ご機嫌な島袋":1,
+            "Masashi":9999999999,
+            "Amongs":5
+        ]
+        
+        guard let username = AWSMobileClient.default().username else {
+            print("Error: Uncaught username")
+            return
+        }
+        
+        var user : User = userDataUtils.getUser(name: username) as! User
+        
+        let getMoney = moneyTable[characterTitle]
+        
+        var alert : UIAlertController
+        
+        
+            alert = UIAlertController(title: String(
+                "\(characterTitle!)　が上納金を納めた。\n所持金が　\(getMoney!)€riko 増えた！！"
+            ), message: "", preferredStyle: .alert)
+        
+        
+        let backAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
+            //let randomNum = Int.random(in: 1...2)
+            let randomNum = 1
+            if randomNum == 1 {
+                self.alertFunc4()
+            } else {
+                self.navigationController?.popViewController(animated: true)
+            }
+        })
+        
+        alert.addAction(backAction)
+        present(alert, animated: true)
+        
+        userDataUtils.updateUserMoney(name: username, getMoney: getMoney!)
+
+    }
+    
+    func alertFunc4(){
         let randomItemNum = Int.random(in: 0...itemTitles.count-1)
         let alert = UIAlertController(title: String("\(itemTitles[randomItemNum].name)を手に入れた！"), message: "", preferredStyle: .alert)
         let imageView = UIImageView(frame: CGRect(x: 10, y: 70, width: 250, height: 250))
@@ -347,7 +542,8 @@ class ARViewController: UIViewController {
     let scHei: CGFloat = UIScreen.main.bounds.height    //画面の高さ
     
     var barView:UIView = UIView()
-   
+    var baseBarView:UIView = UIView()
+    var gageFlameView:UIView = UIView()
    
     
     override func viewWillAppear(_ animated: Bool) {
@@ -395,7 +591,7 @@ class ARViewController: UIViewController {
         let barHeight = scHei*0.6
         let barWidth = scWid*0.1
         
-        // バーのX座標・Y座標・終端のX座標
+        // バーのX座標・Y座標・終端のY座標
         let barXPosition = scWid*0.8
         let barYPosition = scHei*0.2
         let barYPositionEnd = barYPosition + barHeight
@@ -404,6 +600,8 @@ class ARViewController: UIViewController {
         
         // 画像の表示する座標を指定する
         barView.frame = CGRect(x: barXPosition ,y: barYPosition ,width: barWidth ,height: barHeight)
+        baseBarView.frame = CGRect(x: barXPosition ,y: barYPosition ,width: barWidth ,height: barHeight)
+        gageFlameView.frame = CGRect(x: barXPosition-10 ,y: barYPosition-10 ,width: barWidth+20 ,height: barHeight+20)
         
 //            let gradientLayer = CAGradientLayer()
 //        gradientLayer.frame.size = barView.frame.size
@@ -415,17 +613,21 @@ class ARViewController: UIViewController {
 //            gradientLayer.colors = gradientColors
 //            barView.layer.insertSublayer(gradientLayer, at: 0)
         // バーに色を付ける
-        barView.backgroundColor = .orange
-    
+        barView.backgroundColor = .gray
+        baseBarView.backgroundColor = .orange
+        gageFlameView.backgroundColor = .black
+        
         // barViewをViewに追加する
         
+        view.addSubview(gageFlameView)
+        view.addSubview(baseBarView)
         view.addSubview(barView)
         
         // バーをアニメーションさせる
         // 1秒かけてバーを下から上に減少させる
         UIView.animate(withDuration: 1, delay: 0.0, options : [.repeat, .autoreverse], animations: {() -> Void  in
             // アニメーション終了後の座標とサイズを指定
-            self.barView.frame = CGRect(x: barXPosition, y: barYPositionEnd, width: barWidth, height: 0)
+            self.barView.frame = CGRect(x: barXPosition, y: barYPosition, width: barWidth, height: 0)
         },
                        completion: {(finished: Bool) -> Void in
                         // アニメーション終了後の処理
@@ -471,7 +673,7 @@ class ARViewController: UIViewController {
                 print("So bad!!")
             }
         }
-            var result = 3
+            var result = 0
             delay(0.5) {
                 // do something
                 // 画面遷移のアニメーションの実行
