@@ -176,7 +176,7 @@ class ARViewController: UIViewController {
         super.viewDidLoad()
 //        itemRepo.changeEasyCap()
 //        itemRepo.changeMaashi()
-        userDataUtils.updateUserExp(name: AWSMobileClient.default().username!, getExp: 30)
+//        userDataUtils.updateUserExp(name: AWSMobileClient.default().username!, getExp: 30)
 
         itemTitles = itemDataUtils.getAllItem() as! [Item]
 

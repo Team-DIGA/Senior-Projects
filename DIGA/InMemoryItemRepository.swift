@@ -6,6 +6,10 @@
 //
 
 import Foundation
+import UIKit
+import AWSMobileClient
+
+
 
 protocol ItemFunc{
     func changeHoihoi()
@@ -21,6 +25,9 @@ protocol ItemFunc{
     func getEasyCap() -> Bool
     func getMaashi() -> Bool
     func getLegacy() -> Bool
+    func usePotato(view:UIViewController) -> UIAlertController
+    func changeLevelState()
+    func getLevelState() -> Bool
     
 }
 
@@ -32,6 +39,7 @@ struct ItemState {
     var isEasyCap:Bool
     var isMaashi:Bool
     var isLegacy:Bool
+    var levelState:Bool
 }
 
 func initialItem() -> ItemState{
@@ -42,49 +50,56 @@ func initialItem() -> ItemState{
         changeBooster: 0,
         isEasyCap: false,
         isMaashi: false,
-        isLegacy: false
+        isLegacy: false,
+        levelState: false
     )
     
 }
 
-final class InMemoryItemRepository:ItemFunc{
+class InMemoryItemRepository:UIAlertController, ItemFunc{
+
+    let userDataUtils = UserDataUtils()
+    let delegate = UIApplication.shared.delegate as! AppDelegate
 
     var itemObj = initialItem()
     //キャラクターホイホイ
     func changeHoihoi(){
-        itemObj.isHoihoi.toggle()
+        delegate.isHoihoi.toggle()
     }
     
 
 
     func switchChara(itemNum: Int) {
-        itemObj.changeChara = itemNum
+//        itemObj.changeChara = itemNum
+        delegate.changeChara = itemNum
+        
     }
 
     func switchBooster(boosterNum: Int) {
-        itemObj.changeBooster = boosterNum
+        delegate.changeBooster = boosterNum
     }
     
 
     func changeEasyCap(){
-        itemObj.isEasyCap.toggle()
+        delegate.isEasyCap.toggle()
     }
     
     func changeMaashi(){
-        itemObj.isMaashi.toggle()
+        delegate.isMaashi.toggle()
     }
     
     func changeLegacy(){
-        itemObj.isLegacy.toggle()
+        delegate.isLegacy.toggle()
     }
     
     func getHoihoi() -> Bool{
-        return itemObj.isHoihoi
+        return delegate.isHoihoi
     }
     
 
     func getChara() -> Int{
-        return itemObj.changeChara
+//        return itemObj.changeChara
+        return delegate.changeChara
     }
     
     func getDigArray() -> [String] {
@@ -92,29 +107,112 @@ final class InMemoryItemRepository:ItemFunc{
     }
     
     func getBooster() -> Int {
-        return itemObj.changeBooster
+        return delegate.changeBooster
     }
     
     
     func getEasyCap() -> Bool {
-        return itemObj.isEasyCap
+        return delegate.isEasyCap
     }
     
     func getMaashi() -> Bool{
-        return itemObj.isMaashi
+        return delegate.isMaashi
     }
     
     func getLegacy() -> Bool{
-        return itemObj.isLegacy
+        return delegate.isLegacy
+    }
+    
+    func changeLevelState() {
+        itemObj.levelState.toggle()
     }
 
-
-    //Erikoの権化
-
-
-
-
-    //Yusuke
-
+    func getLevelState() -> Bool {
+        return itemObj.levelState
+    }
     
+    func usePotato(view: UIViewController) -> UIAlertController {
+        let randomItemNum = Int.random(in: 1...2)
+        let alert = UIAlertController(title: "Potatoへの挑戦", message: "どっちか選べ", preferredStyle: .alert)
+        let imageView = UIImageView(frame: CGRect(x: 10, y: 70, width: 250, height: 250))
+        let height = NSLayoutConstraint(item: alert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)
+        alert.view.addConstraint(height)
+        imageView.image = UIImage(named: "Potato")
+        alert.view.addSubview(imageView)
+
+        
+        
+        do{
+            guard let username = AWSMobileClient.default().username else {
+                print("Error:uncaught userName")
+                throw NSError(domain: "error", code: -1, userInfo: nil)
+            }
+       
+        
+        print("randomNum", randomItemNum)
+            
+
+            
+        let btn1 = UIAlertAction(title: "A", style: UIAlertAction.Style.default, handler: {_ in
+            if randomItemNum == 1 {
+                self.userDataUtils.updateUserLevel(name: username, level: 1)
+                self.changeLevelState()
+                print("up")
+            } else {
+
+                self.userDataUtils.updateUserLevel(name: username, level: -1)
+                print("down")
+            }
+            self.alertPotatoResult(view: view)
+        })
+        let btn2 = UIAlertAction(title: "B", style: UIAlertAction.Style.default, handler: {_ in
+            if randomItemNum == 1 {
+                self.userDataUtils.updateUserLevel(name: username, level: -1)
+                print("down")
+            } else {
+                self.userDataUtils.updateUserLevel(name: username, level: 1)
+                self.changeLevelState()
+                print("up")
+            }
+            self.alertPotatoResult(view: view)
+        })
+    
+        alert.addAction(btn1)
+        alert.addAction(btn2)
+        
+//
+//        let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
+//            view.navigationController?.popViewController(animated: true)
+//        })
+//
+//        alert.addAction(backAction)
+        }catch{
+            print("Error")
+        }
+            
+        return alert
+            
+            
+    }
+    
+    func alertPotatoResult(view: UIViewController){
+        var title:String = ""
+        if self.getLevelState() {
+            title = "レベルUp！"
+        } else {
+            title = "レベルDown..."
+        }
+        
+        let resultAlert = UIAlertController(title:title, message: "", preferredStyle: .alert)
+        let height = NSLayoutConstraint(item: resultAlert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)
+        resultAlert.view.addConstraint(height)
+        
+        let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
+            view.navigationController?.popViewController(animated: true)
+        })
+        
+        resultAlert.addAction(backAction)
+        
+        view.present(resultAlert, animated: true)
+    }
 }

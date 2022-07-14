@@ -92,6 +92,7 @@ subscription OnCreateUser {
     level
     money
     exp
+    update_count
     createdAt
     updatedAt
     _version
@@ -108,6 +109,7 @@ subscription OnUpdateUser {
     level
     money
     exp
+    update_count
     createdAt
     updatedAt
     _version
@@ -124,6 +126,7 @@ subscription OnDeleteUser {
     level
     money
     exp
+    update_count
     createdAt
     updatedAt
     _version

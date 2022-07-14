@@ -56,6 +56,7 @@ class TopViewController: UIViewController {
             if let userState = userState {
                 switch(userState){
                 case .signedIn:
+                    
                     DispatchQueue.main.async {
                         print("Sign In")
                     }
@@ -67,7 +68,7 @@ class TopViewController: UIViewController {
                                     print("Error:Uncaught username")
                                     return
                                 }
-                                let addUser = User(name:userName, friends: [], items: [], level: 1, money: 0, exp: 0)
+                                let addUser = User(name:userName, friends: [], items: [], level: 1, money: 0, exp: 0, update_count: 1)
                                 self.userDataUtils.createUser(user: addUser)
                                 print("Sign In")
                                 // mutateで新規メッセージを作成

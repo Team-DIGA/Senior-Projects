@@ -12,7 +12,6 @@ import Amplify
 import AWSMobileClient
 
 
-
 class MapAnnotationSetting:MKPointAnnotation{
     var pinImage:UIImage?
 }
@@ -28,7 +27,7 @@ extension UIImage {
 }
 
 class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
-    
+        
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var SerchButton: UIButton!
@@ -71,6 +70,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var annotationArray:[MKAnnotation] = []
     
     private let itemRepo = InMemoryItemRepository()
+    let delegate = UIApplication.shared.delegate as! AppDelegate
     
     // 位置情報初回のみ表示させる際のグローバル変数
     var first = true
@@ -126,6 +126,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("getChara:",itemRepo.getChara())
+//        itemRepo.switchChara(itemNum:2)
         getAllNamesAndImages()
         print(AWSMobileClient.default().username)
         locationManager = CLLocationManager()
@@ -178,6 +180,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                     return
                 }
                 appendMap(i: indexSlime)
+                itemRepo.switchChara(itemNum: 0)
             }
         } else  {
             let numChara:Int

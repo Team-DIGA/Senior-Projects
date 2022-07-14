@@ -27,6 +27,7 @@ struct UserDataUtils {
                     print("Successfully retrieved friend: \(String(describing: friend.first))")
                     guard let gotUser = friend.first else {
                         print("Error: Uncaught user")
+                        semaphore.signal()
                         return
                     }
                     resultUser = gotUser
@@ -54,11 +55,13 @@ struct UserDataUtils {
         //Anyだから暫定でこの書き方。
         var user: User = getUser(name: name) as! User
         let item: Item = itemDataUtild.getItem(name: itemName) as! Item
-
-        user.items! = [item.name]
+        
+        user.update_count += 1
+        user.items! += [item.name]
+        print(user)
 
         // mutateで新規メッセージを作成
-        Amplify.API.mutate(request: .updateMutation(of: user, version: nil)) { event in
+        Amplify.API.mutate(request: .updateMutation(of: user, version: user.update_count-1)) { event in
             switch event {
             case .success(let result):
                 switch result {
@@ -72,6 +75,28 @@ struct UserDataUtils {
             }
         }
     }
+    
+    func updateUserLevel(name: String, level: Int) {
+        //Anyだから暫定でこの書き方。
+        var user: User = getUser(name: name) as! User
+        user.update_count += 1
+        user.level += level
+
+        Amplify.API.mutate(request: .updateMutation(of: user, version: user.update_count-1)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let user):
+                    print("Successfully updated userLevel: \(user)")
+                case .failure(let error):
+                    print("Got failed result of updateLevel with \(error.errorDescription)")
+                }
+            case .failure(let error):
+                print("Got failed event of updateLevel with error \(error)")
+            }
+        }
+    }
+    
     
     func updateUserExp(name: String, getExp: Int) {
             //Anyだから暫定でこの書き方。
