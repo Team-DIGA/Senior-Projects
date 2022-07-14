@@ -53,11 +53,17 @@ struct UserDataUtils {
     
     func updateUserItem(name: String, itemName: String) {
         //Anyだから暫定でこの書き方。
+        print("--------",name)
         var user: User = getUser(name: name) as! User
         let item: Item = itemDataUtild.getItem(name: itemName) as! Item
         
         user.update_count += 1
-        user.items! = [item.name]
+//        print("--------",user.items)
+        guard var items = user.items else { return print("Error") }
+        print("------",items)
+        items += [item.name]
+        user.items = items
+        print("--------",items)
         print(user)
 
         // mutateで新規メッセージを作成
@@ -119,7 +125,7 @@ struct UserDataUtils {
         user.exp += getExp
         print("user.exp after",user.exp)
         user.level = myLv
-        user.items! = []
+    
 
         // mutateで新規メッセージを作成
         Amplify.API.mutate(request: .updateMutation(of: user, version: user.update_count-1)) { event in
@@ -146,7 +152,7 @@ struct UserDataUtils {
         print("user.money before",user.money)
         user.money += getMoney
         print("user.money after",user.money)
-        user.items! = []
+
         
         // mutateで新規メッセージを作成
         Amplify.API.mutate(request: .updateMutation(of: user, version: user.update_count-1)) { event in
