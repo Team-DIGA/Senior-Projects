@@ -10,17 +10,24 @@ import Amplify
 
 final class AddFriendsTestViewController: UIViewController {
     
+    let itemRepo = InMemoryItemRepository()
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var rarityTextField: UITextField!
     @IBOutlet weak var firstMetPlaceTextField: UITextField!
     @IBOutlet weak var metCountTextField: UITextField!
     
+    @IBAction func potatoTest(_ sender: UIButton) {
+        let alert = itemRepo.usePotato(view: self)
+        present(alert, animated: true)
+       
+    }
     let characterDataUtils = CharacterDataUtils()
     let itemDataUtils = ItemDataUtils()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("getchara in admin",itemRepo.getChara())
         // Do any additional setup after loading the view.
     }
     

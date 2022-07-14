@@ -546,6 +546,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -758,7 +759,7 @@
         <!--マップ-->
         <scene sceneID="0UI-Sm-IVX">
             <objects>
-                <viewController id="vDF-6D-jcR" customClass="MapViewController" customModule="DIGA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Map" id="vDF-6D-jcR" customClass="MapViewController" customModule="DIGA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ppZ-pw-FzK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -27,5 +27,9 @@ type User @model {
   level: Int!
   money: Int!
   exp: Int!
+<<<<<<< HEAD
   _version: Int
+=======
+  update_count: Int!
+>>>>>>> f3ae8f27a42a4e961c5b31a00c0f39d0477701d1
 }

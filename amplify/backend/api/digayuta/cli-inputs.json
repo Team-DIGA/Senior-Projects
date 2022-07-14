@@ -3,11 +3,19 @@
   "serviceConfiguration": {
     "apiName": "digayuta",
     "serviceName": "AppSync",
+<<<<<<< HEAD
     "gqlSchemaPath": "/Users/kazunorinakajima/Desktop/BootCamp2/teamPrj/dega3/Senior-Projects/amplify/backend/api/digayuta/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
       "expirationTime": 30,
       "apiKeyExpirationDate": "2022-08-12T13:16:29.419Z",
+=======
+    "gqlSchemaPath": "/Users/s-kanechi/Public/Senior-Projects/amplify/backend/api/digayuta/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 30,
+      "apiKeyExpirationDate": "2022-08-12T07:18:28.636Z",
+>>>>>>> f3ae8f27a42a4e961c5b31a00c0f39d0477701d1
       "keyDescription": "DIGA's APi key"
     },
     "conflictResolution": {

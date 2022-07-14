@@ -39,6 +39,7 @@ class ARViewController: UIViewController {
     
     let itemDataUtils = ItemDataUtils()
     let userDataUtils = UserDataUtils()
+    let itemRepo = InMemoryItemRepository()
     
     let characterDataUtils = CharacterDataUtils()
     let textArray: [String] = [
@@ -119,33 +120,42 @@ class ARViewController: UIViewController {
             [10,15,20,25,30,35,40,45,50,55],
             [5,10,15,20,25,30,35,40,45,50],
         ]
-    let myLevel = 0
-    var myLevelZone = 0
-        if myLevel <= 5 {
-            myLevelZone = 0
-        } else if myLevel <= 10 {
-            myLevelZone = 1
-        } else if myLevel <= 15 {
-            myLevelZone = 2
-        } else if myLevel <= 20 {
-            myLevelZone = 3
-        } else if myLevel <= 25 {
-            myLevelZone = 4
-        } else if myLevel <= 30 {
-            myLevelZone = 5
-        } else if myLevel <= 35 {
-            myLevelZone = 6
-        } else if myLevel <= 40 {
-            myLevelZone = 7
-        } else if myLevel <= 45 {
-            myLevelZone = 8
-        } else {
-            myLevelZone = 9
-        }
-        
-    var captureProbability:Int = arrOfCaptureProbability[characterRarity-1][myLevelZone]
+        let myLevel = 0
+        var myLevelZone = 0
+            if myLevel <= 5 {
+                myLevelZone = 0
+            } else if myLevel <= 10 {
+                myLevelZone = 1
+            } else if myLevel <= 15 {
+                myLevelZone = 2
+            } else if myLevel <= 20 {
+                myLevelZone = 3
+            } else if myLevel <= 25 {
+                myLevelZone = 4
+            } else if myLevel <= 30 {
+                myLevelZone = 5
+            } else if myLevel <= 35 {
+                myLevelZone = 6
+            } else if myLevel <= 40 {
+                myLevelZone = 7
+            } else if myLevel <= 45 {
+                myLevelZone = 8
+            } else {
+                myLevelZone = 9
+            }
+            
+        var captureProbability:Int = arrOfCaptureProbability[characterRarity-1][myLevelZone]
         
         captureProbability += result
+        print("アイテム使われる前", captureProbability)
+        print("result", result)
+        if itemRepo.getEasyCap() {
+            captureProbability += 30
+            print("アイテム使った後", captureProbability)
+            itemRepo.changeEasyCap()
+        }
+        
+        
         
         
 //        let randomNum = Int.random(in: 1...characterRarity+1)
@@ -164,7 +174,14 @@ class ARViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         
+=======
+//        itemRepo.changeEasyCap()
+//        itemRepo.changeMaashi()
+//        userDataUtils.updateUserExp(name: AWSMobileClient.default().username!, getExp: 30)
+
+>>>>>>> f3ae8f27a42a4e961c5b31a00c0f39d0477701d1
         itemTitles = itemDataUtils.getAllItem() as! [Item]
 
         view.addSubview(arView)
@@ -512,6 +529,7 @@ class ARViewController: UIViewController {
     
     func alertFunc4(){
         let randomItemNum = Int.random(in: 0...itemTitles.count-1)
+        print("itemTitles", itemTitles)
         let alert = UIAlertController(title: String("\(itemTitles[randomItemNum].name)を手に入れた！"), message: "", preferredStyle: .alert)
         let imageView = UIImageView(frame: CGRect(x: 10, y: 70, width: 250, height: 250))
         let height = NSLayoutConstraint(item: alert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)
@@ -530,7 +548,7 @@ class ARViewController: UIViewController {
             print("Error: Uncaught username")
             return
         }
-        
+
         userDataUtils.updateUserItem(name: username, itemName: itemTitles[randomItemNum].name)
         
     }
@@ -571,6 +589,7 @@ class ARViewController: UIViewController {
             gageSpeed = 0.3
         }
         
+<<<<<<< HEAD
 //        // プロパティのアニメーションの実行
 //        UIView.animate(withDuration: gageSpeed , // アニメーション合計継続時間(秒)
 //            delay: 0.0, // アニメーション開始時間(秒)
@@ -632,6 +651,27 @@ class ARViewController: UIViewController {
                        completion: {(finished: Bool) -> Void in
                         // アニメーション終了後の処理
                         
+=======
+        if itemRepo.getMaashi() {
+            gageSpeed += 1
+            itemRepo.changeMaashi()
+        }
+        
+        
+        // プロパティのアニメーションの実行
+        UIView.animate(withDuration: gageSpeed , // アニメーション合計継続時間(秒)
+            delay: 0.0, // アニメーション開始時間(秒)
+            options: [.repeat, .autoreverse],
+            animations: {
+                // プロパティの変更
+            print("ゲージの最上端",self.gage1.top)
+            print("ゲージの最下端",self.gage23.bottom)
+            print("矢印の最下端",self.imageView.bottom)
+            print("矢印の最上端",self.imageView.top)
+            self.imageView.frame.origin.y = self.gage23.bottom + (self.imageView.bottom - self.imageView.top)/2 - 75
+            }, completion: {(finished: Bool) in
+            print("animation finished!!")
+>>>>>>> f3ae8f27a42a4e961c5b31a00c0f39d0477701d1
         })
         
     }
