@@ -1,17 +1,15 @@
 export type AmplifyDependentResourcesAttributes = {
     "api": {
-        "seniorprojects": {
+        "digayuta": {
             "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         }
     },
     "auth": {
-        "seniorprojects412d5728": {
+        "seniorprojectsfc97dcdc": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
-            "HostedUIDomain": "string",
-            "OAuthMetadata": "string",
             "UserPoolId": "string",
             "UserPoolArn": "string",
             "UserPoolName": "string",

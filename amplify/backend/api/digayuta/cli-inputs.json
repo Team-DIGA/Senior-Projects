@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "digayuta",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/kazunorinakajima/Desktop/BootCamp2/teamPrj/dega3/Senior-Projects/amplify/backend/api/digayuta/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 30,
+      "apiKeyExpirationDate": "2022-08-12T13:16:29.419Z",
+      "keyDescription": "DIGA's APi key"
+    },
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "AUTOMERGE"
+      },
+      "perModelResolutionStrategy": [
+        {
+          "resolutionStrategy": {
+            "type": "AUTOMERGE"
+          },
+          "entityName": "User"
+        }
+      ]
+    },
+    "additionalAuthTypes": []
+  }
+}

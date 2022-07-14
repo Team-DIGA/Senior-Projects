@@ -9,6 +9,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import Amplify
+import AWSMobileClient
 
 class MapAnnotationSetting:MKPointAnnotation{
     var pinImage:UIImage?
@@ -29,6 +30,16 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var SerchButton: UIButton!
+    @IBOutlet weak var statusZone: UIView!
+    @IBOutlet weak var profPicture: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var LvLavel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
+    @IBOutlet weak var nextLevellabel: UILabel!
+    @IBOutlet weak var expLabel: UILabel!
+    
+    
+    
     @IBAction func didTapSerchButton(_ sender: UIButton) {
         self.viewDidLoad()
         
@@ -117,6 +128,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         
         getAllNamesAndImages()
+        print(AWSMobileClient.default().username)
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager!.requestWhenInUseAuthorization()
@@ -151,6 +163,13 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         // MapViewをviewに追加.
         view.addSubview(mapView)
         view.bringSubviewToFront(SerchButton)
+        view.bringSubviewToFront(statusZone)
+        view.bringSubviewToFront(profPicture)
+        view.bringSubviewToFront(userNameLabel)
+        view.bringSubviewToFront(LvLavel)
+        view.bringSubviewToFront(moneyLabel)
+        view.bringSubviewToFront(nextLevellabel)
+        view.bringSubviewToFront(expLabel)
         //表示するキャラの数
         let numChara = Int.random(in:7...10)
         var countChara = 0
