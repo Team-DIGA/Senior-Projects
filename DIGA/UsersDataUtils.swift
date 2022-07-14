@@ -112,7 +112,7 @@ struct UserDataUtils {
         //Anyだから暫定でこの書き方。
         var user: User = getUser(name: name) as! User
         user.update_count += 1
-        user.level += level
+        user.level += myLv
         
         print("getExp",getExp)
         print("user.exp before",user.exp)
@@ -141,7 +141,6 @@ struct UserDataUtils {
         //Anyだから暫定でこの書き方。
         var user: User = getUser(name: name) as! User
         user.update_count += 1
-        user.level += level
         
         print("getMoney",getMoney)
         print("user.money before",user.money)
@@ -156,7 +155,6 @@ struct UserDataUtils {
                 switch result {
                 case .success(let user):
                     print("Successfully updated userExp: \(user)")
-                    versionNum = user.syncMetadata.version
                 case .failure(let error):
                     print("Got failed result of updateExp with \(error.errorDescription)")
                 }

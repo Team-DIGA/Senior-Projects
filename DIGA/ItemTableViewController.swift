@@ -85,7 +85,7 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         userDataUtils.deleteUserItem(name: username , itemName: itemName)
         
-        let UINavigationController = tabBarController?.viewControllers?[1];
+        let UINavigationController = tabBarController?.viewControllers?[2];
         tabBarController?.selectedViewController = UINavigationController;
 
         

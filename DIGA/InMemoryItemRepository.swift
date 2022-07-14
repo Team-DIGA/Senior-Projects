@@ -157,22 +157,22 @@ class InMemoryItemRepository:UIAlertController, ItemFunc{
             
         let btn1 = UIAlertAction(title: "A", style: UIAlertAction.Style.default, handler: {_ in
             if randomItemNum == 1 {
-                self.userDataUtils.updateUserLevel(name: username, level: 1)
+                self.userDataUtils.updateUserLvAndExp(name: username, myLv: 1, getExp: 0 )
                 self.changeLevelState()
                 print("up")
             } else {
 
-                self.userDataUtils.updateUserLevel(name: username, level: -1)
+                self.userDataUtils.updateUserLvAndExp(name: username, myLv: 100, getExp: 0)
                 print("down")
             }
             self.alertPotatoResult(view: view)
         })
         let btn2 = UIAlertAction(title: "B", style: UIAlertAction.Style.default, handler: {_ in
             if randomItemNum == 1 {
-                self.userDataUtils.updateUserLevel(name: username, level: -1)
+                self.userDataUtils.updateUserLvAndExp(name: username, myLv: -1, getExp:0)
                 print("down")
             } else {
-                self.userDataUtils.updateUserLevel(name: username, level: 1)
+                self.userDataUtils.updateUserLvAndExp(name: username, myLv: 1, getExp: 0)
                 self.changeLevelState()
                 print("up")
             }

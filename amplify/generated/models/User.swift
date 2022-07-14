@@ -10,10 +10,7 @@ public struct User: Model {
   public var level: Int
   public var money: Int
   public var exp: Int
-<<<<<<< HEAD
-=======
   public var update_count: Int
->>>>>>> f3ae8f27a42a4e961c5b31a00c0f39d0477701d1
   public var createdAt: Temporal.DateTime?
   public var updatedAt: Temporal.DateTime?
   
@@ -23,12 +20,8 @@ public struct User: Model {
       items: [String]? = nil,
       level: Int,
       money: Int,
-<<<<<<< HEAD
-      exp: Int) {
-=======
       exp: Int,
       update_count: Int) {
->>>>>>> f3ae8f27a42a4e961c5b31a00c0f39d0477701d1
     self.init(id: id,
       name: name,
       friends: friends,
@@ -47,10 +40,7 @@ public struct User: Model {
       level: Int,
       money: Int,
       exp: Int,
-<<<<<<< HEAD
-=======
       update_count: Int,
->>>>>>> f3ae8f27a42a4e961c5b31a00c0f39d0477701d1
       createdAt: Temporal.DateTime? = nil,
       updatedAt: Temporal.DateTime? = nil) {
       self.id = id

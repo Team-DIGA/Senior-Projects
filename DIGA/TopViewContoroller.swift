@@ -59,6 +59,12 @@ class TopViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         print("Sign In")
+                        guard let userName = AWSMobileClient.default().username else {
+                            print("Error:Uncaught username")
+                            return
+                        }
+                        let addUser = User(name:userName, friends: [], items: [], level: 1, money: 0, exp: 0, update_count: 1)
+                        self.userDataUtils.createUser(user: addUser)
                     }
                 case .signedOut:
                     AWSMobileClient.sharedInstance().showSignIn(navigationController: self.navigationController!, { (userState, error) in
