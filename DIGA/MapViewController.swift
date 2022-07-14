@@ -169,7 +169,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             pin.subtitle = String(raritiesObj[pinTitle!]!)
             pin.coordinate = coordinate
             self.mapView.addAnnotation(pin)
-        }
+            }
 
 
     }
@@ -237,7 +237,7 @@ extension MapViewController{
 //        print("async check 4=================================")
         
         // ピンの情報削除
-        self.mapView.removeAnnotation(view.annotation!)
+        self.mapView.removeAnnotations(self.mapView.annotations)
         
         // 現在地を押してもARに切り替わらない処理
         if view.annotation is MKUserLocation{
