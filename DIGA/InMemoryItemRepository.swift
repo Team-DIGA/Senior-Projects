@@ -28,7 +28,10 @@ protocol ItemFunc{
     func usePotato(view:UIViewController) -> UIAlertController
     func changeLevelState()
     func getLevelState() -> Bool
-    
+    func breakCursed()
+    func onCursed()
+    func getCursed() -> Bool
+    func useCursed(view:UIViewController)
 }
 
 struct ItemState {
@@ -133,6 +136,18 @@ class InMemoryItemRepository:UIAlertController, ItemFunc{
         return itemObj.levelState
     }
     
+    func breakCursed() {
+        delegate.isCursed = false
+    }
+    
+    func onCursed() {
+        delegate.isCursed = true
+    }
+    
+    func getCursed() -> Bool {
+        return delegate.isCursed
+    }
+    
     func usePotato(view: UIViewController) -> UIAlertController {
         let randomItemNum = Int.random(in: 1...2)
         let alert = UIAlertController(title: "Potatoへの挑戦", message: "どっちか選べ", preferredStyle: .alert)
@@ -210,12 +225,24 @@ class InMemoryItemRepository:UIAlertController, ItemFunc{
         resultAlert.view.addConstraint(height)
         
         let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {_ in
-//            (action:UIAlertAction!) -> Void in
-//            view.navigationController?.popViewController(animated: true)
         })
         
         resultAlert.addAction(backAction)
         
         view.present(resultAlert, animated: true)
     }
+    
+    func useCursed(view: UIViewController){
+    let resultAlert = UIAlertController(title:"ふふふ", message: "呪いの面が消えることはない", preferredStyle: .alert)
+    let height = NSLayoutConstraint(item: resultAlert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)
+    resultAlert.view.addConstraint(height)
+    
+    let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {_ in
+    })
+    
+    resultAlert.addAction(backAction)
+    
+    view.present(resultAlert, animated: true)
+}
+
 }

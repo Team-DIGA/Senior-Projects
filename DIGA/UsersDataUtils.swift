@@ -57,7 +57,7 @@ struct UserDataUtils {
         let item: Item = itemDataUtild.getItem(name: itemName) as! Item
         
         user.update_count += 1
-        user.items! += [item.name]
+        user.items! = [item.name]
         print(user)
 
         // mutateで新規メッセージを作成

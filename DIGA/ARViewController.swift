@@ -335,18 +335,34 @@ class ARViewController: UIViewController {
         
         let user : User = userDataUtils.getUser(name: username) as! User
         
-        let getExp = expTable[characterTitle]
-        let myExp = user.exp + getExp!
+        
+        guard var getExp = expTable[characterTitle] else {
+            print("Error:Uncaught exp table")
+            return
+        }
+        
+        if itemRepo.getCursed() {
+            getExp = getExp / 2
+        }
+    
+        if itemRepo.getBooster() == 1 {
+            getExp = getExp * (2/3)
+        } else if itemRepo.getBooster() == 2 {
+            getExp = getExp * 2
+        }
+        
+        
+        let myExp = user.exp + getExp
         let myLv  = Int(floor(pow(Double(myExp),0.33)))
         var alert : UIAlertController
         
         if myLv > user.level {
             alert = UIAlertController(title: String(
-                "経験値　\(getExp!)　を獲得した！\nレベルが　\(myLv - user.level) 上がった！！"
+                "経験値　\(getExp)　を獲得した！\nレベルが　\(myLv - user.level) 上がった！！"
             ), message: "", preferredStyle: .alert)
         } else {
             alert = UIAlertController(title: String(
-                "経験値　\(getExp!)　を獲得した！"
+                "経験値　\(getExp)　を獲得した！"
             ), message: "", preferredStyle: .alert)
         }
         
@@ -363,7 +379,7 @@ class ARViewController: UIViewController {
         alert.addAction(backAction)
         present(alert, animated: true)
         
-        userDataUtils.updateUserLvAndExp(name: username, myLv: myLv ,getExp: Int(getExp!))
+        userDataUtils.updateUserLvAndExp(name: username, myLv: myLv ,getExp: Int(getExp))
 
     }
     func alertFunc3(){
@@ -436,13 +452,25 @@ class ARViewController: UIViewController {
         
         let user : User = userDataUtils.getUser(name: username) as! User
         
-        let getMoney = moneyTable[characterTitle]
+        guard var getMoney = moneyTable[characterTitle] else {
+        print("Error:Uncaught moneyTable")
+            return
+        }
+        if itemRepo.getCursed() {
+            getMoney = getMoney / 2
+        }
         
+        if itemRepo.getBooster() == 1 {
+            getMoney = getMoney * (2/3)
+        } else if itemRepo.getBooster() == 2 {
+            getMoney = getMoney / 4
+        }
+
         var alert : UIAlertController
         
         
             alert = UIAlertController(title: String(
-                "\(characterTitle!)　が上納金を納めた。\n所持金が　\(getMoney!)€riko 増えた！！"
+                "\(characterTitle!)　が上納金を納めた。\n所持金が　\(getMoney)€riko 増えた！！"
             ), message: "", preferredStyle: .alert)
         
         
@@ -459,7 +487,7 @@ class ARViewController: UIViewController {
         alert.addAction(backAction)
         present(alert, animated: true)
         
-        userDataUtils.updateUserMoney(name: username, getMoney: getMoney!)
+        userDataUtils.updateUserMoney(name: username, getMoney: getMoney)
 
     }
     
@@ -472,6 +500,9 @@ class ARViewController: UIViewController {
         alert.view.addConstraint(height)
         imageView.image = UIImage(named: itemTitles[randomItemNum].name)
         alert.view.addSubview(imageView)
+        if itemTitles[randomItemNum].name == "呪いの面" {
+            itemRepo.onCursed()
+        }
         
         let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
             self.navigationController?.popViewController(animated: true)
