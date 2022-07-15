@@ -63,8 +63,6 @@ class ARViewController: UIViewController {
     @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var GageStopButton: UIButton!
     
-    
-    
     @IBOutlet var arView: ARView!
     
     @IBOutlet weak var addFriendButton: UIButton!
@@ -269,8 +267,8 @@ class ARViewController: UIViewController {
         let expTable : [String : Int] = [
             "スライム":15,
             "アナ":100,
-            "アンパンマン":12,
-            "アルミン":30,
+            "アンパンマン":150,
+            "アルミン":39,
             "アシタカ":50,
             "バイキンマン":10,
             "ベジータ":350,
@@ -386,9 +384,9 @@ class ARViewController: UIViewController {
         let moneyTable : [String : Int] = [
             "スライム":15,
             "アナ":100,
-            "アンパンマン":12,
-            "アルミン":30,
-            "アシタカ":50,
+            "アンパンマン":99,
+            "アルミン":95,
+            "アシタカ":39,
             "バイキンマン":10,
             "ベジータ":350,
             "ブルック":120,
