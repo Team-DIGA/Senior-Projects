@@ -87,7 +87,7 @@ class ARViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var GageStopButton: UIButton!
     
-    
+    private let itemRepo = InMemoryItemRepository()
     
     @IBOutlet var arView: ARView!
     
@@ -164,6 +164,8 @@ class ARViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userDataUtils.updateUserExp(name: "yutashoji", getExp: 23)
 
         itemTitles = itemDataUtils.getAllItem() as! [Item]
 

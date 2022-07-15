@@ -29,9 +29,9 @@ extension User {
       .field(user.name, is: .required, ofType: .string),
       .field(user.friends, is: .optional, ofType: .embeddedCollection(of: String.self)),
       .field(user.items, is: .optional, ofType: .embeddedCollection(of: String.self)),
-      .field(user.level, is: .optional, ofType: .int),
-      .field(user.money, is: .optional, ofType: .int),
-      .field(user.exp, is: .optional, ofType: .int),
+      .field(user.level, is: .required, ofType: .int),
+      .field(user.money, is: .required, ofType: .int),
+      .field(user.exp, is: .required, ofType: .int),
       .field(user.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
       .field(user.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)
     )

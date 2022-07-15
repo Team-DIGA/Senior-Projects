@@ -72,6 +72,34 @@ struct UserDataUtils {
             }
         }
     }
+    
+    func updateUserExp(name: String, getExp: Int) {
+        //Anyだから暫定でこの書き方。
+        var user: User = getUser(name: name) as! User
+
+
+        print("getExp",getExp)
+        print("user.exp before",user.exp)
+        user.exp += getExp
+        print("user.exp after",user.exp)
+
+        user.items! = []
+
+        // mutateで新規メッセージを作成
+        Amplify.API.mutate(request: .updateMutation(of: user, version: 9)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let user):
+                    print("Successfully updated userExp: \(user)")
+                case .failure(let error):
+                    print("Got failed result of updateExp with \(error.errorDescription)")
+                }
+            case .failure(let error):
+                print("Got failed event of updateExp with error \(error)")
+            }
+        }
+    }
 
     // 1件挿入
     func createUser(user: User) -> Void {
