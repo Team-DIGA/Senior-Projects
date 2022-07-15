@@ -38,9 +38,10 @@
 		C6486C1E287FF68500195D8D /* SHIMABU.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6486C1D287FF68500195D8D /* SHIMABU.usdz */; };
 		C6486C20287FF7F000195D8D /* sonic_the_hedgehog.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6486C1F287FF7F000195D8D /* sonic_the_hedgehog.usdz */; };
 		C6486C22287FF96C00195D8D /* Totoro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6486C21287FF96C00195D8D /* Totoro.usdz */; };
-		C6A735E32880048500D2D2E7 /* standing_greeting_robin_test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6A735E22880048500D2D2E7 /* standing_greeting_robin_test.usdz */; };
 		C6EAC466287BF78200763CC3 /* slime_metal.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6EAC465287BF78200763CC3 /* slime_metal.usdz */; };
 		C6EAC46E287D484C00763CC3 /* slime_metal.scn in Resources */ = {isa = PBXBuildFile; fileRef = C6EAC46D287D484C00763CC3 /* slime_metal.scn */; };
+		C6EB3055288016F9004E5B76 /* standing_greeting_robin_test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6EB3054288016F9004E5B76 /* standing_greeting_robin_test.usdz */; };
+		C6EB30572880ED98004E5B76 /* slime_metal2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6EB30562880ED98004E5B76 /* slime_metal2.usdz */; };
 		E172058B28706EB100A9D300 /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057E28706EB100A9D300 /* 7.mp3 */; };
 		E172058C28706EB100A9D300 /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057F28706EB100A9D300 /* 6.mp3 */; };
 		E172058D28706EB100A9D300 /* 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058028706EB100A9D300 /* 4.mp3 */; };
@@ -118,9 +119,10 @@
 		C6486C1D287FF68500195D8D /* SHIMABU.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = SHIMABU.usdz; sourceTree = "<group>"; };
 		C6486C1F287FF7F000195D8D /* sonic_the_hedgehog.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sonic_the_hedgehog.usdz; sourceTree = "<group>"; };
 		C6486C21287FF96C00195D8D /* Totoro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Totoro.usdz; sourceTree = "<group>"; };
-		C6A735E22880048500D2D2E7 /* standing_greeting_robin_test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = standing_greeting_robin_test.usdz; sourceTree = "<group>"; };
 		C6EAC465287BF78200763CC3 /* slime_metal.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_metal.usdz; sourceTree = "<group>"; };
 		C6EAC46D287D484C00763CC3 /* slime_metal.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = slime_metal.scn; sourceTree = "<group>"; };
+		C6EB3054288016F9004E5B76 /* standing_greeting_robin_test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = standing_greeting_robin_test.usdz; sourceTree = "<group>"; };
+		C6EB30562880ED98004E5B76 /* slime_metal2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_metal2.usdz; sourceTree = "<group>"; };
 		D19848E6E9DCDD5ED7ACE72A /* Pods_DIGA_DIGAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA_DIGAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D9E66A57DDE9024533B580 /* Pods-DIGA-DIGAUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA-DIGAUITests.debug.xcconfig"; path = "Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E172057E28706EB100A9D300 /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
@@ -305,9 +307,10 @@
 				C6486C1B287FF4E000195D8D /* SHIMABU6_instance.usdz */,
 				E172057F28706EB100A9D300 /* 6.mp3 */,
 				C6486C21287FF96C00195D8D /* Totoro.usdz */,
+				C6EB30562880ED98004E5B76 /* slime_metal2.usdz */,
 				E172058028706EB100A9D300 /* 4.mp3 */,
-				C6A735E22880048500D2D2E7 /* standing_greeting_robin_test.usdz */,
 				C6486C1D287FF68500195D8D /* SHIMABU.usdz */,
+				C6EB3054288016F9004E5B76 /* standing_greeting_robin_test.usdz */,
 				E172058128706EB100A9D300 /* 5.mp3 */,
 				C6486C1F287FF7F000195D8D /* sonic_the_hedgehog.usdz */,
 				E172058228706EB100A9D300 /* 1.mp3 */,
@@ -446,7 +449,7 @@
 				C6486C1E287FF68500195D8D /* SHIMABU.usdz in Resources */,
 				C6486C20287FF7F000195D8D /* sonic_the_hedgehog.usdz in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
-				C6A735E32880048500D2D2E7 /* standing_greeting_robin_test.usdz in Resources */,
+				C6EB3055288016F9004E5B76 /* standing_greeting_robin_test.usdz in Resources */,
 				C6EAC466287BF78200763CC3 /* slime_metal.usdz in Resources */,
 				C6486C1C287FF4E000195D8D /* SHIMABU6_instance.usdz in Resources */,
 				C6486C0E287E8A7900195D8D /* chopper.usdz in Resources */,
@@ -454,6 +457,7 @@
 				3A6004AA28726260009DA69E /* (null) in Resources */,
 				E172059028706EB100A9D300 /* 0.mp3 in Resources */,
 				E172059328706EB100A9D300 /* undefined.mp3 in Resources */,
+				C6EB30572880ED98004E5B76 /* slime_metal2.usdz in Resources */,
 				3A55CFE52874070800CAEA22 /* amplifyconfiguration.json in Resources */,
 				E172058B28706EB100A9D300 /* 7.mp3 in Resources */,
 				E172058F28706EB100A9D300 /* 1.mp3 in Resources */,
