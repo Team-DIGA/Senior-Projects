@@ -11,13 +11,13 @@ let itemObj: [[String: String]] = [
     ["name": "まーしの微振動", "rarity": "1", "effect": "ゲージスピードdown"],
     ["name": "ポテトへの挑戦", "rarity": "2", "effect": "レベル 1up or 1down"],
     ["name": "スライムフィーバー", "rarity": "3", "effect": "スライム大量発生"],
-    ["name": "山田さん増殖中", "rarity": "3", "effect": "獲得EXP、獲得€riko 1.5倍"],
+    ["name": "山田パーリナイ", "rarity": "3", "effect": "獲得EXP、獲得€riko 1.5倍"],
     ["name": "ツバサを授ける", "rarity": "3", "effect": "獲得EXP 2倍、獲得€riko 1/4"],
     ["name": "€rikoの権化", "rarity": "4", "effect": "DIGメンバーがMAPに全員集合"],
     ["name": "レガシーは突然に。", "rarity": "4", "effect": "レア度逆転"],
     ["name": "呪いの面", "rarity": "5", "effect": "獲得EXP、捕獲確率、出現数、獲得€riko　1/2"],
-    ["name": "ふっかつのじゅもん", "rarity": "5", "effect": "呪いの面を無効化する"],
-    ["name": "Yusuke降臨", "rarity": "5", "effect": "伝説のYusukeがMAPに出現"],
+    ["name": "魔封波", "rarity": "5", "effect": "呪いの面を無効化する"],
+    ["name": "大賢者の召喚", "rarity": "5", "effect": "伝説の大賢者がMAPに出現"],
 ]
 
 struct ItemDataUtils {
