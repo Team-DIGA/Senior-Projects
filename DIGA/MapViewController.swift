@@ -27,9 +27,10 @@ extension UIImage {
 }
 
 class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
-        
-    @IBOutlet weak var mapView: MKMapView!
     
+    var user: User!
+    
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var SerchButton: UIButton!
     @IBOutlet weak var statusZone: UIView!
     @IBOutlet weak var profPicture: UIImageView!
@@ -39,11 +40,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     @IBOutlet weak var nextLevellabel: UILabel!
     @IBOutlet weak var expLabel: UILabel!
     
-    
-    
     @IBAction func didTapSerchButton(_ sender: UIButton) {
-        
-        
 //        self.mapView.annotations.removeAll()
 //        print("消したいAnnotations",self.mapView.annotations)
 //        self.mapView.removeAnnotations(self.mapView.annotations)
@@ -52,8 +49,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
 //            print("消えてないAnnotations",self.mapView.annotations)
             self.viewDidLoad()
 //        }
-     
-        
     }
     var locationManager: CLLocationManager!
     
@@ -140,6 +135,13 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard let username = AWSMobileClient.default().username else {
+            print("Error: Uncaught username")
+            return
+        }
+        
+        user = userDataUtils.getUser(name: username) as! User
+        
         print("キャラホイ", itemRepo.getHoihoi())
         print("ヨクツカマール", itemRepo.getEasyCap())
         print("まーしの微振動", itemRepo.getMaashi())
@@ -148,6 +150,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         print("ブースター", itemRepo.getBooster())
         
         print("getChara:",itemRepo.getChara())
+        
 //        itemRepo.switchChara(itemNum:2)
         getAllNamesAndImages()
         locationManager = CLLocationManager()
@@ -170,9 +173,9 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         mapView.delegate = self
         
         // 自分の視点の座標.
-        let fromCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude-0.000001, longitude+0.001)
+//        let fromCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude-0.000001, longitude+0.001)
         // 上空から見下ろす高さ.
-        let myAltitude: CLLocationDistance = 0.00000000000001
+//        let myAltitude: CLLocationDistance = 0.00000000000001
         // MapCameraに中心点、視点、高さを設定./
         let myCamera: MKMapCamera =
         MKMapCamera(lookingAtCenter: currentlocation, fromDistance: 750, pitch: 75, heading: 0)
@@ -191,6 +194,14 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         view.bringSubviewToFront(moneyLabel)
         view.bringSubviewToFront(nextLevellabel)
         view.bringSubviewToFront(expLabel)
+        
+        userNameLabel.text = user.name
+        profPicture.image = UIImage(named: user.name)
+        LvLavel.text = "Lv.\(user.level)"
+        moneyLabel.text = "所持金　\(user.money) €riko"
+        let nextLv = (user.level+1)*(user.level+1)*(user.level+1)*3/2
+        expLabel.text = "あと　\(nextLv - user.exp)　の経験値"
+        
         //表示するキャラの数
         if itemRepo.getChara() == 1 {
             //eriko

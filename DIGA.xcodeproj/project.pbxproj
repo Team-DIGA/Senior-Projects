@@ -11,6 +11,13 @@
 		0A0F86BE287D5B3B003D8C62 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F86BD287D5B3A003D8C62 /* UIViewExtension.swift */; };
 		0A0F86C0287DA746003D8C62 /* animeation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F86BF287DA746003D8C62 /* animeation.swift */; };
 		0A0F86C2287FEC50003D8C62 /* FriendsListTableViweController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F86C1287FEC50003D8C62 /* FriendsListTableViweController.swift */; };
+		0A5AA37328810398008F0717 /* sonic_the_hedgehog.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA37028810397008F0717 /* sonic_the_hedgehog.usdz */; };
+		0A5AA37428810398008F0717 /* SHIMABU.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA37128810398008F0717 /* SHIMABU.usdz */; };
+		0A5AA37528810398008F0717 /* Totoro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA37228810398008F0717 /* Totoro.usdz */; };
+		0A5AA378288103CD008F0717 /* chopper_boxing_test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA376288103CD008F0717 /* chopper_boxing_test.usdz */; };
+		0A5AA379288103CD008F0717 /* standing_greeting_robin_test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */; };
+		0AB33873288124D40045A27C /* slime_second.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0AB33872288124D40045A27C /* slime_second.usdz */; };
+		0AB33875288127500045A27C /* slime_third.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0AB33874288127500045A27C /* slime_third.usdz */; };
 		0D78B0ED286C2B01002CFB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */; };
 		0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EE286C2B01002CFB48 /* ARViewController.swift */; };
 		0D78B0F1286C2B01002CFB48 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0F0286C2B01002CFB48 /* Experience.rcproject */; };
@@ -85,6 +92,13 @@
 		0A0F86BD287D5B3A003D8C62 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		0A0F86BF287DA746003D8C62 /* animeation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animeation.swift; sourceTree = "<group>"; };
 		0A0F86C1287FEC50003D8C62 /* FriendsListTableViweController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViweController.swift; sourceTree = "<group>"; };
+		0A5AA37028810397008F0717 /* sonic_the_hedgehog.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sonic_the_hedgehog.usdz; sourceTree = "<group>"; };
+		0A5AA37128810398008F0717 /* SHIMABU.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = SHIMABU.usdz; sourceTree = "<group>"; };
+		0A5AA37228810398008F0717 /* Totoro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Totoro.usdz; sourceTree = "<group>"; };
+		0A5AA376288103CD008F0717 /* chopper_boxing_test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chopper_boxing_test.usdz; sourceTree = "<group>"; };
+		0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = standing_greeting_robin_test.usdz; sourceTree = "<group>"; };
+		0AB33872288124D40045A27C /* slime_second.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_second.usdz; sourceTree = "<group>"; };
+		0AB33874288127500045A27C /* slime_third.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_third.usdz; sourceTree = "<group>"; };
 		0D78B0E9286C2B01002CFB48 /* DIGA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIGA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D78B0EE286C2B01002CFB48 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
@@ -315,15 +329,22 @@
 				E18EF66728759C91004AF827 /* coil3.usdz */,
 				E18EF65B287472ED004AF827 /* AMONGS.usdz */,
 				E172057E28706EB100A9D300 /* 7.mp3 */,
+				0A5AA376288103CD008F0717 /* chopper_boxing_test.usdz */,
+				0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */,
 				E172057F28706EB100A9D300 /* 6.mp3 */,
 				E172058028706EB100A9D300 /* 4.mp3 */,
 				E172058128706EB100A9D300 /* 5.mp3 */,
 				E172058228706EB100A9D300 /* 1.mp3 */,
 				E172058328706EB100A9D300 /* 0.mp3 */,
+				0A5AA37128810398008F0717 /* SHIMABU.usdz */,
+				0A5AA37028810397008F0717 /* sonic_the_hedgehog.usdz */,
+				0A5AA37228810398008F0717 /* Totoro.usdz */,
 				E172058428706EB100A9D300 /* 2.mp3 */,
 				E172058528706EB100A9D300 /* 3.mp3 */,
 				E172058628706EB100A9D300 /* undefined.mp3 */,
 				E172058728706EB100A9D300 /* 200.mp3 */,
+				0AB33872288124D40045A27C /* slime_second.usdz */,
+				0AB33874288127500045A27C /* slime_third.usdz */,
 				E172058828706EB100A9D300 /* 8.mp3 */,
 				E172058928706EB100A9D300 /* 9.mp3 */,
 				E172058A28706EB100A9D300 /* amongs.mp4 */,
@@ -449,20 +470,27 @@
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
 				3A60F6F3287C16C20002395E /* awsconfiguration.json in Resources */,
+				0AB33875288127500045A27C /* slime_third.usdz in Resources */,
 				E18EF65C287472ED004AF827 /* AMONGS.usdz in Resources */,
 				3A6004AA28726260009DA69E /* (null) in Resources */,
 				3A60F6F2287C16C20002395E /* amplifyconfiguration.json in Resources */,
 				E172059028706EB100A9D300 /* 0.mp3 in Resources */,
+				0A5AA37528810398008F0717 /* Totoro.usdz in Resources */,
+				0A5AA37328810398008F0717 /* sonic_the_hedgehog.usdz in Resources */,
 				E172059328706EB100A9D300 /* undefined.mp3 in Resources */,
 				3A55CFE52874070800CAEA22 /* amplifyconfiguration.json in Resources */,
 				E172058B28706EB100A9D300 /* 7.mp3 in Resources */,
 				E172058F28706EB100A9D300 /* 1.mp3 in Resources */,
 				E172059528706EB100A9D300 /* 8.mp3 in Resources */,
+				0A5AA37428810398008F0717 /* SHIMABU.usdz in Resources */,
 				E172058D28706EB100A9D300 /* 4.mp3 in Resources */,
 				E172059128706EB100A9D300 /* 2.mp3 in Resources */,
 				0D78B0F4286C2B01002CFB48 /* Main.storyboard in Resources */,
+				0AB33873288124D40045A27C /* slime_second.usdz in Resources */,
 				E172059728706EB100A9D300 /* amongs.mp4 in Resources */,
+				0A5AA379288103CD008F0717 /* standing_greeting_robin_test.usdz in Resources */,
 				3A6004A828726260009DA69E /* Assets.xcassets in Resources */,
+				0A5AA378288103CD008F0717 /* chopper_boxing_test.usdz in Resources */,
 				E172058C28706EB100A9D300 /* 6.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,9 +520,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -509,9 +541,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA/Pods-DIGA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA/Pods-DIGA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -793,7 +829,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G5N4W45T7M;
+				DEVELOPMENT_TEAM = L74DBDRY8R;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -831,7 +867,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G5N4W45T7M;
+				DEVELOPMENT_TEAM = L74DBDRY8R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "常に許可";

@@ -3,6 +3,7 @@ import AWSPluginsCore
 import Combine
 
 let friendArray: [String] = [
+    "スライム",
     "アナ",
     "アンパンマン",
     "アルミン",

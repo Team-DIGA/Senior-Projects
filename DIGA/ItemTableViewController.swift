@@ -40,7 +40,7 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
         let nameLabel = cell.viewWithTag(2) as! UILabel
         let effectLabel = cell.viewWithTag(3) as! UILabel
         
-        
+        imageView.image = UIImage(named: itemArray[indexPath.row].name)
         nameLabel.text = " " + itemArray[indexPath.row].name
         nameLabel.textColor = UIColor.white
         nameLabel.font = UIFont(name:"Arial-BoldMT", size: 20.0)
@@ -62,7 +62,7 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
             itemRepo.switchChara(itemNum: 1)
         } else if itemName == "スライムフィーバー" {
             itemRepo.switchChara(itemNum: 2)
-        } else if itemName == "Yusuke降臨" {
+        } else if itemName == "大賢者の召喚" {
             itemRepo.switchChara(itemNum: 3)
         } else if itemName == "ヨクツカマール" {
             itemRepo.changeEasyCap()
@@ -71,8 +71,8 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
         } else if itemName == "ポテトへの挑戦" {
             let alert = itemRepo.usePotato(view: self)
             present(alert, animated: true)
-        } else if itemName == "山田さん増殖中" {
-            itemRepo.switchChara(itemNum: 1)
+        } else if itemName == "山田パーリナイ" {
+            itemRepo.switchBooster(boosterNum: 1)
         } else if itemName == "ツバサを授ける" {
             itemRepo.switchBooster(boosterNum: 2)
         } else if itemName == "キャラクターホイホイ" {
@@ -81,7 +81,7 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
             itemRepo.changeLegacy()
         } else if itemName == "呪いの面" {
             itemRepo.useCursed(view: self)
-        } else if itemName == "ふっかつのじゅもん" {
+        } else if itemName == "魔封波" {
             itemRepo.breakCursed()
             
             guard let username = AWSMobileClient.default().username else {
