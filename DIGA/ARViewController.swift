@@ -215,6 +215,16 @@ class ARViewController: UIViewController {
             for animation in usdzModel.availableAnimations {
                 usdzModel.playAnimation(animation.repeat())
             }
+        }else if characterTitle! == "スライム" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, -0.1, -3)
+            let usdzModel = try! Entity.load(named: "slime_third")
+            anchor.addChild(usdzModel)
+            arView.scene.anchors.append(anchor)
+            for animation in usdzModel.availableAnimations {
+                            usdzModel.playAnimation(animation.repeat())
+                        }
+            
         }else {
             //オブジェ作成表示
             createObjImage()
