@@ -113,6 +113,7 @@ mutation CreateUser(
     level
     money
     exp
+    update_count
     createdAt
     updatedAt
     _version
@@ -132,6 +133,7 @@ mutation UpdateUser(
     level
     money
     exp
+    update_count
     createdAt
     updatedAt
     _version
@@ -151,6 +153,7 @@ mutation DeleteUser(
     level
     money
     exp
+    update_count
     createdAt
     updatedAt
     _version

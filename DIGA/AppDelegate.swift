@@ -11,6 +11,14 @@ import AmplifyPlugins
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var isHoihoi:Bool = false
+    var changeChara:Int = 0
+    var changeBooster:Int = 0
+    var isEasyCap:Bool = false
+    var isMaashi:Bool = false
+    var isLegacy:Bool = false
+    var isCursed:Bool = false
 
     var window: UIWindow?
 

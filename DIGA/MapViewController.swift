@@ -12,7 +12,6 @@ import Amplify
 import AWSMobileClient
 
 
-
 class MapAnnotationSetting:MKPointAnnotation{
     var pinImage:UIImage?
 }
@@ -29,20 +28,27 @@ extension UIImage {
 
 class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
     
-    @IBOutlet weak var mapView: MKMapView!
+    var user: User!
     
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var SerchButton: UIButton!
+    @IBOutlet weak var statusZone: UIView!
+    @IBOutlet weak var profPicture: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var LvLavel: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
+    @IBOutlet weak var nextLevellabel: UILabel!
+    @IBOutlet weak var expLabel: UILabel!
+    
     @IBAction func didTapSerchButton(_ sender: UIButton) {
-        
-        
 //        self.mapView.annotations.removeAll()
-//        self.mapView.removeAnnotations(self.mapView.annotations.removeAll())
-
+//        print("消したいAnnotations",self.mapView.annotations)
+//        self.mapView.removeAnnotations(self.mapView.annotations)
+//
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            print("消えてないAnnotations",self.mapView.annotations)
             self.viewDidLoad()
 //        }
-     
-        
     }
     var locationManager: CLLocationManager!
     
@@ -71,6 +77,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var annotationArray:[MKAnnotation] = []
     
     private let itemRepo = InMemoryItemRepository()
+    let delegate = UIApplication.shared.delegate as! AppDelegate
     
     // 位置情報初回のみ表示させる際のグローバル変数
     var first = true
@@ -124,10 +131,28 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         super.didReceiveMemoryWarning()
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let username = AWSMobileClient.default().username else {
+            print("Error: Uncaught username")
+            return
+        }
+        
+        user = userDataUtils.getUser(name: username) as! User
+        
+        print("キャラホイ", itemRepo.getHoihoi())
+        print("ヨクツカマール", itemRepo.getEasyCap())
+        print("まーしの微振動", itemRepo.getMaashi())
+        print("レガシーは突然に", itemRepo.getLegacy())
+        print("キャラチェン", itemRepo.getChara())
+        print("ブースター", itemRepo.getBooster())
+        
+        print("getChara:",itemRepo.getChara())
+        
+//        itemRepo.switchChara(itemNum:2)
         getAllNamesAndImages()
-        print(AWSMobileClient.default().username)
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager!.requestWhenInUseAuthorization()
@@ -148,9 +173,9 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         mapView.delegate = self
         
         // 自分の視点の座標.
-        let fromCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude-0.000001, longitude+0.001)
+//        let fromCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude-0.000001, longitude+0.001)
         // 上空から見下ろす高さ.
-        let myAltitude: CLLocationDistance = 0.00000000000001
+//        let myAltitude: CLLocationDistance = 0.00000000000001
         // MapCameraに中心点、視点、高さを設定./
         let myCamera: MKMapCamera =
         MKMapCamera(lookingAtCenter: currentlocation, fromDistance: 750, pitch: 75, heading: 0)
@@ -162,12 +187,28 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         // MapViewをviewに追加.
         view.addSubview(mapView)
         view.bringSubviewToFront(SerchButton)
+        view.bringSubviewToFront(statusZone)
+        view.bringSubviewToFront(profPicture)
+        view.bringSubviewToFront(userNameLabel)
+        view.bringSubviewToFront(LvLavel)
+        view.bringSubviewToFront(moneyLabel)
+        view.bringSubviewToFront(nextLevellabel)
+        view.bringSubviewToFront(expLabel)
+        
+        userNameLabel.text = user.name
+        profPicture.image = UIImage(named: user.name)
+        LvLavel.text = "Lv.\(user.level)"
+        moneyLabel.text = "所持金　\(user.money) €riko"
+        let nextLv = (user.level+1)*(user.level+1)*(user.level+1)*3/2
+        expLabel.text = "あと　\(nextLv - user.exp)　の経験値"
+        
         //表示するキャラの数
         if itemRepo.getChara() == 1 {
             //eriko
             for i in 0..<self.pinTitles.count {
                 if itemRepo.getDigArray().contains(self.pinTitles[i]) {
                     appendMap(i: i)
+                    itemRepo.switchChara(itemNum: 0)
                 }
             }
         } else if itemRepo.getChara() == 2 {
@@ -178,6 +219,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                     return
                 }
                 appendMap(i: indexSlime)
+                itemRepo.switchChara(itemNum: 0)
             }
         } else  {
             let numChara:Int
@@ -189,13 +231,24 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             }
             var countChara = 0
             for i in 0..<self.pinTitles.count {
-                let selectChara = Int.random(in: 1...raritiesArray[i] + 1)
+                var rarity:Int
+                if itemRepo.getLegacy() {
+                    rarity = 11 - raritiesArray[i]
+                } else {
+                    rarity = raritiesArray[i]
+                }
+                let selectChara = Int.random(in: 1...rarity + 1)
                 if selectChara == 1 && countChara < numChara && pinTitles[i] != "Yusuke" {
-                    print(countChara,"countChara")
+//                    print("name", pinTitles[i])
+//                    print("motomoto", raritiesArray[i])
+//                    print("hanten",rarity)
                     appendMap(i: i)
                     countChara += 1
                 }
             
+            }
+            if itemRepo.getLegacy() {
+                itemRepo.changeLegacy()
             }
             //Yusuke
             if itemRepo.getChara() == 3 {
@@ -204,6 +257,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                     return
                 }
                 appendMap(i: indexYusuke)
+                itemRepo.switchChara(itemNum: 0)
             }
         }
             
@@ -357,57 +411,57 @@ extension MapViewController{
 //　（現在地情報何回も呼ばれるので）現在地情報取得したら初回のみ表示させる
 extension MapViewController{
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if first{
-            first = false
-            
-
-            if self.myLatitude == nil && self.myLongitude == nil{
-                myLatitude = locationManager.location?.coordinate.latitude
-                myLongitude = locationManager.location?.coordinate.longitude
-                let currentlocation = CLLocationCoordinate2DMake(myLatitude,myLongitude)
-                let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
-                let region = MKCoordinateRegion(center: currentlocation, span: span)
-                mapView.region = region
-                mapView.delegate = self
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        if first{
+//            first = false
+//
+//
+//            if self.myLatitude == nil && self.myLongitude == nil{
+//                myLatitude = locationManager.location?.coordinate.latitude
+//                myLongitude = locationManager.location?.coordinate.longitude
+//                let currentlocation = CLLocationCoordinate2DMake(myLatitude,myLongitude)
+//                let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
+//                let region = MKCoordinateRegion(center: currentlocation, span: span)
+//                mapView.region = region
+//                mapView.delegate = self
                 //表示するキャラの数
-                let numChara:Int
-                if itemRepo.getHoihoi() {
-                    numChara = 15
-                } else {
-                    numChara = Int.random(in:7...10)
-                }
-                itemRepo.changeHoihoi()
-                var countChara = 0
-                for i in 0..<self.pinTitles.count {
-                    //表示するキャラの選択
-                    let selectChara = Int.random(in: 1...raritiesArray[i] + 1)
-                    if selectChara == 1 && countChara < numChara {
-                        appendMap(i: i)
-                        countChara += 1
-                        
-                    }
+//                let numChara:Int
+//                if itemRepo.getHoihoi() {
+//                    numChara = 15
+//                } else {
+//                    numChara = Int.random(in:7...10)
+//                }
+//                itemRepo.changeHoihoi()
+//                var countChara = 0
+//                for i in 0..<self.pinTitles.count {
+//                    //表示するキャラの選択
+//                    let selectChara = Int.random(in: 1...raritiesArray[i] + 1)
+//                    if selectChara == 1 && countChara < numChara {
+//                        appendMap(i: i)
+//                        countChara += 1
+//
+//                    }
                     
                     //area map
 //                    let mod = i % 10
 //                    pinLocationAppend(count: mod)
-                }
+//                }
                 
-                for (index,pinTitle) in self.mapTargetTitle.enumerated(){
-                    let pin = MapAnnotationSetting()
-                    let coordinate = self.pinlocations[index]
-                    pin.title = pinTitle
-                    pin.subtitle = String(raritiesObj[pinTitle!]!)
-                    pin.pinImage = mapTargetImage[index]
-                    pin.coordinate = coordinate
-                    self.mapView.addAnnotation(pin)
-                    annotationArray.append(pin)
-                    print("annotationArray",annotationArray)
-                }
+//                for (index,pinTitle) in self.mapTargetTitle.enumerated(){
+//                    let pin = MapAnnotationSetting()
+//                    let coordinate = self.pinlocations[index]
+//                    pin.title = pinTitle
+//                    pin.subtitle = String(raritiesObj[pinTitle!]!)
+//                    pin.pinImage = mapTargetImage[index]
+//                    pin.coordinate = coordinate
+//                    self.mapView.addAnnotation(pin)
+//                    annotationArray.append(pin)
+//                    print("annotationArray",annotationArray)
+//                }
                 
-            }
-        }
-    }
+//            }
+//        }
+//    }
     
 }
 
@@ -480,6 +534,7 @@ extension MapViewController{
         }
         
         annotationView.annotation = annotation
+
         return annotationView
     }
     

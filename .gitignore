@@ -1,5 +1,5 @@
 #amplify-do-not-edit-begin
-amplify/\#current-cloud-backend
+amplify/#current-cloud-backend
 amplify/.config/local-*
 amplify/logs
 amplify/mock-data
@@ -14,7 +14,7 @@ amplify-build-config.json
 amplify-gradle-config.json
 amplifytools.xcconfig
 .secret-*
-**.sample
+*.sample
 #amplify-do-not-edit-end
 .DS_Store
 xcuserdata/
