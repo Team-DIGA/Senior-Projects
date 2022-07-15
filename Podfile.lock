@@ -53,7 +53,7 @@ DEPENDENCIES:
   - AWSAuthUI
   - AWSMobileClient
   - AWSUserPoolsSignIn
-  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - ChameleonFramework/Swift (from `https://github.com/wowansm/Chameleon`, branch `swift5`)
   - SSCustomTabbar
 
 SPEC REPOS:
@@ -74,12 +74,13 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   ChameleonFramework:
-    :git: https://github.com/ViccAlexander/Chameleon.git
+    :branch: swift5
+    :git: https://github.com/wowansm/Chameleon
 
 CHECKOUT OPTIONS:
   ChameleonFramework:
-    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
-    :git: https://github.com/ViccAlexander/Chameleon.git
+    :commit: 96d52c36a45847fff60bcff7a58fec1e4bd7390b
+    :git: https://github.com/wowansm/Chameleon
 
 SPEC CHECKSUMS:
   Amplify: a4747a22276b4994cfdb29ea8cdbe6eed7964e9f
@@ -97,6 +98,6 @@ SPEC CHECKSUMS:
   SSCustomTabbar: a52533e429bd40f52ce8d7ecb801f3521fbd56a0
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: d515decddbeca0828f8372b6537d7556cbc77565
+PODFILE CHECKSUM: 93e32acd4ba24c6f7d7dac40ceb6ed7d07418248
 
 COCOAPODS: 1.11.3
