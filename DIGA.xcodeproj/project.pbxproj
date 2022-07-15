@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		06969B1DD0E3A11B46C7766A /* Pods_DIGATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD569AA0F43533696604EA1C /* Pods_DIGATests.framework */; };
 		0A0F86BE287D5B3B003D8C62 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F86BD287D5B3A003D8C62 /* UIViewExtension.swift */; };
+		0A0F86C0287DA746003D8C62 /* animeation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F86BF287DA746003D8C62 /* animeation.swift */; };
+		0A0F86C2287FEC50003D8C62 /* FriendsListTableViweController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F86C1287FEC50003D8C62 /* FriendsListTableViweController.swift */; };
 		0D78B0ED286C2B01002CFB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */; };
 		0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EE286C2B01002CFB48 /* ARViewController.swift */; };
 		0D78B0F1286C2B01002CFB48 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0F0286C2B01002CFB48 /* Experience.rcproject */; };
@@ -40,6 +42,7 @@
 		3ADF1E6D286E962F007EB643 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6A286E962F007EB643 /* Character.swift */; };
 		3ADF1E6F286E9819007EB643 /* AddFriendsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6E286E9819007EB643 /* AddFriendsTestViewController.swift */; };
 		B144660F287C2F38002FF0C4 /* UsersDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144660E287C2F38002FF0C4 /* UsersDataUtils.swift */; };
+		B1E5936B287E4FCF0044A28B /* InMemoryItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5936A287E4FCF0044A28B /* InMemoryItemRepository.swift */; };
 		B4D38D6EFCC4A3349B23F34E /* Pods_DIGA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094F1BB6423B2EECF004A6A /* Pods_DIGA.framework */; };
 		E172058B28706EB100A9D300 /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057E28706EB100A9D300 /* 7.mp3 */; };
 		E172058C28706EB100A9D300 /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057F28706EB100A9D300 /* 6.mp3 */; };
@@ -80,6 +83,8 @@
 /* Begin PBXFileReference section */
 		0024C87E482DD78D654BAB38 /* Pods-DIGATests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGATests.debug.xcconfig"; path = "Target Support Files/Pods-DIGATests/Pods-DIGATests.debug.xcconfig"; sourceTree = "<group>"; };
 		0A0F86BD287D5B3A003D8C62 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		0A0F86BF287DA746003D8C62 /* animeation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animeation.swift; sourceTree = "<group>"; };
+		0A0F86C1287FEC50003D8C62 /* FriendsListTableViweController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViweController.swift; sourceTree = "<group>"; };
 		0D78B0E9286C2B01002CFB48 /* DIGA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIGA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D78B0EE286C2B01002CFB48 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +121,7 @@
 		3F9F833CC2E20B6FBD539CE9 /* Pods-DIGATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGATests.release.xcconfig"; path = "Target Support Files/Pods-DIGATests/Pods-DIGATests.release.xcconfig"; sourceTree = "<group>"; };
 		41143A7C211BB9552B42443C /* Pods-DIGA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA.release.xcconfig"; path = "Target Support Files/Pods-DIGA/Pods-DIGA.release.xcconfig"; sourceTree = "<group>"; };
 		B144660E287C2F38002FF0C4 /* UsersDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDataUtils.swift; sourceTree = "<group>"; };
+		B1E5936A287E4FCF0044A28B /* InMemoryItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryItemRepository.swift; sourceTree = "<group>"; };
 		B8BBAAB8BB94B309B6FAE108 /* Pods-DIGA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA.debug.xcconfig"; path = "Target Support Files/Pods-DIGA/Pods-DIGA.debug.xcconfig"; sourceTree = "<group>"; };
 		BD569AA0F43533696604EA1C /* Pods_DIGATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C094F1BB6423B2EECF004A6A /* Pods_DIGA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,7 +210,9 @@
 				0A0F86BD287D5B3A003D8C62 /* UIViewExtension.swift */,
 				0D78B0EE286C2B01002CFB48 /* ARViewController.swift */,
 				0D78B12D286DD2A1002CFB48 /* Picturebook.swift */,
+				0A0F86C1287FEC50003D8C62 /* FriendsListTableViweController.swift */,
 				0D78B0F0286C2B01002CFB48 /* Experience.rcproject */,
+				0A0F86BF287DA746003D8C62 /* animeation.swift */,
 				0D78B0F5286C2B02002CFB48 /* Assets.xcassets */,
 				0D78B0F2286C2B01002CFB48 /* Main.storyboard */,
 				0D78B0F7286C2B02002CFB48 /* LaunchScreen.storyboard */,
@@ -213,6 +221,7 @@
 				3A55CFE828754C1700CAEA22 /* UIDesign.swift */,
 				3A0B5CB528785E3200B42A43 /* ItemDataUtils.swift */,
 				B144660E287C2F38002FF0C4 /* UsersDataUtils.swift */,
+				B1E5936A287E4FCF0044A28B /* InMemoryItemRepository.swift */,
 				3A1AC45D287D455E00B8E010 /* ItemTableViewController.swift */,
 			);
 			path = DIGA;
@@ -249,6 +258,7 @@
 		0D7DFCC128731DD6001B015C /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
+				3A55CFE42874070800CAEA22 /* amplifyconfiguration.json */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -454,7 +464,6 @@
 				E172059728706EB100A9D300 /* amongs.mp4 in Resources */,
 				3A6004A828726260009DA69E /* Assets.xcassets in Resources */,
 				E172058C28706EB100A9D300 /* 6.mp3 in Resources */,
-				4CF59DFB1D72D9526CEFEBC3 /* awsconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,13 +492,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -504,13 +509,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA/Pods-DIGA-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DIGA/Pods-DIGA-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -590,13 +591,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1E5936B287E4FCF0044A28B /* InMemoryItemRepository.swift in Sources */,
 				3ADF1E6D286E962F007EB643 /* Character.swift in Sources */,
 				0D78B11C286C2BD5002CFB48 /* TopViewContoroller.swift in Sources */,
 				3ADF1E6B286E962F007EB643 /* Character+Schema.swift in Sources */,
+				0A0F86C0287DA746003D8C62 /* animeation.swift in Sources */,
 				0D78B12E286DD2A2002CFB48 /* Picturebook.swift in Sources */,
 				3AB938AF287CF1650053FD18 /* Item.swift in Sources */,
 				0A0F86BE287D5B3B003D8C62 /* UIViewExtension.swift in Sources */,
 				3ADF1E6F286E9819007EB643 /* AddFriendsTestViewController.swift in Sources */,
+				0A0F86C2287FEC50003D8C62 /* FriendsListTableViweController.swift in Sources */,
 				3A55CFE32873EAF500CAEA22 /* CharacterDataUtils.swift in Sources */,
 				3AB938B0287CF1650053FD18 /* Item+Schema.swift in Sources */,
 				3A0B5CB628785E3200B42A43 /* ItemDataUtils.swift in Sources */,
@@ -789,7 +793,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L74DBDRY8R;
+				DEVELOPMENT_TEAM = G5N4W45T7M;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "常に許可";
@@ -807,6 +812,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DIG-DIGA-111";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -825,7 +831,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L74DBDRY8R;
+				DEVELOPMENT_TEAM = G5N4W45T7M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "常に許可";
@@ -843,7 +849,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DIG-DIGA-100";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DIG-DIGA-111";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

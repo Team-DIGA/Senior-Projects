@@ -4,8 +4,11 @@ import AWSMobileClient
 var itemArray: [Item] = []
 let userDataUtils = UserDataUtils()
 let itemDataUtils = ItemDataUtils()
+let itemRepo = InMemoryItemRepository()
+
 
 class ItemTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +23,11 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
         let userData = userDataUtils.getUser(name: username) as! User
         let itemNameArray: [String?] = userData.items!
         itemArray = itemDataUtils.getCurrentItem(itemArray: itemNameArray) as! [Item]
+
         
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
@@ -46,6 +52,64 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
         effectLabel.textColor = UIColor.white
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(indexPath.row)番目の行が選択されました。")
+        print(itemArray[indexPath.row].name)
+        let itemName = itemArray[indexPath.row].name
+        if itemName == "€rikoの権化" {
+            itemRepo.switchChara(itemNum: 1)
+        } else if itemName == "スライムフィーバー" {
+            itemRepo.switchChara(itemNum: 2)
+        } else if itemName == "Yusuke降臨" {
+            itemRepo.switchChara(itemNum: 3)
+        } else if itemName == "ヨクツカマール" {
+            itemRepo.changeEasyCap()
+        } else if itemName == "まーしの微振動" {
+            itemRepo.changeMaashi()
+        } else if itemName == "ポテトへの挑戦" {
+            let alert = itemRepo.usePotato(view: self)
+            present(alert, animated: true)
+        } else if itemName == "山田さん増殖中" {
+            itemRepo.switchChara(itemNum: 1)
+        } else if itemName == "ツバサを授ける" {
+            itemRepo.switchBooster(boosterNum: 2)
+        } else if itemName == "キャラクターホイホイ" {
+            itemRepo.changeHoihoi()
+        } else if itemName == "レガシーは突然に。" {
+            itemRepo.changeLegacy()
+        } else if itemName == "呪いの面" {
+            itemRepo.useCursed(view: self)
+        } else if itemName == "ふっかつのじゅもん" {
+            itemRepo.breakCursed()
+            
+            guard let username = AWSMobileClient.default().username else {
+                print("Error: Uncaught username")
+                return
+            }
+            userDataUtils.deleteUserItem(name: username , itemName: "呪いの面")
+            
+        }
+        guard let username = AWSMobileClient.default().username else {
+            print("Error: Uncaught username")
+            return
+        }
+        if itemName != "呪いの面" {
+        userDataUtils.deleteUserItem(name: username , itemName: itemName)
+        } else {
+            
+        }
+        let UINavigationController = tabBarController?.viewControllers?[2];
+        tabBarController?.selectedViewController = UINavigationController;
+
+        
+//        let secondStoryboard = UIStoryboard(name: "MapViewController", bundle: nil)
+//        let secondVC = secondStoryboard.instantiateInitialViewController() as! MapViewController
+//        let nav = self.navigationController!
+//        nav.pushViewController(secondVC, animated: true)
+        
+            
     }
     
     @IBOutlet weak var tableView: UITableView!
