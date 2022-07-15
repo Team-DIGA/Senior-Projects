@@ -173,7 +173,49 @@ class ARViewController: UIViewController {
                 anchor.addChild(usdzModel)
             }
             arView.scene.anchors.append(anchor)
-        } else {
+        } else if characterTitle! == "トロロ" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, 0, 0.9)
+
+            if let usdzModel = try? Entity.load(named: "Totoro") {
+                anchor.addChild(usdzModel)
+            }
+            arView.scene.anchors.append(anchor)
+        }else if characterTitle! == "Shimabu" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, 0, 0.9)
+
+            if let usdzModel = try? Entity.load(named: "SHIMABU") {
+                anchor.addChild(usdzModel)
+            }
+            arView.scene.anchors.append(anchor)
+        } else if characterTitle! == "チョッパー" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, -0.1, 0.9)
+
+            let usdzModel = try! Entity.load(named: "chopper_boxing_test")
+            anchor.addChild(usdzModel)
+            arView.scene.anchors.append(anchor)
+            for animation in usdzModel.availableAnimations {
+                usdzModel.playAnimation(animation.repeat())
+            }
+        } else if characterTitle! == "ソニック" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, 0, +0.9)
+            let usdzModel = try! Entity.load(named: "sonic_the_hedgehog")
+            anchor.addChild(usdzModel)
+            arView.scene.anchors.append(anchor)
+        } else if characterTitle! == "ロビン" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, -0.8, -2)
+
+            let usdzModel = try! Entity.load(named: "standing_greeting_robin_test")
+            anchor.addChild(usdzModel)
+            arView.scene.anchors.append(anchor)
+            for animation in usdzModel.availableAnimations {
+                usdzModel.playAnimation(animation.repeat())
+            }
+        }else {
             //オブジェ作成表示
             createObjImage()
         }
@@ -344,7 +386,7 @@ class ARViewController: UIViewController {
         }
     
         if itemRepo.getBooster() == 1 {
-            getExp = getExp * (2/3)
+            getExp = getExp * (3/2)
         } else if itemRepo.getBooster() == 2 {
             getExp = getExp * 2
         }

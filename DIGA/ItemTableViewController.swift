@@ -72,7 +72,7 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
             let alert = itemRepo.usePotato(view: self)
             present(alert, animated: true)
         } else if itemName == "山田パーリナイ" {
-            itemRepo.switchChara(itemNum: 1)
+            itemRepo.switchBooster(boosterNum: 1)
         } else if itemName == "ツバサを授ける" {
             itemRepo.switchBooster(boosterNum: 2)
         } else if itemName == "キャラクターホイホイ" {
