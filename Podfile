@@ -12,7 +12,6 @@ target 'DIGA' do
   # Pods for DIGA
   pod 'Amplify'
   pod 'AmplifyPlugins/AWSAPIPlugin'
-#  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/wowansm/Chameleon', :branch => 'swift5'
   pod 'Amplify/Tools'
   # allows to call amplify CLI from within Xcode
