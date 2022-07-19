@@ -165,6 +165,8 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
     
     override func viewWillAppear(_ animated: Bool) {
         print("ここで実行されてます")
+        self.fetchMessage()
+        
         // tableViewを更新
         self.tableView.reloadData()
     }
