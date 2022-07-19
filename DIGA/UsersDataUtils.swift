@@ -53,18 +53,12 @@ struct UserDataUtils {
     
     func updateUserItem(name: String, itemName: String) {
         //Anyだから暫定でこの書き方。
-        print("--------",name)
         var user: User = getUser(name: name) as! User
-        let item: Item = itemDataUtild.getItem(name: itemName) as! Item
-        
         user.update_count += 1
-//        print("--------",user.items)
+
         guard var items = user.items else { return print("Error") }
-        print("------",items)
-        items += [item.name]
+        items += [itemName]
         user.items = items
-        print("--------",items)
-        print(user)
 
         // mutateで新規メッセージを作成
         Amplify.API.mutate(request: .updateMutation(of: user, version: user.update_count-1)) { event in
@@ -85,9 +79,6 @@ struct UserDataUtils {
     func deleteUserItem(name: String, itemName: String) {
         //Anyだから暫定でこの書き方。
         var user: User = getUser(name: name) as! User
-        let item: Item = itemDataUtild.getItem(name: itemName) as! Item
-        
-        
         user.update_count += 1
         
         guard let itemIndex = user.items?.firstIndex(of: itemName) else {
@@ -114,7 +105,6 @@ struct UserDataUtils {
     
 
     func updateUserLvAndExp(name: String, myLv: Int, getExp: Int) {
-
         //Anyだから暫定でこの書き方。
         var user: User = getUser(name: name) as! User
         user.update_count += 1
@@ -126,7 +116,6 @@ struct UserDataUtils {
         print("user.exp after",user.exp)
         user.level = myLv
     
-
         // mutateで新規メッセージを作成
         Amplify.API.mutate(request: .updateMutation(of: user, version: user.update_count-1)) { event in
             switch event {
@@ -153,6 +142,33 @@ struct UserDataUtils {
         user.money += getMoney
         print("user.money after",user.money)
 
+        
+        // mutateで新規メッセージを作成
+        Amplify.API.mutate(request: .updateMutation(of: user, version: user.update_count-1)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let user):
+                    print("Successfully updated userExp: \(user)")
+                case .failure(let error):
+                    print("Got failed result of updateExp with \(error.errorDescription)")
+                }
+            case .failure(let error):
+                print("Got failed event of updateExp with error \(error)")
+            }
+        }
+    }
+    
+    func updateUserStatus(name: String, myLv: Int, getExp: Int, getMoney: Int) {
+        //Anyだから暫定でこの書き方。
+        var user: User = getUser(name: name) as! User
+        user.update_count += 1
+        print("user status before updating : ",user)
+        user.level = myLv
+        user.exp += getExp
+        user.money += getMoney
+        
+        print("user status after updating : ",user)
         
         // mutateで新規メッセージを作成
         Amplify.API.mutate(request: .updateMutation(of: user, version: user.update_count-1)) { event in
