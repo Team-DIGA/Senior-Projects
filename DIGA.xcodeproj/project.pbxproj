@@ -881,11 +881,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = G5N4W45T7M;
-=======
-				DEVELOPMENT_TEAM = L74DBDRY8R;
->>>>>>> 1e9fe7230807cf0ac128d89a34ed7d8b74529022
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "常に許可";
