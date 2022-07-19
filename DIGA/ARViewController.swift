@@ -25,9 +25,11 @@ func delay(_ delay: Double, closure: @escaping ()->()) {
 
 class ARViewController: UIViewController {
     
+    var user: User!
+    var myLevel: Int = 0
+    var myLevelZone: Int = 0
     var imageValue: String!
     var characterImage: UIImage?
-
     var characterRarity: Int!
     var characterPlace: String!
     var characterTitle: String!
@@ -71,15 +73,6 @@ class ARViewController: UIViewController {
     @IBOutlet weak var rarityLabel: UILabel!
     @IBOutlet weak var metCountLabel: UILabel!
     
-//    @IBAction func AddFriend2(_ sender: UIButton) {
-//        addOrEscape(result: Int)
-//    }
-//
-//    // 前の画面に戻る処理
-//    @IBAction func AddFriend(_ sender: UIButton) {
-//        addOrEscape(result: Int)
-//    }
-    
     func addOrEscape(result:Int){
         let arrOfCaptureProbability = [
             [50,55,60,65,70,75,80,85,90,95],
@@ -93,8 +86,7 @@ class ARViewController: UIViewController {
             [10,15,20,25,30,35,40,45,50,55],
             [5,10,15,20,25,30,35,40,45,50],
         ]
-        let myLevel = 0
-        var myLevelZone = 0
+        
             if myLevel <= 5 {
                 myLevelZone = 0
             } else if myLevel <= 10 {
@@ -143,6 +135,13 @@ class ARViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let username = AWSMobileClient.default().username else {
+            print("Error: Uncaught username")
+            return
+        }
+        user = userDataUtils.getUser(name: username) as? User
+        myLevel = user.level
         
         itemTitles = itemDataUtils.getAllItem() as! [Item]
 
@@ -253,10 +252,6 @@ class ARViewController: UIViewController {
         metCountLabel.text = "出会った回数： \(characterMetCount)"
         metCountLabel.font = UIFont(name:"Arial-BoldMT", size: 20.0)
         
-//        let boxAnchor = try! Experience.loadBox()
-//        arView.scene.anchors.append(boxAnchor)
-        
-        
         uiDesign.buttonDesign(button: addFriendButton)
         uiDesign.buttonDesign(button: addFriendButton2)
         
@@ -291,13 +286,7 @@ class ARViewController: UIViewController {
         
         if addFlag {
             backAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-//                let randomNum = Int.random(in: 1...2)
-                let randomNum = 1
-                if randomNum == 1 {
                     self.alertFunc2()
-                } else {
-                    self.navigationController?.popViewController(animated: true)
-                }
             })
         } else {
             backAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
@@ -378,14 +367,6 @@ class ARViewController: UIViewController {
             "Amongs":5
         ]
         
-        guard let username = AWSMobileClient.default().username else {
-            print("Error: Uncaught username")
-            return
-        }
-        
-        let user : User = userDataUtils.getUser(name: username) as! User
-        
-        
         guard var getExp = expTable[characterTitle] else {
             print("Error:Uncaught exp table")
             return
@@ -402,8 +383,8 @@ class ARViewController: UIViewController {
         }
         
         
-        let myExp = user.exp + getExp
-        let myLv  = Int(floor(pow(Double(myExp),0.33)))
+        user.exp += getExp
+        let myLv  = Int(floor(pow(Double(user.exp),0.33)))
         var alert : UIAlertController
         
         if myLv > user.level {
@@ -417,22 +398,17 @@ class ARViewController: UIViewController {
         }
         
         let backAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-            //let randomNum = Int.random(in: 1...2)
-            let randomNum = 1
-            if randomNum == 1 {
-                self.alertFunc3()
-            } else {
-                self.navigationController?.popViewController(animated: true)
-            }
+            self.alertFunc3(getExp:getExp)
         })
         
+        user.level = myLv
         alert.addAction(backAction)
         present(alert, animated: true)
         
-        userDataUtils.updateUserLvAndExp(name: username, myLv: myLv ,getExp: Int(getExp))
+        //userDataUtils.updateUserLvAndExp(name: user.name, myLv: myLv ,getExp: Int(getExp))
 
     }
-    func alertFunc3(){
+    func alertFunc3(getExp:Int){
         let moneyTable : [String : Int] = [
             "スライム":15,
             "アナ":100,
@@ -495,17 +471,11 @@ class ARViewController: UIViewController {
             "Amongs":5
         ]
         
-        guard let username = AWSMobileClient.default().username else {
-            print("Error: Uncaught username")
-            return
-        }
-        
-        let user : User = userDataUtils.getUser(name: username) as! User
-        
         guard var getMoney = moneyTable[characterTitle] else {
         print("Error:Uncaught moneyTable")
             return
         }
+        
         if itemRepo.getCursed() {
             getMoney = getMoney / 2
         }
@@ -525,8 +495,7 @@ class ARViewController: UIViewController {
         
         
         let backAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
-            //let randomNum = Int.random(in: 1...2)
-            let randomNum = 1
+            let randomNum = Int.random(in: 1...10)
             if randomNum == 1 {
                 self.alertFunc4()
             } else {
@@ -537,7 +506,7 @@ class ARViewController: UIViewController {
         alert.addAction(backAction)
         present(alert, animated: true)
         
-        userDataUtils.updateUserMoney(name: username, getMoney: getMoney)
+        userDataUtils.updateUserStatus(name: user.name, myLv: user.level, getExp: getExp, getMoney: getMoney)
 
     }
     
@@ -696,8 +665,6 @@ class ARViewController: UIViewController {
         layer.timeOffset = pausedTime
         print(pausedTime)
         
-        print("＝＝＝＝現在地＝＝＝＝",layer.presentation()?.position.y)
-        
         if let position = layer.presentation()?.position {
             print(position.y)
             if position.y < 184 {
@@ -718,59 +685,53 @@ class ARViewController: UIViewController {
                 print("So bad!!")
             }
         }
-            var result = 0
-            delay(0.5) {
-                // do something
-                // 画面遷移のアニメーションの実行
-                UIView.transition(with: self.barView,
-                duration: 1, // アニメーション合計継続時間(秒)
-                options: [.transitionFlipFromLeft, .curveLinear], // オプション(左からのフリップ, 等速)
-                    animations: {
-                    // 画面の変更
-                        if let position = self.barView.layer.presentation()?.position {
-                            if position.y < 170 {
-                                print("Excelent!!!")
-                                result = 20
-                                self.resultImage.image = UIImage(named:"Excellent")
-                            } else if position.y < 224 {
-                                print("Great!!")
-                                result = 10
-                                self.resultImage.image = UIImage(named:"Amoungs")
-                            } else if position.y < 264 {
-                                print("Good job!")
-                                result = 10
-                                self.resultImage.image = UIImage(named:"Amoungs")
-                            } else if position.y < 304 {
-                                print("It's OK!")
-                                result = 0
-                                self.resultImage.image = UIImage(named:"Amoungs")
-                            } else if position.y < 344 {
-                                print("Not good.")
-                                result = 0
-                                self.resultImage.image = UIImage(named:"Amoungs")
-                            } else if position.y < 384 {
-                                print("Not bad.")
-                                result = -10
-                                self.resultImage.image = UIImage(named:"Amoungs")
-                            } else if position.y < 424 {
-                                print("Bad!")
-                                result = -10
-                                self.resultImage.image = UIImage(named:"Amoungs")
-                            } else  {
-                                print("So bad!!")
-                                result = 20
-                                self.resultImage.image = UIImage(named:"Amoungs")
-                            }
-                    }
-                },
-                completion:  {(finished: Bool) in
-                // アニメーション完了時の処理
+        var result = 0
+        // 画面遷移のアニメーションの実行
+        UIView.transition(with: self.barView,
+        duration: 1, // アニメーション合計継続時間(秒)
+        options: [.transitionFlipFromLeft, .curveLinear], // オプション(左からのフリップ, 等速)
+        animations: {
+            // 画面の変更
+            if let position = self.barView.layer.presentation()?.position {
+                if position.y < 170 {
+                    print("Excelent!!!")
+                    result = 20
+                    self.resultImage.image = UIImage(named:"Excellent")
+                } else if position.y < 224 {
+                    print("Great!!")
+                    result = 10
+                    self.resultImage.image = UIImage(named:"Amoungs")
+                } else if position.y < 264 {
+                    print("Good job!")
+                    result = 10
+                    self.resultImage.image = UIImage(named:"Amoungs")
+                } else if position.y < 304 {
+                    print("It's OK!")
+                    result = 0
+                    self.resultImage.image = UIImage(named:"Amoungs")
+                } else if position.y < 344 {
+                    print("Not good.")
+                    result = 0
+                    self.resultImage.image = UIImage(named:"Amoungs")
+                } else if position.y < 384 {
+                    print("Not bad.")
+                    result = -10
+                    self.resultImage.image = UIImage(named:"Amoungs")
+                } else if position.y < 424 {
+                    print("Bad!")
+                    result = -10
+                    self.resultImage.image = UIImage(named:"Amoungs")
+                } else  {
+                print("So bad!!")
+                result = 20
+                self.resultImage.image = UIImage(named:"Amoungs")
                 }
-            )
+            }
+        },
+        completion:  {(finished: Bool) in
+        // アニメーション完了時の処理
         }
-        delay(0.5) {
-            // do something
-            self.addOrEscape(result: result)
-        }
+        )
+        self.addOrEscape(result: result)
     }
 }

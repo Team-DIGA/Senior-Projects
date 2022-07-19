@@ -11,6 +11,8 @@
 		0A0F86BE287D5B3B003D8C62 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F86BD287D5B3A003D8C62 /* UIViewExtension.swift */; };
 		0A0F86C0287DA746003D8C62 /* animeation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F86BF287DA746003D8C62 /* animeation.swift */; };
 		0A0F86C2287FEC50003D8C62 /* FriendsListTableViweController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F86C1287FEC50003D8C62 /* FriendsListTableViweController.swift */; };
+		0A38CD1828862A8A000B2373 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A38CD1728862A8A000B2373 /* Color.xcassets */; };
+		0A38CD1A28862BB8000B2373 /* DigaDefaultUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A38CD1928862BB8000B2373 /* DigaDefaultUI.swift */; };
 		0A5AA37328810398008F0717 /* sonic_the_hedgehog.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA37028810397008F0717 /* sonic_the_hedgehog.usdz */; };
 		0A5AA37428810398008F0717 /* SHIMABU.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA37128810398008F0717 /* SHIMABU.usdz */; };
 		0A5AA37528810398008F0717 /* Totoro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA37228810398008F0717 /* Totoro.usdz */; };
@@ -18,6 +20,8 @@
 		0A5AA379288103CD008F0717 /* standing_greeting_robin_test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */; };
 		0AB33873288124D40045A27C /* slime_second.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0AB33872288124D40045A27C /* slime_second.usdz */; };
 		0AB33875288127500045A27C /* slime_third.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0AB33874288127500045A27C /* slime_third.usdz */; };
+		0AB566182881B3410082B09D /* gatyaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB566172881B3410082B09D /* gatyaViewController.swift */; };
+		0AB5661A2881BF410082B09D /* img-gacha-animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0AB566192881BF410082B09D /* img-gacha-animation.gif */; };
 		0D78B0ED286C2B01002CFB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */; };
 		0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EE286C2B01002CFB48 /* ARViewController.swift */; };
 		0D78B0F1286C2B01002CFB48 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0F0286C2B01002CFB48 /* Experience.rcproject */; };
@@ -101,6 +105,8 @@
 		0A0F86BD287D5B3A003D8C62 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		0A0F86BF287DA746003D8C62 /* animeation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animeation.swift; sourceTree = "<group>"; };
 		0A0F86C1287FEC50003D8C62 /* FriendsListTableViweController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViweController.swift; sourceTree = "<group>"; };
+		0A38CD1728862A8A000B2373 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		0A38CD1928862BB8000B2373 /* DigaDefaultUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigaDefaultUI.swift; sourceTree = "<group>"; };
 		0A5AA37028810397008F0717 /* sonic_the_hedgehog.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sonic_the_hedgehog.usdz; sourceTree = "<group>"; };
 		0A5AA37128810398008F0717 /* SHIMABU.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = SHIMABU.usdz; sourceTree = "<group>"; };
 		0A5AA37228810398008F0717 /* Totoro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Totoro.usdz; sourceTree = "<group>"; };
@@ -108,6 +114,8 @@
 		0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = standing_greeting_robin_test.usdz; sourceTree = "<group>"; };
 		0AB33872288124D40045A27C /* slime_second.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_second.usdz; sourceTree = "<group>"; };
 		0AB33874288127500045A27C /* slime_third.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_third.usdz; sourceTree = "<group>"; };
+		0AB566172881B3410082B09D /* gatyaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gatyaViewController.swift; sourceTree = "<group>"; };
+		0AB566192881BF410082B09D /* img-gacha-animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "img-gacha-animation.gif"; sourceTree = "<group>"; };
 		0D78B0E9286C2B01002CFB48 /* DIGA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIGA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D78B0EE286C2B01002CFB48 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +249,7 @@
 				0D78B11D286C2BEE002CFB48 /* MapViewController.swift */,
 				0A0F86BD287D5B3A003D8C62 /* UIViewExtension.swift */,
 				0D78B0EE286C2B01002CFB48 /* ARViewController.swift */,
+				0AB566172881B3410082B09D /* gatyaViewController.swift */,
 				0D78B12D286DD2A1002CFB48 /* Picturebook.swift */,
 				0A0F86C1287FEC50003D8C62 /* FriendsListTableViweController.swift */,
 				0D78B0F0286C2B01002CFB48 /* Experience.rcproject */,
@@ -253,8 +262,11 @@
 				3A55CFE828754C1700CAEA22 /* UIDesign.swift */,
 				3A0B5CB528785E3200B42A43 /* ItemDataUtils.swift */,
 				B144660E287C2F38002FF0C4 /* UsersDataUtils.swift */,
+				0A38CD1928862BB8000B2373 /* DigaDefaultUI.swift */,
 				B1E5936A287E4FCF0044A28B /* InMemoryItemRepository.swift */,
 				3A1AC45D287D455E00B8E010 /* ItemTableViewController.swift */,
+				0AB566192881BF410082B09D /* img-gacha-animation.gif */,
+				0A38CD1728862A8A000B2373 /* Color.xcassets */,
 			);
 			path = DIGA;
 			sourceTree = "<group>";
@@ -390,7 +402,7 @@
 				0D78B0E5286C2B01002CFB48 /* Sources */,
 				0D78B0E6286C2B01002CFB48 /* Frameworks */,
 				0D78B0E7286C2B01002CFB48 /* Resources */,
-				834D0B394A8C3C6694946715 /* [CP] Embed Pods Frameworks */,
+				95CC2FA10978D1AA1587275A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -428,7 +440,7 @@
 				0D78B104286C2B03002CFB48 /* Sources */,
 				0D78B105286C2B03002CFB48 /* Frameworks */,
 				0D78B106286C2B03002CFB48 /* Resources */,
-				2E8D69F0DCCBBEAFAC54B49C /* [CP] Embed Pods Frameworks */,
+				981A106CEBCBA0059EFFE440 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -498,7 +510,9 @@
 				E18EF66828759C91004AF827 /* coil3.usdz in Resources */,
 				C66D9CC528866786006CC08E /* Eren(Titan)_3.usdz in Resources */,
 				E172058E28706EB100A9D300 /* 5.mp3 in Resources */,
+				0A38CD1828862A8A000B2373 /* Color.xcassets in Resources */,
 				E172059628706EB100A9D300 /* 9.mp3 in Resources */,
+				0AB5661A2881BF410082B09D /* img-gacha-animation.gif in Resources */,
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
 				3A60F6F3287C16C20002395E /* awsconfiguration.json in Resources */,
@@ -548,24 +562,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2E8D69F0DCCBBEAFAC54B49C /* [CP] Embed Pods Frameworks */ = {
+		925AE917B0F91E2177725549 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
+
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DIGA-DIGAUITests-checkManifestLockResult.txt",
+			);
+
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		834D0B394A8C3C6694946715 /* [CP] Embed Pods Frameworks */ = {
+		95CC2FA10978D1AA1587275A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -582,26 +605,21 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DIGA/Pods-DIGA-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		925AE917B0F91E2177725549 /* [CP] Check Pods Manifest.lock */ = {
+		981A106CEBCBA0059EFFE440 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DIGA-DIGAUITests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BD525CAD4C0FF5B8155DC815 /* [CP] Check Pods Manifest.lock */ = {
@@ -659,6 +677,7 @@
 				3ADF1E6D286E962F007EB643 /* Character.swift in Sources */,
 				0D78B11C286C2BD5002CFB48 /* TopViewContoroller.swift in Sources */,
 				3ADF1E6B286E962F007EB643 /* Character+Schema.swift in Sources */,
+				0A38CD1A28862BB8000B2373 /* DigaDefaultUI.swift in Sources */,
 				0A0F86C0287DA746003D8C62 /* animeation.swift in Sources */,
 				0D78B12E286DD2A2002CFB48 /* Picturebook.swift in Sources */,
 				3AB938AF287CF1650053FD18 /* Item.swift in Sources */,
@@ -673,6 +692,7 @@
 				3AB938AE287CF1650053FD18 /* User.swift in Sources */,
 				0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */,
 				3ADF1E6C286E962F007EB643 /* AmplifyModels.swift in Sources */,
+				0AB566182881B3410082B09D /* gatyaViewController.swift in Sources */,
 				3AB938B1287CF1650053FD18 /* User+Schema.swift in Sources */,
 				0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */,
 				0D78B0ED286C2B01002CFB48 /* AppDelegate.swift in Sources */,

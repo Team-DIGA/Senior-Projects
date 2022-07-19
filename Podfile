@@ -23,6 +23,7 @@ target 'DIGA' do
   pod 'AWSAuthUI'
   pod 'AWSUserPoolsSignIn'
   pod 'SSCustomTabbar'
+  pod 'SwiftGifOrigin'
 
   target 'DIGATests' do
     inherit! :search_paths
