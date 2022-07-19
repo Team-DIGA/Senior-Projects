@@ -244,6 +244,15 @@
                                     <action selector="addAllItems:" destination="Tly-3R-M8P" eventType="touchUpInside" id="90X-FA-F4u"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCB-Jh-Exw">
+                                <rect key="frame" x="174" y="114" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <connections>
+                                    <segue destination="dUb-On-84X" kind="show" id="qHs-ua-APb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kB1-7B-BAU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -497,6 +506,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TeB-6S-f89" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="839" y="66"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="scj-ws-mVF">
+            <objects>
+                <viewController id="dUb-On-84X" customClass="SettingViewController" customModule="DIGA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xix-32-emD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hme-Ks-zRq">
+                                <rect key="frame" x="147" y="608" width="120" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="44U-M4-5jY"/>
+                                    <constraint firstAttribute="width" constant="120" id="vCr-zS-aYO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyM-3G-VWc">
+                                <rect key="frame" x="277" y="608" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="XGU-GL-aSK"/>
+                                    <constraint firstAttribute="height" constant="50" id="hRA-Uv-gIr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="pencil" catalog="system" title=""/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="のび太" translatesAutoresizingMaskIntoConstraints="NO" id="q55-ym-2SB">
+                                <rect key="frame" x="87" y="268" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="JIG-v6-rGo"/>
+                                    <constraint firstAttribute="width" constant="240" id="rvg-Ev-Tfh"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGx-YA-ewn">
+                                <rect key="frame" x="277" y="218" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="B2r-HR-Ja6"/>
+                                    <constraint firstAttribute="height" constant="50" id="cf6-5I-dl4"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="photo" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="didTapImage:" destination="dUb-On-84X" eventType="touchUpInside" id="Pbu-8a-5gC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kMt-oA-xIl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hme-Ks-zRq" firstAttribute="top" secondItem="q55-ym-2SB" secondAttribute="bottom" constant="100" id="0z8-uB-A8x"/>
+                            <constraint firstItem="iyM-3G-VWc" firstAttribute="top" secondItem="q55-ym-2SB" secondAttribute="bottom" constant="100" id="2VT-Ki-BkN"/>
+                            <constraint firstItem="q55-ym-2SB" firstAttribute="leading" secondItem="kMt-oA-xIl" secondAttribute="leading" constant="87" id="HiS-MG-IQa"/>
+                            <constraint firstItem="q55-ym-2SB" firstAttribute="top" secondItem="kMt-oA-xIl" secondAttribute="top" constant="180" id="Mfm-Uk-bIy"/>
+                            <constraint firstItem="kMt-oA-xIl" firstAttribute="trailing" secondItem="nGx-YA-ewn" secondAttribute="trailing" constant="87" id="NY6-Cx-4G5"/>
+                            <constraint firstItem="kMt-oA-xIl" firstAttribute="trailing" secondItem="iyM-3G-VWc" secondAttribute="trailing" constant="87" id="Ygo-h8-fo1"/>
+                            <constraint firstItem="kMt-oA-xIl" firstAttribute="trailing" secondItem="q55-ym-2SB" secondAttribute="trailing" constant="87" id="qCQ-ec-SAt"/>
+                            <constraint firstItem="hme-Ks-zRq" firstAttribute="centerX" secondItem="xix-32-emD" secondAttribute="centerX" id="teH-Mh-YNk"/>
+                            <constraint firstItem="q55-ym-2SB" firstAttribute="top" secondItem="nGx-YA-ewn" secondAttribute="bottom" id="v1j-Nu-r4b"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kbI-8D-jAq"/>
+                    <connections>
+                        <outlet property="userImage" destination="q55-ym-2SB" id="QR6-tr-g69"/>
+                        <outlet property="userName" destination="hme-Ks-zRq" id="ut4-7G-Wpj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GZV-wQ-ec8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2565.217391304348" y="963.61607142857133"/>
         </scene>
         <!--アイテム-->
         <scene sceneID="HGs-E1-zws">
@@ -1212,6 +1292,9 @@
         <image name="item" width="32" height="32"/>
         <image name="map" width="32" height="32"/>
         <image name="masashi" width="430" height="430"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="のび太" width="249" height="249"/>
         <image name="仙豆" width="317" height="317"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
