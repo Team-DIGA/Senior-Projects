@@ -126,7 +126,9 @@ class ARViewController: UIViewController {
                 print("metCountError")
                 return
             }
+            print("＝＝＝＝＝今からキャラデータ登録＝＝＝＝＝＝")
             characterDataUtils.updateCharacter(name: characterTitle, place: characterPlace, met_count_key:metCount)
+            print("＝＝＝＝＝キャラデータ登録完了＝＝＝＝＝＝")
             alertFunc1(title: "\(characterTitle!)は\n仲間になった！", message: "",addFlag:true)
         } else {
             alertFunc1(title: "\( characterTitle!)は\n去っていった！", message: "",addFlag:false)
