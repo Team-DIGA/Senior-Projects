@@ -154,6 +154,14 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
         self.view.endEditing(true)
     }
     
+    override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
+        }
+     
+    func didSelectTab(tabBarController: TabBarController) {
+        print("first!")
+    }
+    
 }
 
 enum BorderPosition {

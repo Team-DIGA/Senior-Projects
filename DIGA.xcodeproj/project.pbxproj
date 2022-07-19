@@ -23,6 +23,8 @@
 		0AB33875288127500045A27C /* slime_third.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0AB33874288127500045A27C /* slime_third.usdz */; };
 		0AB566182881B3410082B09D /* gatyaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB566172881B3410082B09D /* gatyaViewController.swift */; };
 		0AB5661A2881BF410082B09D /* img-gacha-animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0AB566192881BF410082B09D /* img-gacha-animation.gif */; };
+		0AEBDA492886DB8A0011B8ED /* SSCustomTabBarDeligate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBDA482886DB8A0011B8ED /* SSCustomTabBarDeligate.swift */; };
+		0AEBDA4B2886DCC90011B8ED /* SSCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBDA4A2886DCC90011B8ED /* SSCustomTabBar.swift */; };
 		0D78B0ED286C2B01002CFB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */; };
 		0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EE286C2B01002CFB48 /* ARViewController.swift */; };
 		0D78B0F1286C2B01002CFB48 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0F0286C2B01002CFB48 /* Experience.rcproject */; };
@@ -119,6 +121,8 @@
 		0AB33874288127500045A27C /* slime_third.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_third.usdz; sourceTree = "<group>"; };
 		0AB566172881B3410082B09D /* gatyaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gatyaViewController.swift; sourceTree = "<group>"; };
 		0AB566192881BF410082B09D /* img-gacha-animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "img-gacha-animation.gif"; sourceTree = "<group>"; };
+		0AEBDA482886DB8A0011B8ED /* SSCustomTabBarDeligate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCustomTabBarDeligate.swift; sourceTree = "<group>"; };
+		0AEBDA4A2886DCC90011B8ED /* SSCustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCustomTabBar.swift; sourceTree = "<group>"; };
 		0D78B0E9286C2B01002CFB48 /* DIGA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIGA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D78B0EE286C2B01002CFB48 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 				0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */,
 				0D78B11B286C2BD5002CFB48 /* TopViewContoroller.swift */,
 				0D78B11D286C2BEE002CFB48 /* MapViewController.swift */,
+				0AEBDA482886DB8A0011B8ED /* SSCustomTabBarDeligate.swift */,
+				0AEBDA4A2886DCC90011B8ED /* SSCustomTabBar.swift */,
 				0A0F86BD287D5B3A003D8C62 /* UIViewExtension.swift */,
 				0D78B0EE286C2B01002CFB48 /* ARViewController.swift */,
 				0AB566172881B3410082B09D /* gatyaViewController.swift */,
@@ -576,20 +582,16 @@
 			);
 			inputFileListPaths = (
 			);
-
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-
 			outputFileListPaths = (
 			);
-
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-DIGA-DIGAUITests-checkManifestLockResult.txt",
 			);
-
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
@@ -707,6 +709,8 @@
 				0D78B11E286C2BEE002CFB48 /* MapViewController.swift in Sources */,
 				0D78B0F1286C2B01002CFB48 /* Experience.rcproject in Sources */,
 				B144660F287C2F38002FF0C4 /* UsersDataUtils.swift in Sources */,
+				0AEBDA4B2886DCC90011B8ED /* SSCustomTabBar.swift in Sources */,
+				0AEBDA492886DB8A0011B8ED /* SSCustomTabBarDeligate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

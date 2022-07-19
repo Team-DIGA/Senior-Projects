@@ -249,9 +249,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Button"/>
-                                <connections>
-                                    <segue destination="dUb-On-84X" kind="show" id="qHs-ua-APb"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kB1-7B-BAU"/>
@@ -397,7 +394,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZj-c2-0aO">
-                                <rect key="frame" x="5" y="721" width="404" height="62"/>
+                                <rect key="frame" x="5" y="770" width="404" height="62"/>
                                 <color key="tintColor" red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="0.70214197019867552" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="友達を探す">
@@ -408,7 +405,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6M-uX-Doe">
-                                <rect key="frame" x="5" y="93" width="404" height="38.5"/>
+                                <rect key="frame" x="5" y="49" width="404" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -436,7 +433,7 @@
             <objects>
                 <tableViewController id="8Jp-z0-dNZ" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="aHC-Xf-0bK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -507,7 +504,7 @@
             </objects>
             <point key="canvasLocation" x="839" y="66"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--設定-->
         <scene sceneID="scj-ws-mVF">
             <objects>
                 <viewController id="dUb-On-84X" customClass="SettingViewController" customModule="DIGA" customModuleProvider="target" sceneMemberID="viewController">
@@ -557,6 +554,7 @@
                             <constraint firstItem="q55-ym-2SB" firstAttribute="top" secondItem="nGx-YA-ewn" secondAttribute="bottom" id="v1j-Nu-r4b"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="設定" id="5N2-Oy-U1r"/>
                     <navigationItem key="navigationItem" id="kbI-8D-jAq"/>
                     <connections>
                         <outlet property="userImage" destination="q55-ym-2SB" id="QR6-tr-g69"/>
@@ -865,7 +863,7 @@
                         <segue destination="xy3-5a-GMr" kind="relationship" relationship="viewControllers" id="ixZ-Cf-RK6"/>
                         <segue destination="vDF-6D-jcR" kind="relationship" relationship="viewControllers" id="L7u-GW-ZEF"/>
                         <segue destination="jVJ-aa-sxB" kind="relationship" relationship="viewControllers" id="OUC-NJ-hKL"/>
-                        <segue destination="vnm-ih-RAf" kind="relationship" relationship="viewControllers" id="bjp-8P-Vwh"/>
+                        <segue destination="dUb-On-84X" kind="relationship" relationship="viewControllers" id="B4L-MC-r7t"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cb2-gc-W37" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
