@@ -131,7 +131,6 @@ struct CharacterDataUtils {
     
     //データ更新
     func updateCharacter(name: String, place:String, met_count_key:Int) {
-        getCharacter(name: name)
         DIGA.updateCharacter?.have_met = true
         DIGA.updateCharacter?.first_met_place = place
         DIGA.updateCharacter?.met_count += 1
@@ -142,7 +141,6 @@ struct CharacterDataUtils {
         // mutateで新規メッセージを作成
         print("------",name,"=====",met_count_key)
         Amplify.API.mutate(request: .updateMutation(of: updateFriend, version: met_count_key+1)) { event in
-//          Amplify.API.mutate(request: .updateMutation(of: updateFriend)) { event in
             switch event {
             case .success(let result):
                 switch result {
