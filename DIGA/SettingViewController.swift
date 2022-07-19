@@ -21,6 +21,15 @@ final class SettingViewController: UIViewController,UIImagePickerControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        if let dirPath = paths.first{
+            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("userImage")
+            debugPrint(imageURL)
+            userImage.image = UIImage(contentsOfFile: imageURL.path)
+        } else {
+            userImage.image = UIImage(named: "スネ夫")
+        }
+
         guard let username = AWSMobileClient.default().username else {
             print("Error: Uncaught username")
             return
