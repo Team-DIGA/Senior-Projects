@@ -590,7 +590,7 @@
                                     <constraint firstAttribute="height" constant="292" id="dMJ-7D-Dby"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPp-1T-vaF" customClass="DigaButton" customModule="DIGA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPp-1T-vaF" customClass="PositiveSimpleButton" customModule="DIGA" customModuleProvider="target">
                                 <rect key="frame" x="100" y="632" width="214" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="53x-zN-q86"/>
@@ -692,44 +692,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOR-ii-cXO" customClass="DigaButton" customModule="DIGA" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOR-ii-cXO" customClass="PositiveSimpleButton" customModule="DIGA" customModuleProvider="target">
                                 <rect key="frame" x="20" y="719.5" width="374" height="58.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58.5" id="HeX-Jd-8Sc"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="ガチャる">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="37"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="ガチャる"/>
                                 <connections>
                                     <action selector="didTapGatyaButton:" destination="jVJ-aa-sxB" eventType="touchUpInside" id="p6u-rN-T5r"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gatya" translatesAutoresizingMaskIntoConstraints="NO" id="4q7-eD-n2e">
-                                <rect key="frame" x="20" y="88" width="374" height="500"/>
+                                <rect key="frame" x="20" y="88" width="374" height="450"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="vca-jh-jZ4"/>
+                                    <constraint firstAttribute="height" constant="450" id="vca-jh-jZ4"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3yJ-Vz-0Za">
-                                <rect key="frame" x="20" y="88" width="374" height="500"/>
+                                <rect key="frame" x="20" y="88" width="374" height="450"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="sK9-es-F7y"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jTG-KJ-vba">
-                                <rect key="frame" x="20" y="88" width="374" height="500"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="Cdc-Lp-TIv"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="500" id="ltG-9h-w3s"/>
+                                    <constraint firstAttribute="height" constant="450" id="sK9-es-F7y"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4i-6d-dYp">
-                                <rect key="frame" x="20" y="608" width="374" height="91.5"/>
+                                <rect key="frame" x="20" y="558" width="374" height="141.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jTG-KJ-vba">
+                                <rect key="frame" x="20" y="88" width="374" height="450"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="Cdc-Lp-TIv"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="450" id="ltG-9h-w3s"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pN8-ig-jx2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -816,14 +815,12 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CQ-2v-Kg7" customClass="DigaButton" customModule="DIGA" customModuleProvider="target">
-                                <rect key="frame" x="270" y="734" width="134" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CQ-2v-Kg7" customClass="PositiveSimpleButton" customModule="DIGA" customModuleProvider="target">
+                                <rect key="frame" x="270" y="741" width="134" height="37"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="探す">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
-                                    <color key="baseBackgroundColor" red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="0.70159871688741726" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="探す"/>
                                 <connections>
                                     <action selector="didTapSerchButton:" destination="vDF-6D-jcR" eventType="touchUpInside" id="D1u-9U-m5Q"/>
                                 </connections>
@@ -947,20 +944,17 @@
                             <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DcP-nT-fKB">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </arView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVp-FI-quZ">
-                                <rect key="frame" x="45.5" y="784" width="323" height="78"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVp-FI-quZ" customClass="PositiveSimpleButton" customModule="DIGA" customModuleProvider="target">
+                                <rect key="frame" x="149.5" y="825" width="115" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="GETだぜ！！">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <state key="normal" title="GETだぜ！！"/>
                                 <connections>
                                     <action selector="onButtonClickWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2VF-Kj-13B"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKc-ye-FNg">
-                                <rect key="frame" x="70" y="734" width="274" height="30"/>
+                                <rect key="frame" x="70" y="775" width="274" height="30"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="j5L-3W-dQj"/>
@@ -975,7 +969,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNR-KE-YIi">
-                                <rect key="frame" x="70" y="694" width="274" height="30"/>
+                                <rect key="frame" x="70" y="735" width="274" height="30"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ffq-dc-aJj"/>
@@ -1193,6 +1187,20 @@
             <point key="canvasLocation" x="-812" y="544"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="7CQ-2v-Kg7">
+            <size key="intrinsicContentSize" width="59" height="37"/>
+        </designable>
+        <designable name="MPp-1T-vaF">
+            <size key="intrinsicContentSize" width="90" height="37"/>
+        </designable>
+        <designable name="SOR-ii-cXO">
+            <size key="intrinsicContentSize" width="88" height="37"/>
+        </designable>
+        <designable name="VVp-FI-quZ">
+            <size key="intrinsicContentSize" width="115" height="37"/>
+        </designable>
+    </designables>
     <resources>
         <image name="DIGAwhite2" width="293" height="118"/>
         <image name="GoRef2" width="238" height="200"/>

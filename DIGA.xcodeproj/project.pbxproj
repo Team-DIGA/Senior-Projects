@@ -13,6 +13,7 @@
 		0A0F86C2287FEC50003D8C62 /* FriendsListTableViweController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F86C1287FEC50003D8C62 /* FriendsListTableViweController.swift */; };
 		0A38CD1828862A8A000B2373 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A38CD1728862A8A000B2373 /* Color.xcassets */; };
 		0A38CD1A28862BB8000B2373 /* DigaDefaultUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A38CD1928862BB8000B2373 /* DigaDefaultUI.swift */; };
+		0A38CD1C288651FA000B2373 /* PositiveSimpleButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A38CD1B288651FA000B2373 /* PositiveSimpleButton.xib */; };
 		0A5AA37328810398008F0717 /* sonic_the_hedgehog.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA37028810397008F0717 /* sonic_the_hedgehog.usdz */; };
 		0A5AA37428810398008F0717 /* SHIMABU.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA37128810398008F0717 /* SHIMABU.usdz */; };
 		0A5AA37528810398008F0717 /* Totoro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA37228810398008F0717 /* Totoro.usdz */; };
@@ -98,6 +99,7 @@
 		0A0F86C1287FEC50003D8C62 /* FriendsListTableViweController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViweController.swift; sourceTree = "<group>"; };
 		0A38CD1728862A8A000B2373 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		0A38CD1928862BB8000B2373 /* DigaDefaultUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigaDefaultUI.swift; sourceTree = "<group>"; };
+		0A38CD1B288651FA000B2373 /* PositiveSimpleButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PositiveSimpleButton.xib; sourceTree = "<group>"; };
 		0A5AA37028810397008F0717 /* sonic_the_hedgehog.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sonic_the_hedgehog.usdz; sourceTree = "<group>"; };
 		0A5AA37128810398008F0717 /* SHIMABU.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = SHIMABU.usdz; sourceTree = "<group>"; };
 		0A5AA37228810398008F0717 /* Totoro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Totoro.usdz; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				3A1AC45D287D455E00B8E010 /* ItemTableViewController.swift */,
 				0AB566192881BF410082B09D /* img-gacha-animation.gif */,
 				0A38CD1728862A8A000B2373 /* Color.xcassets */,
+				0A38CD1B288651FA000B2373 /* PositiveSimpleButton.xib */,
 			);
 			path = DIGA;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				0A38CD1828862A8A000B2373 /* Color.xcassets in Resources */,
 				E172059628706EB100A9D300 /* 9.mp3 in Resources */,
 				0AB5661A2881BF410082B09D /* img-gacha-animation.gif in Resources */,
+				0A38CD1C288651FA000B2373 /* PositiveSimpleButton.xib in Resources */,
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
 				3A60F6F3287C16C20002395E /* awsconfiguration.json in Resources */,

@@ -36,7 +36,7 @@ class TopViewController: UIViewController {
     
     let userDataUtils = UserDataUtils()
     
-    @IBOutlet weak var digaGoButton: DigaButton!
+    @IBOutlet weak var digaGoButton: PositiveSimpleButton!
     
     @IBAction func amongsTappedButton(_ sender: UIButton) {
         randomNum = Int.random(in: 0...200)
@@ -59,12 +59,12 @@ class TopViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         print("Sign In")
-//                        guard let userName = AWSMobileClient.default().username else {
-//                            print("Error:Uncaught username")
-//                            return
-//                        }
-//                        let addUser = User(name:userName, friends: [], items: [], level: 1, money: 0, exp: 0, update_count: 1)
-//                        self.userDataUtils.createUser(user: addUser)
+                        guard let userName = AWSMobileClient.default().username else {
+                            print("Error:Uncaught username")
+                            return
+                        }
+                        let addUser = User(name:userName, friends: [], items: [], level: 1, money: 0, exp: 0, update_count: 1)
+                        self.userDataUtils.createUser(user: addUser)
                     }
                 case .signedOut:
                     AWSMobileClient.sharedInstance().showSignIn(navigationController: self.navigationController!, { (userState, error) in
@@ -127,7 +127,8 @@ class TopViewController: UIViewController {
         //soundSet
         soundSet(name: "0")
         
-        uiDesign.buttonDesign(button: digaGoButton)
+        //カスタムボタンの適用確認のためコメント化
+        //uiDesign.buttonDesign(button: digaGoButton)
         uiDesign.buttonDesign(button: signOutButton)
 
         fetchCurrentAuthSession()
