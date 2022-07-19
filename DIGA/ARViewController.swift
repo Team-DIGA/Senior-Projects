@@ -401,7 +401,7 @@ class ARViewController: UIViewController {
             self.alertFunc3(getExp:getExp)
         })
         
-        user.level = myLv
+        user.level += myLv - user.level
         alert.addAction(backAction)
         present(alert, animated: true)
         
@@ -506,7 +506,7 @@ class ARViewController: UIViewController {
         alert.addAction(backAction)
         present(alert, animated: true)
         
-        userDataUtils.updateUserStatus(name: user.name, myLv: user.level, getExp: getExp, getMoney: getMoney)
+        userDataUtils.updateUserStatus(name: user.name, getExp: getExp, getMoney: getMoney, getItem: nil)
 
     }
     

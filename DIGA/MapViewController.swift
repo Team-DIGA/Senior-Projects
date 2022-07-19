@@ -311,7 +311,12 @@ extension MapViewController{
             }
             debugPrint("placeMark=============: \(placemark)")
             debugPrint("placeMark.name=============: \(placemark.name)")
-            self.targetPlace = placemark.name!
+            if let placemarkName = placemark.name {
+                self.targetPlace = placemark.name!
+            }else{
+                self.targetPlace = "不明な場所"
+            }
+            
         }
 //        print("async check 1=================================")
 //        let semaphore = DispatchSemaphore(value: 0)

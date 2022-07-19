@@ -159,14 +159,19 @@ struct UserDataUtils {
         }
     }
     
-    func updateUserStatus(name: String, myLv: Int, getExp: Int, getMoney: Int) {
+    func updateUserStatus(name: String, getExp: Int, getMoney: Int, getItem: String? ) {
         //Anyだから暫定でこの書き方。
         var user: User = getUser(name: name) as! User
         user.update_count += 1
         print("user status before updating : ",user)
-        user.level = myLv
         user.exp += getExp
+        user.level = Int(floor(pow(Double(user.exp),0.33)))
         user.money += getMoney
+        guard var items = user.items else { return print("Error") }
+        if let item = getItem {
+            items += [item]
+        }
+        user.items = items
         
         print("user status after updating : ",user)
         
