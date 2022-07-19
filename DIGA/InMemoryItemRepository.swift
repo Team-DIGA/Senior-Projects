@@ -77,14 +77,13 @@ class InMemoryItemRepository:UIAlertController, ItemFunc{
     func switchChara(itemNum: Int) {
 //        itemObj.changeChara = itemNum
         delegate.changeChara = itemNum
-        
     }
 
     func switchBooster(boosterNum: Int) {
         delegate.changeBooster = boosterNum
     }
     
-
+    
     func changeEasyCap(){
         delegate.isEasyCap.toggle()
     }

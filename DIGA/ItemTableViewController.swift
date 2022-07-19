@@ -96,6 +96,18 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
             return
         }
         if itemName != "呪いの面" {
+        
+            let resultAlert = UIAlertController(title:"\(itemName)を使った！", message: "\(itemArray[indexPath.row].effect)", preferredStyle: .alert)
+            let height = NSLayoutConstraint(item: resultAlert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)
+            resultAlert.view.addConstraint(height)
+            
+            let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {_ in
+            })
+            
+            resultAlert.addAction(backAction)
+            
+            present(resultAlert, animated: true)
+            
         userDataUtils.deleteUserItem(name: username , itemName: itemName)
         } else {
             
