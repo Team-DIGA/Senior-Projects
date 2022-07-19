@@ -59,6 +59,7 @@ class TopViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         print("Sign In")
+                        
                         guard let userName = AWSMobileClient.default().username else {
                             print("Error:Uncaught username")
                             return

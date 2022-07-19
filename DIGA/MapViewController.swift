@@ -183,7 +183,14 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         view.bringSubviewToFront(expLabel)
         
         userNameLabel.text = user.name
-        profPicture.image = UIImage(named: user.name)
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        if let dirPath = paths.first{
+            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("userImage")
+            debugPrint(imageURL)
+            profPicture.image = UIImage(contentsOfFile: imageURL.path)
+        } else {
+            profPicture.image = UIImage(named: "スネ夫")
+        }
         LvLavel.text = "Lv.\(user.level)"
         moneyLabel.text = "所持金　\(user.money) €riko"
         let nextLv = (user.level+1)*(user.level+1)*(user.level+1)*3/2
