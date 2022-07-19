@@ -56,6 +56,15 @@
 		B1C8B8BD28864ED000E615B7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C8B8BC28864ED000E615B7 /* SettingViewController.swift */; };
 		B1E5936B287E4FCF0044A28B /* InMemoryItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5936A287E4FCF0044A28B /* InMemoryItemRepository.swift */; };
 		B4D38D6EFCC4A3349B23F34E /* Pods_DIGA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094F1BB6423B2EECF004A6A /* Pods_DIGA.framework */; };
+		C66D9CB12882FD5C006CC08E /* Goku.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C66D9CB02882FD5C006CC08E /* Goku.usdz */; };
+		C66D9CB32882FDB1006CC08E /* Goku_Rigged__Animated.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C66D9CB22882FDB1006CC08E /* Goku_Rigged__Animated.usdz */; };
+		C66D9CB52882FE3F006CC08E /* Dragon_Ball_-_Goku_Super_Sayayin.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C66D9CB42882FE3F006CC08E /* Dragon_Ball_-_Goku_Super_Sayayin.usdz */; };
+		C66D9CB72882FEC3006CC08E /* SSJ-Goku.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C66D9CB62882FEC3006CC08E /* SSJ-Goku.usdz */; };
+		C66D9CBD288300FB006CC08E /* Sanji_One_Piece.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C66D9CBC288300FB006CC08E /* Sanji_One_Piece.usdz */; };
+		C66D9CBF28830642006CC08E /* Nezuko_Kamado-Demon_Slayer.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C66D9CBE28830642006CC08E /* Nezuko_Kamado-Demon_Slayer.usdz */; };
+		C66D9CC528866786006CC08E /* Eren(Titan)_3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C66D9CC428866786006CC08E /* Eren(Titan)_3.usdz */; };
+		C66D9CC928866BEB006CC08E /* Eren(Titan)_4.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C66D9CC828866BEB006CC08E /* Eren(Titan)_4.usdz */; };
+		C66D9CCB28868BB9006CC08E /* puyo.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C66D9CCA28868BB9006CC08E /* puyo.usdz */; };
 		E172058B28706EB100A9D300 /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057E28706EB100A9D300 /* 7.mp3 */; };
 		E172058C28706EB100A9D300 /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057F28706EB100A9D300 /* 6.mp3 */; };
 		E172058D28706EB100A9D300 /* 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058028706EB100A9D300 /* 4.mp3 */; };
@@ -149,6 +158,15 @@
 		B8BBAAB8BB94B309B6FAE108 /* Pods-DIGA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA.debug.xcconfig"; path = "Target Support Files/Pods-DIGA/Pods-DIGA.debug.xcconfig"; sourceTree = "<group>"; };
 		BD569AA0F43533696604EA1C /* Pods_DIGATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C094F1BB6423B2EECF004A6A /* Pods_DIGA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66D9CB02882FD5C006CC08E /* Goku.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Goku.usdz; sourceTree = "<group>"; };
+		C66D9CB22882FDB1006CC08E /* Goku_Rigged__Animated.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Goku_Rigged__Animated.usdz; sourceTree = "<group>"; };
+		C66D9CB42882FE3F006CC08E /* Dragon_Ball_-_Goku_Super_Sayayin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Dragon_Ball_-_Goku_Super_Sayayin.usdz"; sourceTree = "<group>"; };
+		C66D9CB62882FEC3006CC08E /* SSJ-Goku.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "SSJ-Goku.usdz"; sourceTree = "<group>"; };
+		C66D9CBC288300FB006CC08E /* Sanji_One_Piece.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Sanji_One_Piece.usdz; sourceTree = "<group>"; };
+		C66D9CBE28830642006CC08E /* Nezuko_Kamado-Demon_Slayer.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Nezuko_Kamado-Demon_Slayer.usdz"; sourceTree = "<group>"; };
+		C66D9CC428866786006CC08E /* Eren(Titan)_3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Eren(Titan)_3.usdz"; sourceTree = "<group>"; };
+		C66D9CC828866BEB006CC08E /* Eren(Titan)_4.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Eren(Titan)_4.usdz"; sourceTree = "<group>"; };
+		C66D9CCA28868BB9006CC08E /* puyo.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = puyo.usdz; sourceTree = "<group>"; };
 		D19848E6E9DCDD5ED7ACE72A /* Pods_DIGA_DIGAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA_DIGAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D9E66A57DDE9024533B580 /* Pods-DIGA-DIGAUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA-DIGAUITests.debug.xcconfig"; path = "Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E172057E28706EB100A9D300 /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
@@ -342,13 +360,22 @@
 			children = (
 				E18EF65D287472F9004AF827 /* coil.usdz */,
 				E18EF66728759C91004AF827 /* coil3.usdz */,
+				C66D9CCA28868BB9006CC08E /* puyo.usdz */,
 				E18EF65B287472ED004AF827 /* AMONGS.usdz */,
 				E172057E28706EB100A9D300 /* 7.mp3 */,
 				0A5AA376288103CD008F0717 /* chopper_boxing_test.usdz */,
 				0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */,
+				C66D9CB42882FE3F006CC08E /* Dragon_Ball_-_Goku_Super_Sayayin.usdz */,
+				C66D9CB02882FD5C006CC08E /* Goku.usdz */,
+				C66D9CBE28830642006CC08E /* Nezuko_Kamado-Demon_Slayer.usdz */,
+				C66D9CB62882FEC3006CC08E /* SSJ-Goku.usdz */,
+				C66D9CC828866BEB006CC08E /* Eren(Titan)_4.usdz */,
+				C66D9CB22882FDB1006CC08E /* Goku_Rigged__Animated.usdz */,
+				C66D9CBC288300FB006CC08E /* Sanji_One_Piece.usdz */,
 				E172057F28706EB100A9D300 /* 6.mp3 */,
 				E172058028706EB100A9D300 /* 4.mp3 */,
 				E172058128706EB100A9D300 /* 5.mp3 */,
+				C66D9CC428866786006CC08E /* Eren(Titan)_3.usdz */,
 				E172058228706EB100A9D300 /* 1.mp3 */,
 				E172058328706EB100A9D300 /* 0.mp3 */,
 				0A5AA37128810398008F0717 /* SHIMABU.usdz */,
@@ -478,8 +505,13 @@
 			files = (
 				E18EF65E287472F9004AF827 /* coil.usdz in Resources */,
 				E172059228706EB100A9D300 /* 3.mp3 in Resources */,
+				C66D9CB52882FE3F006CC08E /* Dragon_Ball_-_Goku_Super_Sayayin.usdz in Resources */,
+				C66D9CBD288300FB006CC08E /* Sanji_One_Piece.usdz in Resources */,
+				C66D9CC928866BEB006CC08E /* Eren(Titan)_4.usdz in Resources */,
+				C66D9CBF28830642006CC08E /* Nezuko_Kamado-Demon_Slayer.usdz in Resources */,
 				E172059428706EB100A9D300 /* 200.mp3 in Resources */,
 				E18EF66828759C91004AF827 /* coil3.usdz in Resources */,
+				C66D9CC528866786006CC08E /* Eren(Titan)_3.usdz in Resources */,
 				E172058E28706EB100A9D300 /* 5.mp3 in Resources */,
 				0A38CD1828862A8A000B2373 /* Color.xcassets in Resources */,
 				E172059628706EB100A9D300 /* 9.mp3 in Resources */,
@@ -490,13 +522,17 @@
 				0AB33875288127500045A27C /* slime_third.usdz in Resources */,
 				E18EF65C287472ED004AF827 /* AMONGS.usdz in Resources */,
 				3A6004AA28726260009DA69E /* (null) in Resources */,
+				C66D9CB32882FDB1006CC08E /* Goku_Rigged__Animated.usdz in Resources */,
+				C66D9CCB28868BB9006CC08E /* puyo.usdz in Resources */,
 				3A60F6F2287C16C20002395E /* amplifyconfiguration.json in Resources */,
+				C66D9CB72882FEC3006CC08E /* SSJ-Goku.usdz in Resources */,
 				E172059028706EB100A9D300 /* 0.mp3 in Resources */,
 				0A5AA37528810398008F0717 /* Totoro.usdz in Resources */,
 				0A5AA37328810398008F0717 /* sonic_the_hedgehog.usdz in Resources */,
 				E172059328706EB100A9D300 /* undefined.mp3 in Resources */,
 				3A55CFE52874070800CAEA22 /* amplifyconfiguration.json in Resources */,
 				E172058B28706EB100A9D300 /* 7.mp3 in Resources */,
+				C66D9CB12882FD5C006CC08E /* Goku.usdz in Resources */,
 				E172058F28706EB100A9D300 /* 1.mp3 in Resources */,
 				E172059528706EB100A9D300 /* 8.mp3 in Resources */,
 				0A5AA37428810398008F0717 /* SHIMABU.usdz in Resources */,
@@ -536,16 +572,20 @@
 			);
 			inputFileListPaths = (
 			);
+
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+
 			outputFileListPaths = (
 			);
+
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-DIGA-DIGAUITests-checkManifestLockResult.txt",
 			);
+
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
