@@ -191,33 +191,33 @@ struct UserDataUtils {
         }
     }
     
-//    func getAllUser() {
-//        let semaphore = DispatchSemaphore(value: 0)
-//
-//        // Amplify SDK経由でqueryオペレーションを実行しCharacterの配列を取得
-//        Amplify.API.query(request: .list(User.self, where: nil)) { event in
-//            switch event {
-//            case .success(let result):
-//                // GraphQLの場合、Query失敗時のerrorもレスポンスに含まれる
-//                switch result {
-//                case .success(let friend):
-//
-//                    allUsersArray = friend
-//                    semaphore.signal()
-//
-//                case .failure(let graphQLError):
-//                    // サーバーから返されるエラーはこっち
-//                    print("Failed to getAllData graphql \(graphQLError)")
-//                    semaphore.signal()
-//                }
-//            case .failure(let apiError):
-//                // 通信エラー等の場合はこっち
-//                print("Failed to getAllData a message", apiError)
-//                semaphore.signal()
-//            }
-//        }
-//        semaphore.wait()
-//    }
+    func getAllUser() -> [User] {
+        let semaphore = DispatchSemaphore(value: 0)
+        var allUsersArray:[User] = []
+        // Amplify SDK経由でqueryオペレーションを実行しCharacterの配列を取得
+        Amplify.API.query(request: .list(User.self, where: nil)) { event in
+            switch event {
+            case .success(let result):
+                // GraphQLの場合、Query失敗時のerrorもレスポンスに含まれる
+                switch result {
+                case .success(let user):
+                    allUsersArray = user
+                    semaphore.signal()
+
+                case .failure(let graphQLError):
+                    // サーバーから返されるエラーはこっち
+                    print("Failed to getAllData graphql \(graphQLError)")
+                    semaphore.signal()
+                }
+            case .failure(let apiError):
+                // 通信エラー等の場合はこっち
+                print("Failed to getAllData a message", apiError)
+                semaphore.signal()
+            }
+        }
+        semaphore.wait()
+        return allUsersArray
+    }
     
     
     
