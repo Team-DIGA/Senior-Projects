@@ -309,6 +309,7 @@ extension MapViewController{
             break
         case .authorizedAlways, .authorizedWhenInUse:
             manager.startUpdatingLocation()
+            manager.requestWhenInUseAuthorization()
             break
         default:
             break
@@ -343,11 +344,10 @@ extension MapViewController{
             debugPrint("placeMark=============: \(placemark)")
             debugPrint("placeMark.name=============: \(placemark.name)")
             if let placemarkName = placemark.name {
-                self.targetPlace = placemark.name!
+                self.targetPlace = placemarkName
             }else{
                 self.targetPlace = "不明な場所"
             }
-            
         }
 //        print("async check 1=================================")
 //        let semaphore = DispatchSemaphore(value: 0)
@@ -370,7 +370,7 @@ extension MapViewController{
             return
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
             self.performSegue(withIdentifier: "toARView", sender: self)
         }
         

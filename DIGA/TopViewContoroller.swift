@@ -28,7 +28,7 @@ class TopViewController: UIViewController {
             }
         })
     }
-    
+
     @IBOutlet weak var signOutButton: UIButton!
     var randomNum = 0
     var nameNum = ""
