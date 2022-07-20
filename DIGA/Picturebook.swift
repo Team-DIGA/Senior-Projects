@@ -3,6 +3,7 @@ import MapKit
 import CoreLocation
 import Amplify
 import ChameleonFramework
+import SSCustomTabbar
 
 var characterArray: [Character] = []
 
@@ -138,7 +139,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
         placeLabel.textColor = UIColor.white
         
         countLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
-        countLabel.text = "  出会った回数： \(characterArray[indexPath.row].met_count)"
+        countLabel.text = "  つかまえた回数： \(characterArray[indexPath.row].met_count)"
         countLabel.textColor = UIColor.white
 
         imageView.image = cellImage
@@ -154,6 +155,21 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
         self.view.endEditing(true)
     }
     
+    override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
+        }
+     
+    func didSelectTab(tabBarController: SSCustomTabBarViewController) {
+        print("=======first!==========")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("ここで実行されてます")
+        self.fetchMessage()
+        
+        // tableViewを更新
+        self.tableView.reloadData()
+    }
 }
 
 enum BorderPosition {

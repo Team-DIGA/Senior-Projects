@@ -126,7 +126,9 @@ class ARViewController: UIViewController {
                 print("metCountError")
                 return
             }
+            print("＝＝＝＝＝今からキャラデータ登録＝＝＝＝＝＝")
             characterDataUtils.updateCharacter(name: characterTitle, place: characterPlace, met_count_key:metCount)
+            print("＝＝＝＝＝キャラデータ登録完了＝＝＝＝＝＝")
             alertFunc1(title: "\(characterTitle!)は\n仲間になった！", message: "",addFlag:true)
         } else {
             alertFunc1(title: "\( characterTitle!)は\n去っていった！", message: "",addFlag:false)
@@ -217,7 +219,7 @@ class ARViewController: UIViewController {
         }else if characterTitle! == "スライム" {
             let anchor = AnchorEntity()
             anchor.position = simd_make_float3(0, -0.1, -3)
-            let usdzModel = try! Entity.load(named: "slime_third")
+            let usdzModel = try! Entity.load(named: "slime_second")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
             for animation in usdzModel.availableAnimations {
@@ -401,7 +403,7 @@ class ARViewController: UIViewController {
             self.alertFunc3(getExp:getExp)
         })
         
-        user.level = myLv
+        user.level += myLv - user.level
         alert.addAction(backAction)
         present(alert, animated: true)
         
@@ -506,7 +508,7 @@ class ARViewController: UIViewController {
         alert.addAction(backAction)
         present(alert, animated: true)
         
-        userDataUtils.updateUserStatus(name: user.name, myLv: user.level, getExp: getExp, getMoney: getMoney)
+        userDataUtils.updateUserStatus(name: user.name, getExp: getExp, getMoney: getMoney, getItem: nil)
 
     }
     
@@ -732,6 +734,9 @@ class ARViewController: UIViewController {
         // アニメーション完了時の処理
         }
         )
-        self.addOrEscape(result: result)
+        delay(0.5){
+            self.addOrEscape(result: result)
+        }
+        
     }
 }
