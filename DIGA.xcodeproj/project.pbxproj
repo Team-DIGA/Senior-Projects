@@ -73,6 +73,7 @@
 		C6F0A52C2887A333002F7CDE /* sonic_the_hedgehog2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A52B2887A333002F7CDE /* sonic_the_hedgehog2.usdz */; };
 		C6F0A52E2887A6A0002F7CDE /* rarecoil.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A52D2887A6A0002F7CDE /* rarecoil.usdz */; };
 		C6F0A5302887A88E002F7CDE /* kurillin1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A52F2887A88E002F7CDE /* kurillin1.usdz */; };
+		C6F0A5342887BBAD002F7CDE /* dancing_mickey.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A5332887BBAD002F7CDE /* dancing_mickey.usdz */; };
 		E172058B28706EB100A9D300 /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057E28706EB100A9D300 /* 7.mp3 */; };
 		E172058C28706EB100A9D300 /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057F28706EB100A9D300 /* 6.mp3 */; };
 		E172058D28706EB100A9D300 /* 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058028706EB100A9D300 /* 4.mp3 */; };
@@ -184,6 +185,7 @@
 		C6F0A52B2887A333002F7CDE /* sonic_the_hedgehog2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sonic_the_hedgehog2.usdz; sourceTree = "<group>"; };
 		C6F0A52D2887A6A0002F7CDE /* rarecoil.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = rarecoil.usdz; sourceTree = "<group>"; };
 		C6F0A52F2887A88E002F7CDE /* kurillin1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = kurillin1.usdz; sourceTree = "<group>"; };
+		C6F0A5332887BBAD002F7CDE /* dancing_mickey.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = dancing_mickey.usdz; sourceTree = "<group>"; };
 		D19848E6E9DCDD5ED7ACE72A /* Pods_DIGA_DIGAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA_DIGAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D9E66A57DDE9024533B580 /* Pods-DIGA-DIGAUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA-DIGAUITests.debug.xcconfig"; path = "Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E172057E28706EB100A9D300 /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 				0A5AA376288103CD008F0717 /* chopper_boxing_test.usdz */,
 				0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */,
 				C6F0A52B2887A333002F7CDE /* sonic_the_hedgehog2.usdz */,
+				C6F0A5332887BBAD002F7CDE /* dancing_mickey.usdz */,
 				C66D9CB42882FE3F006CC08E /* Dragon_Ball_-_Goku_Super_Sayayin.usdz */,
 				C66D9CB02882FD5C006CC08E /* Goku.usdz */,
 				C66D9CBE28830642006CC08E /* Nezuko_Kamado-Demon_Slayer.usdz */,
@@ -546,6 +549,7 @@
 				0AB5661A2881BF410082B09D /* img-gacha-animation.gif in Resources */,
 				0A38CD1C288651FA000B2373 /* PositiveSimpleButton.xib in Resources */,
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
+				C6F0A5342887BBAD002F7CDE /* dancing_mickey.usdz in Resources */,
 				C6F0A52C2887A333002F7CDE /* sonic_the_hedgehog2.usdz in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
 				3A60F6F3287C16C20002395E /* awsconfiguration.json in Resources */,
