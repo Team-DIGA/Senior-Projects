@@ -10,12 +10,14 @@ var characterArray: [Character] = []
 class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-//    @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var completeLabelView: UILabel!
     var metcount = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationItem.title = "Top"
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -31,12 +33,11 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
                 switch result {
                 case .success(let friend):
                     characterArray = friend
-                    print("aaaaaaaa",friend)
                     
                     DispatchQueue.main.async {
                         // tableViewを更新
                         self.tableView.reloadData()
-//                        達成率を更新
+                        //達成率を更新
                         let maxcount = characterArray.count
                         let meetArray = characterArray.filter{
                             $0.have_met == true
@@ -45,7 +46,9 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
                         var completeRate = 0.0
                         completeRate = self.metcount / Double(maxcount) * 100
                         debugPrint(maxcount, self.metcount, completeRate)
-                        self.completeLabelView.text = "達成率：　\(floor(completeRate))％"
+                        let complateLevel = "達成率：　\(floor(completeRate))％"
+                        let complateRate = "   達成数：　\(meetArray.count) / \(characterArray.count)"
+                        self.completeLabelView.text = complateLevel + complateRate
                     }
                 case .failure(let graphQLError):
                     // サーバーから返されるエラーはこっち
@@ -73,7 +76,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
         
         // 画像配列の番号で指定された要素の名前の画像をUIImageとする
         let cellImage: UIImage?
-        var rareText: String = "  レアリティ　： "
+        var rareText: String = "　レアリティ　　： "
         
         for i in 1...10 {
             if i <= characterArray[indexPath.row].rarity {
@@ -84,63 +87,37 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
         }
         
         if characterArray[indexPath.row].have_met == false {
-            cellImage = UIImage(named: "noImage")
+            cellImage = UIImage(named: "haveNotMet")
+            nameLabel.text = " ???"
+            placeLabel.text = "　出会った場所　： ???"
+            cell.backgroundColor = UIColor(named: "PictureBockHaveNotMet")
+            nameLabel.textColor = UIColor.white
+            rareLabel.textColor = UIColor.white
+            placeLabel.textColor = UIColor.white
+            countLabel.textColor = UIColor.white
         } else {
             cellImage = UIImage(named: characterArray[indexPath.row].name)
+            nameLabel.text = " " + characterArray[indexPath.row].name
+            placeLabel.text = "　出会った場所　： \(characterArray[indexPath.row].first_met_place)"
+            cell.backgroundColor = UIColor(named: "PictureBockHaveMet")
+            nameLabel.textColor = UIColor.black
+            rareLabel.textColor = UIColor.black
+            placeLabel.textColor = UIColor.black
+            countLabel.textColor = UIColor.black
         }
         
-        let color = UIColor(averageColorFrom: cellImage!)
-        let array: [String] = color.description.components(separatedBy: " ")
-        let redNum = NumberFormatter().number(from: array[1])
-        let greenNum = NumberFormatter().number(from: array[2])
-        let blueNum = NumberFormatter().number(from: array[3])
-        let redAlphaNum = NumberFormatter().number(from: array[4])
+        nameLabel.addBorder(width: 3, color: UIColor(named: "NavigationBar")!, position: .bottom)
         
-        var redFloat: CGFloat = 0.0
-        var greenFloat: CGFloat = 0.0
-        var blueFloat: CGFloat = 0.0
-        var alphaFloat: CGFloat = 0.0
-        
-        func guardColor() {
-            guard let red = redNum else { return }
-            guard let blue = blueNum else { return }
-            guard let green = greenNum else { return }
-            guard let alpha = redAlphaNum else { return }
-            
-            redFloat = CGFloat(truncating: red)
-            blueFloat = CGFloat(truncating: blue)
-            greenFloat = CGFloat(truncating: green)
-            alphaFloat = CGFloat(truncating: alpha)
-        }
-        
-        guardColor()
-        
-//        let newColor = UIColor(red: redFloat + 0.564706, green: greenFloat + 0.30, blue: blueFloat + 0.65, alpha: alphaFloat)
-        let newColor = UIColor(red: redFloat, green: greenFloat, blue: blueFloat, alpha: alphaFloat)
-        
-        cell.backgroundColor = newColor
-        
-        nameLabel.text = " " + characterArray[indexPath.row].name
-//        nameLabel.textColor = newColor
-//        nameLabel.textColor = UIColor(complementaryFlatColorOf: newColor)
-        nameLabel.textColor = UIColor.white
         nameLabel.font = UIFont(name:"Arial-BoldMT", size: 20.0)
         nameLabel.font = nameLabel.font.withSize(19)
-//        nameLabel.backgroundColor = UIColor.white
-        nameLabel.addBorder(width: 3, color: .gray, position: .bottom)
-        
         
         rareLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
         rareLabel.text = rareText
-        rareLabel.textColor = UIColor.white
         
         placeLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
-        placeLabel.text = "  出会った場所： \(characterArray[indexPath.row].first_met_place)"
-        placeLabel.textColor = UIColor.white
         
         countLabel.font = UIFont(name:"Arial-BoldMT", size: 14.0)
-        countLabel.text = "  つかまえた回数： \(characterArray[indexPath.row].met_count)"
-        countLabel.textColor = UIColor.white
+        countLabel.text = "　つかまえた回数： \(characterArray[indexPath.row].met_count)"
 
         imageView.image = cellImage
         

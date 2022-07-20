@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -105,7 +106,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="図鑑" image="book" id="Ylg-ba-9Jn"/>
-                    <navigationItem key="navigationItem" id="e0u-7n-Fhj"/>
+                    <navigationItem key="navigationItem" title="図鑑" id="e0u-7n-Fhj"/>
                     <connections>
                         <outlet property="completeLabelView" destination="dCb-sX-aSj" id="p6b-hU-Kgl"/>
                         <outlet property="tableView" destination="4Sb-Na-WGP" id="l1y-mQ-3f2"/>
@@ -453,9 +454,9 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPp-1T-vaF" customClass="PositiveSimpleButton" customModule="DIGA" customModuleProvider="target">
-                                <rect key="frame" x="100" y="632" width="214" height="46"/>
+                                <rect key="frame" x="50" y="632" width="314" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="53x-zN-q86"/>
+                                    <constraint firstAttribute="height" constant="60" id="53x-zN-q86"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -486,9 +487,12 @@
                                     <constraint firstAttribute="height" constant="262" id="pUv-Hz-huS"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubg-dY-O9H">
-                                <rect key="frame" x="100" y="728" width="214" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubg-dY-O9H" customClass="PositiveSimpleButton" customModule="DIGA" customModuleProvider="target">
+                                <rect key="frame" x="50" y="742" width="314" height="60"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="cV8-RQ-eLT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -504,15 +508,15 @@
                         <viewLayoutGuide key="safeArea" id="X3P-G4-nkZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MPp-1T-vaF" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="100" id="0Z0-d8-cK1"/>
+                            <constraint firstItem="MPp-1T-vaF" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="50" id="0Z0-d8-cK1"/>
                             <constraint firstItem="93c-df-wHb" firstAttribute="top" secondItem="SF9-xr-BIC" secondAttribute="top" constant="40" id="85m-P3-RHK"/>
-                            <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="ubg-dY-O9H" secondAttribute="trailing" constant="100" id="BnM-HO-bYM"/>
-                            <constraint firstItem="ubg-dY-O9H" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="100" id="MiG-ht-b3x"/>
+                            <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="ubg-dY-O9H" secondAttribute="trailing" constant="50" id="BnM-HO-bYM"/>
+                            <constraint firstItem="ubg-dY-O9H" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="50" id="MiG-ht-b3x"/>
                             <constraint firstItem="93c-df-wHb" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="14" id="O3f-kl-FPH"/>
                             <constraint firstItem="uMn-q3-pO1" firstAttribute="centerX" secondItem="SF9-xr-BIC" secondAttribute="centerX" id="R7D-53-MLb"/>
                             <constraint firstItem="DCZ-wA-qwU" firstAttribute="trailing" secondItem="X3P-G4-nkZ" secondAttribute="trailing" id="URU-ku-F0x"/>
                             <constraint firstItem="DCZ-wA-qwU" firstAttribute="top" secondItem="SF9-xr-BIC" secondAttribute="top" constant="-16" id="WIt-YB-qpu"/>
-                            <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="MPp-1T-vaF" secondAttribute="trailing" constant="100" id="XpH-Dz-ky8"/>
+                            <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="MPp-1T-vaF" secondAttribute="trailing" constant="50" id="XpH-Dz-ky8"/>
                             <constraint firstItem="X3P-G4-nkZ" firstAttribute="trailing" secondItem="93c-df-wHb" secondAttribute="trailing" constant="172" id="h16-JM-4rO"/>
                             <constraint firstItem="DCZ-wA-qwU" firstAttribute="leading" secondItem="X3P-G4-nkZ" secondAttribute="leading" constant="178" id="j47-A2-0g1"/>
                             <constraint firstItem="ubg-dY-O9H" firstAttribute="top" secondItem="MPp-1T-vaF" secondAttribute="bottom" constant="50" id="jCD-J1-eOn"/>
@@ -579,7 +583,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="450" id="ltG-9h-w3s"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOR-ii-cXO" customClass="PositiveSimpleButton" customModule="DIGA" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOR-ii-cXO" customClass="GatyaButton" customModule="DIGA" customModuleProvider="target">
                                 <rect key="frame" x="20" y="719.5" width="374" height="58.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58.5" id="HeX-Jd-8Sc"/>
@@ -647,7 +651,7 @@
                         <color key="tintColor" red="1" green="0.61756327530816324" blue="0.22335090285918366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="layerFillColor">
-                                <color key="value" red="0.38823529411764707" green="0.90196078431372551" blue="0.88627450980392153" alpha="0.69872723509933776" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" name="NavigationVar"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedTabTintColor">
                                 <color key="value" systemColor="systemGroupedBackgroundColor"/>
@@ -674,7 +678,7 @@
             </objects>
             <point key="canvasLocation" x="-2564" y="-532"/>
         </scene>
-        <!--マップ-->
+        <!--Map-->
         <scene sceneID="0UI-Sm-IVX">
             <objects>
                 <viewController storyboardIdentifier="Map" id="vDF-6D-jcR" customClass="MapViewController" customModule="DIGA" customModuleProvider="target" sceneMemberID="viewController">
@@ -687,7 +691,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CQ-2v-Kg7" customClass="PositiveSimpleButton" customModule="DIGA" customModuleProvider="target">
-                                <rect key="frame" x="270" y="741" width="134" height="37"/>
+                                <rect key="frame" x="270" y="736" width="134" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -786,7 +790,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="マップ" image="map" id="Tzi-jS-lgm"/>
-                    <navigationItem key="navigationItem" id="9aC-nW-qeY"/>
+                    <navigationItem key="navigationItem" title="Map" id="9aC-nW-qeY"/>
                     <connections>
                         <outlet property="LvLavel" destination="6i0-Ad-JmU" id="yxZ-mh-PYt"/>
                         <outlet property="SerchButton" destination="7CQ-2v-Kg7" id="2r5-1p-8FU"/>
@@ -816,7 +820,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </arView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVp-FI-quZ" customClass="PositiveSimpleButton" customModule="DIGA" customModuleProvider="target">
-                                <rect key="frame" x="149.5" y="825" width="115" height="37"/>
+                                <rect key="frame" x="45.5" y="784" width="323" height="78"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="GETだぜ！！"/>
@@ -825,7 +829,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKc-ye-FNg">
-                                <rect key="frame" x="70" y="775" width="274" height="30"/>
+                                <rect key="frame" x="70" y="734" width="274" height="30"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="j5L-3W-dQj"/>
@@ -840,7 +844,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNR-KE-YIi">
-                                <rect key="frame" x="70" y="735" width="274" height="30"/>
+                                <rect key="frame" x="70" y="694" width="274" height="30"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ffq-dc-aJj"/>
@@ -943,6 +947,21 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TVJ-mh-wrS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" name="NavigationVar"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" name="NavigationVar"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" name="NavigationVar"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" name="NavigationVar"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -953,7 +972,7 @@
             </objects>
             <point key="canvasLocation" x="-3646" y="-1214"/>
         </scene>
-        <!--Picturebook-->
+        <!--図鑑-->
         <scene sceneID="Mwf-ho-E9Y">
             <objects>
                 <viewController id="TSG-vI-zOF" customClass="Picturebook" customModule="DIGA" customModuleProvider="target" sceneMemberID="viewController">
@@ -1025,8 +1044,8 @@
                                     <outlet property="delegate" destination="TSG-vI-zOF" id="Chn-Zz-DPn"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="達成率：　％" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpK-ev-deK">
-                                <rect key="frame" x="5" y="49" width="404" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="達成率：　％" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpK-ev-deK">
+                                <rect key="frame" x="6" y="49" width="404" height="31.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31.5" id="jC6-BU-BWI"/>
                                 </constraints>
@@ -1049,7 +1068,7 @@
                             <constraint firstItem="UTg-Wk-saR" firstAttribute="trailing" secondItem="fuS-Eb-10n" secondAttribute="trailing" id="eFi-t0-91n"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VPs-Ay-qrU"/>
+                    <navigationItem key="navigationItem" title="図鑑" id="VPs-Ay-qrU"/>
                     <connections>
                         <outlet property="completeLabelView" destination="RpK-ev-deK" id="WJp-Vu-isZ"/>
                         <outlet property="tableView" destination="UTg-Wk-saR" id="5AI-bN-Tyd"/>
@@ -1062,16 +1081,16 @@
     </scenes>
     <designables>
         <designable name="7CQ-2v-Kg7">
-            <size key="intrinsicContentSize" width="59" height="37"/>
+            <size key="intrinsicContentSize" width="111" height="68"/>
         </designable>
         <designable name="MPp-1T-vaF">
-            <size key="intrinsicContentSize" width="90" height="37"/>
-        </designable>
-        <designable name="SOR-ii-cXO">
-            <size key="intrinsicContentSize" width="182" height="37"/>
+            <size key="intrinsicContentSize" width="192" height="68"/>
         </designable>
         <designable name="VVp-FI-quZ">
-            <size key="intrinsicContentSize" width="115" height="37"/>
+            <size key="intrinsicContentSize" width="268" height="68"/>
+        </designable>
+        <designable name="ubg-dY-O9H">
+            <size key="intrinsicContentSize" width="186" height="68"/>
         </designable>
     </designables>
     <resources>
@@ -1088,6 +1107,9 @@
         <image name="upper_body-3" width="32" height="32"/>
         <image name="のび太" width="249" height="249"/>
         <image name="仙豆" width="317" height="317"/>
+        <namedColor name="NavigationVar">
+            <color red="0.44247427761187863" green="0.86921953914141414" blue="0.84192518804788485" alpha="0.84382760761589404" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

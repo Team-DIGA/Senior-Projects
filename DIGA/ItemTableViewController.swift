@@ -9,19 +9,28 @@ let itemRepo = InMemoryItemRepository()
 
 class ItemTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
-    
-    @IBOutlet weak var itemCount: UILabel!
-    
+//    @IBOutlet weak var itemCount: UILabel!
     
     override func viewDidAppear(_ animated: Bool) {
         itemArray = itemDataUtils.getAllItem() as! [Item]
         self.tableView.reloadData()
     }
+    
+    
+//    @IBOutlet weak var itemCount: UILabel!
+//
+//
+//    override func viewDidAppear(_ animated: Bool) {
+//        itemArray = itemDataUtils.getAllItem() as! [Item]
+//        self.tableView.reloadData()
+//    }
         
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -35,8 +44,6 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
 //        itemArray = itemDataUtils.getCurrentItem(itemArray: itemNameArray) as! [Item]
         
     }
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("itemArray is ", itemArray)
@@ -132,34 +139,29 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
             let resultAlert = UIAlertController(title:"\(itemName)を使った！", message: "\(itemArray[indexPath.row].effect)", preferredStyle: .alert)
             let height = NSLayoutConstraint(item: resultAlert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)
             resultAlert.view.addConstraint(height)
-            
+            let imageView = UIImageView(frame: CGRect(x: 10, y: 70, width: 250, height: 250))
+            imageView.image = UIImage(named: itemName)
+            resultAlert.view.addSubview(imageView)
             let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {_ in
             })
-            
             resultAlert.addAction(backAction)
-            
-            present(resultAlert, animated: true)
+            present(resultAlert, animated: true, completion: nil)
             
 //        userDataUtils.deleteUserItem(name: username , itemName: itemName)
-        itemDataUtils.updateItem(name: itemName, itemCount: -1)
+            itemDataUtils.updateItem(name: itemName, itemCount: -1)
         
-        } else {
-            
         }
         
-        let UINavigationController = tabBarController?.viewControllers?[2];
-        tabBarController?.selectedViewController = UINavigationController;
+        let UINavigationController = tabBarController?.viewControllers?[2]
+        tabBarController?.selectedViewController = UINavigationController
 
         }
 //        let secondStoryboard = UIStoryboard(name: "MapViewController", bundle: nil)
 //        let secondVC = secondStoryboard.instantiateInitialViewController() as! MapViewController
 //        let nav = self.navigationController!
 //        nav.pushViewController(secondVC, animated: true)
-        
-            
     }
     
     @IBOutlet weak var tableView: UITableView!
 
-    
 }

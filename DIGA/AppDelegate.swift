@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Setup Amplify
+        UINavigationBar.appearance().barTintColor = UIColor(named: "NavigationBar")
         do {
             try Amplify.add(plugin: AWSAPIPlugin(modelRegistration: AmplifyModels()))
             try Amplify.add(plugin: AWSCognitoAuthPlugin())
