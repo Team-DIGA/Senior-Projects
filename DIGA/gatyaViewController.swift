@@ -17,6 +17,7 @@ class GatyaViewController: UIViewController{
     @IBOutlet weak var dropItemImage: UIImageView!
     @IBOutlet weak var gatyaButton: UIButton!
     
+    @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var gtyaLabel: UILabel!
     var counter : Int = 0
     var timer = Timer()
@@ -60,6 +61,7 @@ class GatyaViewController: UIViewController{
         self.gatyaAnimation.isHidden = true
         self.dropItemImage.isHidden = true
         self.gtyaLabel.isHidden = true
+        self.moneyLabel.text = "所持金 " + String(user.money) + "€riko"
     }
     
     @IBAction func didTapGatyaButton(_ sender: UIButton) {
@@ -73,10 +75,11 @@ class GatyaViewController: UIViewController{
             //所持金確認してOKなら所持金からガチャ代金をひく
             //所持金ないなら金持って出直してこいやと怒る
             //この部分のロジックを後で考える
-        if user.money >= 50 {
+        if user.money >= 50000 {
             gachaAnimation()
             getItem = gachaResult() as! String
-            userDataUtils.updateUserStatus(name: user.name, getExp: 0, getMoney: -50, getItem: getItem )
+            userDataUtils.updateUserStatus(name: user.name, getExp: 0, getMoney: -50000, getItem: getItem )
+            itemDataUtils.updateItem(name: getItem, itemCount: 1)
         } else {
             let Alert = UIAlertController(title: String(
                 "所持€rikoが足りないよ。\n€rikoを集めてきて。"
@@ -93,11 +96,16 @@ class GatyaViewController: UIViewController{
         //結果の表示
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
             self.dropItemImage.image = UIImage(named: randomItem)!
-            
+            guard let username = AWSMobileClient.default().username else {
+            print("Error: Uncaught username")
+            return
+            }
+            self.user = userDataUtils.getUser(name: username) as? User
             self.dropItemImage.isHidden = false
             self.gatyaAnimation.isHidden = true
             self.gatyaButton.isHidden = false
             self.gtyaLabel.isHidden = false
+            self.moneyLabel.text = "所持金 " + String(self.user.money) + "€riko"
             self.gatyaButton.setTitle("もう一度ガチャる", for: .normal)
             self.gtyaLabel.text = "\(randomItem)を手に入れた"
             
@@ -117,6 +125,7 @@ class GatyaViewController: UIViewController{
         self.dropItemImage.isHidden = true
         self.gtyaLabel.isHidden = true
         firstGatyaImage.isHidden = false
-        self.gatyaButton.setTitle("ガチャる", for: .normal)
+        self.moneyLabel.text = "おかね" + String(user.money) + " €riko"
+        self.gatyaButton.setTitle("50000€rikoでガチャる", for: .normal)
     }
 }

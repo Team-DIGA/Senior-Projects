@@ -62,6 +62,8 @@ mutation CreateItem(
     name
     rarity
     effect
+    item_count
+    update_count
     createdAt
     updatedAt
     _version
@@ -78,6 +80,8 @@ mutation UpdateItem(
     name
     rarity
     effect
+    item_count
+    update_count
     createdAt
     updatedAt
     _version
@@ -94,6 +98,8 @@ mutation DeleteItem(
     name
     rarity
     effect
+    item_count
+    update_count
     createdAt
     updatedAt
     _version
