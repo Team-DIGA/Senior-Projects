@@ -72,10 +72,10 @@ class GatyaViewController: UIViewController{
             //所持金確認してOKなら所持金からガチャ代金をひく
             //所持金ないなら金持って出直してこいやと怒る
             //この部分のロジックを後で考える
-        if user.money >= 50 {
+        if user.money >= 50000 {
             gachaAnimation()
             getItem = gachaResult() as! String
-            userDataUtils.updateUserStatus(name: user.name, getExp: 0, getMoney: -50, getItem: getItem )
+            userDataUtils.updateUserStatus(name: user.name, getExp: 0, getMoney: -50000, getItem: getItem )
             itemDataUtils.updateItem(name: getItem, itemCount: 1)
         } else {
             let Alert = UIAlertController(title: String(
@@ -122,7 +122,7 @@ class GatyaViewController: UIViewController{
         self.dropItemImage.isHidden = true
         self.gtyaLabel.isHidden = true
         firstGatyaImage.isHidden = false
-        self.moneyLabel.text = "おかね " + String(user.money) + " €riko"
-        self.gatyaButton.setTitle("ガチャる", for: .normal)
+        self.moneyLabel.text = "おかね" + String(user.money) + " €riko"
+        self.gatyaButton.setTitle("50000€rikoでガチャる", for: .normal)
     }
 }
