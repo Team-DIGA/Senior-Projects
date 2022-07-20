@@ -14,6 +14,12 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var itemCount: UILabel!
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        itemArray = itemDataUtils.getAllItem() as! [Item]
+        self.tableView.reloadData()
+    }
+        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
