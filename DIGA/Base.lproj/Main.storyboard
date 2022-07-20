@@ -586,7 +586,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="ガチャる"/>
+                                <state key="normal" title="50000€rikoでガチャる"/>
                                 <connections>
                                     <action selector="didTapGatyaButton:" destination="jVJ-aa-sxB" eventType="touchUpInside" id="p6u-rN-T5r"/>
                                 </connections>
@@ -1068,7 +1068,7 @@
             <size key="intrinsicContentSize" width="90" height="37"/>
         </designable>
         <designable name="SOR-ii-cXO">
-            <size key="intrinsicContentSize" width="88" height="37"/>
+            <size key="intrinsicContentSize" width="182" height="37"/>
         </designable>
         <designable name="VVp-FI-quZ">
             <size key="intrinsicContentSize" width="115" height="37"/>
