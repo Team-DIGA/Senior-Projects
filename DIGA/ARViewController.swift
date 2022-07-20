@@ -126,7 +126,9 @@ class ARViewController: UIViewController {
                 print("metCountError")
                 return
             }
+            print("＝＝＝＝＝今からキャラデータ登録＝＝＝＝＝＝")
             characterDataUtils.updateCharacter(name: characterTitle, place: characterPlace, met_count_key:metCount)
+            print("＝＝＝＝＝キャラデータ登録完了＝＝＝＝＝＝")
             alertFunc1(title: "\(characterTitle!)は\n仲間になった！", message: "",addFlag:true)
         } else {
             alertFunc1(title: "\( characterTitle!)は\n去っていった！", message: "",addFlag:false)
@@ -174,7 +176,7 @@ class ARViewController: UIViewController {
             arView.scene.anchors.append(anchor)
         } else if characterTitle! == "トロロ" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, 0, 0.9)
+            anchor.position = simd_make_float3(0, -0.2, -0.2)
 
             if let usdzModel = try? Entity.load(named: "Totoro") {
                 anchor.addChild(usdzModel)
@@ -182,7 +184,7 @@ class ARViewController: UIViewController {
             arView.scene.anchors.append(anchor)
         }else if characterTitle! == "Shimabu" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, 0, 0.9)
+            anchor.position = simd_make_float3(0, 0, 0)
 
             if let usdzModel = try? Entity.load(named: "SHIMABU") {
                 anchor.addChild(usdzModel)
@@ -190,7 +192,7 @@ class ARViewController: UIViewController {
             arView.scene.anchors.append(anchor)
         } else if characterTitle! == "チョッパー" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -0.1, 0.9)
+            anchor.position = simd_make_float3(0, -1, -2)
 
             let usdzModel = try! Entity.load(named: "chopper_boxing_test")
             anchor.addChild(usdzModel)
@@ -200,13 +202,13 @@ class ARViewController: UIViewController {
             }
         } else if characterTitle! == "ソニック" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, 0, +0.9)
-            let usdzModel = try! Entity.load(named: "sonic_the_hedgehog")
+            anchor.position = simd_make_float3(0, -3, -3)
+            let usdzModel = try! Entity.load(named: "sonic_the_hedgehog2")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
         } else if characterTitle! == "ロビン" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -0.8, -2)
+            anchor.position = simd_make_float3(0, -2, -2)
 
             let usdzModel = try! Entity.load(named: "standing_greeting_robin_test")
             anchor.addChild(usdzModel)
@@ -214,10 +216,84 @@ class ARViewController: UIViewController {
             for animation in usdzModel.availableAnimations {
                 usdzModel.playAnimation(animation.repeat())
             }
+        }else if characterTitle! == "サンジ" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, -2, -2)
+            let usdzModel = try! Entity.load(named: "Sanji_One_Piece")
+            anchor.addChild(usdzModel)
+            arView.scene.anchors.append(anchor)
+            for animation in usdzModel.availableAnimations {
+                            usdzModel.playAnimation(animation.repeat())
+                        }
+        }else if characterTitle! == "クリリン" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, -0.1, -0.1)
+            let usdzModel = try! Entity.load(named: "kurillin1")
+            anchor.addChild(usdzModel)
+            arView.scene.anchors.append(anchor)
+            for animation in usdzModel.availableAnimations {
+                            usdzModel.playAnimation(animation.repeat())
+                        }
+        }else if characterTitle! == "レアコイル" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, -2, -2)
+            let usdzModel = try! Entity.load(named: "rarecoil")
+            anchor.addChild(usdzModel)
+            arView.scene.anchors.append(anchor)
+            for animation in usdzModel.availableAnimations {
+                            usdzModel.playAnimation(animation.repeat())
+                        }
+        }else if characterTitle! == "ミッキー" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, -0.1, -0.1)
+            let usdzModel = try! Entity.load(named: "dancing_mickey")
+            anchor.addChild(usdzModel)
+            arView.scene.anchors.append(anchor)
+            for animation in usdzModel.availableAnimations {
+                            usdzModel.playAnimation(animation.repeat())
+                        }
+        }else if characterTitle! == "ぷよ" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, -3, -4)
+            let usdzModel = try! Entity.load(named: "puyo")
+            anchor.addChild(usdzModel)
+            arView.scene.anchors.append(anchor)
+            for animation in usdzModel.availableAnimations {
+                            usdzModel.playAnimation(animation.repeat())
+                        }
         }else if characterTitle! == "スライム" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -0.1, -3)
-            let usdzModel = try! Entity.load(named: "slime_third")
+            anchor.position = simd_make_float3(0, -0.5, -0.8)
+            let usdzModel = try! Entity.load(named: "slime_5th")
+            anchor.addChild(usdzModel)
+            arView.scene.anchors.append(anchor)
+            for animation in usdzModel.availableAnimations {
+                            usdzModel.playAnimation(animation.repeat())
+                        }
+        }else if characterTitle! == "メタルスライム" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, -150, -200)
+            let usdzModel = try! Entity.load(named: "metal_slime")
+            anchor.addChild(usdzModel)
+            arView.scene.anchors.append(anchor)
+            for animation in usdzModel.availableAnimations {
+                            usdzModel.playAnimation(animation.repeat())
+                        }
+            
+        }else if characterTitle! == "巨人化したエレン" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, -8, -8)
+            let usdzModel = try! Entity.load(named: "Eren(Titan)_3")
+            anchor.addChild(usdzModel)
+            arView.scene.anchors.append(anchor)
+            for animation in usdzModel.availableAnimations {
+                            usdzModel.playAnimation(animation.repeat())
+                        }
+            
+        }else if characterTitle! == "悟空" {
+            let anchor = AnchorEntity()
+            anchor.position = simd_make_float3(0, -2, -2)
+            let usdzModel = try! Entity.load(named: "Goku_Rigged__Animated")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
             for animation in usdzModel.availableAnimations {
@@ -401,7 +477,7 @@ class ARViewController: UIViewController {
             self.alertFunc3(getExp:getExp)
         })
         
-        user.level = myLv
+        user.level += myLv - user.level
         alert.addAction(backAction)
         present(alert, animated: true)
         
@@ -506,7 +582,7 @@ class ARViewController: UIViewController {
         alert.addAction(backAction)
         present(alert, animated: true)
         
-        userDataUtils.updateUserStatus(name: user.name, myLv: user.level, getExp: getExp, getMoney: getMoney)
+        userDataUtils.updateUserStatus(name: user.name, getExp: getExp, getMoney: getMoney, getItem: nil)
 
     }
     
@@ -530,12 +606,13 @@ class ARViewController: UIViewController {
         alert.addAction(backAction)
         present(alert, animated: true)
         
-        guard let username = AWSMobileClient.default().username else {
-            print("Error: Uncaught username")
-            return
-        }
+//        guard let username = AWSMobileClient.default().username else {
+//            print("Error: Uncaught username")
+//            return
+//        }
 
-        userDataUtils.updateUserItem(name: username, itemName: itemTitles[randomItemNum].name)
+//        userDataUtils.updateUserItem(name: username, itemName: itemTitles[randomItemNum].name)
+        itemDataUtils.updateItem(name: itemTitles[randomItemNum].name, itemCount: 1)
         
     }
     
@@ -732,6 +809,9 @@ class ARViewController: UIViewController {
         // アニメーション完了時の処理
         }
         )
-        self.addOrEscape(result: result)
+        delay(0.5){
+            self.addOrEscape(result: result)
+        }
+        
     }
 }

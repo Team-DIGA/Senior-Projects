@@ -17,6 +17,8 @@ type Item @model {
   name: String!
   rarity: Int!
   effect: String!
+  item_count: Int!
+  update_count: Int!
 }
 
 type User @model {

@@ -13,15 +13,20 @@
 		0A0F86C2287FEC50003D8C62 /* FriendsListTableViweController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0F86C1287FEC50003D8C62 /* FriendsListTableViweController.swift */; };
 		0A38CD1828862A8A000B2373 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A38CD1728862A8A000B2373 /* Color.xcassets */; };
 		0A38CD1A28862BB8000B2373 /* DigaDefaultUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A38CD1928862BB8000B2373 /* DigaDefaultUI.swift */; };
+		0A38CD1C288651FA000B2373 /* PositiveSimpleButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A38CD1B288651FA000B2373 /* PositiveSimpleButton.xib */; };
 		0A5AA37328810398008F0717 /* sonic_the_hedgehog.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA37028810397008F0717 /* sonic_the_hedgehog.usdz */; };
 		0A5AA37428810398008F0717 /* SHIMABU.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA37128810398008F0717 /* SHIMABU.usdz */; };
 		0A5AA37528810398008F0717 /* Totoro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA37228810398008F0717 /* Totoro.usdz */; };
 		0A5AA378288103CD008F0717 /* chopper_boxing_test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA376288103CD008F0717 /* chopper_boxing_test.usdz */; };
 		0A5AA379288103CD008F0717 /* standing_greeting_robin_test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */; };
+		0A87A64C288798CD00ECB079 /* slime_metal3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A87A64B288798CD00ECB079 /* slime_metal3.usdz */; };
+		0A87A64E28879B4800ECB079 /* metal_slime.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A87A64D28879B4700ECB079 /* metal_slime.usdz */; };
 		0AB33873288124D40045A27C /* slime_second.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0AB33872288124D40045A27C /* slime_second.usdz */; };
 		0AB33875288127500045A27C /* slime_third.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0AB33874288127500045A27C /* slime_third.usdz */; };
 		0AB566182881B3410082B09D /* gatyaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB566172881B3410082B09D /* gatyaViewController.swift */; };
 		0AB5661A2881BF410082B09D /* img-gacha-animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0AB566192881BF410082B09D /* img-gacha-animation.gif */; };
+		0AEBDA492886DB8A0011B8ED /* SSCustomTabBarDeligate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBDA482886DB8A0011B8ED /* SSCustomTabBarDeligate.swift */; };
+		0AEBDA4B2886DCC90011B8ED /* SSCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBDA4A2886DCC90011B8ED /* SSCustomTabBar.swift */; };
 		0D78B0ED286C2B01002CFB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */; };
 		0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EE286C2B01002CFB48 /* ARViewController.swift */; };
 		0D78B0F1286C2B01002CFB48 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0F0286C2B01002CFB48 /* Experience.rcproject */; };
@@ -53,6 +58,7 @@
 		3ADF1E6D286E962F007EB643 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6A286E962F007EB643 /* Character.swift */; };
 		3ADF1E6F286E9819007EB643 /* AddFriendsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6E286E9819007EB643 /* AddFriendsTestViewController.swift */; };
 		B144660F287C2F38002FF0C4 /* UsersDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144660E287C2F38002FF0C4 /* UsersDataUtils.swift */; };
+		B1C8B8BD28864ED000E615B7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C8B8BC28864ED000E615B7 /* SettingViewController.swift */; };
 		B1E5936B287E4FCF0044A28B /* InMemoryItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5936A287E4FCF0044A28B /* InMemoryItemRepository.swift */; };
 		B4D38D6EFCC4A3349B23F34E /* Pods_DIGA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094F1BB6423B2EECF004A6A /* Pods_DIGA.framework */; };
 		C66D9CB12882FD5C006CC08E /* Goku.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C66D9CB02882FD5C006CC08E /* Goku.usdz */; };
@@ -64,6 +70,11 @@
 		C66D9CC528866786006CC08E /* Eren(Titan)_3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C66D9CC428866786006CC08E /* Eren(Titan)_3.usdz */; };
 		C66D9CC928866BEB006CC08E /* Eren(Titan)_4.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C66D9CC828866BEB006CC08E /* Eren(Titan)_4.usdz */; };
 		C66D9CCB28868BB9006CC08E /* puyo.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C66D9CCA28868BB9006CC08E /* puyo.usdz */; };
+		C6F0A52C2887A333002F7CDE /* sonic_the_hedgehog2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A52B2887A333002F7CDE /* sonic_the_hedgehog2.usdz */; };
+		C6F0A52E2887A6A0002F7CDE /* rarecoil.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A52D2887A6A0002F7CDE /* rarecoil.usdz */; };
+		C6F0A5302887A88E002F7CDE /* kurillin1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A52F2887A88E002F7CDE /* kurillin1.usdz */; };
+		C6F0A5342887BBAD002F7CDE /* dancing_mickey.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A5332887BBAD002F7CDE /* dancing_mickey.usdz */; };
+		C6F0A53A2887CBE1002F7CDE /* slime_5th.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A5392887CBE1002F7CDE /* slime_5th.usdz */; };
 		E172058B28706EB100A9D300 /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057E28706EB100A9D300 /* 7.mp3 */; };
 		E172058C28706EB100A9D300 /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057F28706EB100A9D300 /* 6.mp3 */; };
 		E172058D28706EB100A9D300 /* 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058028706EB100A9D300 /* 4.mp3 */; };
@@ -107,15 +118,21 @@
 		0A0F86C1287FEC50003D8C62 /* FriendsListTableViweController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViweController.swift; sourceTree = "<group>"; };
 		0A38CD1728862A8A000B2373 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		0A38CD1928862BB8000B2373 /* DigaDefaultUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigaDefaultUI.swift; sourceTree = "<group>"; };
+		0A38CD1B288651FA000B2373 /* PositiveSimpleButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PositiveSimpleButton.xib; sourceTree = "<group>"; };
 		0A5AA37028810397008F0717 /* sonic_the_hedgehog.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sonic_the_hedgehog.usdz; sourceTree = "<group>"; };
 		0A5AA37128810398008F0717 /* SHIMABU.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = SHIMABU.usdz; sourceTree = "<group>"; };
 		0A5AA37228810398008F0717 /* Totoro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Totoro.usdz; sourceTree = "<group>"; };
 		0A5AA376288103CD008F0717 /* chopper_boxing_test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chopper_boxing_test.usdz; sourceTree = "<group>"; };
 		0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = standing_greeting_robin_test.usdz; sourceTree = "<group>"; };
+		0A87A64A2887968100ECB079 /* slime_metal.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = slime_metal.glb; sourceTree = "<group>"; };
+		0A87A64B288798CD00ECB079 /* slime_metal3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_metal3.usdz; sourceTree = "<group>"; };
+		0A87A64D28879B4700ECB079 /* metal_slime.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = metal_slime.usdz; sourceTree = "<group>"; };
 		0AB33872288124D40045A27C /* slime_second.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_second.usdz; sourceTree = "<group>"; };
 		0AB33874288127500045A27C /* slime_third.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_third.usdz; sourceTree = "<group>"; };
 		0AB566172881B3410082B09D /* gatyaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gatyaViewController.swift; sourceTree = "<group>"; };
 		0AB566192881BF410082B09D /* img-gacha-animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "img-gacha-animation.gif"; sourceTree = "<group>"; };
+		0AEBDA482886DB8A0011B8ED /* SSCustomTabBarDeligate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCustomTabBarDeligate.swift; sourceTree = "<group>"; };
+		0AEBDA4A2886DCC90011B8ED /* SSCustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCustomTabBar.swift; sourceTree = "<group>"; };
 		0D78B0E9286C2B01002CFB48 /* DIGA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIGA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D78B0EE286C2B01002CFB48 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +169,7 @@
 		3F9F833CC2E20B6FBD539CE9 /* Pods-DIGATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGATests.release.xcconfig"; path = "Target Support Files/Pods-DIGATests/Pods-DIGATests.release.xcconfig"; sourceTree = "<group>"; };
 		41143A7C211BB9552B42443C /* Pods-DIGA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA.release.xcconfig"; path = "Target Support Files/Pods-DIGA/Pods-DIGA.release.xcconfig"; sourceTree = "<group>"; };
 		B144660E287C2F38002FF0C4 /* UsersDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDataUtils.swift; sourceTree = "<group>"; };
+		B1C8B8BC28864ED000E615B7 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B1E5936A287E4FCF0044A28B /* InMemoryItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryItemRepository.swift; sourceTree = "<group>"; };
 		B8BBAAB8BB94B309B6FAE108 /* Pods-DIGA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA.debug.xcconfig"; path = "Target Support Files/Pods-DIGA/Pods-DIGA.debug.xcconfig"; sourceTree = "<group>"; };
 		BD569AA0F43533696604EA1C /* Pods_DIGATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +183,11 @@
 		C66D9CC428866786006CC08E /* Eren(Titan)_3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Eren(Titan)_3.usdz"; sourceTree = "<group>"; };
 		C66D9CC828866BEB006CC08E /* Eren(Titan)_4.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = "Eren(Titan)_4.usdz"; sourceTree = "<group>"; };
 		C66D9CCA28868BB9006CC08E /* puyo.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = puyo.usdz; sourceTree = "<group>"; };
+		C6F0A52B2887A333002F7CDE /* sonic_the_hedgehog2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sonic_the_hedgehog2.usdz; sourceTree = "<group>"; };
+		C6F0A52D2887A6A0002F7CDE /* rarecoil.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = rarecoil.usdz; sourceTree = "<group>"; };
+		C6F0A52F2887A88E002F7CDE /* kurillin1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = kurillin1.usdz; sourceTree = "<group>"; };
+		C6F0A5332887BBAD002F7CDE /* dancing_mickey.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = dancing_mickey.usdz; sourceTree = "<group>"; };
+		C6F0A5392887CBE1002F7CDE /* slime_5th.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_5th.usdz; sourceTree = "<group>"; };
 		D19848E6E9DCDD5ED7ACE72A /* Pods_DIGA_DIGAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA_DIGAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D9E66A57DDE9024533B580 /* Pods-DIGA-DIGAUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA-DIGAUITests.debug.xcconfig"; path = "Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E172057E28706EB100A9D300 /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
@@ -247,6 +270,8 @@
 				0D78B0EC286C2B01002CFB48 /* AppDelegate.swift */,
 				0D78B11B286C2BD5002CFB48 /* TopViewContoroller.swift */,
 				0D78B11D286C2BEE002CFB48 /* MapViewController.swift */,
+				0AEBDA482886DB8A0011B8ED /* SSCustomTabBarDeligate.swift */,
+				0AEBDA4A2886DCC90011B8ED /* SSCustomTabBar.swift */,
 				0A0F86BD287D5B3A003D8C62 /* UIViewExtension.swift */,
 				0D78B0EE286C2B01002CFB48 /* ARViewController.swift */,
 				0AB566172881B3410082B09D /* gatyaViewController.swift */,
@@ -256,6 +281,7 @@
 				0A0F86BF287DA746003D8C62 /* animeation.swift */,
 				0D78B0F5286C2B02002CFB48 /* Assets.xcassets */,
 				0D78B0F2286C2B01002CFB48 /* Main.storyboard */,
+				B1C8B8BC28864ED000E615B7 /* SettingViewController.swift */,
 				0D78B0F7286C2B02002CFB48 /* LaunchScreen.storyboard */,
 				3ADF1E6E286E9819007EB643 /* AddFriendsTestViewController.swift */,
 				3A55CFE22873EAF500CAEA22 /* CharacterDataUtils.swift */,
@@ -267,6 +293,7 @@
 				3A1AC45D287D455E00B8E010 /* ItemTableViewController.swift */,
 				0AB566192881BF410082B09D /* img-gacha-animation.gif */,
 				0A38CD1728862A8A000B2373 /* Color.xcassets */,
+				0A38CD1B288651FA000B2373 /* PositiveSimpleButton.xib */,
 			);
 			path = DIGA;
 			sourceTree = "<group>";
@@ -302,7 +329,6 @@
 		0D7DFCC128731DD6001B015C /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				3A55CFE42874070800CAEA22 /* amplifyconfiguration.json */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -312,6 +338,7 @@
 			children = (
 				3A60F6F1287C16C20002395E /* awsconfiguration.json */,
 				3A60F6F0287C16C20002395E /* amplifyconfiguration.json */,
+				3A55CFE42874070800CAEA22 /* amplifyconfiguration.json */,
 			);
 			name = AmplifyConfig;
 			sourceTree = "<group>";
@@ -358,15 +385,21 @@
 				E18EF65D287472F9004AF827 /* coil.usdz */,
 				E18EF66728759C91004AF827 /* coil3.usdz */,
 				C66D9CCA28868BB9006CC08E /* puyo.usdz */,
+				0A87A64A2887968100ECB079 /* slime_metal.glb */,
 				E18EF65B287472ED004AF827 /* AMONGS.usdz */,
+				0A87A64B288798CD00ECB079 /* slime_metal3.usdz */,
 				E172057E28706EB100A9D300 /* 7.mp3 */,
 				0A5AA376288103CD008F0717 /* chopper_boxing_test.usdz */,
+				C6F0A5392887CBE1002F7CDE /* slime_5th.usdz */,
 				0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */,
+				C6F0A52B2887A333002F7CDE /* sonic_the_hedgehog2.usdz */,
+				C6F0A5332887BBAD002F7CDE /* dancing_mickey.usdz */,
 				C66D9CB42882FE3F006CC08E /* Dragon_Ball_-_Goku_Super_Sayayin.usdz */,
 				C66D9CB02882FD5C006CC08E /* Goku.usdz */,
 				C66D9CBE28830642006CC08E /* Nezuko_Kamado-Demon_Slayer.usdz */,
 				C66D9CB62882FEC3006CC08E /* SSJ-Goku.usdz */,
 				C66D9CC828866BEB006CC08E /* Eren(Titan)_4.usdz */,
+				0A87A64D28879B4700ECB079 /* metal_slime.usdz */,
 				C66D9CB22882FDB1006CC08E /* Goku_Rigged__Animated.usdz */,
 				C66D9CBC288300FB006CC08E /* Sanji_One_Piece.usdz */,
 				E172057F28706EB100A9D300 /* 6.mp3 */,
@@ -375,6 +408,7 @@
 				C66D9CC428866786006CC08E /* Eren(Titan)_3.usdz */,
 				E172058228706EB100A9D300 /* 1.mp3 */,
 				E172058328706EB100A9D300 /* 0.mp3 */,
+				C6F0A52F2887A88E002F7CDE /* kurillin1.usdz */,
 				0A5AA37128810398008F0717 /* SHIMABU.usdz */,
 				0A5AA37028810397008F0717 /* sonic_the_hedgehog.usdz */,
 				0A5AA37228810398008F0717 /* Totoro.usdz */,
@@ -383,6 +417,7 @@
 				E172058628706EB100A9D300 /* undefined.mp3 */,
 				E172058728706EB100A9D300 /* 200.mp3 */,
 				0AB33872288124D40045A27C /* slime_second.usdz */,
+				C6F0A52D2887A6A0002F7CDE /* rarecoil.usdz */,
 				0AB33874288127500045A27C /* slime_third.usdz */,
 				E172058828706EB100A9D300 /* 8.mp3 */,
 				E172058928706EB100A9D300 /* 9.mp3 */,
@@ -506,19 +541,26 @@
 				C66D9CBD288300FB006CC08E /* Sanji_One_Piece.usdz in Resources */,
 				C66D9CC928866BEB006CC08E /* Eren(Titan)_4.usdz in Resources */,
 				C66D9CBF28830642006CC08E /* Nezuko_Kamado-Demon_Slayer.usdz in Resources */,
+				C6F0A53A2887CBE1002F7CDE /* slime_5th.usdz in Resources */,
+				C6F0A52E2887A6A0002F7CDE /* rarecoil.usdz in Resources */,
 				E172059428706EB100A9D300 /* 200.mp3 in Resources */,
 				E18EF66828759C91004AF827 /* coil3.usdz in Resources */,
+				0A87A64E28879B4800ECB079 /* metal_slime.usdz in Resources */,
 				C66D9CC528866786006CC08E /* Eren(Titan)_3.usdz in Resources */,
 				E172058E28706EB100A9D300 /* 5.mp3 in Resources */,
 				0A38CD1828862A8A000B2373 /* Color.xcassets in Resources */,
 				E172059628706EB100A9D300 /* 9.mp3 in Resources */,
 				0AB5661A2881BF410082B09D /* img-gacha-animation.gif in Resources */,
+				0A38CD1C288651FA000B2373 /* PositiveSimpleButton.xib in Resources */,
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
+				C6F0A5342887BBAD002F7CDE /* dancing_mickey.usdz in Resources */,
+				C6F0A52C2887A333002F7CDE /* sonic_the_hedgehog2.usdz in Resources */,
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
 				3A60F6F3287C16C20002395E /* awsconfiguration.json in Resources */,
 				0AB33875288127500045A27C /* slime_third.usdz in Resources */,
 				E18EF65C287472ED004AF827 /* AMONGS.usdz in Resources */,
 				3A6004AA28726260009DA69E /* (null) in Resources */,
+				0A87A64C288798CD00ECB079 /* slime_metal3.usdz in Resources */,
 				C66D9CB32882FDB1006CC08E /* Goku_Rigged__Animated.usdz in Resources */,
 				C66D9CCB28868BB9006CC08E /* puyo.usdz in Resources */,
 				3A60F6F2287C16C20002395E /* amplifyconfiguration.json in Resources */,
@@ -540,6 +582,7 @@
 				E172059728706EB100A9D300 /* amongs.mp4 in Resources */,
 				0A5AA379288103CD008F0717 /* standing_greeting_robin_test.usdz in Resources */,
 				3A6004A828726260009DA69E /* Assets.xcassets in Resources */,
+				C6F0A5302887A88E002F7CDE /* kurillin1.usdz in Resources */,
 				0A5AA378288103CD008F0717 /* chopper_boxing_test.usdz in Resources */,
 				E172058C28706EB100A9D300 /* 6.mp3 in Resources */,
 			);
@@ -569,20 +612,16 @@
 			);
 			inputFileListPaths = (
 			);
-
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-
 			outputFileListPaths = (
 			);
-
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-DIGA-DIGAUITests-checkManifestLockResult.txt",
 			);
-
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
@@ -684,6 +723,7 @@
 				0A0F86BE287D5B3B003D8C62 /* UIViewExtension.swift in Sources */,
 				3ADF1E6F286E9819007EB643 /* AddFriendsTestViewController.swift in Sources */,
 				0A0F86C2287FEC50003D8C62 /* FriendsListTableViweController.swift in Sources */,
+				B1C8B8BD28864ED000E615B7 /* SettingViewController.swift in Sources */,
 				3A55CFE32873EAF500CAEA22 /* CharacterDataUtils.swift in Sources */,
 				3AB938B0287CF1650053FD18 /* Item+Schema.swift in Sources */,
 				3A0B5CB628785E3200B42A43 /* ItemDataUtils.swift in Sources */,
@@ -699,6 +739,8 @@
 				0D78B11E286C2BEE002CFB48 /* MapViewController.swift in Sources */,
 				0D78B0F1286C2B01002CFB48 /* Experience.rcproject in Sources */,
 				B144660F287C2F38002FF0C4 /* UsersDataUtils.swift in Sources */,
+				0AEBDA4B2886DCC90011B8ED /* SSCustomTabBar.swift in Sources */,
+				0AEBDA492886DB8A0011B8ED /* SSCustomTabBarDeligate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

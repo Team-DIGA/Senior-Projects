@@ -5,24 +5,36 @@
 //  Created by Kazunori Nakajima on 2022/07/19.
 //
 
+// PositiveSimpleButton.swift
+import Foundation
 import UIKit
-
-class DigaButton: UIButton {
-    
-    required init (coder aDecoder: NSCoder){
-        super.init(coder: aDecoder)!
-    }
-
-
-    override init (frame: CGRect){
-        super.init(frame: frame)
-        self.setTitle("Custom", for: UIControl.State.normal)
-        
-        self.backgroundColor = UIColor.orange
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = 32
-        self.layer.borderColor = UIColor.black.cgColor
-        self.layer.borderWidth = 4
-        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 28)
-    }
+@IBDesignable
+class PositiveSimpleButton: UIButton {
+override init(frame: CGRect) {
+    super.init(frame: frame)
+    customDesign()
+  }
+required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    customDesign()
+  }
+  
+  override func prepareForInterfaceBuilder() {
+    super.prepareForInterfaceBuilder()
+    customDesign()
+  }
+  
+  private func customDesign() {
+      backgroundColor = UIColor(named: "DigaGreen")
+    setTitleColor(.white, for: .normal)
+    titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
+    contentEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+    layer.cornerRadius = 15.0
+  }
 }
+
+//extension UIColor {
+//    class var digagreen: UIColor{
+//        return UIColor(named: "DigaGreen")
+//    }
+//}
