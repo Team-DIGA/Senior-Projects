@@ -37,7 +37,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
                     DispatchQueue.main.async {
                         // tableViewを更新
                         self.tableView.reloadData()
-//                        達成率を更新
+                        //達成率を更新
                         let maxcount = characterArray.count
                         let meetArray = characterArray.filter{
                             $0.have_met == true
@@ -47,7 +47,7 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
                         completeRate = self.metcount / Double(maxcount) * 100
                         debugPrint(maxcount, self.metcount, completeRate)
                         let complateLevel = "達成率：　\(floor(completeRate))％"
-                        let complateRate = "   達成数:　\(meetArray.count) / \(characterArray.count)"
+                        let complateRate = "   達成数：　\(meetArray.count) / \(characterArray.count)"
                         self.completeLabelView.text = complateLevel + complateRate
                     }
                 case .failure(let graphQLError):

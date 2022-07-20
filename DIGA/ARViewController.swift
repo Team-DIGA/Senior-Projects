@@ -379,7 +379,7 @@ class ARViewController: UIViewController {
         }
 
         alert.addAction(backAction)
-        present(alert, animated: true, completion:nil)
+        present(alert, animated: true, completion: nil)
     }
     
     func alertFunc2(){
@@ -563,14 +563,10 @@ class ARViewController: UIViewController {
         } else if itemRepo.getBooster() == 2 {
             getMoney = getMoney / 4
         }
-
-        var alert : UIAlertController
-        
-        
-            alert = UIAlertController(title: String(
-                "\(characterTitle!)　が上納金を納めた。\n所持金が　\(getMoney)€riko 増えた！！"
-            ), message: "", preferredStyle: .alert)
-        
+      
+        let alert = UIAlertController(title: String(
+            "\(characterTitle!)　が上納金を納めた。\n所持金が　\(getMoney)€riko 増えた！！"
+        ), message: "", preferredStyle: .alert)
         
         let backAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
             let randomNum = Int.random(in: 1...10)
@@ -582,7 +578,7 @@ class ARViewController: UIViewController {
         })
         
         alert.addAction(backAction)
-        present(alert, animated: true)
+        present(alert, animated: true, completion: nil)
         
         userDataUtils.updateUserStatus(name: user.name, getExp: getExp, getMoney: getMoney, getItem: nil)
 

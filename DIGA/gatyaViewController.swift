@@ -81,10 +81,15 @@ class GatyaViewController: UIViewController{
             userDataUtils.updateUserStatus(name: user.name, getExp: 0, getMoney: -50000, getItem: getItem )
             itemDataUtils.updateItem(name: getItem, itemCount: 1)
         } else {
-            let Alert = UIAlertController(title: String(
+            let backAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
+                self.loadView()
+                self.viewDidLoad()
+            })
+            let alert = UIAlertController(title: String(
                 "所持€rikoが足りないよ。\n€rikoを集めてきて。"
             ), message: "", preferredStyle: .alert)
-            
+            alert.addAction(backAction)
+            present(alert, animated: true, completion: nil)
         }
     }
     
@@ -97,8 +102,8 @@ class GatyaViewController: UIViewController{
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
             self.dropItemImage.image = UIImage(named: randomItem)!
             guard let username = AWSMobileClient.default().username else {
-            print("Error: Uncaught username")
-            return
+                print("Error: Uncaught username")
+                return
             }
             self.user = userDataUtils.getUser(name: username) as? User
             self.dropItemImage.isHidden = false
