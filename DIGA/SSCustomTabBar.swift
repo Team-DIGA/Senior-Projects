@@ -19,10 +19,10 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         super.didReceiveMemoryWarning()
     }
  
-    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
-        if viewController is TabBarDelegate {
-            let v = viewController as! TabBarDelegate
-            v.didSelectTab(tabBarController: self)
-        }
-    }
+//    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+//        if viewController is SSCustomTabBarDelegate {
+//            let v = viewController as! SSCustomTabBarDelegate
+//            v.didSelectTab(tabBarController: self)
+//        }
+//    }
 }

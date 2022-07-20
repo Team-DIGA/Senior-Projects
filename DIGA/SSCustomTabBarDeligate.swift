@@ -8,7 +8,7 @@
 import Foundation
 import SSCustomTabbar
  
-@objc protocol TabBarDelegate {
+@objc protocol SSCustomTabBarDelegate {
  
-    func didSelectTab(tabBarController: TabBarController)
+    func didSelectTab(tabBarController: SSCustomTabBarViewController)
 }

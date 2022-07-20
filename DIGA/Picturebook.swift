@@ -3,6 +3,7 @@ import MapKit
 import CoreLocation
 import Amplify
 import ChameleonFramework
+import SSCustomTabbar
 
 var characterArray: [Character] = []
 
@@ -158,10 +159,17 @@ class Picturebook: UIViewController, UITableViewDelegate, UITableViewDataSource,
             super.didReceiveMemoryWarning()
         }
      
-    func didSelectTab(tabBarController: TabBarController) {
-        print("first!")
+    func didSelectTab(tabBarController: SSCustomTabBarViewController) {
+        print("=======first!==========")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("ここで実行されてます")
+        self.fetchMessage()
+        
+        // tableViewを更新
+        self.tableView.reloadData()
+    }
 }
 
 enum BorderPosition {
