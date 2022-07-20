@@ -734,6 +734,9 @@ class ARViewController: UIViewController {
         // アニメーション完了時の処理
         }
         )
-        self.addOrEscape(result: result)
+        delay(0.5){
+            self.addOrEscape(result: result)
+        }
+        
     }
 }

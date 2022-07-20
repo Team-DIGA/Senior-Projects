@@ -75,7 +75,7 @@ class GatyaViewController: UIViewController{
             getItem = gachaResult() as! String
             userDataUtils.updateUserStatus(name: user.name, getExp: 0, getMoney: -50, getItem: getItem )
         } else {
-            _ = UIAlertController(title: String(
+            let Alert = UIAlertController(title: String(
                 "所持€rikoが足りないよ。\n€rikoを集めてきて。"
             ), message: "", preferredStyle: .alert)
             
@@ -88,7 +88,7 @@ class GatyaViewController: UIViewController{
             return print("randomItemがnilっぽい")
         }
         //結果の表示
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
             self.dropItemImage.image = UIImage(named: randomItem)!
             
             self.dropItemImage.isHidden = false
@@ -107,5 +107,13 @@ class GatyaViewController: UIViewController{
         self.gatyaAnimation.isHidden = false
         gatyaAnimation.loadGif(name: "img-gacha-animation")
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.gatyaAnimation.isHidden = true
+        self.dropItemImage.isHidden = true
+        self.gtyaLabel.isHidden = true
+        firstGatyaImage.isHidden = false
+        self.gatyaButton.setTitle("ガチャる", for: .normal)
     }
 }
