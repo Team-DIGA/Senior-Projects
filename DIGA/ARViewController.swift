@@ -264,7 +264,7 @@ class ARViewController: UIViewController {
         }else if characterTitle! == "スライム" {
             let anchor = AnchorEntity()
             anchor.position = simd_make_float3(0, -150, -200)
-            let usdzModel = try! Entity.load(named: "metal_slime")
+            let usdzModel = try! Entity.load(named: "slime_5th")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
             for animation in usdzModel.availableAnimations {

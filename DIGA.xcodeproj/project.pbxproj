@@ -74,6 +74,7 @@
 		C6F0A52E2887A6A0002F7CDE /* rarecoil.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A52D2887A6A0002F7CDE /* rarecoil.usdz */; };
 		C6F0A5302887A88E002F7CDE /* kurillin1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A52F2887A88E002F7CDE /* kurillin1.usdz */; };
 		C6F0A5342887BBAD002F7CDE /* dancing_mickey.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A5332887BBAD002F7CDE /* dancing_mickey.usdz */; };
+		C6F0A53A2887CBE1002F7CDE /* slime_5th.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A5392887CBE1002F7CDE /* slime_5th.usdz */; };
 		E172058B28706EB100A9D300 /* 7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057E28706EB100A9D300 /* 7.mp3 */; };
 		E172058C28706EB100A9D300 /* 6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172057F28706EB100A9D300 /* 6.mp3 */; };
 		E172058D28706EB100A9D300 /* 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E172058028706EB100A9D300 /* 4.mp3 */; };
@@ -186,6 +187,7 @@
 		C6F0A52D2887A6A0002F7CDE /* rarecoil.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = rarecoil.usdz; sourceTree = "<group>"; };
 		C6F0A52F2887A88E002F7CDE /* kurillin1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = kurillin1.usdz; sourceTree = "<group>"; };
 		C6F0A5332887BBAD002F7CDE /* dancing_mickey.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = dancing_mickey.usdz; sourceTree = "<group>"; };
+		C6F0A5392887CBE1002F7CDE /* slime_5th.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_5th.usdz; sourceTree = "<group>"; };
 		D19848E6E9DCDD5ED7ACE72A /* Pods_DIGA_DIGAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIGA_DIGAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D9E66A57DDE9024533B580 /* Pods-DIGA-DIGAUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA-DIGAUITests.debug.xcconfig"; path = "Target Support Files/Pods-DIGA-DIGAUITests/Pods-DIGA-DIGAUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E172057E28706EB100A9D300 /* 7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 7.mp3; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 				0A87A64B288798CD00ECB079 /* slime_metal3.usdz */,
 				E172057E28706EB100A9D300 /* 7.mp3 */,
 				0A5AA376288103CD008F0717 /* chopper_boxing_test.usdz */,
+				C6F0A5392887CBE1002F7CDE /* slime_5th.usdz */,
 				0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */,
 				C6F0A52B2887A333002F7CDE /* sonic_the_hedgehog2.usdz */,
 				C6F0A5332887BBAD002F7CDE /* dancing_mickey.usdz */,
@@ -538,6 +541,7 @@
 				C66D9CBD288300FB006CC08E /* Sanji_One_Piece.usdz in Resources */,
 				C66D9CC928866BEB006CC08E /* Eren(Titan)_4.usdz in Resources */,
 				C66D9CBF28830642006CC08E /* Nezuko_Kamado-Demon_Slayer.usdz in Resources */,
+				C6F0A53A2887CBE1002F7CDE /* slime_5th.usdz in Resources */,
 				C6F0A52E2887A6A0002F7CDE /* rarecoil.usdz in Resources */,
 				E172059428706EB100A9D300 /* 200.mp3 in Resources */,
 				E18EF66828759C91004AF827 /* coil3.usdz in Resources */,
