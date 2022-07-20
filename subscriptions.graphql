@@ -50,6 +50,8 @@ subscription OnCreateItem {
     name
     rarity
     effect
+    item_count
+    update_count
     createdAt
     updatedAt
     _version
@@ -63,6 +65,8 @@ subscription OnUpdateItem {
     name
     rarity
     effect
+    item_count
+    update_count
     createdAt
     updatedAt
     _version
@@ -76,6 +80,8 @@ subscription OnDeleteItem {
     name
     rarity
     effect
+    item_count
+    update_count
     createdAt
     updatedAt
     _version

@@ -7,7 +7,7 @@
     "defaultAuthType": {
       "mode": "API_KEY",
       "expirationTime": 30,
-      "apiKeyExpirationDate": "2022-08-12T13:16:29.419Z",
+      "apiKeyExpirationDate": "2022-08-19T03:08:55.615Z",
       "keyDescription": "DIGA's APi key"
     },
     "conflictResolution": {

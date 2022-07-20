@@ -72,6 +72,8 @@ query GetItem($id: ID!) {
     name
     rarity
     effect
+    item_count
+    update_count
     createdAt
     updatedAt
     _version
@@ -90,6 +92,8 @@ query ListItems(
       name
       rarity
       effect
+      item_count
+      update_count
       createdAt
       updatedAt
       _version
@@ -117,6 +121,8 @@ query SyncItems(
       name
       rarity
       effect
+      item_count
+      update_count
       createdAt
       updatedAt
       _version
