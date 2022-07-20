@@ -12,25 +12,30 @@ import UIKit
 class PositiveSimpleButton: UIButton {
 override init(frame: CGRect) {
     super.init(frame: frame)
-    customDesign()
-  }
-required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    customDesign()
-  }
+        customDesign()
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        customDesign()
+    }
   
-  override func prepareForInterfaceBuilder() {
-    super.prepareForInterfaceBuilder()
-    customDesign()
-  }
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        customDesign()
+    }
   
-  private func customDesign() {
-      backgroundColor = UIColor(named: "DigaGreen")
-    setTitleColor(.white, for: .normal)
-    titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
-    contentEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
-    layer.cornerRadius = 15.0
-  }
+    private func customDesign() {
+        backgroundColor = UIColor(named: "NavigationBar")
+        setTitleColor(.white, for: .normal)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 40.0)
+        contentEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+        layer.cornerRadius = 15.0
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowOpacity = 10
+        layer.shadowRadius = 10
+        layer.shadowColor = UIColor.white.cgColor
+        layer.cornerRadius = 10
+    }
 }
 
 //extension UIColor {

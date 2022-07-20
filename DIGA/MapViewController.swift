@@ -129,6 +129,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        
         guard let username = AWSMobileClient.default().username else {
             print("Error: Uncaught username")
             return
@@ -194,7 +196,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         } else {
             profPicture.image = UIImage(named: "スネ夫")
         }
-        LvLavel.text = "Lv.\(user.level)"
+        LvLavel.text = " 　Lv.\(user.level)"
         moneyLabel.text = "所持金　\(user.money) €riko"
         let nextLv = (user.level+1)*(user.level+1)*(user.level+1)*3/2
         expLabel.text = "あと　\(nextLv - user.exp)　の経験値"

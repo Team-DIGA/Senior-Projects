@@ -12,6 +12,8 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
     
         tableView.delegate = self
         tableView.dataSource = self

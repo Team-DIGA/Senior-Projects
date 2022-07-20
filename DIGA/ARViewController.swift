@@ -138,6 +138,8 @@ class ARViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        
         guard let username = AWSMobileClient.default().username else {
             print("Error: Uncaught username")
             return

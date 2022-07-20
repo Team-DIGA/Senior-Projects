@@ -13,6 +13,7 @@ import Amplify
 import AWSMobileClient
 
 class TopViewController: UIViewController {
+    
     @IBAction func signOutButton(_ sender: UIButton) {
         // サインアウト処理
         AWSMobileClient.sharedInstance().signOut()
@@ -48,6 +49,13 @@ class TopViewController: UIViewController {
     }
     var avPlayer: AVAudioPlayer!
     var buttonAvPlayer : AVAudioPlayer!
+    
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+
+      navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -141,7 +149,7 @@ class TopViewController: UIViewController {
         
         //カスタムボタンの適用確認のためコメント化
         //uiDesign.buttonDesign(button: digaGoButton)
-        uiDesign.buttonDesign(button: signOutButton)
+//        uiDesign.buttonDesign(button: signOutButton)
 
         fetchCurrentAuthSession()
         
