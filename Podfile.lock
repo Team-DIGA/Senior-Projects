@@ -44,6 +44,7 @@ PODS:
     - ChameleonFramework/Default
   - SSCustomTabbar (2.0.6)
   - Starscream (4.0.4)
+  - SwiftGifOrigin (1.7.0)
 
 DEPENDENCIES:
   - Amplify
@@ -53,8 +54,9 @@ DEPENDENCIES:
   - AWSAuthUI
   - AWSMobileClient
   - AWSUserPoolsSignIn
-  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - ChameleonFramework/Swift (from `https://github.com/wowansm/Chameleon`, branch `swift5`)
   - SSCustomTabbar
+  - SwiftGifOrigin
 
 SPEC REPOS:
   trunk:
@@ -71,15 +73,17 @@ SPEC REPOS:
     - AWSUserPoolsSignIn
     - SSCustomTabbar
     - Starscream
+    - SwiftGifOrigin
 
 EXTERNAL SOURCES:
   ChameleonFramework:
-    :git: https://github.com/ViccAlexander/Chameleon.git
+    :branch: swift5
+    :git: https://github.com/wowansm/Chameleon
 
 CHECKOUT OPTIONS:
   ChameleonFramework:
-    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
-    :git: https://github.com/ViccAlexander/Chameleon.git
+    :commit: 96d52c36a45847fff60bcff7a58fec1e4bd7390b
+    :git: https://github.com/wowansm/Chameleon
 
 SPEC CHECKSUMS:
   Amplify: a4747a22276b4994cfdb29ea8cdbe6eed7964e9f
@@ -96,7 +100,8 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   SSCustomTabbar: a52533e429bd40f52ce8d7ecb801f3521fbd56a0
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
 
-PODFILE CHECKSUM: d515decddbeca0828f8372b6537d7556cbc77565
+PODFILE CHECKSUM: 1bce163ef9fb42955b0aa46fbd0b4230831068c7
 
 COCOAPODS: 1.11.3

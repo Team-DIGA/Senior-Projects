@@ -12,7 +12,7 @@ target 'DIGA' do
   # Pods for DIGA
   pod 'Amplify'
   pod 'AmplifyPlugins/AWSAPIPlugin'
-  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/wowansm/Chameleon', :branch => 'swift5'
   pod 'Amplify/Tools'
   # allows to call amplify CLI from within Xcode
 
@@ -23,6 +23,7 @@ target 'DIGA' do
   pod 'AWSAuthUI'
   pod 'AWSUserPoolsSignIn'
   pod 'SSCustomTabbar'
+  pod 'SwiftGifOrigin'
 
   target 'DIGATests' do
     inherit! :search_paths

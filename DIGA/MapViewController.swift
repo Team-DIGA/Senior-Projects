@@ -18,7 +18,6 @@ class MapAnnotationSetting:MKPointAnnotation{
 
 extension UIImage {
     func resized(size: CGSize) -> UIImage {
-        // リサイズ後のサイズを指定してUIGraphicsImageRendererを作成する
         let renderer = UIGraphicsImageRenderer(size: size)
         return renderer.image { (context) in
             draw(in: CGRect(origin: .zero, size: size))
@@ -39,24 +38,14 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var nextLevellabel: UILabel!
     @IBOutlet weak var expLabel: UILabel!
-    
     @IBAction func didTapSerchButton(_ sender: UIButton) {
-//        self.mapView.annotations.removeAll()
-//        print("消したいAnnotations",self.mapView.annotations)
-//        self.mapView.removeAnnotations(self.mapView.annotations)
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//            print("消えてないAnnotations",self.mapView.annotations)
             self.viewDidLoad()
-//        }
     }
     var locationManager: CLLocationManager!
     
-    // 取得した緯度経度を保持するインスタンス
     var myLatitude: CLLocationDegrees!
     var myLongitude: CLLocationDegrees!
     
-    // タップした緯度経度を保持するインスタンス
     var tapLatitude: CLLocationDegrees!
     var tapLongitude: CLLocationDegrees!
 
@@ -91,6 +80,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var metCountObj:[String:Int] = [:]
     
     func getAllNamesAndImages() {
+        
+        //***Refactor***//
+        //CharacterDataUtilsのgetAllCharacter使ってもっとシンプルに書けないか？
+        
         let semaphore = DispatchSemaphore(value: 0)
         // Amplify SDK経由でqueryオペレーションを実行しCharacterの配列を取得
         Amplify.API.query(request: .list(Character.self, where: nil)) { event in
@@ -140,7 +133,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             return
         }
         
-        user = userDataUtils.getUser(name: username) as! User
+        user = userDataUtils.getUser(name: username) as? User
         
         print("キャラホイ", itemRepo.getHoihoi())
         print("ヨクツカマール", itemRepo.getEasyCap())
@@ -148,7 +141,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         print("レガシーは突然に", itemRepo.getLegacy())
         print("キャラチェン", itemRepo.getChara())
         print("ブースター", itemRepo.getBooster())
-        
         print("getChara:",itemRepo.getChara())
         
 //        itemRepo.switchChara(itemNum:2)
@@ -172,14 +164,9 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         mapView.region = region
         mapView.delegate = self
         
-        // 自分の視点の座標.
-//        let fromCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude-0.000001, longitude+0.001)
-        // 上空から見下ろす高さ.
-//        let myAltitude: CLLocationDistance = 0.00000000000001
         // MapCameraに中心点、視点、高さを設定./
         let myCamera: MKMapCamera =
         MKMapCamera(lookingAtCenter: currentlocation, fromDistance: 750, pitch: 75, heading: 0)
-
         // CameraをMapViewに設定.
         mapView.setCamera(myCamera, animated: true)
         // ビルを3Dに見えるようにする.

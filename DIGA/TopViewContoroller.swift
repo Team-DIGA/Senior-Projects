@@ -36,7 +36,7 @@ class TopViewController: UIViewController {
     
     let userDataUtils = UserDataUtils()
     
-    @IBOutlet weak var digaGoButton: UIButton!
+    @IBOutlet weak var digaGoButton: DigaButton!
     
     @IBAction func amongsTappedButton(_ sender: UIButton) {
         randomNum = Int.random(in: 0...200)
