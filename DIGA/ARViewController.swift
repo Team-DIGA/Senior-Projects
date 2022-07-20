@@ -203,7 +203,7 @@ class ARViewController: UIViewController {
         } else if characterTitle! == "ソニック" {
             let anchor = AnchorEntity()
             anchor.position = simd_make_float3(0, -1, -1)
-            let usdzModel = try! Entity.load(named: "sonic_the_hedgehog")
+            let usdzModel = try! Entity.load(named: "sonic_the_hedgehog2")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
         } else if characterTitle! == "ロビン" {
