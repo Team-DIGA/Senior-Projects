@@ -74,6 +74,7 @@ class GatyaViewController: UIViewController{
             gachaAnimation()
             getItem = gachaResult() as! String
             userDataUtils.updateUserStatus(name: user.name, getExp: 0, getMoney: -50, getItem: getItem )
+            itemDataUtils.updateItem(name: getItem, itemCount: 1)
         } else {
             let Alert = UIAlertController(title: String(
                 "所持€rikoが足りないよ。\n€rikoを集めてきて。"

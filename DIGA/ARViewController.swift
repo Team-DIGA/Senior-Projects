@@ -562,12 +562,13 @@ class ARViewController: UIViewController {
         alert.addAction(backAction)
         present(alert, animated: true)
         
-        guard let username = AWSMobileClient.default().username else {
-            print("Error: Uncaught username")
-            return
-        }
+//        guard let username = AWSMobileClient.default().username else {
+//            print("Error: Uncaught username")
+//            return
+//        }
 
-        userDataUtils.updateUserItem(name: username, itemName: itemTitles[randomItemNum].name)
+//        userDataUtils.updateUserItem(name: username, itemName: itemTitles[randomItemNum].name)
+        itemDataUtils.updateItem(name: itemTitles[randomItemNum].name, itemCount: 1)
         
     }
     
