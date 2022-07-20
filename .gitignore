@@ -23,3 +23,4 @@ amplifyconfiguration.json
 amplify/.DS_Store
 amplify/backend/.DS_Store
 Pods/*
+amplify/backend/api/digayuta/cli-inputs.json
