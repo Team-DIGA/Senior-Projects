@@ -10,7 +10,8 @@ import SwiftGifOrigin
 import AWSMobileClient
 
 class GatyaViewController: UIViewController{
-
+    
+    var user: User!
     @IBOutlet weak var firstGatyaImage: UIImageView!
     @IBOutlet weak var gatyaAnimation: UIImageView!
     @IBOutlet weak var dropItemImage: UIImageView!
@@ -47,6 +48,11 @@ class GatyaViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let username = AWSMobileClient.default().username else {
+        print("Error: Uncaught username")
+        return
+        }
+        user = userDataUtils.getUser(name: username) as? User
         
         self.gatyaAnimation.isHidden = true
         self.dropItemImage.isHidden = true
@@ -54,30 +60,26 @@ class GatyaViewController: UIViewController{
     }
     
     @IBAction func didTapGatyaButton(_ sender: UIButton) {
-            let semaphore = DispatchSemaphore(value: 0)
             gatyaButton.isHidden = true
             firstGatyaImage.isHidden = true
             gatyaAnimation.isHidden = true
             dropItemImage.isHidden = true
             gtyaLabel.isHidden = true
+        let getItem:String
         
             //所持金確認してOKなら所持金からガチャ代金をひく
             //所持金ないなら金持って出直してこいやと怒る
             //この部分のロジックを後で考える
-        
+        if user.money >= 50 {
             gachaAnimation()
-            let getItem = gachaResult()
-        
-            guard let username = AWSMobileClient.default().username else {
-            print("Error: Uncaught username")
-            return
-            }
-            semaphore.signal()
-            semaphore.wait()
-
-            userDataUtils.updateUserItem(name: username, itemName: getItem as! String)
-        
-        
+            getItem = gachaResult() as! String
+            userDataUtils.updateUserStatus(name: user.name, getExp: 0, getMoney: -50, getItem: getItem )
+        } else {
+            let Alert = UIAlertController(title: String(
+                "所持€rikoが足りないよ。\n€rikoを集めてきて。"
+            ), message: "", preferredStyle: .alert)
+            
+        }
     }
     
     //ガチャの結果を表示する機能
@@ -86,7 +88,7 @@ class GatyaViewController: UIViewController{
             return print("randomItemがnilっぽい")
         }
         //結果の表示
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
             self.dropItemImage.image = UIImage(named: randomItem)!
             
             self.dropItemImage.isHidden = false
@@ -105,5 +107,13 @@ class GatyaViewController: UIViewController{
         self.gatyaAnimation.isHidden = false
         gatyaAnimation.loadGif(name: "img-gacha-animation")
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.gatyaAnimation.isHidden = true
+        self.dropItemImage.isHidden = true
+        self.gtyaLabel.isHidden = true
+        firstGatyaImage.isHidden = false
+        self.gatyaButton.setTitle("ガチャる", for: .normal)
     }
 }
