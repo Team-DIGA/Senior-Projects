@@ -115,18 +115,18 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
         } else if itemName == "魔封波" {
             itemRepo.breakCursed()
             
-            guard let username = AWSMobileClient.default().username else {
-                print("Error: Uncaught username")
-                return
-            }
+//            guard let username = AWSMobileClient.default().username else {
+//                print("Error: Uncaught username")
+//                return
+//            }
 //            userDataUtils.deleteUserItem(name: username , itemName: "呪いの面")
             itemDataUtils.updateItem(name: "呪いの面", itemCount: -1)
             
         }
-        guard let username = AWSMobileClient.default().username else {
-            print("Error: Uncaught username")
-            return
-        }
+//        guard let username = AWSMobileClient.default().username else {
+//            print("Error: Uncaught username")
+//            return
+//        }
         if itemName != "呪いの面" {
         
             let resultAlert = UIAlertController(title:"\(itemName)を使った！", message: "\(itemArray[indexPath.row].effect)", preferredStyle: .alert)
