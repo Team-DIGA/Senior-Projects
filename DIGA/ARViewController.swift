@@ -176,7 +176,7 @@ class ARViewController: UIViewController {
             arView.scene.anchors.append(anchor)
         } else if characterTitle! == "トロロ" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -0.5, -0.5)
+            anchor.position = simd_make_float3(0, -0.2, -0.2)
 
             if let usdzModel = try? Entity.load(named: "Totoro") {
                 anchor.addChild(usdzModel)
@@ -202,7 +202,7 @@ class ARViewController: UIViewController {
             }
         } else if characterTitle! == "ソニック" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -1, -1)
+            anchor.position = simd_make_float3(0, -3, -3)
             let usdzModel = try! Entity.load(named: "sonic_the_hedgehog2")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
@@ -227,7 +227,7 @@ class ARViewController: UIViewController {
                         }
         }else if characterTitle! == "クリリン" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -2, -2)
+            anchor.position = simd_make_float3(0, -0.1, -0.1)
             let usdzModel = try! Entity.load(named: "kurillin1")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
@@ -245,7 +245,7 @@ class ARViewController: UIViewController {
                         }
         }else if characterTitle! == "ミッキー" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -2, -2)
+            anchor.position = simd_make_float3(0, -0.1, -0.1)
             let usdzModel = try! Entity.load(named: "dancing_mickey")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
@@ -254,7 +254,7 @@ class ARViewController: UIViewController {
                         }
         }else if characterTitle! == "ぷよ" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -2, -2)
+            anchor.position = simd_make_float3(0, -3, -4)
             let usdzModel = try! Entity.load(named: "puyo")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
@@ -263,7 +263,7 @@ class ARViewController: UIViewController {
                         }
         }else if characterTitle! == "スライム" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -150, -200)
+            anchor.position = simd_make_float3(0, -0.5, -0.8)
             let usdzModel = try! Entity.load(named: "slime_5th")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
