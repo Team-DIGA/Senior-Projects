@@ -19,6 +19,8 @@
 		0A5AA37528810398008F0717 /* Totoro.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA37228810398008F0717 /* Totoro.usdz */; };
 		0A5AA378288103CD008F0717 /* chopper_boxing_test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA376288103CD008F0717 /* chopper_boxing_test.usdz */; };
 		0A5AA379288103CD008F0717 /* standing_greeting_robin_test.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */; };
+		0A87A64C288798CD00ECB079 /* slime_metal3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A87A64B288798CD00ECB079 /* slime_metal3.usdz */; };
+		0A87A64E28879B4800ECB079 /* metal_slime.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0A87A64D28879B4700ECB079 /* metal_slime.usdz */; };
 		0AB33873288124D40045A27C /* slime_second.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0AB33872288124D40045A27C /* slime_second.usdz */; };
 		0AB33875288127500045A27C /* slime_third.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0AB33874288127500045A27C /* slime_third.usdz */; };
 		0AB566182881B3410082B09D /* gatyaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB566172881B3410082B09D /* gatyaViewController.swift */; };
@@ -117,6 +119,9 @@
 		0A5AA37228810398008F0717 /* Totoro.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Totoro.usdz; sourceTree = "<group>"; };
 		0A5AA376288103CD008F0717 /* chopper_boxing_test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = chopper_boxing_test.usdz; sourceTree = "<group>"; };
 		0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = standing_greeting_robin_test.usdz; sourceTree = "<group>"; };
+		0A87A64A2887968100ECB079 /* slime_metal.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = slime_metal.glb; sourceTree = "<group>"; };
+		0A87A64B288798CD00ECB079 /* slime_metal3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_metal3.usdz; sourceTree = "<group>"; };
+		0A87A64D28879B4700ECB079 /* metal_slime.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = metal_slime.usdz; sourceTree = "<group>"; };
 		0AB33872288124D40045A27C /* slime_second.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_second.usdz; sourceTree = "<group>"; };
 		0AB33874288127500045A27C /* slime_third.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_third.usdz; sourceTree = "<group>"; };
 		0AB566172881B3410082B09D /* gatyaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gatyaViewController.swift; sourceTree = "<group>"; };
@@ -370,7 +375,9 @@
 				E18EF65D287472F9004AF827 /* coil.usdz */,
 				E18EF66728759C91004AF827 /* coil3.usdz */,
 				C66D9CCA28868BB9006CC08E /* puyo.usdz */,
+				0A87A64A2887968100ECB079 /* slime_metal.glb */,
 				E18EF65B287472ED004AF827 /* AMONGS.usdz */,
+				0A87A64B288798CD00ECB079 /* slime_metal3.usdz */,
 				E172057E28706EB100A9D300 /* 7.mp3 */,
 				0A5AA376288103CD008F0717 /* chopper_boxing_test.usdz */,
 				0A5AA377288103CD008F0717 /* standing_greeting_robin_test.usdz */,
@@ -379,6 +386,7 @@
 				C66D9CBE28830642006CC08E /* Nezuko_Kamado-Demon_Slayer.usdz */,
 				C66D9CB62882FEC3006CC08E /* SSJ-Goku.usdz */,
 				C66D9CC828866BEB006CC08E /* Eren(Titan)_4.usdz */,
+				0A87A64D28879B4700ECB079 /* metal_slime.usdz */,
 				C66D9CB22882FDB1006CC08E /* Goku_Rigged__Animated.usdz */,
 				C66D9CBC288300FB006CC08E /* Sanji_One_Piece.usdz */,
 				E172057F28706EB100A9D300 /* 6.mp3 */,
@@ -520,6 +528,7 @@
 				C66D9CBF28830642006CC08E /* Nezuko_Kamado-Demon_Slayer.usdz in Resources */,
 				E172059428706EB100A9D300 /* 200.mp3 in Resources */,
 				E18EF66828759C91004AF827 /* coil3.usdz in Resources */,
+				0A87A64E28879B4800ECB079 /* metal_slime.usdz in Resources */,
 				C66D9CC528866786006CC08E /* Eren(Titan)_3.usdz in Resources */,
 				E172058E28706EB100A9D300 /* 5.mp3 in Resources */,
 				0A38CD1828862A8A000B2373 /* Color.xcassets in Resources */,
@@ -532,6 +541,7 @@
 				0AB33875288127500045A27C /* slime_third.usdz in Resources */,
 				E18EF65C287472ED004AF827 /* AMONGS.usdz in Resources */,
 				3A6004AA28726260009DA69E /* (null) in Resources */,
+				0A87A64C288798CD00ECB079 /* slime_metal3.usdz in Resources */,
 				C66D9CB32882FDB1006CC08E /* Goku_Rigged__Animated.usdz in Resources */,
 				C66D9CCB28868BB9006CC08E /* puyo.usdz in Resources */,
 				3A60F6F2287C16C20002395E /* amplifyconfiguration.json in Resources */,

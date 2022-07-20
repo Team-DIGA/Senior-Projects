@@ -341,7 +341,7 @@ extension MapViewController{
             debugPrint("placeMark=============: \(placemark)")
             debugPrint("placeMark.name=============: \(placemark.name)")
             if let placemarkName = placemark.name {
-                self.targetPlace = placemark.name!
+                self.targetPlace = placemarkName
             }else{
                 self.targetPlace = "不明な場所"
             }
