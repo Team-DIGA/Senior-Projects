@@ -579,7 +579,6 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="450" id="ltG-9h-w3s"/>
                                 </constraints>
                             </imageView>
-<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOR-ii-cXO" customClass="PositiveSimpleButton" customModule="DIGA" customModuleProvider="target">
                                 <rect key="frame" x="20" y="719.5" width="374" height="58.5"/>
                                 <constraints>
@@ -592,14 +591,12 @@
                                     <action selector="didTapGatyaButton:" destination="jVJ-aa-sxB" eventType="touchUpInside" id="p6u-rN-T5r"/>
                                 </connections>
                             </button>
-=======
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お金" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIX-zE-qOE">
                                 <rect key="frame" x="319" y="694" width="35" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
->>>>>>> c8b6f596e6f780758429d54dc4a359565a57a0f5
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pN8-ig-jx2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
