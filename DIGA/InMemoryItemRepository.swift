@@ -77,14 +77,13 @@ class InMemoryItemRepository:UIAlertController, ItemFunc{
     func switchChara(itemNum: Int) {
 //        itemObj.changeChara = itemNum
         delegate.changeChara = itemNum
-        
     }
 
     func switchBooster(boosterNum: Int) {
         delegate.changeBooster = boosterNum
     }
     
-
+    
     func changeEasyCap(){
         delegate.isEasyCap.toggle()
     }
@@ -158,39 +157,46 @@ class InMemoryItemRepository:UIAlertController, ItemFunc{
         alert.view.addSubview(imageView)
 
         
-        
         do{
             guard let username = AWSMobileClient.default().username else {
                 print("Error:uncaught userName")
                 throw NSError(domain: "error", code: -1, userInfo: nil)
             }
        
-        
+        let user: User = self.userDataUtils.getUser(name: username) as! User
+        let requireExp = Int(pow(Double(user.level), 3) * 1.5)
+        let remainExp = requireExp - user.exp
+
         print("randomNum", randomItemNum)
             
 
             
         let btn1 = UIAlertAction(title: "A", style: UIAlertAction.Style.default, handler: {_ in
+            guard let username = AWSMobileClient.default().username else {
+                print("Error:uncaught userName")
+                return }
+
             if randomItemNum == 1 {
-                self.userDataUtils.updateUserLvAndExp(name: username, myLv: 1, getExp: 0 )
+                self.userDataUtils.updateUserStatus(name: username, getExp: remainExp, getMoney: 0, getItem:nil)
                 self.changeLevelState()
                 print("up")
             } else {
 
-                self.userDataUtils.updateUserLvAndExp(name: username, myLv: 100, getExp: 0)
+                self.userDataUtils.updateUserStatus(name: username, getExp: requireExp * -1, getMoney: 0, getItem: nil)
                 print("down")
             }
             self.alertPotatoResult(view: view)
         })
         let btn2 = UIAlertAction(title: "B", style: UIAlertAction.Style.default, handler: {_ in
             if randomItemNum == 1 {
-                self.userDataUtils.updateUserLvAndExp(name: username, myLv: -1, getExp:0)
+                self.userDataUtils.updateUserStatus(name: username, getExp: requireExp * -1, getMoney: 0, getItem: nil)
                 print("down")
             } else {
-                self.userDataUtils.updateUserLvAndExp(name: username, myLv: 1, getExp: 0)
+                self.userDataUtils.updateUserStatus(name: username, getExp: remainExp, getMoney: 0, getItem: nil)
                 self.changeLevelState()
                 print("up")
             }
+            
             self.alertPotatoResult(view: view)
         })
     

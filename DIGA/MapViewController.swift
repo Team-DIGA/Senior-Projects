@@ -28,6 +28,7 @@ extension UIImage {
 class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
     
     var user: User!
+    var userName: String!
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var SerchButton: UIButton!
@@ -133,7 +134,9 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             return
         }
         
-        user = userDataUtils.getUser(name: username) as? User
+        userName = username
+        
+        user = userDataUtils.getUser(name: userName) as? User
         
         print("キャラホイ", itemRepo.getHoihoi())
         print("ヨクツカマール", itemRepo.getEasyCap())
@@ -183,7 +186,14 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         view.bringSubviewToFront(expLabel)
         
         userNameLabel.text = user.name
-        profPicture.image = UIImage(named: user.name)
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        if let dirPath = paths.first{
+            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("userImage")
+            debugPrint(imageURL)
+            profPicture.image = UIImage(contentsOfFile: imageURL.path)
+        } else {
+            profPicture.image = UIImage(named: "スネ夫")
+        }
         LvLavel.text = "Lv.\(user.level)"
         moneyLabel.text = "所持金　\(user.money) €riko"
         let nextLv = (user.level+1)*(user.level+1)*(user.level+1)*3/2
@@ -264,6 +274,25 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        user = userDataUtils.getUser(name: userName) as? User
+        
+        userNameLabel.text = user.name
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        if let dirPath = paths.first{
+            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("userImage")
+            debugPrint(imageURL)
+            profPicture.image = UIImage(contentsOfFile: imageURL.path)
+        } else {
+            profPicture.image = UIImage(named: "スネ夫")
+        }
+        LvLavel.text = "Lv.\(user.level)"
+        moneyLabel.text = "所持金　\(user.money) €riko"
+        let nextLv = (user.level+1)*(user.level+1)*(user.level+1)*3/2
+        expLabel.text = "あと　\(nextLv - user.exp)　の経験値"
+        
+    }
+    
 }
 
 
@@ -311,7 +340,12 @@ extension MapViewController{
             }
             debugPrint("placeMark=============: \(placemark)")
             debugPrint("placeMark.name=============: \(placemark.name)")
-            self.targetPlace = placemark.name!
+            if let placemarkName = placemark.name {
+                self.targetPlace = placemark.name!
+            }else{
+                self.targetPlace = "不明な場所"
+            }
+            
         }
 //        print("async check 1=================================")
 //        let semaphore = DispatchSemaphore(value: 0)

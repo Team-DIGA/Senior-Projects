@@ -131,6 +131,7 @@ struct CharacterDataUtils {
     
     //データ更新
     func updateCharacter(name: String, place:String, met_count_key:Int) {
+        getCharacter(name: name)
         DIGA.updateCharacter?.have_met = true
         DIGA.updateCharacter?.first_met_place = place
         DIGA.updateCharacter?.met_count += 1
