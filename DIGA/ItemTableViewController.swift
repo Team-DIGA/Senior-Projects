@@ -134,28 +134,22 @@ class ItemTableViewController: UIViewController, UITableViewDelegate, UITableVie
             resultAlert.view.addSubview(imageView)
             let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {_ in
             })
-            
             resultAlert.addAction(backAction)
-            
             present(resultAlert, animated: true, completion: nil)
             
 //        userDataUtils.deleteUserItem(name: username , itemName: itemName)
-        itemDataUtils.updateItem(name: itemName, itemCount: -1)
+            itemDataUtils.updateItem(name: itemName, itemCount: -1)
         
-        } else {
-            
         }
         
-        let UINavigationController = tabBarController?.viewControllers?[2];
-        tabBarController?.selectedViewController = UINavigationController;
+        let UINavigationController = tabBarController?.viewControllers?[2]
+        tabBarController?.selectedViewController = UINavigationController
 
         }
 //        let secondStoryboard = UIStoryboard(name: "MapViewController", bundle: nil)
 //        let secondVC = secondStoryboard.instantiateInitialViewController() as! MapViewController
 //        let nav = self.navigationController!
 //        nav.pushViewController(secondVC, animated: true)
-        
-            
     }
     
     @IBOutlet weak var tableView: UITableView!
