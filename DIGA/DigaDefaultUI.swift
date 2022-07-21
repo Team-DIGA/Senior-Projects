@@ -56,7 +56,7 @@ class GatyaButton: UIButton {
     private func gatyaButtonDesign() {
         backgroundColor = UIColor(named: "NavigationBar")
         setTitleColor(.white, for: .normal)
-        titleLabel?.font = UIFont.boldSystemFont(ofSize: 30.0)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 25.0)
         contentEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
         layer.cornerRadius = 15.0
         layer.shadowOffset = CGSize(width: 0, height: 0)

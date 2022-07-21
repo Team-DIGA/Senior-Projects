@@ -9,12 +9,22 @@ let itemRepo = InMemoryItemRepository()
 
 class ItemTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var itemCount: UILabel!
+//    @IBOutlet weak var itemCount: UILabel!
     
     override func viewDidAppear(_ animated: Bool) {
         itemArray = itemDataUtils.getAllItem() as! [Item]
         self.tableView.reloadData()
     }
+    
+    
+//    @IBOutlet weak var itemCount: UILabel!
+//
+//
+//    override func viewDidAppear(_ animated: Bool) {
+//        itemArray = itemDataUtils.getAllItem() as! [Item]
+//        self.tableView.reloadData()
+//    }
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()

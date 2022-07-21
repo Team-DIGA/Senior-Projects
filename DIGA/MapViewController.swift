@@ -80,6 +80,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var raritiesArray:[Int] = []
     var metCountObj:[String:Int] = [:]
     
+    let demoArray:[String] = ["チョッパー", "巨人化したエレン", "サンジ", "ロビン", "スライム", "Amongs","トロロ", "悟空", "クリリン", "ソニック", "ミッキー", "ぷよ"]
+    
     func getAllNamesAndImages() {
         
         //***Refactor***//
@@ -221,34 +223,42 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                 itemRepo.switchChara(itemNum: 0)
             }
         } else  {
-            let numChara:Int
-            if itemRepo.getHoihoi() {
-                numChara = 15
-                itemRepo.changeHoihoi()
-            } else {
-                numChara = Int.random(in:7...10)
-            }
-            var countChara = 0
             for i in 0..<self.pinTitles.count {
-                var rarity:Int
-                if itemRepo.getLegacy() {
-                    rarity = 11 - raritiesArray[i]
-                } else {
-                    rarity = raritiesArray[i]
-                }
-                let selectChara = Int.random(in: 1...rarity + 1)
-                if selectChara == 1 && countChara < numChara && pinTitles[i] != "Yusuke" {
-//                    print("name", pinTitles[i])
-//                    print("motomoto", raritiesArray[i])
-//                    print("hanten",rarity)
+                if self.demoArray.contains(self.pinTitles[i]) {
                     appendMap(i: i)
-                    countChara += 1
+                    itemRepo.switchChara(itemNum: 0)
                 }
-            
             }
-            if itemRepo.getLegacy() {
-                itemRepo.changeLegacy()
-            }
+//            let numChara:Int
+//            if itemRepo.getHoihoi() {
+//                numChara = 15
+//                itemRepo.changeHoihoi()
+//            } else {
+//                numChara = Int.random(in:7...10)
+//            }
+//            var countChara = 0
+//            for i in 0..<self.pinTitles.count {
+//
+//                var rarity:Int
+//                if itemRepo.getLegacy() {
+//                    rarity = 11 - raritiesArray[i]
+//                } else {
+//                    rarity = raritiesArray[i]
+//                }
+//                let selectChara = Int.random(in: 1...rarity + 1)
+//                if selectChara == 1 && countChara < numChara && pinTitles[i] != "Yusuke" {
+////                    print("name", pinTitles[i])
+////                    print("motomoto", raritiesArray[i])
+////                    print("hanten",rarity)
+//                    appendMap(i: i)
+//                    countChara += 1
+//
+//                }
+//
+//            }
+//            if itemRepo.getLegacy() {
+//                itemRepo.changeLegacy()
+//            }
             //Yusuke
             if itemRepo.getChara() == 3 {
                 guard let indexYusuke = pinTitles.firstIndex(of: "Yusuke") else {
