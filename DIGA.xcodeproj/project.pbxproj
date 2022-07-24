@@ -75,7 +75,6 @@
 		C6F0A5302887A88E002F7CDE /* kurillin1.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A52F2887A88E002F7CDE /* kurillin1.usdz */; };
 		C6F0A5342887BBAD002F7CDE /* dancing_mickey.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A5332887BBAD002F7CDE /* dancing_mickey.usdz */; };
 		C6F0A53A2887CBE1002F7CDE /* slime_5th.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A5392887CBE1002F7CDE /* slime_5th.usdz */; };
-		C6F0A53C2887E390002F7CDE /* ZORO.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A53B2887E390002F7CDE /* ZORO.usdz */; };
 		C6F0A53E2887EABF002F7CDE /* Amy_Rose.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A53D2887EABF002F7CDE /* Amy_Rose.usdz */; };
 		C6F0A54228895391002F7CDE /* nezuko_greet.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A54128895391002F7CDE /* nezuko_greet.usdz */; };
 		C6F0A54A288A1ED2002F7CDE /* namiREMAKE_greet.usdz in Resources */ = {isa = PBXBuildFile; fileRef = C6F0A549288A1ED2002F7CDE /* namiREMAKE_greet.usdz */; };
@@ -192,7 +191,6 @@
 		C6F0A52F2887A88E002F7CDE /* kurillin1.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = kurillin1.usdz; sourceTree = "<group>"; };
 		C6F0A5332887BBAD002F7CDE /* dancing_mickey.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = dancing_mickey.usdz; sourceTree = "<group>"; };
 		C6F0A5392887CBE1002F7CDE /* slime_5th.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = slime_5th.usdz; sourceTree = "<group>"; };
-		C6F0A53B2887E390002F7CDE /* ZORO.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ZORO.usdz; sourceTree = "<group>"; };
 		C6F0A53D2887EABF002F7CDE /* Amy_Rose.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Amy_Rose.usdz; sourceTree = "<group>"; };
 		C6F0A54128895391002F7CDE /* nezuko_greet.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = nezuko_greet.usdz; sourceTree = "<group>"; };
 		C6F0A549288A1ED2002F7CDE /* namiREMAKE_greet.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = namiREMAKE_greet.usdz; sourceTree = "<group>"; };
@@ -429,7 +427,6 @@
 				0AB33872288124D40045A27C /* slime_second.usdz */,
 				C6F0A53D2887EABF002F7CDE /* Amy_Rose.usdz */,
 				C6F0A52D2887A6A0002F7CDE /* rarecoil.usdz */,
-				C6F0A53B2887E390002F7CDE /* ZORO.usdz */,
 				0AB33874288127500045A27C /* slime_third.usdz */,
 				E172058828706EB100A9D300 /* 8.mp3 */,
 				E172058928706EB100A9D300 /* 9.mp3 */,
