@@ -9,6 +9,8 @@ extension Item {
     case name
     case rarity
     case effect
+    case item_count
+    case update_count
     case createdAt
     case updatedAt
   }
@@ -26,6 +28,8 @@ extension Item {
       .field(item.name, is: .required, ofType: .string),
       .field(item.rarity, is: .required, ofType: .int),
       .field(item.effect, is: .required, ofType: .string),
+      .field(item.item_count, is: .required, ofType: .int),
+      .field(item.update_count, is: .required, ofType: .int),
       .field(item.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
       .field(item.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)
     )

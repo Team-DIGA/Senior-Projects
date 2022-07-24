@@ -242,7 +242,9 @@ class InMemoryItemRepository:UIAlertController, ItemFunc{
     let resultAlert = UIAlertController(title:"ふふふ", message: "呪いの面が消えることはない", preferredStyle: .alert)
     let height = NSLayoutConstraint(item: resultAlert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 380)
     resultAlert.view.addConstraint(height)
-    
+    let imageView = UIImageView(frame: CGRect(x: 10, y: 70, width: 250, height: 250))
+    imageView.image = UIImage(named: "呪いの面")
+    resultAlert.view.addSubview(imageView)
     let backAction: UIAlertAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {_ in
     })
     

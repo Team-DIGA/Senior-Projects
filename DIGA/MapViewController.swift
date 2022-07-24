@@ -129,6 +129,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        
         guard let username = AWSMobileClient.default().username else {
             print("Error: Uncaught username")
             return
@@ -194,7 +196,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         } else {
             profPicture.image = UIImage(named: "スネ夫")
         }
-        LvLavel.text = "Lv.\(user.level)"
+        LvLavel.text = " 　Lv.\(user.level)"
         moneyLabel.text = "所持金　\(user.money) €riko"
         let nextLv = (user.level+1)*(user.level+1)*(user.level+1)*3/2
         expLabel.text = "あと　\(nextLv - user.exp)　の経験値"
@@ -307,6 +309,7 @@ extension MapViewController{
             break
         case .authorizedAlways, .authorizedWhenInUse:
             manager.startUpdatingLocation()
+            manager.requestWhenInUseAuthorization()
             break
         default:
             break
@@ -345,7 +348,6 @@ extension MapViewController{
             }else{
                 self.targetPlace = "不明な場所"
             }
-            
         }
 //        print("async check 1=================================")
 //        let semaphore = DispatchSemaphore(value: 0)
@@ -368,7 +370,7 @@ extension MapViewController{
             return
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
             self.performSegue(withIdentifier: "toARView", sender: self)
         }
         

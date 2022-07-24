@@ -100,6 +100,35 @@ struct ItemDataUtils {
         return allItem
     }
     
+    
+    func updateItem(name: String, itemCount: Int) {
+        //Anyだから暫定でこの書き方。
+        var item: Item = getItem(name: name) as! Item
+        if item.item_count == 0 && itemCount == -1{
+            item.item_count = 0
+        } else {
+            item.item_count += itemCount
+        }
+        item.update_count += 1
+
+        
+
+        // mutateで新規メッセージを作成
+        Amplify.API.mutate(request: .updateMutation(of: item, version: item.update_count-1)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let user):
+                    print("Successfully updated ItemCount: \(user)")
+                case .failure(let error):
+                    print("Got failed result of update ItemCount with \(error.errorDescription)")
+                }
+                case .failure(let error):
+                print("Got failed event of itemCount with error \(error)")
+            }
+        }
+    }
+    
     //全データ挿入
     func createAllItem() -> Void {
         for item in itemObj {
@@ -107,7 +136,7 @@ struct ItemDataUtils {
             guard let rarityStr = item["rarity"] else { return }
             guard let rarity = Int(rarityStr) else { return }
             
-            let items = Item(name: item["name"]!, rarity: rarity, effect: item["effect"]!)
+            let items = Item(name: item["name"]!, rarity: rarity, effect: item["effect"]!, item_count:0, update_count:1   )
 
             // mutateで新規メッセージを作成
             Amplify.API.mutate(request: .create(items)) { event in

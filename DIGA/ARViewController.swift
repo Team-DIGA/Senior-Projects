@@ -138,6 +138,8 @@ class ARViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        
         guard let username = AWSMobileClient.default().username else {
             print("Error: Uncaught username")
             return
@@ -176,7 +178,7 @@ class ARViewController: UIViewController {
             arView.scene.anchors.append(anchor)
         } else if characterTitle! == "トロロ" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -0.5, -0.5)
+            anchor.position = simd_make_float3(0, -0.2, -0.2)
 
             if let usdzModel = try? Entity.load(named: "Totoro") {
                 anchor.addChild(usdzModel)
@@ -202,7 +204,7 @@ class ARViewController: UIViewController {
             }
         } else if characterTitle! == "ソニック" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -1, -1)
+            anchor.position = simd_make_float3(0, -3, -3)
             let usdzModel = try! Entity.load(named: "sonic_the_hedgehog2")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
@@ -227,7 +229,7 @@ class ARViewController: UIViewController {
                         }
         }else if characterTitle! == "クリリン" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -2, -2)
+            anchor.position = simd_make_float3(0, -0.1, -0.1)
             let usdzModel = try! Entity.load(named: "kurillin1")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
@@ -245,7 +247,7 @@ class ARViewController: UIViewController {
                         }
         }else if characterTitle! == "ミッキー" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -2, -2)
+            anchor.position = simd_make_float3(0, -0.1, -0.1)
             let usdzModel = try! Entity.load(named: "dancing_mickey")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
@@ -254,7 +256,7 @@ class ARViewController: UIViewController {
                         }
         }else if characterTitle! == "ぷよ" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -2, -2)
+            anchor.position = simd_make_float3(0, -3, -4)
             let usdzModel = try! Entity.load(named: "puyo")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
@@ -263,7 +265,7 @@ class ARViewController: UIViewController {
                         }
         }else if characterTitle! == "スライム" {
             let anchor = AnchorEntity()
-            anchor.position = simd_make_float3(0, -150, -200)
+            anchor.position = simd_make_float3(0, -0.5, -0.8)
             let usdzModel = try! Entity.load(named: "slime_5th")
             anchor.addChild(usdzModel)
             arView.scene.anchors.append(anchor)
@@ -377,7 +379,7 @@ class ARViewController: UIViewController {
         }
 
         alert.addAction(backAction)
-        present(alert, animated: true, completion:nil)
+        present(alert, animated: true, completion: nil)
     }
     
     func alertFunc2(){
@@ -561,14 +563,10 @@ class ARViewController: UIViewController {
         } else if itemRepo.getBooster() == 2 {
             getMoney = getMoney / 4
         }
-
-        var alert : UIAlertController
-        
-        
-            alert = UIAlertController(title: String(
-                "\(characterTitle!)　が上納金を納めた。\n所持金が　\(getMoney)€riko 増えた！！"
-            ), message: "", preferredStyle: .alert)
-        
+      
+        let alert = UIAlertController(title: String(
+            "\(characterTitle!)　が上納金を納めた。\n所持金が　\(getMoney)€riko 増えた！！"
+        ), message: "", preferredStyle: .alert)
         
         let backAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) -> Void in
             let randomNum = Int.random(in: 1...10)
@@ -580,7 +578,7 @@ class ARViewController: UIViewController {
         })
         
         alert.addAction(backAction)
-        present(alert, animated: true)
+        present(alert, animated: true, completion: nil)
         
         userDataUtils.updateUserStatus(name: user.name, getExp: getExp, getMoney: getMoney, getItem: nil)
 
@@ -606,12 +604,13 @@ class ARViewController: UIViewController {
         alert.addAction(backAction)
         present(alert, animated: true)
         
-        guard let username = AWSMobileClient.default().username else {
-            print("Error: Uncaught username")
-            return
-        }
+//        guard let username = AWSMobileClient.default().username else {
+//            print("Error: Uncaught username")
+//            return
+//        }
 
-        userDataUtils.updateUserItem(name: username, itemName: itemTitles[randomItemNum].name)
+//        userDataUtils.updateUserItem(name: username, itemName: itemTitles[randomItemNum].name)
+        itemDataUtils.updateItem(name: itemTitles[randomItemNum].name, itemCount: 1)
         
     }
     

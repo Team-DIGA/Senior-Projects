@@ -20,6 +20,9 @@ final class SettingViewController: UIViewController,UIImagePickerControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        
         imagePicker.delegate = self
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         if let dirPath = paths.first{

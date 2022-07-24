@@ -31,7 +31,6 @@
 		0D78B0EF286C2B01002CFB48 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0EE286C2B01002CFB48 /* ARViewController.swift */; };
 		0D78B0F1286C2B01002CFB48 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B0F0286C2B01002CFB48 /* Experience.rcproject */; };
 		0D78B0F4286C2B01002CFB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D78B0F2286C2B01002CFB48 /* Main.storyboard */; };
-		0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D78B0F5286C2B02002CFB48 /* Assets.xcassets */; };
 		0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D78B0F7286C2B02002CFB48 /* LaunchScreen.storyboard */; };
 		0D78B103286C2B03002CFB48 /* DIGATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B102286C2B03002CFB48 /* DIGATests.swift */; };
 		0D78B10D286C2B03002CFB48 /* DIGAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D78B10C286C2B03002CFB48 /* DIGAUITests.swift */; };
@@ -57,6 +56,7 @@
 		3ADF1E6C286E962F007EB643 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E69286E962F007EB643 /* AmplifyModels.swift */; };
 		3ADF1E6D286E962F007EB643 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6A286E962F007EB643 /* Character.swift */; };
 		3ADF1E6F286E9819007EB643 /* AddFriendsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF1E6E286E9819007EB643 /* AddFriendsTestViewController.swift */; };
+		3AF873FB28883680007461A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF873FA28883680007461A8 /* Assets.xcassets */; };
 		B144660F287C2F38002FF0C4 /* UsersDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144660E287C2F38002FF0C4 /* UsersDataUtils.swift */; };
 		B1C8B8BD28864ED000E615B7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C8B8BC28864ED000E615B7 /* SettingViewController.swift */; };
 		B1E5936B287E4FCF0044A28B /* InMemoryItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5936A287E4FCF0044A28B /* InMemoryItemRepository.swift */; };
@@ -142,7 +142,6 @@
 		0D78B0EE286C2B01002CFB48 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		0D78B0F0286C2B01002CFB48 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		0D78B0F3286C2B01002CFB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0D78B0F5286C2B02002CFB48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D78B0F8286C2B02002CFB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D78B0FE286C2B03002CFB48 /* DIGATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIGATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D78B102286C2B03002CFB48 /* DIGATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIGATests.swift; sourceTree = "<group>"; };
@@ -170,6 +169,7 @@
 		3ADF1E69286E962F007EB643 /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplifyModels.swift; sourceTree = "<group>"; };
 		3ADF1E6A286E962F007EB643 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		3ADF1E6E286E9819007EB643 /* AddFriendsTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsTestViewController.swift; sourceTree = "<group>"; };
+		3AF873FA28883680007461A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Assets.xcassets; sourceTree = "<group>"; };
 		3F9F833CC2E20B6FBD539CE9 /* Pods-DIGATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGATests.release.xcconfig"; path = "Target Support Files/Pods-DIGATests/Pods-DIGATests.release.xcconfig"; sourceTree = "<group>"; };
 		41143A7C211BB9552B42443C /* Pods-DIGA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIGA.release.xcconfig"; path = "Target Support Files/Pods-DIGA/Pods-DIGA.release.xcconfig"; sourceTree = "<group>"; };
 		B144660E287C2F38002FF0C4 /* UsersDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDataUtils.swift; sourceTree = "<group>"; };
@@ -287,7 +287,7 @@
 				0A0F86C1287FEC50003D8C62 /* FriendsListTableViweController.swift */,
 				0D78B0F0286C2B01002CFB48 /* Experience.rcproject */,
 				0A0F86BF287DA746003D8C62 /* animeation.swift */,
-				0D78B0F5286C2B02002CFB48 /* Assets.xcassets */,
+				3AF873FA28883680007461A8 /* Assets.xcassets */,
 				0D78B0F2286C2B01002CFB48 /* Main.storyboard */,
 				B1C8B8BC28864ED000E615B7 /* SettingViewController.swift */,
 				0D78B0F7286C2B02002CFB48 /* LaunchScreen.storyboard */,
@@ -568,8 +568,11 @@
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
 				C6F0A5342887BBAD002F7CDE /* dancing_mickey.usdz in Resources */,
 				C6F0A52C2887A333002F7CDE /* sonic_the_hedgehog2.usdz in Resources */,
+<<<<<<< HEAD
 				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
 				C6F0A53C2887E390002F7CDE /* ZORO.usdz in Resources */,
+=======
+>>>>>>> 1d9fb09ec339112300c51e608878968cf9dc3aea
 				3A60F6F3287C16C20002395E /* awsconfiguration.json in Resources */,
 				0AB33875288127500045A27C /* slime_third.usdz in Resources */,
 				E18EF65C287472ED004AF827 /* AMONGS.usdz in Resources */,
@@ -590,6 +593,7 @@
 				E172058F28706EB100A9D300 /* 1.mp3 in Resources */,
 				E172059528706EB100A9D300 /* 8.mp3 in Resources */,
 				0A5AA37428810398008F0717 /* SHIMABU.usdz in Resources */,
+				3AF873FB28883680007461A8 /* Assets.xcassets in Resources */,
 				E172058D28706EB100A9D300 /* 4.mp3 in Resources */,
 				E172059128706EB100A9D300 /* 2.mp3 in Resources */,
 				0D78B0F4286C2B01002CFB48 /* Main.storyboard in Resources */,
@@ -935,7 +939,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L74DBDRY8R;
+				DEVELOPMENT_TEAM = 4W9BJUAY8P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "常に許可";
@@ -954,7 +958,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DIG-DIGA-111";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DIG-DIGA-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -972,7 +976,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L74DBDRY8R;
+				DEVELOPMENT_TEAM = 4W9BJUAY8P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "常に許可";
@@ -991,7 +995,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DIG-DIGA-111";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DIG-DIGA-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
