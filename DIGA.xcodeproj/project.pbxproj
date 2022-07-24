@@ -568,11 +568,6 @@
 				0D78B0F9286C2B02002CFB48 /* LaunchScreen.storyboard in Resources */,
 				C6F0A5342887BBAD002F7CDE /* dancing_mickey.usdz in Resources */,
 				C6F0A52C2887A333002F7CDE /* sonic_the_hedgehog2.usdz in Resources */,
-<<<<<<< HEAD
-				0D78B0F6286C2B02002CFB48 /* Assets.xcassets in Resources */,
-				C6F0A53C2887E390002F7CDE /* ZORO.usdz in Resources */,
-=======
->>>>>>> 1d9fb09ec339112300c51e608878968cf9dc3aea
 				3A60F6F3287C16C20002395E /* awsconfiguration.json in Resources */,
 				0AB33875288127500045A27C /* slime_third.usdz in Resources */,
 				E18EF65C287472ED004AF827 /* AMONGS.usdz in Resources */,
